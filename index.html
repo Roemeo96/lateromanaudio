@@ -24,18 +24,22 @@ body {
 }
 
 
-/* gesamtes Logo */
 .logo-wrapper {
     display: flex;
     align-items: center;
+    justify-content: center;
 
     gap: 28px;
 
+    width: 100%;
+    max-width: 500px;
+
     background: #000;
+    zoom: min(1, calc(100vw / 500));
 }
 
 
-/* Schrift */
+
 .text-logo {
     font-family: "Times New Roman", Times, serif;
 
@@ -68,7 +72,6 @@ body {
 .group {
     display: flex;
 
-    /* Abstand innerhalb eines 2er-Blocks */
     gap: 5px;
 
     height: 100%;
@@ -86,11 +89,16 @@ body {
 
 .subtitle {
     color: #eee8d5;
-    margin-top: 24px;
-    font-family: "Times New Roman", Times, serif;
+
+    width: 100%;
+    max-width: 500px;
+
+    text-align: center;
+
+    margin-top: 40px;
     text-transform: uppercase;
-    letter-spacing: 0.25em;
-    font-size: 14px;
+    font-family: "Times New Roman", Times, serif;
+    letter-spacing: 0.35em;
 }
 
 </style>
@@ -149,7 +157,7 @@ body {
 </br>
 </br>
 </br>
-<div class="subtitle">Comming Soon...</div>
+<div class="subtitle">Comming Soon ...</div>
 
 
 
