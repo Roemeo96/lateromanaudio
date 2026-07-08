@@ -74,7 +74,36 @@
         <p class="landing-coming">
           Coming Soon ...
         </p>
+
+        <p class="landing-description">
+          The Weltgesit Synthesis is a first of its kind pedal converting the dynamics of your guitar signal into a control voltage, that emulates an expression pedal. This allows you to use your playing dynamics to control other effects accepting expression input, creating a more expressive and dynamic performance. Use it in front or after your compression pedal.
+        </p>
+
+        <p class="landing-description">
+            The pedal is currently in development and will be available soon. In the meantime, you can use this interactive simulation to explore the transfer curve of the pedal and see how it responds to different input levels and settings.
+        </p>
+
       </div>
+
+      <div class="landing-bullets">
+        <p class="landing-description">
+            FEATURES
+        </p>
+        <ul class="landing-description-list">
+            <li>SENSITIVITY:&nbsp;&nbsp;&nbsp;&nbsp;Amplifies your signal to match the desired output level</li>
+            <li>MIN:&nbsp;&nbsp;&nbsp;&nbsp;Sets the minimum heel-down position of the expression emulation</li>
+            <li>MAX:&nbsp;&nbsp;&nbsp;&nbsp;Sets the maximum toe-down position of the expression emulation</li>
+            <li>ATTACK:&nbsp;&nbsp;&nbsp;&nbsp;Controls how quickly the pedal responds to increases of the input level</li>
+            <li>RELEASE:&nbsp;&nbsp;&nbsp;&nbsp;Controls how quickly the pedal returns to its default state after the input level decreases</li>
+            <li>THRESHOLD:&nbsp;&nbsp;&nbsp;&nbsp;Sets the input level at which RATIO will bend the characteristic curve</li>
+            <li>RATIO:&nbsp;&nbsp;&nbsp;&nbsp;Bends the slope above the THRESHOLD level</li>
+            <li>INVERT:&nbsp;&nbsp;&nbsp;&nbsp;Inverts the characteristic curve: Heel-down and Toe-down positions switch</li>
+        </ul>
+        <p class="landing-description">
+            Try out the interactive simulation below to explore the transfer curve of the pedal and see how it responds to different input levels and settings. Change the input level to see how ATTACK and RELEASE affect the output.
+        </p>
+      </div>
+
     </section>
 
     <!-- Pedalsimulation -->
@@ -202,7 +231,7 @@
           <input
             id="ratio"
             type="range"
-            min="0.5"
+            min="0.25"
             max="2"
             step="0.05"
             value="1"
@@ -253,7 +282,7 @@
             min="10"
             max="4000"
             step="10"
-            value="500"
+            value="2000"
           >
         </div>
       </section>
@@ -311,7 +340,28 @@
         </div>
       </section>
     </main>
+<section class="landing-specifications">
+    <div class="landing-copy">
 
+        <p class="landing-description">
+            SPECIFICATIONS
+        </p>
+        <ul class="landing-description-list">
+            <li>INPUT:1x TS Input Jack</li>
+            <li>EXP:2x TRS Input Jack</li>
+            <li>OUTPUT:1x TS Output Jack</li>
+            <li>Output Impedance: 100Ω</li>
+            <li>Power Supply: 9V DC (center negative)</li>
+            <li>Current Draw: 20mA</li>
+            <li>True Bypass</li>
+            <li>Dimensions: 145mm x 100mm x 100mm</li>
+            <li>Weight: 300g</li>
+        </ul>
+        <p class="landing-description">
+            Disclaimer: The pedal is emulating a 50k potentiometer of an expression pedal, but does not guarantee to represent its linear characteristic curve. Use only with devices agnostic to potentiometer resistance. The output voltage is not a true CV signal and may not be compatible with all devices. Please check the specifications of your device before using the pedal.
+        </p>
+    </div>
+    </section>
     <script
       type="module"
       src="/src/main.js"

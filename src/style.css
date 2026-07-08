@@ -7,7 +7,7 @@
     "Segoe UI",
     sans-serif;
 
-  color: #f5f2ea;
+  color: #eee8d5;
   background: #000000;
 
   font-synthesis: none;
@@ -21,6 +21,7 @@
   --text: #f5f2ea;
   --accent: #eee8d5;
   --accent-soft: rgb(200 255 77 / 15%);
+  --tertiary: #ff765f;
   --danger: #ff765f;
 }
 
@@ -110,6 +111,7 @@ input {
   letter-spacing: -0.06em;
 }
 
+
 .subtitle {
   margin: 0.65rem 0 0;
   color: var(--muted);
@@ -151,7 +153,7 @@ input[type="range"] {
   width: 100%;
   margin: 0;
 
-  accent-color: var(--accent);
+  accent-color: var(--tertiary);
   cursor: pointer;
 }
 
@@ -286,11 +288,11 @@ input[type="range"] {
 }
 
 .current-point {
-  fill: var(--panel);
-  stroke: var(--accent);
-  stroke-width: 4;
+  fill: var(--tertiary);
+  stroke: var(--tertiary);
+  stroke-width: 3;
 
-  filter: drop-shadow(0 0 8px rgb(200 255 77 / 65%));
+  filter: drop-shadow(0 0 8px rgb(255 118 95 / 50%));
 
   transition:
     cx 0ms linear,
@@ -374,7 +376,24 @@ input[type="range"] {
   color: #eee8d5;
   background: #000;
 
-  text-align: center;
+  text-align: left;
+}
+
+.landing-specifications {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  padding: 1rem 1rem;
+
+  color: #eee8d5;
+  background: #000;
+
+  text-align: left;
 }
 
 .landing-logo {
@@ -445,6 +464,17 @@ input[type="range"] {
   margin-top: 2.5rem;
 }
 
+.landing-bullets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1.25rem;
+
+  width: min(100%, 1250px);
+  margin-top: 2.5rem;
+}
+
 .landing-tagline,
 .landing-coming {
   margin: 0;
@@ -471,6 +501,24 @@ input[type="range"] {
 
   font-size: clamp(0.8rem, 2.5vw, 1rem);
   letter-spacing: 0.35em;
+}
+
+
+.landing-description {
+  margin-top: 3.5rem;
+
+  font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+  letter-spacing: 0.15em;
+}
+
+.landing-description-list {
+    margin-top: 2.5rem;
+    
+    font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+    letter-spacing: 0.15em;
+}
+.landing-description-list li{
+    margin-bottom: 1rem;
 }
 
 /*

@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 
 const WIDTH = 760;
-const HEIGHT = 480;
+const HEIGHT = 540;
 
 const MARGIN = {
   top: 30,

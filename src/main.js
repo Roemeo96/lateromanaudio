@@ -19,7 +19,7 @@ const state = {
   threshold: 2.5,
   ratio: 1,
   attackMs: 250,
-  releaseMs: 500,
+  releaseMs: 2000,
 };
 
 const sensitivityInput =
