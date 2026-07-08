@@ -1,166 +1,320 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8">
 
-<title>Late Roman Audio</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    >
 
-<style>
+    <meta
+      name="description"
+      content="Late Roman Audio – interaktive Simulation des Weltgeist Synthesis Pedals"
+    >
 
-html,
-body {
-    margin: 0;
-    height: 100%;
-    background: #000;
-}
+    <title>Late Roman Audio – Weltgeist Synthesis</title>
 
+    <link
+      rel="icon"
+      href='data:image/svg+xml,
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+          <g fill="%23eee8d5">
+            <rect x="18" y="8" width="8" height="48"/>
+            <rect x="35" y="8" width="8" height="48"/>
+            <rect x="53" y="8" width="8" height="48"/>
+          </g>
+        </svg>'
+    >
+  </head>
 
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+  <body>
+    <!-- Landingpage -->
+    <section class="landing-hero">
+      <div
+        class="landing-logo"
+        aria-label="Late Roman Audio"
+      >
+        <div class="text-logo">
+          <div>Late</div>
+          <div>Roman</div>
+          <div>Avdio</div>
+        </div>
 
+        <div
+          class="logo-symbol"
+          aria-hidden="true"
+        >
+          <div class="logo-bar-group">
+            <span></span>
+            <span></span>
+          </div>
 
-.logo-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+          <div class="logo-bar-group">
+            <span></span>
+            <span></span>
+          </div>
 
-    gap: 28px;
+          <div class="logo-bar-group">
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
 
-    width: 100%;
-    max-width: 500px;
+      <div class="landing-copy">
+        <p class="landing-tagline">
+          The Dynamics You Lost after Compression
+        </p>
 
-    background: #000;
-    zoom: min(1, calc(100vw / 500));
-}
+        <p class="landing-tagline">
+          Reborn as Control
+        </p>
 
+        <p class="landing-coming">
+          Coming Soon ...
+        </p>
+      </div>
+    </section>
 
+    <!-- Pedalsimulation -->
+    <main
+      id="pedal-simulation"
+      class="app"
+    >
+      <section class="pedal-panel">
+        <header class="pedal-header">
+          <p class="brand">Weltgeist</p>
+          <h1>Synthesis</h1>
+          <p class="subtitle">Interactive transfer curve</p>
+        </header>
 
-.text-logo {
-    font-family: "Times New Roman", Times, serif;
+        <div class="control">
+          <div class="control-heading">
+            <label for="sensitivity">
+              Sensitivity
+            </label>
 
-    font-weight: 900;
-    text-transform: uppercase;
+            <output
+              id="sensitivity-value"
+              for="sensitivity"
+            >
+              5.0
+            </output>
+          </div>
 
-    color: #eee8d5;
+          <input
+            id="sensitivity"
+            type="range"
+            min="0.5"
+            max="10"
+            step="0.1"
+            value="5"
+          >
+        </div>
 
-    text-align: right;
+        <div class="control">
+          <div class="control-heading">
+            <label for="min-output">
+              Min
+            </label>
 
-    font-size: 38px;
-    line-height: 1.1;
+            <output
+              id="min-output-value"
+              for="min-output"
+            >
+              0.00
+            </output>
+          </div>
 
-    letter-spacing: 0.22em;
+          <input
+            id="min-output"
+            type="range"
+            min="0"
+            max="5"
+            step="0.05"
+            value="0"
+          >
+        </div>
 
-    transform: scaleY(1.08);
-}
+        <div class="control">
+          <div class="control-heading">
+            <label for="max-output">
+              Max
+            </label>
 
+            <output
+              id="max-output-value"
+              for="max-output"
+            >
+              5.00
+            </output>
+          </div>
 
-.symbol {
-    height: 130px;
+          <input
+            id="max-output"
+            type="range"
+            min="0"
+            max="5"
+            step="0.05"
+            value="5"
+          >
+        </div>
 
-    display: flex;
+        <div class="control">
+          <div class="control-heading">
+            <label for="threshold">
+              Threshold
+            </label>
 
-    /* Abstand zwischen den 2er-Blöcken */
-    gap: 10px;
-}
+            <output
+              id="threshold-value"
+              for="threshold"
+            >
+              2.50
+            </output>
+          </div>
 
+          <input
+            id="threshold"
+            type="range"
+            min="0"
+            max="5"
+            step="0.05"
+            value="2.5"
+          >
+        </div>
 
-.group {
-    display: flex;
+        <div class="control">
+          <div class="control-heading">
+            <label for="ratio">
+              Ratio
+            </label>
 
-    gap: 5px;
+            <output
+              id="ratio-value"
+              for="ratio"
+            >
+              1.00
+            </output>
+          </div>
 
-    height: 100%;
-}
+          <input
+            id="ratio"
+            type="range"
+            min="0.5"
+            max="2"
+            step="0.05"
+            value="1"
+          >
+        </div>
 
+        <div class="control">
+          <div class="control-heading">
+            <label for="attack">
+              Attack
+            </label>
 
-.group span {
-    display: block;
+            <output
+              id="attack-value"
+              for="attack"
+            >
+              250 ms
+            </output>
+          </div>
 
-    width: 3px;
-    height: 100%;
+          <input
+            id="attack"
+            type="range"
+            min="10"
+            max="1000"
+            step="10"
+            value="250"
+          >
+        </div>
 
-    background: #eee8d5;
-}
+        <div class="control">
+          <div class="control-heading">
+            <label for="release">
+              Release
+            </label>
 
-.subtitle {
-    color: #eee8d5;
+            <output
+              id="release-value"
+              for="release"
+            >
+              500 ms
+            </output>
+          </div>
 
-    width: 100%;
-    max-width: 500px;
+          <input
+            id="release"
+            type="range"
+            min="10"
+            max="4000"
+            step="10"
+            value="500"
+          >
+        </div>
+      </section>
 
-    text-align: center;
+      <section class="visualization-panel">
+        <header class="visualization-header">
+          <div>
+            <p class="eyebrow">Transfer function</p>
+            <h2>Amplitude to control voltage</h2>
+          </div>
 
-    margin-top: 40px;
-    text-transform: uppercase;
-    font-family: "Times New Roman", Times, serif;
-    letter-spacing: 0.35em;
-}
+          <div class="control">
+            <div class="control-heading">
+              <label for="input-level">
+                Input Level
+              </label>
 
-</style>
+              <output
+                id="input-level-value"
+                for="input-level"
+              >
+                0.50
+              </output>
+            </div>
 
-<link rel="icon" href='data:image/svg+xml,
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+            <input
+              id="input-level"
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0.5"
+            >
+          </div>
 
-<g fill="%23eee8d5">
+          <dl class="live-values">
+            <div>
+              <dt>Input</dt>
+              <dd id="current-input">0.00</dd>
+            </div>
 
-<rect x="18" y="8" width="8" height="48"/>
-<rect x="35" y="8" width="8" height="48"/>
-<rect x="53" y="8" width="8" height="48"/>
+            <div>
+              <dt>Output</dt>
+              <dd id="current-output">0.00</dd>
+            </div>
+          </dl>
+        </header>
 
-</g>
+        <div class="chart-container">
+          <svg
+            id="transfer-chart"
+            role="img"
+            aria-label="Kennlinie des Pedals"
+          ></svg>
+        </div>
+      </section>
+    </main>
 
-</svg>'>
-
-
-
-
-</head>
-
-
-<body>
-
-
-<div class="logo-wrapper">
-
-    <div class="text-logo">
-        <div>LATE</div>
-        <div>ROMAN</div>
-        <div>AVDIO</div>
-    </div>
-
-
-<div class="symbol">
-    <div class="group">
-        <span></span>
-        <span></span>
-    </div>
-
-    <div class="group">
-        <span></span>
-        <span></span>
-    </div>
-
-    <div class="group">
-        <span></span>
-        <span></span>
-    </div>
-</div>
-</div>
-</br>
-<div class="subtitle">The Dynamics You Lost after Compression</div>
-<div class="subtitle">Reborn as Control</div>
-</br>
-</br>
-</br>
-<div class="subtitle">Comming Soon ...</div>
-
-
-
-
-</body>
+    <script
+      type="module"
+      src="/src/main.js"
+    ></script>
+  </body>
 </html>

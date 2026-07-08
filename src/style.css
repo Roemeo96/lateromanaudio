@@ -1,0 +1,508 @@
+:root {
+  font-family:
+    'Times New Roman', Times, serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #f5f2ea;
+  background: #000000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --background: #000000;
+  --panel: #1b1d19;
+  --panel-light: #252821;
+  --border: rgb(255 255 255 / 12%);
+  --muted: #a8aa9f;
+  --text: #f5f2ea;
+  --accent: #eee8d5;
+  --accent-soft: rgb(200 255 77 / 15%);
+  --danger: #ff765f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgb(200 255 77 / 8%),
+      transparent 35rem
+    ),
+    var(--background);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  gap: 1.5rem;
+
+  width: min(1280px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.pedal-panel,
+.visualization-panel {
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgb(255 255 255 / 5%),
+      transparent 45%
+    ),
+    var(--panel);
+
+  box-shadow:
+    0 1.5rem 4rem rgb(0 0 0 / 25%),
+    inset 0 1px rgb(255 255 255 / 6%);
+}
+
+.pedal-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  min-height: 550px;
+  padding: 2rem;
+}
+
+.pedal-header {
+  text-align: center;
+}
+
+.brand,
+.eyebrow {
+  margin: 0 0 0.35rem;
+
+  color: var(--accent);
+
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.pedal-header h1,
+.visualization-header h2 {
+  margin: 0;
+}
+
+.pedal-header h1 {
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  letter-spacing: -0.06em;
+}
+
+.subtitle {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+}
+
+.control {
+  display: grid;
+  gap: 1rem;
+}
+
+.control-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.control-heading label {
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.control-heading output {
+display: none;
+  min-width: 3.5rem;
+  padding: 0.35rem 0.6rem;
+
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+
+  color: var(--accent);
+  background: rgb(0 0 0 / 20%);
+
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 0;
+
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+
+.visualization-panel {
+  min-width: 0;
+  padding: 1.5rem;
+}
+
+.visualization-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+
+  margin-bottom: 1rem;
+}
+
+.visualization-header h2 {
+  font-size: clamp(1.25rem, 3vw, 1.8rem);
+}
+
+.live-values {
+  display: flex;
+  gap: 0.75rem;
+
+  margin: 0;
+  display: none;
+}
+
+.live-values div {
+  min-width: 5.5rem;
+  padding: 0.65rem 0.8rem;
+
+  border: 1px solid var(--border);
+  border-radius: 0.65rem;
+
+  background: rgb(0 0 0 / 18%);
+}
+
+.live-values dt {
+  margin-bottom: 0.2rem;
+
+  color: var(--muted);
+
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.live-values dd {
+  margin: 0;
+
+  color: var(--accent);
+
+  font-size: 1.1rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.chart-container {
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+
+  background:
+    linear-gradient(
+      rgb(255 255 255 / 2%),
+      transparent
+    ),
+    #151713;
+}
+
+#transfer-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.chart-axis path,
+.chart-axis line {
+  stroke: rgb(255 255 255 / 24%);
+}
+
+.chart-axis text {
+  fill: var(--muted);
+  font-size: 12px;
+}
+
+.chart-grid path {
+  display: none;
+}
+
+.chart-grid line {
+  stroke: rgb(255 255 255 / 7%);
+  stroke-dasharray: 4 6;
+}
+
+.axis-label {
+  fill: var(--muted);
+
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.transfer-curve {
+  fill: none;
+  stroke: var(--accent);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 4;
+
+  filter: drop-shadow(0 0 8px rgb(238 232 213 / 35%));
+
+  transition: d 150ms ease;
+}
+
+.current-guide {
+  stroke: rgb(245 242 234 / 35%);
+  stroke-dasharray: 5 5;
+  stroke-width: 1.5;
+}
+
+.current-point {
+  fill: var(--panel);
+  stroke: var(--accent);
+  stroke-width: 4;
+
+  filter: drop-shadow(0 0 8px rgb(200 255 77 / 65%));
+
+  transition:
+    cx 0ms linear,
+    cy var(--output-transition-duration, 250ms) ease-out;
+}
+
+@media (max-width: 850px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .pedal-panel {
+    min-height: auto;
+  }
+
+  .visualization-header {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .app {
+    width: min(100% - 1rem, 1280px);
+    padding: 0.5rem 0;
+  }
+
+  .pedal-panel,
+  .visualization-panel {
+    padding: 1.25rem;
+    border-radius: 1rem;
+  }
+
+  .live-values {
+    width: 100%;
+  }
+
+  .live-values div {
+    flex: 1;
+  }
+}
+
+
+
+.threshold-line {
+  stroke: rgb(255 255 255 / 42%);
+  stroke-width: 1.5;
+  stroke-dasharray: 7 7;
+
+  transition: x1 150ms ease, x2 150ms ease;
+}
+
+.threshold-label {
+  fill: var(--muted);
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  pointer-events: none;
+
+  transition: x 150ms ease;
+}
+
+
+
+/* ==================================================
+   Late Roman Audio Landingpage
+   ================================================== */
+
+.landing-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  padding: 3rem 1rem;
+
+  color: #eee8d5;
+  background: #000;
+
+  text-align: center;
+}
+
+.landing-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(1.25rem, 5vw, 1.75rem);
+
+  width: min(100%, 500px);
+}
+
+.text-logo {
+  color: #eee8d5;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: clamp(1.8rem, 7vw, 2.375rem);
+  font-weight: 900;
+  line-height: 1.1;
+
+  letter-spacing: 0.22em;
+  text-align: right;
+  text-transform: uppercase;
+
+  transform: scaleY(1.08);
+  transform-origin: center;
+}
+
+.logo-symbol {
+  display: flex;
+
+  flex: 0 0 auto;
+
+  gap: 10px;
+
+  height: clamp(95px, 22vw, 130px);
+}
+
+.logo-bar-group {
+  display: flex;
+
+  gap: 5px;
+
+  height: 100%;
+}
+
+.logo-bar-group span {
+  display: block;
+
+  width: 3px;
+  height: 100%;
+
+  background: #eee8d5;
+}
+
+.landing-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 1.25rem;
+
+  width: min(100%, 700px);
+  margin-top: 2.5rem;
+}
+
+.landing-tagline,
+.landing-coming {
+  margin: 0;
+
+  color: #eee8d5;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.landing-tagline {
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
+  letter-spacing: clamp(0.18em, 1vw, 0.35em);
+  line-height: 1.7;
+}
+
+.landing-coming {
+  margin-top: 2.5rem;
+
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  letter-spacing: 0.35em;
+}
+
+/*
+ * Die Simulation beginnt unterhalb der Landingpage.
+ */
+#pedal-simulation {
+  scroll-margin-top: 2rem;
+}
+
+@media (max-width: 500px) {
+  .landing-hero {
+    padding-inline: 1.25rem;
+  }
+
+  .landing-logo {
+    gap: 1rem;
+  }
+
+  .text-logo {
+    letter-spacing: 0.15em;
+  }
+
+  .logo-symbol {
+    gap: 7px;
+  }
+
+  .logo-bar-group {
+    gap: 4px;
+  }
+
+  .landing-tagline,
+  .landing-coming {
+    letter-spacing: 0.2em;
+  }
+}
