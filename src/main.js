@@ -1,6 +1,7 @@
 import './style.css';
 
 import {
+  clamp,
   calculateOutput,
   calculateThresholdInput,
   createCurvePoints,
@@ -9,6 +10,9 @@ import {
 import {
   createTransferChart,
 } from './transfer-chart.js';
+
+const OUTPUT_MINIMUM = 0;
+const OUTPUT_MAXIMUM = 5;
 
 const state = {
   baseSlope: 1,
@@ -21,6 +25,24 @@ const state = {
   attackMs: 250,
   releaseMs: 3750,
 };
+
+let minRelativePosition =
+  state.threshold > OUTPUT_MINIMUM
+    ? (
+        state.minOutput - OUTPUT_MINIMUM
+      ) / (
+        state.threshold - OUTPUT_MINIMUM
+      )
+    : 0;
+
+let maxRelativePosition =
+  state.threshold < OUTPUT_MAXIMUM
+    ? (
+        state.maxOutput - state.threshold
+      ) / (
+        OUTPUT_MAXIMUM - state.threshold
+      )
+    : 1;
 
 const sensitivityInput =
   document.querySelector('#sensitivity');
@@ -165,22 +187,24 @@ function render() {
   currentOutputValue.textContent =
     output.toFixed(2);
 
-/*
- * Es muss immer gelten:
- *
- * MIN <= Threshold <= MAX
- */
+
+minOutputInput.min =
+  String(OUTPUT_MINIMUM);
+
 minOutputInput.max =
   String(state.threshold);
 
 thresholdInput.min =
-  String(state.minOutput);
+  String(OUTPUT_MINIMUM);
 
 thresholdInput.max =
-  String(state.maxOutput);
+  String(OUTPUT_MAXIMUM);
 
 maxOutputInput.min =
   String(state.threshold);
+
+maxOutputInput.max =
+  String(OUTPUT_MAXIMUM);
 
 minOutputInput.value =
   String(state.minOutput);
@@ -273,10 +297,20 @@ minOutputInput.addEventListener(
       return;
     }
 
-    state.minOutput = Math.min(
+    state.minOutput = clamp(
       newValue,
+      OUTPUT_MINIMUM,
       state.threshold,
     );
+
+    minRelativePosition =
+      state.threshold > OUTPUT_MINIMUM
+        ? (
+            state.minOutput - OUTPUT_MINIMUM
+          ) / (
+            state.threshold - OUTPUT_MINIMUM
+          )
+        : 0;
 
     render();
   },
@@ -292,10 +326,20 @@ maxOutputInput.addEventListener(
       return;
     }
 
-    state.maxOutput = Math.max(
+    state.maxOutput = clamp(
       newValue,
       state.threshold,
+      OUTPUT_MAXIMUM,
     );
+
+    maxRelativePosition =
+      state.threshold < OUTPUT_MAXIMUM
+        ? (
+            state.maxOutput - state.threshold
+          ) / (
+            OUTPUT_MAXIMUM - state.threshold
+          )
+        : 1;
 
     render();
   },
@@ -311,13 +355,30 @@ thresholdInput.addEventListener(
       return;
     }
 
-    state.threshold = Math.min(
-      state.maxOutput,
-      Math.max(
-        state.minOutput,
-        newValue,
-      ),
+    const newThreshold = clamp(
+      newValue,
+      OUTPUT_MINIMUM,
+      OUTPUT_MAXIMUM,
     );
+
+    state.threshold =
+      newThreshold;
+
+    state.minOutput =
+      OUTPUT_MINIMUM
+      + minRelativePosition
+        * (
+          newThreshold
+          - OUTPUT_MINIMUM
+        );
+
+    state.maxOutput =
+      newThreshold
+      + maxRelativePosition
+        * (
+          OUTPUT_MAXIMUM
+          - newThreshold
+        );
 
     render();
   },
