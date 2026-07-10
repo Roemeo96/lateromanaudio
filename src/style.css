@@ -97,7 +97,6 @@ input {
   gap: 1rem;
 
   min-height: 650px;
-  padding: 1.5rem;
 }
 
 .pedal-product-name {
@@ -139,11 +138,10 @@ input {
   display: grid;
   gap: 1rem;
   font-size: 0.85rem;
+  margin-bottom: 1.5rem;
 }
 
-.control:last-child {
-  margin-top: 1.5rem;
-}
+
 
 .control-heading {
   display: flex;
@@ -187,13 +185,36 @@ display: none;
 
 
 
-.control-heading input[type="checkbox"] {
+.control--horizontal {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.control--horizontal .control-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.15rem;
+}
+
+.control--horizontal > input[type="range"] {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.control--horizontal > input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
 
   position: relative;
   display: inline-block;
-  flex: 0 0 auto;
+
+  justify-self: center;
+  align-self: center;
 
   box-sizing: border-box;
   width: 2.75rem;
@@ -209,7 +230,7 @@ display: none;
 }
 
 
-.control-heading input[type="checkbox"]::before {
+.control--horizontal > input[type="checkbox"]::before {
   content: "";
 
   position: absolute;
@@ -228,11 +249,11 @@ display: none;
     background-color 150ms ease;
 }
 
-.control-heading input[type="checkbox"]:checked {
+.control--horizontal > input[type="checkbox"]:checked {
   background-color: #eee8d5;
 }
 
-.control-heading input[type="checkbox"]:checked::before {
+.control--horizontal > input[type="checkbox"]:checked::before {
   background-color: #222;
 
   transform:
@@ -240,7 +261,7 @@ display: none;
     translateY(-50%);
 }
 
-.control-heading input[type="checkbox"]:focus-visible {
+.control--horizontal > input[type="checkbox"]:focus-visible {
   outline: 2px solid #eee8d5;
   outline-offset: 3px;
 }
