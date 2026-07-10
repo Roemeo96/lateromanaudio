@@ -24,6 +24,7 @@ const state = {
   ratio: 0.5,
   attackMs: 250,
   releaseMs: 3750,
+  invert: false
 };
 
 let minRelativePosition =
@@ -101,6 +102,8 @@ const releaseInput =
 const releaseValue =
   document.querySelector('#release-value');
 
+const invertInput =
+  document.querySelector('#invert');
 
 if (
   !sensitivityInput
@@ -122,6 +125,7 @@ if (
   || !currentInputValue
   || !currentOutputValue
   || !chartElement
+  || !invertInput
 ) {
   throw new Error(
     'Ein oder mehrere benötigte HTML-Elemente fehlen.',
@@ -139,6 +143,7 @@ function getSettings() {
     maxOutput: state.maxOutput,
     threshold: state.threshold,
     ratio: state.ratio,
+    invert: state.invert,
   };
 }
 
@@ -187,6 +192,9 @@ function render() {
   currentOutputValue.textContent =
     output.toFixed(2);
 
+  invertInput.checked =
+    state.invert;
+
 
 minOutputInput.min =
   String(OUTPUT_MINIMUM);
@@ -224,6 +232,17 @@ chart.update({
   releaseMs: state.releaseMs,
 });
 }
+
+invertInput.addEventListener(
+  'change',
+  event => {
+    state.invert =
+      event.target.checked;
+
+    render();
+  },
+);
+
 
 attackInput.addEventListener(
   'input',

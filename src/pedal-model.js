@@ -87,14 +87,20 @@ export function calculateOutput(input, settings) {
     );
   }
 
-  const rawOutput =
-    calculateRawOutput(input, settings);
+const rawOutput =
+  calculateRawOutput(input, settings);
 
-  return clamp(
-    rawOutput,
-    minOutput,
-    maxOutput,
-  );
+const limitedOutput = clamp(
+  rawOutput,
+  minOutput,
+  maxOutput,
+);
+
+if (settings.invert) {
+  return 5 - limitedOutput;
+}
+
+return limitedOutput;
 }
 
 /**

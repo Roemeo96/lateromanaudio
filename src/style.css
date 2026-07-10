@@ -141,6 +141,10 @@ input {
   font-size: 0.85rem;
 }
 
+.control:last-child {
+  margin-top: 1rem;
+}
+
 .control-heading {
   display: flex;
   align-items: center;
@@ -166,6 +170,58 @@ display: none;
 
   font-variant-numeric: tabular-nums;
   text-align: center;
+}
+
+
+.control--switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.control--switch input {
+  width: 1.3rem;
+  height: 1.3rem;
+  cursor: pointer;
+}
+
+
+
+.control-heading input[type="checkbox"] {
+  appearance: none;
+  position: relative;
+
+  width: 2.75rem;
+  height: 1.4rem;
+  margin: 0;
+
+  border: 1px solid currentColor;
+  border-radius: 999px;
+
+  background: transparent;
+  cursor: pointer;
+}
+
+.control-heading input[type="checkbox"]::before {
+
+  content: "";
+
+  position: absolute;
+  top: 0.2rem;
+  left: 0.2rem;
+
+  width: 0.9rem;
+  height: 0.9rem;
+
+  border-radius: 50%;
+
+  background: currentColor;
+
+  transition: transform 150ms ease;
+}
+
+.control-heading input[type="checkbox"]:checked::before {
+  transform: translateX(1.3rem);
 }
 
 input[type="range"] {
