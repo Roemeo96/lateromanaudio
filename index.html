@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="UTF-8">
 
@@ -37,10 +37,12 @@
         Late Roman Audio – Weltgeist Synthesis
       </h1>
       <div
+        role="img"
         class="landing-logo"
         aria-label="Late Roman Audio"
       >
-        <div class="text-logo">
+        <div class="text-logo"
+          aria-hidden="true">
           <div>Late</div>
           <div>Roman</div>
           <div>Avdio</div>
@@ -69,7 +71,7 @@
 
       <div class="landing-copy">
         <p class="landing-tagline">
-          The Dynamics You Lost after Compression
+          The Dynamics You Lost After Compression
         </p>
 
         <p class="landing-tagline">
@@ -79,13 +81,12 @@
         <p class="landing-coming">
           Coming Soon ...
         </p>
-
         <p class="landing-description">
-          The Weltgeist Synthesis is a first of its kind pedal converting the dynamics of your guitar signal into a control voltage, that emulates an expression pedal. This allows you to use your playing dynamics to control other effects accepting expression input, creating a more expressive and dynamic performance. Use it in front or after your compression pedal.
+          The Weltgeist Synthesis is a first-of-its-kind pedal that converts the dynamics of your guitar signal into a control signal emulating an expression pedal. This allows you to use your playing dynamics to control other effects with an expression input, creating a more expressive and dynamic performance. Use it before or after your compression pedal.
         </p>
 
         <p class="landing-description">
-            The pedal is currently in development and will be available soon. In the meantime, you can use this interactive simulation to explore the transfer curve of the pedal and see how it responds to different input levels and settings.
+          The pedal is currently in development and will be available soon. In the meantime, you can use this interactive simulation to explore the response curve of the pedal and see how it reacts to different input levels and settings.
         </p>
 
       </div>
@@ -97,17 +98,17 @@
         <dl class="feature-list">
           <div class="feature-row">
             <dt>Sensitivity</dt>
-            <dd>Amplifies your signal to match the desired output level.</dd>
+            <dd>Amplifies your signal to achieve the desired expression response.</dd>
           </div>
 
           <div class="feature-row">
             <dt>Min</dt>
-            <dd>Sets the minimum heel-down position of the expression emulation.</dd>
+            <dd>Sets the heel-down position of the expression emulation.</dd>
           </div>
 
           <div class="feature-row">
             <dt>Max</dt>
-            <dd>Sets the maximum toe-down position of the expression emulation.</dd>
+            <dd>Sets the toe-down position of the expression emulation.</dd>
           </div>
 
           <div class="feature-row">
@@ -117,27 +118,27 @@
 
           <div class="feature-row">
             <dt>Release</dt>
-            <dd>Controls how quickly the pedal returns to its default state after the input level decreases.</dd>
+            <dd>Controls how quickly the pedal returns as the input level decreases.</dd>
           </div>
 
           <div class="feature-row">
             <dt>Threshold</dt>
-            <dd>Sets the input level at which Ratio bends the characteristic curve.</dd>
+            <dd>Sets the input level above which the Ratio control changes the response curve.</dd>
           </div>
 
           <div class="feature-row">
             <dt>Ratio</dt>
-            <dd>Bends the slope above the Threshold level.</dd>
+            <dd>Adjusts the slope of the response curve above the threshold.</dd>
           </div>
 
           <div class="feature-row">
             <dt>Invert</dt>
-            <dd>Inverts the characteristic curve so that the heel-down and toe-down positions switch.</dd>
+            <dd>Inverts the response curve, swapping the heel-down and toe-down positions.</dd>
           </div>
         </dl>
-        <p class="landing-description">
-            Try out the interactive simulation below to explore the transfer curve of the pedal and see how it responds to different input levels and settings. Change the input level to see how ATTACK and RELEASE affect the output.
-        </p>
+      <p class="landing-description">
+        Try the interactive simulation below to explore the response curve of the pedal and see how it reacts to different input levels and settings. Change the input level to see how Attack and Release affect the output.
+      </p>
       </div>
 
     </section>
@@ -151,7 +152,7 @@
       id="simulation-heading"
       class="visually-hidden"
     >
-      Interactive transfer curve
+      Interactive response curve
     </h2>
       <section class="pedal-panel">
         <header class="pedal-header">
@@ -423,7 +424,7 @@
 
           <div class="feature-row">
             <dt>Power supply</dt>
-            <dd>9 V DC, center negative</dd>
+            <dd>9 V DC, center-negative</dd>
           </div>
 
           <div class="feature-row">
@@ -447,10 +448,10 @@
           </div>
         </dl>
         <h2 class="landing-description">
-          Compatibility notice
+          Compatibility Notice
         </h2>
         <p class="landing-description">
-            The pedal is emulating a 50k potentiometer of an expression pedal, but does not guarantee to represent its linear characteristic curve. Use only with devices agnostic to potentiometer resistance. The output voltage is not a true CV signal and may not be compatible with all devices. Please check the specifications of your device before using the pedal.
+          The pedal emulates the 50 kΩ potentiometer of an expression pedal, but it is not guaranteed to reproduce a perfectly linear response curve. Use it only with devices that do not require a specific potentiometer resistance. The output is not a true CV signal and may not be compatible with all devices. Please check your device's specifications before using the pedal.
         </p>
     </div>
     </section>
