@@ -692,7 +692,19 @@ input[type="range"] {
   line-height: 1.5;
 }
 
+.reveal-section {
+  opacity: 0;
+  transform: translateY(3rem);
 
+  transition:
+    opacity 750ms ease,
+    transform 750ms ease;
+}
+
+.reveal-section.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 

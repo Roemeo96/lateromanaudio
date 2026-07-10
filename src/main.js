@@ -11,6 +11,11 @@ import {
   createTransferChart,
 } from './transfer-chart.js';
 
+
+
+
+
+
 const OUTPUT_MINIMUM = 0;
 const OUTPUT_MAXIMUM = 5;
 
@@ -418,4 +423,43 @@ ratioInput.addEventListener(
   },
 );
 
+
+
+
+
+
+const sections =
+  document.querySelectorAll('.reveal-section');
+
+const observer =
+  new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add(
+          'is-visible',
+        );
+
+        observer.unobserve(
+          entry.target,
+        );
+      });
+    },
+    {
+      threshold: 0.15,
+    },
+  );
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+
+
+
+
+
 render();
+
