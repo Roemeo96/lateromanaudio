@@ -12,14 +12,14 @@ import {
 
 const state = {
   baseSlope: 1,
-  sensitivity: 5,
-  input: 0.5,
-  minOutput: 0,
-  maxOutput: 5,
-  threshold: 2.5,
-  ratio: 1,
+  sensitivity: 6.5,
+  input: 0.3,
+  minOutput: 1,
+  maxOutput: 4.75,
+  threshold: 3.75,
+  ratio: 0.5,
   attackMs: 250,
-  releaseMs: 2000,
+  releaseMs: 3750,
 };
 
 const sensitivityInput =

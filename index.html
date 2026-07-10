@@ -7,13 +7,16 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     >
+    <link
+  rel="canonical"
+  href="https://lateromanaudio.de/"
+>
+<meta
+  name="description"
+  content="Late Roman Audio develops the Weltgeist Synthesis pedal, transforming the dynamics of your instrument signal into expression-pedal control."
+>
 
-    <meta
-      name="description"
-      content="Late Roman Audio – interaktive Simulation des Weltgeist Synthesis Pedals"
-    >
-
-    <title>Late Roman Audio – Weltgeist Synthesis</title>
+    <title>Late Roman Audio – Dynamics-Controlled Expression Pedal</title>
 
     <link
       rel="icon"
@@ -29,8 +32,10 @@
   </head>
 
   <body>
-    <!-- Landingpage -->
     <section class="landing-hero">
+      <h1 class="visually-hidden">
+        Late Roman Audio – Weltgeist Synthesis
+      </h1>
       <div
         class="landing-logo"
         aria-label="Late Roman Audio"
@@ -76,7 +81,7 @@
         </p>
 
         <p class="landing-description">
-          The Weltgesit Synthesis is a first of its kind pedal converting the dynamics of your guitar signal into a control voltage, that emulates an expression pedal. This allows you to use your playing dynamics to control other effects accepting expression input, creating a more expressive and dynamic performance. Use it in front or after your compression pedal.
+          The Weltgeist Synthesis is a first of its kind pedal converting the dynamics of your guitar signal into a control voltage, that emulates an expression pedal. This allows you to use your playing dynamics to control other effects accepting expression input, creating a more expressive and dynamic performance. Use it in front or after your compression pedal.
         </p>
 
         <p class="landing-description">
@@ -86,19 +91,50 @@
       </div>
 
       <div class="landing-bullets">
-        <p class="landing-description">
-            FEATURES
-        </p>
-        <ul class="landing-description-list">
-            <li>SENSITIVITY:&nbsp;&nbsp;&nbsp;&nbsp;Amplifies your signal to match the desired output level</li>
-            <li>MIN:&nbsp;&nbsp;&nbsp;&nbsp;Sets the minimum heel-down position of the expression emulation</li>
-            <li>MAX:&nbsp;&nbsp;&nbsp;&nbsp;Sets the maximum toe-down position of the expression emulation</li>
-            <li>ATTACK:&nbsp;&nbsp;&nbsp;&nbsp;Controls how quickly the pedal responds to increases of the input level</li>
-            <li>RELEASE:&nbsp;&nbsp;&nbsp;&nbsp;Controls how quickly the pedal returns to its default state after the input level decreases</li>
-            <li>THRESHOLD:&nbsp;&nbsp;&nbsp;&nbsp;Sets the input level at which RATIO will bend the characteristic curve</li>
-            <li>RATIO:&nbsp;&nbsp;&nbsp;&nbsp;Bends the slope above the THRESHOLD level</li>
-            <li>INVERT:&nbsp;&nbsp;&nbsp;&nbsp;Inverts the characteristic curve: Heel-down and Toe-down positions switch</li>
-        </ul>
+        <h2 class="landing-description">
+          Features
+        </h2>
+        <dl class="feature-list">
+          <div class="feature-row">
+            <dt>Sensitivity</dt>
+            <dd>Amplifies your signal to match the desired output level.</dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>Min</dt>
+            <dd>Sets the minimum heel-down position of the expression emulation.</dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>Max</dt>
+            <dd>Sets the maximum toe-down position of the expression emulation.</dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>Attack</dt>
+            <dd>Controls how quickly the pedal responds as the input level increases.</dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>Release</dt>
+            <dd>Controls how quickly the pedal returns to its default state after the input level decreases.</dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>Threshold</dt>
+            <dd>Sets the input level at which Ratio bends the characteristic curve.</dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>Ratio</dt>
+            <dd>Bends the slope above the Threshold level.</dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>Invert</dt>
+            <dd>Inverts the characteristic curve so that the heel-down and toe-down positions switch.</dd>
+          </div>
+        </dl>
         <p class="landing-description">
             Try out the interactive simulation below to explore the transfer curve of the pedal and see how it responds to different input levels and settings. Change the input level to see how ATTACK and RELEASE affect the output.
         </p>
@@ -106,16 +142,21 @@
 
     </section>
 
-    <!-- Pedalsimulation -->
     <main
       id="pedal-simulation"
       class="app"
+      aria-labelledby="simulation-heading"
     >
+    <h2
+      id="simulation-heading"
+      class="visually-hidden"
+    >
+      Interactive transfer curve
+    </h2>
       <section class="pedal-panel">
         <header class="pedal-header">
           <p class="brand">Weltgeist</p>
-          <h1>Synthesis</h1>
-          <p class="subtitle">Interactive transfer curve</p>
+          <p class="pedal-product-name">Synthesis</p>
         </header>
 
         <div class="control">
@@ -138,7 +179,7 @@
             min="0.5"
             max="10"
             step="0.1"
-            value="5"
+            value="6.5"
           >
         </div>
 
@@ -162,7 +203,7 @@
             min="0"
             max="5"
             step="0.05"
-            value="0"
+            value="1"
           >
         </div>
 
@@ -186,7 +227,7 @@
             min="0"
             max="5"
             step="0.05"
-            value="5"
+            value="4.75"
           >
         </div>
 
@@ -210,7 +251,7 @@
             min="0"
             max="5"
             step="0.05"
-            value="2.5"
+            value="3.75"
           >
         </div>
 
@@ -231,10 +272,10 @@
           <input
             id="ratio"
             type="range"
-            min="0.25"
+            min="0.2"
             max="2"
             step="0.05"
-            value="1"
+            value="0.5"
           >
         </div>
 
@@ -282,17 +323,17 @@
             min="10"
             max="4000"
             step="10"
-            value="2000"
+            value="3750"
           >
         </div>
       </section>
 
       <section class="visualization-panel">
         <header class="visualization-header">
-          <div>
-            <p class="eyebrow">Transfer function</p>
-            <h2>Amplitude to control voltage</h2>
-          </div>
+        <div>
+          <p class="eyebrow">Expression Mapping</p>
+          <h3>How Your Playing Controls Expression</h3>
+        </div>
 
           <div class="control">
             <div class="control-heading">
@@ -314,7 +355,7 @@
               min="0"
               max="1"
               step="0.01"
-              value="0.5"
+              value="0.3"
             >
           </div>
 
@@ -343,22 +384,60 @@
 <section class="landing-specifications">
     <div class="landing-copy">
 
+        <h2 class="landing-description">
+          Specifications
+        </h2>
+        <dl class="feature-list">
+          <div class="feature-row">
+            <dt>Input</dt>
+            <dd>1× TS input jack</dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>Expression</dt>
+            <dd>2× TRS input jacks</dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>Output</dt>
+            <dd>1× TS output jack</dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>Output impedance</dt>
+            <dd>100 Ω</dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>Power supply</dt>
+            <dd>9 V DC, center negative</dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>Current draw</dt>
+            <dd>20 mA</dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>Bypass</dt>
+            <dd>True bypass</dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>Dimensions</dt>
+            <dd>145 mm × 100 mm × 100 mm</dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>Weight</dt>
+            <dd>300 g</dd>
+          </div>
+        </dl>
+        <h2 class="landing-description">
+          Compatibility notice
+        </h2>
         <p class="landing-description">
-            SPECIFICATIONS
-        </p>
-        <ul class="landing-description-list">
-            <li>INPUT:1x TS Input Jack</li>
-            <li>EXP:2x TRS Input Jack</li>
-            <li>OUTPUT:1x TS Output Jack</li>
-            <li>Output Impedance: 100Ω</li>
-            <li>Power Supply: 9V DC (center negative)</li>
-            <li>Current Draw: 20mA</li>
-            <li>True Bypass</li>
-            <li>Dimensions: 145mm x 100mm x 100mm</li>
-            <li>Weight: 300g</li>
-        </ul>
-        <p class="landing-description">
-            Disclaimer: The pedal is emulating a 50k potentiometer of an expression pedal, but does not guarantee to represent its linear characteristic curve. Use only with devices agnostic to potentiometer resistance. The output voltage is not a true CV signal and may not be compatible with all devices. Please check the specifications of your device before using the pedal.
+            The pedal is emulating a 50k potentiometer of an expression pedal, but does not guarantee to represent its linear characteristic curve. Use only with devices agnostic to potentiometer resistance. The output voltage is not a true CV signal and may not be compatible with all devices. Please check the specifications of your device before using the pedal.
         </p>
     </div>
     </section>

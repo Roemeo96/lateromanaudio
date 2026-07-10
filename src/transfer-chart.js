@@ -5,9 +5,9 @@ const HEIGHT = 540;
 
 const MARGIN = {
   top: 30,
-  right: 40,
+  right: 50,
   bottom: 65,
-  left: 75,
+  left: 125,
 };
 
 /**
@@ -43,7 +43,14 @@ const xAxis = d3
 
 const yAxis = d3
   .axisLeft(yScale)
-  .tickValues([]);
+  .tickValues([0, 5])
+  .tickSize(0)
+  .tickPadding(12)
+  .tickFormat(value => (
+    value === 0
+      ? 'HEEL-DOWN'
+      : 'TOE-DOWN'
+  ));
 
   const xGrid = d3
     .axisBottom(xScale)
@@ -87,7 +94,7 @@ const yAxis = d3
     .attr('x', (plotLeft + plotRight) / 2)
     .attr('y', HEIGHT - 15)
     .attr('text-anchor', 'middle')
-    .text('Input amplitude');
+    .text('Input Volume');
 
   svg
     .append('text')
@@ -96,7 +103,7 @@ const yAxis = d3
     .attr('x', -(plotTop + plotBottom) / 2)
     .attr('y', 22)
     .attr('text-anchor', 'middle')
-    .text('Control voltage');
+    .text('Expression Position');
 
     const lineGenerator = d3
   .line()

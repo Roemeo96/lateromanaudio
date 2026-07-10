@@ -58,6 +58,21 @@ input {
   padding: 2rem 0;
 }
 
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+
+  border: 0;
+}
+
 .pedal-panel,
 .visualization-panel {
   border: 1px solid var(--border);
@@ -79,14 +94,18 @@ input {
 .pedal-panel {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
 
   min-height: 550px;
   padding: 2rem;
 }
 
-.pedal-header {
-  text-align: center;
+.pedal-product-name {
+  margin: 0;
+
+  font-size: clamp(1.7rem, 4vw, 2.7rem);
+  font-weight: 700;
+  letter-spacing: -0.06em;
 }
 
 .brand,
@@ -102,7 +121,7 @@ input {
 }
 
 .pedal-header h1,
-.visualization-header h2 {
+.visualization-header h3 {
   margin: 0;
 }
 
@@ -249,7 +268,12 @@ input[type="range"] {
 
 .chart-axis text {
   fill: var(--muted);
-  font-size: 12px;
+  font-size: 15px;
+    font-family:
+    "Times New Roman",
+    Times,
+    serif;
+  letter-spacing: 0.05em;
 }
 
 .chart-grid path {
@@ -264,7 +288,7 @@ input[type="range"] {
 .axis-label {
   fill: var(--muted);
 
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -347,7 +371,7 @@ input[type="range"] {
 .threshold-label {
   fill: var(--muted);
 
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.12em;
 
@@ -356,11 +380,6 @@ input[type="range"] {
   transition: x 150ms ease;
 }
 
-
-
-/* ==================================================
-   Late Roman Audio Landingpage
-   ================================================== */
 
 .landing-hero {
   display: flex;
@@ -528,7 +547,58 @@ input[type="range"] {
   scroll-margin-top: 2rem;
 }
 
-@media (max-width: 500px) {
+
+.feature-list {
+  width: min(100% - 2rem, 800px);
+  margin: 2.5rem auto 0;
+
+  color: #eee8d5;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  letter-spacing: 0.12em;
+}
+
+.feature-row {
+  display: grid;
+  grid-template-columns: 14rem minmax(0, 1fr);
+  gap: 1.5rem;
+
+  position: relative;
+
+  margin-bottom: 0.9rem;
+  padding-left: 1.2rem;
+}
+
+.feature-row::before {
+  content: "•";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.feature-row dt {
+  margin: 0;
+
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.feature-row dd {
+  margin: 0;
+
+  line-height: 1.5;
+}
+
+
+
+
+
+@media (max-width: 650px) {
   .landing-hero {
     padding-inline: 1.25rem;
   }
@@ -553,4 +623,15 @@ input[type="range"] {
   .landing-coming {
     letter-spacing: 0.2em;
   }
+    .feature-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .feature-row dd {
+    line-height: 1.6;
+  }
 }
+
+
+
