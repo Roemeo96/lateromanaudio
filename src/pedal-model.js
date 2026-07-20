@@ -14,18 +14,12 @@ export function clamp(value, minimum, maximum) {
 }
 
 /**
- * Berechnet zunächst den noch nicht durch MIN und MAX
- * begrenzten Ausgangswert.
+ * Berechnet den noch nicht invertierten Ausgangswert.
  *
- * Vor dem Threshold gilt:
+ * BASE verschiebt die Kennlinie vertikal.
+ * SENSITIVITY bestimmt ihre Steigung.
  *
- * output = effectiveSlope × input
- *
- * Hinter dem Threshold gilt:
- *
- * output =
- * thresholdOutput
- * + effectiveSlope × ratio × (input - threshold)
+ * output = base + sensitivity × input
  *
  * @param {number} input
  * @param {object} settings
@@ -33,74 +27,46 @@ export function clamp(value, minimum, maximum) {
  */
 export function calculateRawOutput(input, settings) {
   const {
-    baseSlope = 1,
+    base = 0,
     sensitivity = 1,
-    threshold = 2.5,
-    ratio = 1,
   } = settings;
 
-  const effectiveSlope =
-    baseSlope * sensitivity;
-
-  const linearOutput =
-    effectiveSlope * input;
-
-  /*
-   * Solange die ursprüngliche lineare Kennlinie
-   * den Threshold noch nicht erreicht hat,
-   * bleibt die Steigung unverändert.
-   */
-  if (linearOutput <= threshold) {
-    return linearOutput;
-  }
-
-  /*
-   * Oberhalb des Thresholds wird nur noch die
-   * Differenz zum Threshold mit Ratio skaliert.
-   */
-  const amountAboveThreshold =
-    linearOutput - threshold;
-
   return (
-    threshold
-    + ratio * amountAboveThreshold
+    base
+    + sensitivity * input
   );
 }
 
 /**
- * Berechnet den endgültigen Ausgangswert einschließlich
- * MIN- und MAX-Begrenzung.
+ * Berechnet den endgültigen Ausgangswert.
+ *
+ * Der Ausgang wird zunächst auf 0 bis 5 begrenzt.
+ * Bei aktiviertem INVERT wird anschließend die
+ * Expression-Position umgekehrt.
  *
  * @param {number} input
  * @param {object} settings
  * @returns {number}
  */
 export function calculateOutput(input, settings) {
-  const {
-    minOutput = 0,
-    maxOutput = 5,
-  } = settings;
-
-  if (minOutput > maxOutput) {
-    throw new RangeError(
-      'minOutput darf nicht größer als maxOutput sein.',
+  const rawOutput =
+    calculateRawOutput(
+      input,
+      settings,
     );
+
+  const limitedOutput =
+    clamp(
+      rawOutput,
+      0,
+      5,
+    );
+
+  if (settings.invert) {
+    return 5 - limitedOutput;
   }
 
-const rawOutput =
-  calculateRawOutput(input, settings);
-
-const limitedOutput = clamp(
-  rawOutput,
-  minOutput,
-  maxOutput,
-);
-
-if (settings.invert) {
-  return 5 - limitedOutput;
-}
-
-return limitedOutput;
+  return limitedOutput;
 }
 
 /**
@@ -115,7 +81,9 @@ export function createCurvePoints(
   sampleCount = 200,
 ) {
   return Array.from(
-    { length: sampleCount + 1 },
+    {
+      length: sampleCount + 1,
+    },
     (_, index) => {
       const input =
         index / sampleCount;
@@ -129,23 +97,4 @@ export function createCurvePoints(
       };
     },
   );
-}
-
-
-
-export function calculateThresholdInput(settings) {
-  const {
-    baseSlope = 1,
-    sensitivity = 1,
-    threshold = 2.5,
-  } = settings;
-
-  const effectiveSlope =
-    baseSlope * sensitivity;
-
-  if (effectiveSlope <= 0) {
-    return null;
-  }
-
-  return threshold / effectiveSlope;
 }

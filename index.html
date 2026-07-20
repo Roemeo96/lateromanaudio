@@ -104,39 +104,20 @@
           Features
         </h2>
         <dl class="feature-list">
+
+          <div class="feature-row">
+            <dt>Base</dt>
+            <dd>Adds a fixed offset to the control signal, setting the starting expression position.</dd>
+          </div>
+
           <div class="feature-row">
             <dt>Sensitivity</dt>
             <dd>Amplifies your signal to achieve the desired expression response.</dd>
           </div>
 
           <div class="feature-row">
-            <dt>Min</dt>
-            <dd>Sets the heel-down position of the expression emulation.</dd>
-          </div>
-
-          <div class="feature-row">
-            <dt>Max</dt>
-            <dd>Sets the toe-down position of the expression emulation.</dd>
-          </div>
-
-          <div class="feature-row">
             <dt>Attack</dt>
             <dd>Controls how quickly the pedal responds as the input level increases.</dd>
-          </div>
-
-          <div class="feature-row">
-            <dt>Release</dt>
-            <dd>Controls how quickly the pedal returns as the input level decreases.</dd>
-          </div>
-
-          <div class="feature-row">
-            <dt>Threshold</dt>
-            <dd>Sets the input level above which the Ratio control changes the response curve.</dd>
-          </div>
-
-          <div class="feature-row">
-            <dt>Ratio</dt>
-            <dd>Adjusts the slope of the response curve above the threshold.</dd>
           </div>
 
           <div class="feature-row">
@@ -178,7 +159,7 @@
               id="sensitivity-value"
               for="sensitivity"
             >
-              5.0
+              6.5
             </output>
           </div>
 
@@ -194,20 +175,20 @@
 
         <div class="control control--horizontal">
           <div class="control-heading">
-            <label for="min-output">
-              Min
+            <label for="base">
+              Base
             </label>
 
             <output
-              id="min-output-value"
-              for="min-output"
+              id="base-value"
+              for="base"
             >
-              0.00
+              1.00
             </output>
           </div>
 
           <input
-            id="min-output"
+            id="base"
             type="range"
             min="0"
             max="5"
@@ -216,77 +197,7 @@
           >
         </div>
 
-        <div class="control control--horizontal">
-          <div class="control-heading">
-            <label for="max-output">
-              Max
-            </label>
 
-            <output
-              id="max-output-value"
-              for="max-output"
-            >
-              5.00
-            </output>
-          </div>
-
-          <input
-            id="max-output"
-            type="range"
-            min="0"
-            max="5"
-            step="0.05"
-            value="4.75"
-          >
-        </div>
-
-        <div class="control control--horizontal">
-          <div class="control-heading">
-            <label for="threshold">
-              Threshold
-            </label>
-
-            <output
-              id="threshold-value"
-              for="threshold"
-            >
-              2.50
-            </output>
-          </div>
-
-          <input
-            id="threshold"
-            type="range"
-            min="0"
-            max="5"
-            step="0.05"
-            value="3.75"
-          >
-        </div>
-
-        <div class="control control--horizontal">
-          <div class="control-heading">
-            <label for="ratio">
-              Ratio
-            </label>
-
-            <output
-              id="ratio-value"
-              for="ratio"
-            >
-              1.00
-            </output>
-          </div>
-
-          <input
-            id="ratio"
-            type="range"
-            min="0.2"
-            max="2"
-            step="0.05"
-            value="0.5"
-          >
-        </div>
 
         <div class="control control--horizontal">
           <div class="control-heading">
@@ -322,7 +233,7 @@
               id="release-value"
               for="release"
             >
-              500 ms
+              3750 ms
             </output>
           </div>
 
@@ -367,7 +278,7 @@
                 id="input-level-value"
                 for="input-level"
               >
-                0.50
+                0.3
               </output>
             </div>
 

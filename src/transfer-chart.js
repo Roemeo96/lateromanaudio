@@ -37,20 +37,20 @@ export function createTransferChart(svgElement) {
     .domain([0, 5])
     .range([plotBottom, plotTop]);
 
-const xAxis = d3
-  .axisBottom(xScale)
-  .tickValues([]);
+  const xAxis = d3
+    .axisBottom(xScale)
+    .tickValues([]);
 
-const yAxis = d3
-  .axisLeft(yScale)
-  .tickValues([0, 5])
-  .tickSize(0)
-  .tickPadding(12)
-  .tickFormat(value => (
-    value === 0
-      ? 'HEEL-DOWN'
-      : 'TOE-DOWN'
-  ));
+  const yAxis = d3
+    .axisLeft(yScale)
+    .tickValues([0, 5])
+    .tickSize(0)
+    .tickPadding(12)
+    .tickFormat(value => (
+      value === 0
+        ? 'HEEL-DOWN'
+        : 'TOE-DOWN'
+    ));
 
   const xGrid = d3
     .axisBottom(xScale)
@@ -105,20 +105,10 @@ const yAxis = d3
     .attr('text-anchor', 'middle')
     .text('Expression Position');
 
-    const lineGenerator = d3
-  .line()
-  .x(point => xScale(point.input))
-  .y(point => yScale(point.output));
-
-  const thresholdLine = svg
-    .append('line')
-    .attr('class', 'threshold-line');
-
-  const thresholdLabel = svg
-    .append('text')
-    .attr('class', 'threshold-label')
-    .attr('text-anchor', 'middle')
-    .text('THRESHOLD');
+  const lineGenerator = d3
+    .line()
+    .x(point => xScale(point.input))
+    .y(point => yScale(point.output));
 
   const curvePath = svg
     .append('path')
@@ -137,7 +127,7 @@ const yAxis = d3
     .attr('class', 'current-point')
     .attr('r', 8);
 
-let previousInput = null;
+  let previousInput = null;
 
   /**
    * Aktualisiert Kennlinie und aktuellen Arbeitspunkt.
@@ -146,92 +136,56 @@ let previousInput = null;
    * @param {{ input: number, output: number }[]} data.points
    * @param {number} data.currentInput
    * @param {number} data.currentOutput
+   * @param {number} data.attackMs
+   * @param {number} data.releaseMs
    */
-function update({
-  points,
-  currentInput,
-  currentOutput,
-  thresholdInput,
-  attackMs,
-  releaseMs,
-}) {
+  function update({
+    points,
+    currentInput,
+    currentOutput,
+    attackMs,
+    releaseMs,
+  }) {
+    let transitionDuration = 0;
 
+    if (previousInput === null) {
+      transitionDuration = 0;
+    } else if (currentInput > previousInput) {
+      transitionDuration = attackMs;
+    } else if (currentInput < previousInput) {
+      transitionDuration = releaseMs;
+    }
 
-let transitionDuration = 0;
+    svg.style(
+      '--output-transition-duration',
+      `${transitionDuration}ms`,
+    );
 
-if (previousInput === null) {
-  transitionDuration = 0;
-} else if (currentInput > previousInput) {
-  transitionDuration = attackMs;
-} else if (currentInput < previousInput) {
-  transitionDuration = releaseMs;
-}
+    curvePath
+      .datum(points)
+      .attr('d', lineGenerator);
 
-svg.style(
-  '--output-transition-duration',
-  `${transitionDuration}ms`,
-);
+    const pointX = xScale(currentInput);
+    const pointY = yScale(currentOutput);
 
-const thresholdIsVisible =
-  Number.isFinite(thresholdInput)
-  && thresholdInput >= 0
-  && thresholdInput <= 1;
+    inputGuide
+      .attr('x1', pointX)
+      .attr('x2', pointX)
+      .attr('y1', plotBottom)
+      .attr('y2', pointY);
 
-thresholdLine
-  .style(
-    'display',
-    thresholdIsVisible ? null : 'none',
-  );
+    outputGuide
+      .attr('x1', plotLeft)
+      .attr('x2', pointX)
+      .attr('y1', pointY)
+      .attr('y2', pointY);
 
-thresholdLabel
-  .style(
-    'display',
-    thresholdIsVisible ? null : 'none',
-  );
-
-    if (thresholdIsVisible) {
-    const thresholdX =
-      xScale(thresholdInput);
-
-    thresholdLine
-      .attr('x1', thresholdX)
-      .attr('x2', thresholdX)
-      .attr('y1', plotTop)
-      .attr('y2', plotBottom);
-
-    thresholdLabel
-      .attr('x', thresholdX)
-      .attr('y', plotTop + 16);
-  }
-
-  curvePath
-    .datum(points)
-    .attr('d', lineGenerator);
-
-  const pointX =
-    xScale(currentInput);
-
-  const pointY =
-    yScale(currentOutput);
-
-  inputGuide
-    .attr('x1', pointX)
-    .attr('x2', pointX)
-    .attr('y1', plotBottom)
-    .attr('y2', pointY);
-
-  outputGuide
-    .attr('x1', plotLeft)
-    .attr('x2', pointX)
-    .attr('y1', pointY)
-    .attr('y2', pointY);
-
-  currentPoint
-    .attr('cx', pointX)
-    .attr('cy', pointY);
+    currentPoint
+      .attr('cx', pointX)
+      .attr('cy', pointY);
 
     previousInput = currentInput;
-}
+  }
 
   return {
     update,
