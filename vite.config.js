@@ -3,11 +3,11 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   build: {
-    rolldownOptions: {
+    rollupOptions: {
       input: {
-        main: resolve(import.meta.dirname, "index.html"),
-        imprint: resolve(import.meta.dirname, "imprint.html"),
-        privacy: resolve(import.meta.dirname, "privacy.html"),
+        main: resolve(process.cwd(), "index.html"),
+        imprint: resolve(process.cwd(), "imprint.html"),
+        privacy: resolve(process.cwd(), "privacy.html"),
       },
     },
   },
