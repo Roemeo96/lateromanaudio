@@ -29,11 +29,9 @@ body {
   margin: 0;
 
   background:
-    radial-gradient(
-      circle at top left,
+    radial-gradient(circle at top left,
       rgb(200 255 77 / 8%),
-      transparent 35rem
-    ),
+      transparent 35rem),
     var(--background);
 }
 
@@ -159,7 +157,7 @@ input {
 }
 
 .control-heading output {
-display: none;
+  display: none;
   min-width: 3.5rem;
   padding: 0.35rem 0.6rem;
 
@@ -190,13 +188,13 @@ display: none;
   gap: 0.15rem;
 }
 
-.control--horizontal > input[type="range"] {
+.control--horizontal>input[type="range"] {
   width: 100%;
   min-width: 0;
   margin: 0;
 }
 
-.control--horizontal > input[type="checkbox"] {
+.control--horizontal>input[type="checkbox"] {
   -webkit-appearance: none;
   appearance: none;
 
@@ -220,7 +218,7 @@ display: none;
 }
 
 
-.control--horizontal > input[type="checkbox"]::before {
+.control--horizontal>input[type="checkbox"]::before {
   content: "";
 
   position: absolute;
@@ -239,19 +237,18 @@ display: none;
     background-color 150ms ease;
 }
 
-.control--horizontal > input[type="checkbox"]:checked {
+.control--horizontal>input[type="checkbox"]:checked {
   background-color: #eee8d5;
 }
 
-.control--horizontal > input[type="checkbox"]:checked::before {
+.control--horizontal>input[type="checkbox"]:checked::before {
   background-color: #222;
 
   transform:
-    translateX(1.25rem)
-    translateY(-50%);
+    translateX(1.25rem) translateY(-50%);
 }
 
-.control--horizontal > input[type="checkbox"]:focus-visible {
+.control--horizontal>input[type="checkbox"]:focus-visible {
   outline: 2px solid #eee8d5;
   outline-offset: 3px;
 }
@@ -268,13 +265,11 @@ input[type="range"] {
   border-radius: 999px;
 
   background:
-    linear-gradient(
-      to right,
+    linear-gradient(to right,
       var(--tertiary) 0%,
       var(--tertiary) var(--range-percentage),
       rgb(238 232 213 / 30%) var(--range-percentage),
-      rgb(238 232 213 / 30%) 100%
-    );
+      rgb(238 232 213 / 30%) 100%);
 
   cursor: pointer;
 }
@@ -391,10 +386,8 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   border-radius: 1rem;
 
   background:
-    linear-gradient(
-      rgb(255 255 255 / 2%),
-      transparent
-    ),
+    linear-gradient(rgb(255 255 255 / 2%),
+      transparent),
     #151713;
 }
 
@@ -412,7 +405,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 .chart-axis text {
   fill: var(--muted);
   font-size: 15px;
-    font-family:
+  font-family:
     "Times New Roman",
     Times,
     serif;
@@ -473,13 +466,11 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 
   .pedal-panel {
     min-height: auto;
+    padding: 1.25rem;
   }
 
   .visualization-header {
     flex-direction: column;
-  }
-  .visualization-header h3 {
-  display: none;
   }
 }
 
@@ -513,12 +504,9 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
-  min-height: 100vh;
-  min-height: 100svh;
-
-  padding: 3rem 1rem;
+  padding: 8rem 1rem 8rem;
 
   color: #eee8d5;
   background: #000;
@@ -623,7 +611,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   padding-inline: 1rem;
 }
 
-.landing-bullets > .landing-description {
+.landing-bullets>.landing-description {
   width: min(100%, 800px);
   margin-inline: auto;
 }
@@ -674,7 +662,8 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 .landing-description {
   margin-top: 3.5rem;
 
-  font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  line-height: 1.6;
   letter-spacing: 0.15em;
 }
 
@@ -767,7 +756,8 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   .landing-coming {
     letter-spacing: 0.2em;
   }
-    .feature-row {
+
+  .feature-row {
     grid-template-columns: 1fr;
     gap: 0.25rem;
   }
@@ -856,11 +846,9 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   padding: 1.1rem clamp(1.25rem, 4vw, 4rem);
 
   background:
-    linear-gradient(
-      to bottom,
+    linear-gradient(to bottom,
       rgba(14, 14, 13, 0.97),
-      rgba(14, 14, 13, 0.92)
-    );
+      rgba(14, 14, 13, 0.92));
 
   border-bottom: 1px solid rgba(238, 232, 213, 0.18);
   backdrop-filter: blur(12px);
@@ -992,8 +980,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 .pedal-showcase {
   width: 100%;
   padding:
-    clamp(5rem, 10vw, 9rem)
-    clamp(1.25rem, 5vw, 5rem);
+    clamp(5rem, 10vw, 9rem) clamp(1.25rem, 5vw, 5rem);
 
   border-top: 1px solid rgba(238, 232, 213, 0.12);
   border-bottom: 1px solid rgba(238, 232, 213, 0.12);
@@ -1002,8 +989,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 .pedal-showcase-content {
   display: grid;
   grid-template-columns:
-    minmax(0, 1.2fr)
-    minmax(18rem, 0.8fr);
+    minmax(0, 1.2fr) minmax(18rem, 0.8fr);
   align-items: center;
   gap: clamp(3rem, 8vw, 8rem);
 
@@ -1029,12 +1015,10 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   overflow: hidden;
 
   background:
-    radial-gradient(
-      circle at center,
+    radial-gradient(circle at center,
       rgba(238, 232, 213, 0.1),
       rgba(238, 232, 213, 0.025) 48%,
-      transparent 72%
-    );
+      transparent 72%);
 
   border: 1px solid rgba(238, 232, 213, 0.14);
 }
@@ -1276,7 +1260,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 .content-section {
   width: min(100%, 1250px);
   margin: 7rem auto 0;
-  padding-inline: 1rem;
+  padding-inline: 1.25rem;
 }
 
 .section-heading {
@@ -1294,12 +1278,12 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   margin-top: 3.5rem;
 }
 
-.content-section > .feature-list {
+.content-section>.feature-list {
   width: min(100%, 800px);
   margin: 2.5rem auto 0;
 }
 
-.content-section > .landing-description {
+.content-section>.landing-description {
   width: min(100%, 800px);
   margin: 1.25rem auto 0;
 }
