@@ -308,7 +308,7 @@ const observer =
       });
     },
     {
-      threshold: 0.25,
+      threshold: 0.15,
     },
   );
 
