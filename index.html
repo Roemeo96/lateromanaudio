@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,10 +8,12 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     >
+
     <link
       rel="canonical"
       href="https://lateromanaudio.de/"
     >
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -19,12 +22,15 @@
       "url": "https://lateromanaudio.de/"
     }
     </script>
+
     <meta
       name="description"
       content="Late Roman Audio develops the Weltgeist Synthesis pedal, transforming the dynamics of your instrument signal into expression-pedal control."
     >
 
-    <title>Late Roman Audio – Dynamics-Controlled Expression Pedal</title>
+    <title>
+      Late Roman Audio – Dynamics-Controlled Expression Pedal
+    </title>
 
     <link
       rel="icon"
@@ -40,60 +46,68 @@
   </head>
 
   <body>
-<body>
-  <header class="site-header">
-    <a
-      class="site-header-brand"
-      href="/"
-      aria-label="Late Roman Audio – Home"
-    >
-      <span class="site-header-wordmark">
-        Late Roman Avdio
-      </span>
-
-      <span
-        class="site-header-symbol"
-        aria-hidden="true"
+    <header class="site-header">
+      <a
+        class="site-header-brand"
+        href="/"
+        aria-label="Late Roman Audio – Home"
       >
-        <span></span>
-        <span></span>
-        <span></span>
-      </span>
-    </a>
+        <span class="site-header-wordmark">
+          Late Roman Avdio
+        </span>
 
-    <nav
-      class="site-header-navigation"
-      aria-label="Main navigation"
-    >
-      <a href="#features">
-        Features
+        <span
+          class="site-header-symbol"
+          aria-hidden="true"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
       </a>
 
-      <a href="#pedal-simulation">
-        Simulation
-      </a>
+      <nav
+        class="site-header-navigation"
+        aria-label="Main navigation"
+      >
+        <a href="#pedal">
+          Pedal
+        </a>
 
-      <a href="#specifications">
-        Specifications
-      </a>
+        <a href="#features">
+          Features
+        </a>
 
-      <a href="mailto:contact@lateromanaudio.de">
-        Contact
-      </a>
-    </nav>
-  </header>
+        <a href="#pedal-simulation">
+          Simulation
+        </a>
+
+        <a href="#specifications">
+          Specifications
+        </a>
+
+        <a href="mailto:contact@lateromanaudio.de">
+          Contact
+        </a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
 
     <section class="landing-hero">
       <h1 class="visually-hidden">
         Late Roman Audio – Weltgeist Synthesis
       </h1>
+
       <div
         role="img"
         class="landing-logo"
         aria-label="Late Roman Audio"
       >
-        <div class="text-logo"
-          aria-hidden="true">
+        <div
+          class="text-logo"
+          aria-hidden="true"
+        >
           <div>Late</div>
           <div>Roman</div>
           <div>Avdio</div>
@@ -132,146 +146,195 @@
         <p class="landing-coming">
           Coming Soon ...
         </p>
+
         <p class="landing-description">
-          The Weltgeist Synthesis is a first-of-its-kind pedal that converts the dynamics of your guitar signal into a control signal emulating an expression pedal. This allows you to use your playing dynamics to control other effects with an expression input, creating a more expressive and dynamic performance. Use it before or after your compression pedal.
+          The Weltgeist Synthesis is a first-of-its-kind pedal that converts
+          the dynamics of your guitar signal into a control signal emulating
+          an expression pedal. This allows you to use your playing dynamics
+          to control other effects with an expression input, creating a more
+          expressive and dynamic performance. Use it before or after your
+          compression pedal.
         </p>
 
         <p class="landing-description">
-          The pedal is currently in development and will be available soon. In the meantime, you can use this interactive simulation to explore the response curve of the pedal and see how it reacts to different input levels and settings.
+          The pedal is currently in development and will be available soon.
+          In the meantime, you can use this interactive simulation to explore
+          the response curve of the pedal and see how it reacts to different
+          input levels and settings.
         </p>
-
       </div>
-      <div
-        id="features"
-        class="landing-bullets reveal-section"
-      >
-        <h2 class="landing-description">
-          Features
-        </h2>
-        <dl class="feature-list">
-
-          <div class="feature-row">
-            <dt>Base</dt>
-            <dd>Adds a fixed offset to the control signal, setting the starting expression position.</dd>
-          </div>
-
-          <div class="feature-row">
-            <dt>Sensitivity</dt>
-            <dd>Amplifies your signal to achieve the desired expression response.</dd>
-          </div>
-
-          <div class="feature-row">
-            <dt>Rise</dt>
-            <dd>Controls how quickly the pedal responds as the input level increases.</dd>
-          </div>
-          <div class="feature-row">
-            <dt>Fall</dt>
-            <dd>Controls how quickly the pedal responds as the input level decreases.</dd>
-          </div>
-          <div class="feature-row">
-            <dt>Invert</dt>
-            <dd>Inverts the response curve, swapping the heel-down and toe-down positions.</dd>
-          </div>
-        </dl>
-      <p class="landing-description">
-        Try the interactive simulation below to explore the response curve of the pedal and see how it reacts to different input levels and settings. Change the input level to see how Rise and Fall affect the output.
-      </p>
-
-      </div>
-
     </section>
-<section
-  id="pedal"
-  class="pedal-showcase reveal-section"
-  aria-labelledby="pedal-showcase-heading"
->
-  <div class="pedal-showcase-content">
-    <figure class="pedal-showcase-figure">
-      <div class="pedal-showcase-image-frame">
-        <img
-          class="pedal-showcase-image"
-          src="/images/weltgeist.webp"
-          alt="Weltgeist pedal by Late Roman Audio"
-          loading="lazy"
-        >
+
+    <!-- Product image and purchase controls -->
+
+    <section
+      id="pedal"
+      class="pedal-showcase reveal-section"
+      aria-labelledby="pedal-showcase-heading"
+    >
+      <div class="pedal-showcase-content">
+        <figure class="pedal-showcase-figure">
+          <div class="pedal-showcase-image-frame">
+            <img
+              class="pedal-showcase-image"
+              src="/images/weltgeist.webp"
+              alt="Weltgeist pedal by Late Roman Audio"
+              loading="lazy"
+            >
+          </div>
+
+          <figcaption>
+            Weltgeist by Late Roman Audio
+          </figcaption>
+        </figure>
+
+        <div class="pedal-purchase">
+          <p class="eyebrow">
+            Late Roman Audio
+          </p>
+
+          <h2 id="pedal-showcase-heading">
+            Weltgeist
+          </h2>
+
+          <p class="pedal-purchase-price">
+            €299.00
+          </p>
+
+          <p class="pedal-purchase-status">
+            Coming soon
+          </p>
+
+          <div class="pedal-purchase-controls">
+            <div class="quantity-control">
+              <label for="weltgeist-quantity">
+                Quantity
+              </label>
+
+              <input
+                id="weltgeist-quantity"
+                class="quantity-input"
+                type="number"
+                min="1"
+                max="5"
+                step="1"
+                value="1"
+                inputmode="numeric"
+              >
+            </div>
+
+            <button
+              id="weltgeist-add-to-cart"
+              class="snipcart-add-item pedal-add-to-cart"
+              type="button"
+              data-item-id="weltgeist"
+              data-item-name="Weltgeist"
+              data-item-price="299.00"
+              data-item-url="/"
+              data-item-image="/images/weltgeist.webp"
+              data-item-description="Dynamics-controlled expression pedal by Late Roman Audio"
+              data-item-min-quantity="1"
+              data-item-max-quantity="5"
+              data-item-quantity="1"
+              disabled
+            >
+              Coming soon
+            </button>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <figcaption>
-        Weltgeist by Late Roman Audio
-      </figcaption>
-    </figure>
+    <!-- Features -->
 
-    <div class="pedal-purchase">
-      <p class="eyebrow">
-        Late Roman Audio
-      </p>
-
-      <h2 id="pedal-showcase-heading">
-        Weltgeist
+    <section
+      id="features"
+      class="landing-bullets reveal-section"
+      aria-labelledby="features-heading"
+    >
+      <h2
+        id="features-heading"
+        class="landing-description"
+      >
+        Features
       </h2>
 
-      <p class="pedal-purchase-price">
-        €299.00
-      </p>
+      <dl class="feature-list">
+        <div class="feature-row">
+          <dt>Base</dt>
 
-      <p class="pedal-purchase-status">
-        Coming soon
-      </p>
-
-      <div class="pedal-purchase-controls">
-        <div class="quantity-control">
-          <label for="weltgeist-quantity">
-            Quantity
-          </label>
-
-          <input
-            id="weltgeist-quantity"
-            class="quantity-input"
-            type="number"
-            min="1"
-            max="5"
-            step="1"
-            value="1"
-            inputmode="numeric"
-          >
+          <dd>
+            Adds a fixed offset to the control signal, setting the starting
+            expression position.
+          </dd>
         </div>
 
-        <button
-          id="weltgeist-add-to-cart"
-          class="snipcart-add-item pedal-add-to-cart"
-          type="button"
-          data-item-id="weltgeist"
-          data-item-name="Weltgeist"
-          data-item-price="299.00"
-          data-item-url="/"
-          data-item-image="/images/weltgeist.webp"
-          data-item-description="Dynamics-controlled expression pedal by Late Roman Audio"
-          data-item-min-quantity="1"
-          data-item-max-quantity="5"
-          data-item-quantity="1"
-          disabled
-        >
-          Comming soon
-        </button>
+        <div class="feature-row">
+          <dt>Sensitivity</dt>
+
+          <dd>
+            Amplifies your signal to achieve the desired expression response.
+          </dd>
+        </div>
+
+        <div class="feature-row">
+          <dt>Rise</dt>
+
+          <dd>
+            Controls how quickly the pedal responds as the input level
+            increases.
+          </dd>
+        </div>
+
+        <div class="feature-row">
+          <dt>Fall</dt>
+
+          <dd>
+            Controls how quickly the pedal responds as the input level
+            decreases.
+          </dd>
+        </div>
+
+        <div class="feature-row">
+          <dt>Invert</dt>
+
+          <dd>
+            Inverts the response curve, swapping the heel-down and toe-down
+            positions.
+          </dd>
+        </div>
+      </dl>
+
+      <div class="landing-copy">
+        <p class="landing-description">
+          Try the interactive simulation below to explore the response curve of
+          the pedal and see how it reacts to different input levels and settings.
+          Change the input level to see how Rise and Fall affect the output.
+        </p>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+
     <main
       id="pedal-simulation"
       class="app reveal-section"
       aria-labelledby="simulation-heading"
     >
-    <h2
-      id="simulation-heading"
-      class="visually-hidden"
-    >
-      Interactive response curve
-    </h2>
+      <h2
+        id="simulation-heading"
+        class="visually-hidden"
+      >
+        Interactive response curve
+      </h2>
+
       <section class="pedal-panel">
         <header class="pedal-header">
-          <p class="brand">Weltgeist</p>
-          <p class="pedal-product-name">Synthesis</p>
+          <p class="brand">
+            Weltgeist
+          </p>
+
+          <p class="pedal-product-name">
+            Synthesis
+          </p>
         </header>
 
         <div class="control control--horizontal">
@@ -322,11 +385,9 @@
           >
         </div>
 
-
-
         <div class="control control--horizontal">
           <div class="control-heading">
-            <label for="rise">
+            <label for="attack">
               Rise
             </label>
 
@@ -350,7 +411,7 @@
 
         <div class="control control--horizontal">
           <div class="control-heading">
-            <label for="fall">
+            <label for="release">
               Fall
             </label>
 
@@ -371,6 +432,7 @@
             value="3750"
           >
         </div>
+
         <div class="control control--horizontal">
           <div class="control-heading">
             <label for="invert">
@@ -388,10 +450,15 @@
 
       <section class="visualization-panel">
         <header class="visualization-header">
-        <div>
-          <p class="eyebrow">Expression Mapping</p>
-          <h3>How Your Playing Controls Expression</h3>
-        </div>
+          <div>
+            <p class="eyebrow">
+              Expression Mapping
+            </p>
+
+            <h3>
+              How Your Playing Controls Expression
+            </h3>
+          </div>
 
           <div class="control control--horizontal">
             <div class="control-heading">
@@ -434,20 +501,27 @@
           <svg
             id="transfer-chart"
             role="img"
-            aria-label="Kennlinie des Pedals"
+            aria-label="Weltgeist pedal response curve"
           ></svg>
         </div>
       </section>
     </main>
+
+    <!-- Specifications and compatibility -->
+
     <section
       id="specifications"
       class="landing-specifications reveal-section"
+      aria-labelledby="specifications-heading"
     >
-    <div class="landing-copy">
-
-        <h2 class="landing-description">
+      <div class="landing-copy">
+        <h2
+          id="specifications-heading"
+          class="landing-description"
+        >
           Specifications
         </h2>
+
         <dl class="feature-list">
           <div class="feature-row">
             <dt>Input</dt>
@@ -494,15 +568,23 @@
             <dd>300 g</dd>
           </div>
         </dl>
+
         <h2 class="landing-description">
           Compatibility Notice
         </h2>
+
         <p class="landing-description">
-          The pedal emulates the 50 kΩ potentiometer of an expression pedal, but it is not guaranteed to reproduce a perfectly linear response curve. Use it only with devices that do not require a specific potentiometer resistance. The output is not a true CV signal and may not be compatible with all devices. Please check your device's specifications before using the pedal.
+          The pedal emulates the 50 kΩ potentiometer of an expression pedal,
+          but it is not guaranteed to reproduce a perfectly linear response
+          curve. Use it only with devices that do not require a specific
+          potentiometer resistance. The output is not a true CV signal and
+          may not be compatible with all devices. Please check your device's
+          specifications before using the pedal.
         </p>
-    </div>
+      </div>
     </section>
 
+    <!-- Footer -->
 
     <footer class="site-footer">
       <p class="site-footer-brand">
@@ -527,17 +609,10 @@
       </nav>
     </footer>
 
-
-
-
-
-
-
-
-
     <script
       type="module"
       src="/src/main.js"
     ></script>
   </body>
 </html>
+```
