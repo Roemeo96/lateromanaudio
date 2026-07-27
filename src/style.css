@@ -1287,3 +1287,68 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   width: min(100%, 800px);
   margin: 1.25rem auto 0;
 }
+
+
+.legal-page {
+  width: min(100% - 2rem, 800px);
+  margin: 0 auto;
+  padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.legal-page h1 {
+  margin: 0 0 4rem;
+
+  color: var(--accent);
+
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.legal-page section {
+  margin-top: 3rem;
+}
+
+.legal-page h2 {
+  margin: 0 0 1rem;
+
+  color: var(--accent);
+
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.legal-page p,
+.legal-page li,
+.legal-page address {
+  color: var(--text);
+
+  font-size: 1rem;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+.legal-page address {
+  font-style: normal;
+}
+
+.legal-page a {
+  color: var(--accent);
+}
+
+.legal-page ul {
+  padding-left: 1.5rem;
+}
+
+.legal-page-updated {
+  margin-top: 4rem;
+
+  color: var(--muted) !important;
+
+  font-size: 0.8rem !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase;
+}
