@@ -58,7 +58,7 @@ input {
   gap: 1.5rem;
 
   width: min(1080px, calc(100% - 2rem));
-  margin: 0 auto;
+  margin: 2rem auto;
   padding: 2rem 0;
 }
 
@@ -789,7 +789,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   gap: 2rem;
 
   width: min(1080px, calc(100% - 2rem));
-  margin: 3rem auto 0;
+  margin: 8rem auto 0;
   padding: 1.5rem 0 2rem;
 
   border-top: 1px solid var(--border);
@@ -1000,7 +1000,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 
 .pedal-showcase-figure {
   width: min(100%, 48rem);
-  margin: 0 auto;
+  margin: 3rem auto;
 }
 
 .pedal-showcase-image-frame {
@@ -1115,7 +1115,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   text-transform: uppercase;
 }
 
-.pedal-purchase h2 {
+.pedal-purchase h3 {
   margin: 0;
 
   color: #eee8d5;
@@ -1275,7 +1275,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 }
 
 .section-heading--subsequent {
-  margin-top: 3.5rem;
+  margin-top: 7.5rem;
 }
 
 .content-section>.feature-list {
