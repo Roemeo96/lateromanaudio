@@ -6,25 +6,6 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="referrer"
-    content="strict-origin-when-cross-origin"
-  >
-
-  <meta
-    http-equiv="Content-Security-Policy"
-    content="
-      default-src 'self';
-      script-src 'self';
-      style-src 'self';
-      img-src 'self' data:;
-      font-src 'self';
-      connect-src 'self';
-      object-src 'none';
-      base-uri 'self';
-      form-action 'self';
-    "
-  >
 
   <link rel="canonical" href="https://lateromanaudio.de/">
 
@@ -104,6 +85,11 @@
   <!-- Hero -->
 
   <section class="landing-hero">
+      <div
+      id="hero-particles"
+      class="section-particles"
+      aria-hidden="true"
+    ></div>
     <h1 class="visually-hidden">
       Weltgeist – An Expression Pedal Controlled by Your Playing Dynamics
     </h1>
@@ -213,7 +199,17 @@
     </div>
   </section>
 
-  <section id="features" class="content-section reveal-section" aria-labelledby="features-heading">
+  <section
+    id="features"
+    class="content-section reveal-section particle-section"
+    aria-labelledby="features-heading"
+  >
+      <div
+      id="features-particles"
+      class="section-particles"
+      aria-hidden="true"
+    ></div>
+    <div class="section-content">
     <h2 id="features-heading" class="section-heading">
       Weltgeist Features
     </h2>
@@ -261,6 +257,7 @@
         </dd>
       </div>
     </dl>
+    </div>
   </section>
 
   <section id="simulation" class="content-section reveal-section" aria-labelledby="simulation-heading">
@@ -403,7 +400,17 @@
     </section>
   </main>
 
-  <section id="specifications" class="content-section reveal-section" aria-labelledby="specifications-heading">
+  <section
+    id="specifications"
+    class="content-section reveal-section particle-section"
+    aria-labelledby="specifications-heading"
+  >
+      <div
+        id="specifications-particles"
+        class="section-particles"
+        aria-hidden="true"
+      ></div>
+      <div class="section-content">
     <h2 id="specifications-heading" class="section-heading">
       Specifications
     </h2>
@@ -416,7 +423,7 @@
 
       <div class="feature-row">
         <dt>Expression</dt>
-        <dd>2× TRS input jacks</dd>
+        <dd>2× TRS expression output jacks</dd>
       </div>
 
       <div class="feature-row">
@@ -467,6 +474,7 @@
       may not be compatible with all devices. Please check your device's
       specifications before using the pedal.
     </p>
+    </div>
   </section>
 
 
