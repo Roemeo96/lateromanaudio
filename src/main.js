@@ -9,8 +9,16 @@ import {
   createTransferChart,
 } from './transfer-chart.js';
 
+import {
+  initializeSectionParticles,
+} from "./hero-particles.js";
 
-
+initializeSectionParticles().catch((error) => {
+  console.error(
+    "Section particles could not be initialized:",
+    error,
+  );
+});
 
 
 const quantityInput = document.querySelector(

@@ -10,7 +10,7 @@
   --background: #000000;
   --border: rgb(255 255 255 / 12%);
   --muted: #a8aa9f;
-  --text: #f5f2ea;
+  --text: #eee8d5;
   --accent: #eee8d5;
   --tertiary: #ff765f;
 
@@ -61,6 +61,37 @@ input {
   margin: 2rem auto;
   padding: 2rem 0;
 }
+
+.particle-section {
+  position: relative;
+  isolation: isolate;
+}
+
+.section-particles {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.section-particles canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.section-content {
+  position: relative;
+  z-index: 1;
+}
+
 
 .visually-hidden {
   position: absolute;
