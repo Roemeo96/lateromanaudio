@@ -17,20 +17,31 @@ const particleOptions = {
   detectRetina: true,
 
   interactivity: {
-    events: {
-      onClick: {
-        enable: false,
-      },
+  detectsOn: "window",
 
-      onHover: {
-        enable: false,
-      },
+  events: {
+    onClick: {
+      enable: false,
+    },
 
-      resize: {
-        enable: true,
-      },
+    onHover: {
+      enable: true,
+      mode: "repulse",
+    },
+
+    resize: {
+      enable: true,
     },
   },
+
+  modes: {
+    repulse: {
+      distance: 200,
+      duration: 0.2,
+      speed: 0.05,
+    },
+  },
+},
 
   particles: {
     paint: {
@@ -46,7 +57,10 @@ const particleOptions = {
     move: {
       enable: true,
       direction: "top",
-      speed: 0.3,
+      speed: {
+        min: 0.1,
+        max: 1.35,
+        },
       random: true,
       straight: false,
 
@@ -68,12 +82,12 @@ const particleOptions = {
     opacity: {
       value: {
         min: 0.1,
-        max: 0.5,
+        max: 0.6,
       },
 
       animation: {
         enable: true,
-        speed: 0.5,
+        speed: 0.2,
         sync: false,
       },
     },
