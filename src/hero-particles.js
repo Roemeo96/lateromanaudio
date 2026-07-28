@@ -59,7 +59,7 @@ const particleOptions = {
       direction: "top",
       speed: {
         min: 0.1,
-        max: 1.35,
+        max: 0.35,
         },
       random: true,
       straight: false,
@@ -82,7 +82,7 @@ const particleOptions = {
     opacity: {
       value: {
         min: 0.1,
-        max: 0.6,
+        max: 0.5,
       },
 
       animation: {
