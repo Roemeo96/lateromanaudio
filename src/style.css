@@ -91,6 +91,7 @@ input {
   width: min(100% - 3rem, 76rem);
   margin-inline: auto;
   margin-bottom: 6rem;
+  margin-top: 6rem;
 }
 
 .visually-hidden {
@@ -1019,7 +1020,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 .pedal-showcase {
   width: 100%;
   padding:
-    clamp(5rem, 10vw, 9rem) clamp(1.25rem, 5vw, 5rem);
+  clamp(2.5rem, 5vw, 4.5rem) clamp(1.25rem, 5vw, 5rem);
 
   border-top: 1px solid rgba(238, 232, 213, 0.12);
   border-bottom: 1px solid rgba(238, 232, 213, 0.12);
