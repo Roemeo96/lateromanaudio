@@ -1405,3 +1405,30 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   letter-spacing: 0.1em !important;
   text-transform: uppercase;
 }
+
+.site-footer-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.site-footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2rem;
+  height: 2rem;
+
+  color: inherit;
+}
+
+.site-footer-social-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.site-footer-social-link:hover,
+.site-footer-social-link:focus-visible {
+  color: var(--color-cream);
+}
