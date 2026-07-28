@@ -61,10 +61,10 @@ input {
   margin: 2rem auto;
   padding: 2rem 0;
 }
-
 .particle-section {
   position: relative;
   isolation: isolate;
+  overflow: hidden;
 }
 
 .section-particles {
@@ -72,13 +72,9 @@ input {
   top: 0;
   bottom: 0;
 
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
 
   z-index: 0;
   pointer-events: none;
-  overflow: hidden;
 }
 
 .section-particles canvas {
@@ -87,11 +83,15 @@ input {
   height: 100% !important;
 }
 
+
 .section-content {
   position: relative;
   z-index: 1;
-}
 
+  width: min(100% - 3rem, 76rem);
+  margin-inline: auto;
+  margin-bottom: 6rem;
+}
 
 .visually-hidden {
   position: absolute;
@@ -1296,11 +1296,24 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 
 
 
-.content-section {
-  width: min(100%, 1250px);
-  margin: 7rem auto 0;
-  padding-inline: 1.25rem;
+.content-section.particle-section {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: 0;
+  overflow: hidden;
+  isolation: isolate;
 }
+
+.section-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
 
 .section-heading {
   width: 100%;

@@ -56,7 +56,7 @@ const particleOptions = {
     },
 
     number: {
-      value: 15,
+      value: 25,
 
       density: {
         enable: true,
@@ -68,7 +68,7 @@ const particleOptions = {
     opacity: {
       value: {
         min: 0.1,
-        max: 0.6,
+        max: 0.5,
       },
 
       animation: {

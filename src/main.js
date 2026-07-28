@@ -13,32 +13,13 @@ import {
   initializeSectionParticles,
 } from "./hero-particles.js";
 
-export async function initializeSectionParticles() {
-  console.log("Starting section particles");
+initializeSectionParticles().catch((error) => {
+  console.error(
+    "Section particles could not be initialized:",
+    error,
+  );
+});
 
-  const prefersReducedMotion =
-    window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-  console.log("Reduced motion:", prefersReducedMotion);
-
-  if (prefersReducedMotion) {
-    return;
-  }
-
-  await loadSlim(tsParticles);
-
-  console.log("tsParticles loaded");
-
-  await Promise.all([
-    initializeParticles("hero-particles"),
-    initializeParticles("features-particles"),
-    initializeParticles("specifications-particles"),
-  ]);
-
-  console.log("All particle containers initialized");
-}
 
 const quantityInput = document.querySelector(
   "#weltgeist-quantity",
