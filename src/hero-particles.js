@@ -25,29 +25,29 @@ const particleOptions = {
   interactivity: {
     detectsOn: "window",
 
-  events: {
-    onClick: {
-      enable: false,
+    events: {
+      onClick: {
+        enable: false,
+      },
+
+      onHover: {
+        enable: true,
+        mode: "repulse",
+      },
+
+      resize: {
+        enable: true,
+      },
     },
 
-    onHover: {
-      enable: true,
-      mode: "repulse",
-    },
-
-    resize: {
-      enable: true,
+    modes: {
+      repulse: {
+        distance: 200,
+        duration: 0.2,
+        speed: 0.05,
+      },
     },
   },
-
-  modes: {
-    repulse: {
-      distance: 200,
-      duration: 0.2,
-      speed: 0.05,
-    },
-  },
-},
 
   particles: {
     paint: {
@@ -65,8 +65,8 @@ const particleOptions = {
       direction: "top",
       speed: {
         min: 0.1,
-        max: 0.4,
-        },
+        max: 0.3,
+      },
       random: true,
       straight: false,
 
@@ -90,7 +90,7 @@ const particleOptions = {
     },
 
     number: {
-      value: 55,
+      value: 45,
 
       density: {
         enable: true,
@@ -174,7 +174,7 @@ export async function initializeSectionParticles() {
     initializeParticles("features-particles"),
     initializeParticles("specifications-particles"),
 
-  initializeParticles("simulation-showcase-particles"),
+    initializeParticles("simulation-showcase-particles"),
   ]);
 }
 
