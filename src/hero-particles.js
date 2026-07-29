@@ -185,19 +185,19 @@ export function updateParticleWobble(currentOutput) {
   );
 
   const minimumDistance =
-    normalizedPosition * 2;
+    normalizedPosition * 4;
 
   const maximumDistance =
-    normalizedPosition * 8;
+    normalizedPosition * 10;
 
   const moveSpeed =
     normalizedPosition * 1.5;
 
   const minimumOpacity =
-    0.2 + normalizedPosition * 0.2;
+    0.3 + normalizedPosition * 0.2;
 
   const maximumOpacity =
-    0.7 + normalizedPosition * 0.2;
+    0.7 + normalizedPosition * 0.25;
 
   particleContainers.forEach((container) => {
     const particles =
