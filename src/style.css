@@ -589,6 +589,30 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   text-align: left;
 }
 
+.landing-eyebrow {
+  margin: 0;
+
+  color: rgba(238, 232, 213, 0.5);
+
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.landing-product-name {
+  margin: 0.4rem 0 1.5rem;
+
+  color: var(--text);
+
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 
 .landing-logo {
   display: flex;
