@@ -11,14 +11,9 @@ import {
 
 import {
   initializeSectionParticles,
+  updateParticleWobble,
 } from "./hero-particles.js";
 
-initializeSectionParticles().catch((error) => {
-  console.error(
-    "Section particles could not be initialized:",
-    error,
-  );
-});
 
 
 const quantityInput = document.querySelector(
@@ -67,12 +62,15 @@ if (quantityInput && addToCartButton) {
 
 
 const state = {
-  base: 1,
+  base: 0,
   sensitivity: 6.5,
-  input: 0.3,
+  input: 0,
   attackMs: 250,
   releaseMs: 3750,
   invert: false,
+
+  currentOutput: 0,
+  targetOutput: 0,
 };
 
 const baseInput =
@@ -149,6 +147,14 @@ function getSettings() {
   };
 }
 
+state.targetOutput = calculateOutput(
+  state.input,
+  getSettings(),
+);
+
+state.currentOutput =
+  state.targetOutput;
+
 function render() {
   const settings =
     getSettings();
@@ -156,11 +162,11 @@ function render() {
   const points =
     createCurvePoints(settings);
 
-  const output =
-    calculateOutput(
-      state.input,
-      settings,
-    );
+  state.targetOutput =
+  calculateOutput(
+    state.input,
+    settings,
+  );
 
   baseValue.textContent =
     state.base.toFixed(2);
@@ -181,7 +187,7 @@ function render() {
     state.input.toFixed(2);
 
   currentOutputValue.textContent =
-    output.toFixed(2);
+    state.currentOutput.toFixed(2);
 
   baseInput.value =
     String(state.base);
@@ -204,11 +210,73 @@ function render() {
   chart.update({
     points,
     currentInput: state.input,
-    currentOutput: output,
-    attackMs: state.attackMs,
-    releaseMs: state.releaseMs,
+    currentOutput: state.currentOutput,
   });
 }
+
+
+let previousFrameTime = null;
+
+function animateOutput(frameTime) {
+  requestAnimationFrame(
+    animateOutput,
+  );
+
+  if (previousFrameTime === null) {
+    previousFrameTime = frameTime;
+  }
+
+  const elapsedMs = Math.min(
+    frameTime - previousFrameTime,
+    50,
+  );
+
+  previousFrameTime = frameTime;
+
+  const difference =
+    state.targetOutput
+    - state.currentOutput;
+
+  if (Math.abs(difference) <= 0.0001) {
+    return;
+  }
+
+  const durationMs =
+    difference > 0
+      ? state.attackMs
+      : state.releaseMs;
+
+  if (durationMs <= 0) {
+    state.currentOutput =
+      state.targetOutput;
+  } else {
+    const maximumChange =
+      (5 / durationMs) * elapsedMs;
+
+    if (Math.abs(difference) <= maximumChange) {
+      state.currentOutput =
+        state.targetOutput;
+    } else {
+      state.currentOutput +=
+        Math.sign(difference)
+        * maximumChange;
+    }
+  }
+
+  render();
+
+  try {
+    updateParticleWobble(
+      state.currentOutput,
+    );
+  } catch (error) {
+    console.error(
+      "Particle wobble could not be updated:",
+      error,
+    );
+  }
+}
+
 
 baseInput.addEventListener(
   'input',
@@ -325,6 +393,23 @@ sections.forEach(section => {
 });
 
 render();
+
+initializeSectionParticles()
+  .then(() => {
+    updateParticleWobble(
+      state.currentOutput,
+    );
+  })
+  .catch((error) => {
+    console.error(
+      "Section particles could not be initialized:",
+      error,
+    );
+  });
+
+requestAnimationFrame(
+  animateOutput,
+);
 
 
 const rangeInputs = document.querySelectorAll(

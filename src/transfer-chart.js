@@ -11,7 +11,7 @@ const MARGIN = {
 };
 
 /**
- * Erstellt das SVG-Diagramm.
+ * 
  *
  * @param {SVGSVGElement} svgElement
  * @returns {{ update: Function }}
@@ -127,39 +127,20 @@ export function createTransferChart(svgElement) {
     .attr('class', 'current-point')
     .attr('r', 8);
 
-  let previousInput = null;
 
   /**
-   * Aktualisiert Kennlinie und aktuellen Arbeitspunkt.
+   * 
    *
    * @param {object} data
    * @param {{ input: number, output: number }[]} data.points
    * @param {number} data.currentInput
    * @param {number} data.currentOutput
-   * @param {number} data.attackMs
-   * @param {number} data.releaseMs
    */
   function update({
     points,
     currentInput,
     currentOutput,
-    attackMs,
-    releaseMs,
   }) {
-    let transitionDuration = 0;
-
-    if (previousInput === null) {
-      transitionDuration = 0;
-    } else if (currentInput > previousInput) {
-      transitionDuration = attackMs;
-    } else if (currentInput < previousInput) {
-      transitionDuration = releaseMs;
-    }
-
-    svg.style(
-      '--output-transition-duration',
-      `${transitionDuration}ms`,
-    );
 
     curvePath
       .datum(points)
@@ -183,8 +164,6 @@ export function createTransferChart(svgElement) {
     currentPoint
       .attr('cx', pointX)
       .attr('cy', pointY);
-
-    previousInput = currentInput;
   }
 
   return {

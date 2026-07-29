@@ -2,6 +2,11 @@ import { tsParticles } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import { loadWobbleUpdater } from "@tsparticles/updater-wobble";
 
+const particleContainers = [];
+
+const particleWobbleFactors =
+  new WeakMap();
+
 const particleOptions = {
   fullScreen: {
     enable: false,
@@ -18,7 +23,7 @@ const particleOptions = {
   detectRetina: true,
 
   interactivity: {
-  detectsOn: "window",
+    detectsOn: "window",
 
   events: {
     onClick: {
@@ -70,13 +75,18 @@ const particleOptions = {
       },
     },
 
-        wobble: {
+    wobble: {
       enable: true,
+
       distance: {
-        min: 10,
-        max: 20,
+        min: 0,
+        max: 0,
       },
-      speed: 300,
+
+      speed: {
+        angle: 300,
+        move: 0,
+      },
     },
 
     number: {
@@ -91,8 +101,8 @@ const particleOptions = {
 
     opacity: {
       value: {
-        min: 0.1,
-        max: 0.6,
+        min: 0.2,
+        max: 0.7,
       },
 
       animation: {
@@ -131,10 +141,14 @@ async function initializeParticles(containerId) {
     return;
   }
 
-  await tsParticles.load({
+  const container = await tsParticles.load({
     id: containerId,
     options: particleOptions,
   });
+
+  if (container) {
+    particleContainers.push(container);
+  }
 }
 
 /**
@@ -159,5 +173,90 @@ export async function initializeSectionParticles() {
     initializeParticles("hero-particles"),
     initializeParticles("features-particles"),
     initializeParticles("specifications-particles"),
+
+  initializeParticles("simulation-showcase-particles"),
   ]);
+}
+
+export function updateParticleWobble(currentOutput) {
+  const normalizedPosition = Math.min(
+    1,
+    Math.max(0, currentOutput / 5),
+  );
+
+  const minimumDistance =
+    normalizedPosition * 2;
+
+  const maximumDistance =
+    normalizedPosition * 8;
+
+  const moveSpeed =
+    normalizedPosition * 1.5;
+
+  const minimumOpacity =
+    0.2 + normalizedPosition * 0.2;
+
+  const maximumOpacity =
+    0.7 + normalizedPosition * 0.2;
+
+  particleContainers.forEach((container) => {
+    const particles =
+      container.particles;
+
+    for (
+      let index = 0;
+      index < particles.count;
+      index += 1
+    ) {
+      const particle =
+        particles.get(index);
+
+      if (!particle) {
+        continue;
+      }
+
+      let factor =
+        particleWobbleFactors.get(particle);
+
+      if (factor === undefined) {
+        factor = Math.random();
+
+        particleWobbleFactors.set(
+          particle,
+          factor,
+        );
+      }
+
+      const distance =
+        minimumDistance
+        + (
+          maximumDistance
+          - minimumDistance
+        )
+        * factor;
+
+      const opacity =
+        minimumOpacity
+        + (
+          maximumOpacity
+          - minimumOpacity
+        )
+        * factor;
+
+      if (particle.retina) {
+        particle.retina.wobbleDistance =
+          distance;
+      }
+
+      if (particle.wobble) {
+        particle.wobble.moveSpeed =
+          moveSpeed;
+      }
+
+      if (particle.opacity) {
+        particle.opacity.value =
+          opacity;
+      }
+    }
+  });
 }
