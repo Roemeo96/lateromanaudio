@@ -1,5 +1,6 @@
 import { tsParticles } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
+import { loadWobbleUpdater } from "@tsparticles/updater-wobble";
 
 const particleOptions = {
   fullScreen: {
@@ -67,6 +68,15 @@ const particleOptions = {
       outModes: {
         default: "out",
       },
+    },
+
+        wobble: {
+      enable: true,
+      distance: {
+        min: 10,
+        max: 20,
+      },
+      speed: 300,
     },
 
     number: {
@@ -142,6 +152,8 @@ export async function initializeSectionParticles() {
   }
 
   await loadSlim(tsParticles);
+
+  await loadWobbleUpdater(tsParticles);
 
   await Promise.all([
     initializeParticles("hero-particles"),
