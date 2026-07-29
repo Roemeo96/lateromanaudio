@@ -82,7 +82,7 @@ const particleOptions = {
     opacity: {
       value: {
         min: 0.1,
-        max: 0.8,
+        max: 0.6,
       },
 
       animation: {
