@@ -185,10 +185,10 @@ export function updateParticleWobble(currentOutput) {
   );
 
   const minimumDistance =
-    normalizedPosition * 4;
+    normalizedPosition * 7;
 
   const maximumDistance =
-    normalizedPosition * 10;
+    normalizedPosition * 12;
 
   const moveSpeed =
     normalizedPosition * 1.5;
