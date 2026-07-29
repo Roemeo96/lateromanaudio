@@ -59,7 +59,7 @@ const particleOptions = {
       direction: "top",
       speed: {
         min: 0.1,
-        max: 0.35,
+        max: 0.4,
         },
       random: true,
       straight: false,
@@ -70,7 +70,7 @@ const particleOptions = {
     },
 
     number: {
-      value: 15,
+      value: 55,
 
       density: {
         enable: true,

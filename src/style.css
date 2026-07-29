@@ -109,14 +109,32 @@ input {
   border: 0;
 }
 
-.pedal-panel,
-.visualization-panel {
+.pedal-panel {
   border-radius: 1.25rem;
 
   box-shadow:
     0 1.5rem 4rem rgb(0 0 0 / 25%),
     inset 0 1px rgb(255 255 255 / 6%);
 }
+
+.visualization-panel {
+  position: relative;
+  min-width: 0;
+  padding: 1.5rem;
+
+  border-left: 1px solid rgba(238, 232, 213, 0.14);
+  border-radius: 0;
+
+  background: #020202;
+  box-shadow: none;
+}
+
+@media (max-width: 850px) {
+.visualization-panel {
+  border-left: none;
+}
+}
+
 
 .pedal-panel {
   display: flex;
@@ -420,16 +438,16 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 }
 
 .chart-container {
-  overflow: hidden;
-
-  border: 1px solid var(--border);
-  border-radius: 1rem;
-
+  position: relative;
   background:
-    linear-gradient(rgb(255 255 255 / 2%),
-      transparent),
-    #151713;
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(238, 232, 213, 0.025),
+      transparent 58%
+    ),
+    #020202;
 }
+
 
 #transfer-chart {
   display: block;
@@ -439,7 +457,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 
 .chart-axis path,
 .chart-axis line {
-  stroke: rgb(255 255 255 / 24%);
+  stroke: rgba(238, 232, 213, 0.22);
 }
 
 .chart-axis text {
@@ -457,8 +475,8 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 }
 
 .chart-grid line {
-  stroke: rgb(255 255 255 / 7%);
-  stroke-dasharray: 4 6;
+  stroke: rgba(238, 232, 213, 0.055);
+  stroke-width: 1;
 }
 
 .axis-label {
@@ -474,7 +492,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   stroke: var(--accent);
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 2.5;
+  stroke-width: 2;
 
   filter: drop-shadow(0 0 8px rgb(238 232 213 / 35%));
 
@@ -1339,6 +1357,29 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 .content-section>.landing-description {
   width: min(100%, 800px);
   margin: 1.25rem auto 0;
+}
+
+#simulation {
+  padding-block: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.simulation-showcase-start {
+  border-top: 1px solid #eee8d51f;
+}
+
+.simulation-showcase-end::after {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  bottom: 0;
+
+  width: 100vw;
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background: #eee8d51f;
 }
 
 
