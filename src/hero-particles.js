@@ -101,8 +101,8 @@ const particleOptions = {
 
     opacity: {
       value: {
-        min: 0.2,
-        max: 0.7,
+        min: 0.1,
+        max: 0.6,
       },
 
       animation: {
@@ -185,16 +185,16 @@ export function updateParticleWobble(currentOutput) {
   );
 
   const minimumDistance =
-    normalizedPosition * 20;
+    normalizedPosition * 15;
 
   const maximumDistance =
-    normalizedPosition * 40;
+    normalizedPosition * 30;
 
   const moveSpeed =
     normalizedPosition * 1.5;
 
   const minimumOpacity =
-    0.3 + normalizedPosition * 0.2;
+    0.3 + normalizedPosition * 0.25;
 
   const maximumOpacity =
     0.7 + normalizedPosition * 0.25;
