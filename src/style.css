@@ -65,6 +65,7 @@ input {
   position: relative;
   isolation: isolate;
   overflow: hidden;
+  padding: 10rem;
 }
 
 .section-particles {
