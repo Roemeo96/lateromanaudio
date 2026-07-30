@@ -3,7 +3,7 @@ name: Deploy Late Roman Audio
 on:
   push:
     branches:
-      - main
+      - coming-soon
 
   workflow_dispatch:
 
