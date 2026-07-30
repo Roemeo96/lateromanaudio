@@ -260,3 +260,6 @@ export function updateParticleWobble(currentOutput) {
     }
   });
 }
+
+
+initializeSectionParticles();
