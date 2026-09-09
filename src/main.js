@@ -64,7 +64,11 @@ if (quantityInput && addToCartButton) {
 const state = {
   base: 0,
   sensitivity: 6.5,
+
   input: 0,
+  manualInput: 0,
+  inputSource: 'manual',
+
   attackMs: 250,
   releaseMs: 3750,
   invert: false,
@@ -91,6 +95,11 @@ const inputLevelInput =
 const inputLevelValue =
   document.querySelector('#input-level-value');
 
+const inputSourceInputs =
+  document.querySelectorAll(
+    'input[name="input-source"]',
+  );
+
 const attackInput =
   document.querySelector('#attack');
 
@@ -115,6 +124,16 @@ const currentOutputValue =
 const chartElement =
   document.querySelector('#transfer-chart');
 
+const liveAudioInfo =
+  document.querySelector(
+    '#live-audio-info',
+  );
+
+const liveAudioStatus =
+  document.querySelector(
+    '#live-audio-status',
+  );
+
 if (
   !baseInput
   || !baseValue
@@ -122,6 +141,7 @@ if (
   || !sensitivityValue
   || !inputLevelInput
   || !inputLevelValue
+  || inputSourceInputs.length === 0
   || !attackInput
   || !attackValue
   || !releaseInput
@@ -130,6 +150,8 @@ if (
   || !currentInputValue
   || !currentOutputValue
   || !chartElement
+  || !liveAudioInfo
+  || !liveAudioStatus
 ) {
   throw new Error(
     'Ein oder mehrere benötigte HTML-Elemente fehlen.',
@@ -277,6 +299,401 @@ function animateOutput(frameTime) {
   }
 }
 
+let liveAudioStream = null;
+let liveAudioContext = null;
+let liveAudioSource = null;
+let liveAudioAnalyser = null;
+let liveAudioSamples = null;
+let liveAudioAnimationFrame = null;
+
+let lastAudioLevelLogTime = 0;
+let smoothedLiveInput = 0;
+let previousAudioFrameTime = null;
+
+function normalizeLiveAudioLevel(rms) {
+  const minimumDb = -40;
+  const maximumDb = -18;
+
+  const safeRms =
+    Math.max(
+      rms,
+      0.000001,
+    );
+
+  const db =
+    20 * Math.log10(
+      safeRms,
+    );
+
+  const normalized =
+    (
+      db
+      - minimumDb
+    )
+    / (
+      maximumDb
+      - minimumDb
+    );
+
+  return {
+    rms,
+    db,
+    normalized:
+      Math.min(
+        1,
+        Math.max(
+          0,
+          normalized,
+        ),
+      ),
+  };
+}
+
+
+
+function smoothLiveAudioLevel(
+  target,
+  frameTime,
+) {
+  if (previousAudioFrameTime === null) {
+    previousAudioFrameTime = frameTime;
+    smoothedLiveInput = target;
+
+    return target;
+  }
+
+  const elapsedMs = Math.min(
+    frameTime - previousAudioFrameTime,
+    50,
+  );
+
+  previousAudioFrameTime = frameTime;
+
+  const smoothingMs =
+    target > smoothedLiveInput
+      ? 100
+      : 300;
+
+  const alpha =
+    1 - Math.exp(
+      -elapsedMs / smoothingMs,
+    );
+
+  smoothedLiveInput +=
+    (target - smoothedLiveInput)
+    * alpha;
+
+  return smoothedLiveInput;
+}
+
+
+
+
+function measureLiveAudioLevel(frameTime) {
+  if (
+    !liveAudioAnalyser
+    || !liveAudioSamples
+  ) {
+    return;
+  }
+
+  liveAudioAnalyser.getFloatTimeDomainData(
+    liveAudioSamples,
+  );
+
+  let sumOfSquares = 0;
+
+  for (
+    let index = 0;
+    index < liveAudioSamples.length;
+    index += 1
+  ) {
+    const sample =
+      liveAudioSamples[index];
+
+    sumOfSquares +=
+      sample * sample;
+  }
+
+  const rms =
+    Math.sqrt(
+      sumOfSquares
+      / liveAudioSamples.length,
+    );
+
+    const audioLevel =
+      normalizeLiveAudioLevel(
+        rms,
+      );
+
+    const smoothedInput =
+      smoothLiveAudioLevel(
+        audioLevel.normalized,
+        frameTime,
+      );
+
+    if (state.inputSource === 'live') {
+      state.input =
+        smoothedInput;
+
+      render();
+
+      updateRangeFill(
+        inputLevelInput,
+      );
+    }
+
+  console.log(
+    'Live audio:',
+    {
+      rms:
+        audioLevel.rms.toFixed(5),
+
+      db:
+        audioLevel.db.toFixed(1),
+
+      normalized:
+        audioLevel.normalized.toFixed(2),
+    },
+  );
+  /*
+   * Nur etwa 10x pro Sekunde loggen,
+   * damit die Console nicht zugespammt wird.
+   */
+  if (
+    frameTime - lastAudioLevelLogTime
+    >= 100
+  ) {
+
+    lastAudioLevelLogTime =
+      frameTime;
+  }
+
+  liveAudioAnimationFrame =
+    requestAnimationFrame(
+      measureLiveAudioLevel,
+    );
+}
+
+function showLiveAudioInfo(
+  message = '',
+) {
+  liveAudioInfo.hidden = false;
+
+  if (message) {
+    liveAudioStatus.textContent = message;
+    liveAudioStatus.hidden = false;
+  } else {
+    liveAudioStatus.hidden = true;
+  }
+}
+
+function hideLiveAudioInfo() {
+  liveAudioInfo.hidden = true;
+}
+
+async function startLiveAudio() {
+  if (
+    !navigator.mediaDevices
+    || !navigator.mediaDevices.getUserMedia
+  ) {
+    throw new Error(
+      'Audio input is not supported by this browser.',
+    );
+  }
+
+  liveAudioStream =
+    await navigator.mediaDevices.getUserMedia({
+      audio: {
+        echoCancellation: false,
+        noiseSuppression: false,
+        autoGainControl: false,
+      },
+    });
+
+  liveAudioContext =
+    new AudioContext();
+
+  if (
+    liveAudioContext.state
+    === 'suspended'
+  ) {
+    await liveAudioContext.resume();
+  }
+
+  liveAudioSource =
+    liveAudioContext.createMediaStreamSource(
+      liveAudioStream,
+    );
+
+  liveAudioAnalyser =
+    liveAudioContext.createAnalyser();
+
+  liveAudioAnalyser.fftSize =
+    2048;
+
+  liveAudioSamples =
+    new Float32Array(
+      liveAudioAnalyser.fftSize,
+    );
+
+  liveAudioSource.connect(
+    liveAudioAnalyser,
+  );
+
+  console.log(
+    'Live audio stream opened:',
+    liveAudioStream,
+  );
+
+  liveAudioAnimationFrame =
+    requestAnimationFrame(
+      measureLiveAudioLevel,
+    );
+}
+async function stopLiveAudio() {
+  smoothedLiveInput = 0;
+  previousAudioFrameTime = null;
+
+  if (liveAudioAnimationFrame) {
+    cancelAnimationFrame(
+      liveAudioAnimationFrame,
+    );
+
+    liveAudioAnimationFrame =
+      null;
+  }
+
+  if (liveAudioSource) {
+    liveAudioSource.disconnect();
+
+    liveAudioSource =
+      null;
+  }
+
+  liveAudioAnalyser =
+    null;
+
+  liveAudioSamples =
+    null;
+
+  if (liveAudioContext) {
+    await liveAudioContext.close();
+
+    liveAudioContext =
+      null;
+  }
+
+  if (liveAudioStream) {
+    liveAudioStream
+      .getTracks()
+      .forEach(track => {
+        track.stop();
+      });
+
+    liveAudioStream =
+      null;
+  }
+
+  console.log(
+    'Live audio stream stopped.',
+  );
+}
+
+inputSourceInputs.forEach(input => {
+  input.addEventListener(
+    'change',
+    async event => {
+      if (!event.target.checked) {
+        return;
+      }
+
+      const selectedSource =
+        event.target.value;
+
+      if (selectedSource === 'manual') {
+        state.inputSource = 'manual';
+
+        inputLevelInput.disabled = false;
+
+        hideLiveAudioInfo();
+
+        await stopLiveAudio();
+
+        state.input =
+          state.manualInput;
+
+        render();
+
+        updateRangeFill(
+          inputLevelInput,
+        );
+
+        return;
+      }
+
+      if (selectedSource !== 'live') {
+        return;
+      }
+
+      try {
+        showLiveAudioInfo(
+          'Requesting audio access…',
+        );
+
+        await startLiveAudio();
+
+        state.inputSource = 'live';
+
+        inputLevelInput.disabled = true;
+
+        showLiveAudioInfo();
+      } catch (error) {
+        console.error(
+          'Live audio could not be started:',
+          error,
+        );
+
+        state.inputSource = 'manual';
+
+        inputLevelInput.disabled = false;
+
+        state.input =
+          state.manualInput;
+
+        const manualInput =
+          document.querySelector(
+            'input[name="input-source"][value="manual"]',
+          );
+
+        if (manualInput) {
+          manualInput.checked = true;
+        }
+
+        if (error.name === 'NotAllowedError') {
+          showLiveAudioInfo(
+            'Audio input access denied.',
+          );
+        } else if (error.name === 'NotFoundError') {
+          showLiveAudioInfo(
+            'No audio input device found.',
+          );
+        } else {
+          showLiveAudioInfo(
+            'Audio input could not be started.',
+          );
+        }
+
+        render();
+
+        updateRangeFill(
+          inputLevelInput,
+        );
+      }
+    },
+  );
+});
+
 
 baseInput.addEventListener(
   'input',
@@ -311,6 +728,10 @@ sensitivityInput.addEventListener(
 inputLevelInput.addEventListener(
   'input',
   event => {
+    if (state.inputSource !== 'manual') {
+      return;
+    }
+
     const newValue =
       Number(event.target.value);
 
@@ -318,7 +739,9 @@ inputLevelInput.addEventListener(
       return;
     }
 
+    state.manualInput = newValue;
     state.input = newValue;
+
     render();
   },
 );
@@ -437,3 +860,6 @@ rangeInputs.forEach((input) => {
     updateRangeFill(input);
   });
 });
+
+
+

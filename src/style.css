@@ -58,8 +58,11 @@ input {
   gap: 1.5rem;
 
   width: min(1080px, calc(100% - 2rem));
-  margin: 2rem auto;
-  padding: 2rem 0;
+  margin: 1.5rem auto;
+  padding-top: 2rem;
+  padding-right: 0;
+  padding-bottom: 0.5rem;
+  padding-left: 0;
 }
 .particle-section {
   position: relative;
@@ -506,8 +509,9 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 
 #transfer-chart {
   display: block;
-  width: 100%;
+  width: 92%;
   height: auto;
+  margin: 0 auto;
 }
 
 .chart-axis path,
@@ -1551,4 +1555,194 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 .site-footer-social-link:hover,
 .site-footer-social-link:focus-visible {
   color: var(--color-cream);
+}
+
+
+.simulation-input-control {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.8rem;
+
+  min-width: 22rem;
+}
+
+.input-source-selector {
+  display: flex;
+  align-items: center;
+
+  gap: 1.4rem;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+}
+
+.input-source-selector legend {
+  width: 100%;
+  margin-bottom: 0.8rem;
+
+  color: var(--muted);
+
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.input-source-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+
+  color: rgba(238, 232, 213, 0.65);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.input-source-option input {
+  width: 1.05rem;
+  height: 1.05rem;
+  font-size: 0.86rem;
+  gap: 0.65rem;
+  border: 1.5px solid rgba(238, 232, 213, 0.75);
+}
+
+.input-source-option span {
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+
+.simulation-input-control .input-level-control {
+  margin: 0;
+  margin-top: 1.25rem;
+}
+
+.input-source-selector {
+  column-gap: 1.8rem;
+}
+
+.input-level-control input:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+@media (max-width: 600px) {
+  .simulation-input-control {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .input-source-selector {
+    flex-wrap: wrap;
+  }
+}
+
+
+
+
+.live-audio-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  margin: -0.6rem 0 0;
+}
+
+.live-audio-info[hidden] {
+  display: none;
+}
+
+.live-audio-status,
+.live-audio-privacy {
+  margin: 0;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+}
+
+.live-audio-status {
+  color: var(--accent);
+
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.live-audio-privacy {
+  margin: 0;
+  color: rgba(238, 232, 213, 0.9);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  letter-spacing: 0.015em;
+}
+
+.input-source-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.input-source-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  color: rgba(238, 232, 213, 0.45);
+  opacity: 1;
+
+  flex-shrink: 0;
+}
+
+.input-source-option input[value="live"]:checked
+  + .input-source-icon {
+  color: #ff705c;
+  
+}
+
+.input-source-option input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: 0;
+
+  border: 2px solid #eee8d5;
+  border-radius: 50%;
+  background: #000;
+
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.input-source-option input[type="radio"]:checked {
+  background:
+    radial-gradient(
+      circle,
+      #eee8d5 0 38%,
+      #000 42%
+    );
 }

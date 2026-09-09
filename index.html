@@ -428,18 +428,103 @@
           </h3>
         </div>
 
-        <div class="control control--horizontal">
-          <div class="control-heading">
-            <label for="input-level">
-              Input Level
+        <div class="simulation-input-control">
+
+          <fieldset class="input-source-selector">
+            <legend>
+              Input Source
+            </legend>
+
+            <label class="input-source-option">
+              <input
+                type="radio"
+                name="input-source"
+                value="manual"
+                checked
+              >
+
+              <span>
+                Manual
+              </span>
             </label>
 
-            <output id="input-level-value" for="input-level">
-              0
-            </output>
+            <label class="input-source-option">
+            <input
+              type="radio"
+              name="input-source"
+              value="live"
+            >
+
+            <svg
+              class="input-source-icon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="
+                  M12 14
+                  A3 3 0 0 0 15 11
+                  V5
+                  A3 3 0 0 0 9 5
+                  V11
+                  A3 3 0 0 0 12 14
+
+                  M18 11
+                  A6 6 0 0 1 6 11
+
+                  M12 17
+                  V21
+
+                  M9 21
+                  H15
+                "
+              />
+            </svg>
+
+            <span>
+              Live Audio
+            </span>
+          </label>
+          </fieldset>
+          <div
+            id="live-audio-info"
+            class="live-audio-info"
+            aria-live="polite"
+            hidden
+          >
+            <p
+              id="live-audio-status"
+              class="live-audio-status"
+            >
+              Listening…
+            </p>
+
+            <p class="live-audio-privacy">
+              Processed locally in your browser. Not uploaded.
+            </p>
           </div>
 
-          <input id="input-level" type="range" min="0" max="1" step="0.01" value="0">
+          <div class="control control--horizontal input-level-control">
+            <div class="control-heading">
+              <label for="input-level">
+                Input Level
+              </label>
+
+              <output id="input-level-value" for="input-level">
+                0
+              </output>
+            </div>
+
+            <input
+              id="input-level"
+              type="range"
+              min="0"
+              max="1"
+              step="0.01"
+              value="0"
+            >
+          </div>
+
         </div>
 
         <dl class="live-values">
@@ -463,7 +548,7 @@
 
   <section
     id="specifications"
-    class="content-section reveal-section particle-section"
+    class="content-section particle-section"
     aria-labelledby="specifications-heading"
   >
       <div
