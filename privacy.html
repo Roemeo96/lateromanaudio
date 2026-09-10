@@ -2,6 +2,31 @@
 <html lang="en">
 
 <head>
+    <script>
+  (() => {
+    let storedTheme = null;
+
+    try {
+      storedTheme =
+        localStorage.getItem("theme");
+    } catch {
+      // Use system preference if storage is unavailable.
+    }
+
+    const systemTheme =
+      window.matchMedia(
+        "(prefers-color-scheme: light)",
+      ).matches
+        ? "light"
+        : "dark";
+
+    document.documentElement.dataset.theme =
+      storedTheme === "light"
+      || storedTheme === "dark"
+        ? storedTheme
+        : systemTheme;
+  })();
+</script>
     <meta charset="UTF-8">
 
     <meta
