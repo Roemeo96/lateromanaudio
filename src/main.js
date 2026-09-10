@@ -21,6 +21,12 @@ import {
   createPedalSimulation,
 } from './pedal-simulation.js';
 
+import {
+  initializeMobileMenu,
+} from './mobile-menu.js';
+
+initializeMobileMenu();
+
 initializePurchaseControls();
 
 const pedalSimulation =
