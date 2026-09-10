@@ -295,6 +295,16 @@
 /* Mobile */
 
 @media (max-width: 900px) {
+
+
+.site-header-theme-toggle {
+  width: 100%;
+  height: auto;
+  padding: 0.85rem 0;
+
+  justify-content: flex-start;
+}
+
   .site-header {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
