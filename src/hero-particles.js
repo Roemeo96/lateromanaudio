@@ -173,8 +173,6 @@ export async function initializeSectionParticles() {
     initializeParticles("hero-particles"),
     initializeParticles("features-particles"),
     initializeParticles("specifications-particles"),
-
-    initializeParticles("simulation-showcase-particles"),
   ]);
 }
 
@@ -194,7 +192,7 @@ export function updateParticleWobble(currentOutput) {
     normalizedPosition * 1.5;
 
   const minimumOpacity =
-    0.3 + normalizedPosition * 0.25;
+    0.2 + normalizedPosition * 0.25;
 
   const maximumOpacity =
     0.7 + normalizedPosition * 0.25;

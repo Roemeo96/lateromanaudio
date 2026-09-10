@@ -1,0 +1,31 @@
+.particle-section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+
+.section-particles canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+.content-section.particle-section {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  padding-inline: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.section-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
