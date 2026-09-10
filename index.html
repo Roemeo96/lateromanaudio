@@ -51,20 +51,51 @@
 
 <body>
   <script type="module" src="/src/snipcart.js"></script>
+
+
   <header class="site-header">
-    <a class="site-header-brand" href="/" aria-label="Late Roman Audio – Home">
+    <a
+      class="site-header-brand"
+      href="/"
+      aria-label="Late Roman Audio – Home"
+    >
       <span class="site-header-wordmark">
         Late Roman Avdio
       </span>
 
-      <span class="site-header-symbol" aria-hidden="true">
+      <span
+        class="site-header-symbol"
+        aria-hidden="true"
+      >
         <span></span>
         <span></span>
         <span></span>
       </span>
     </a>
 
-    <nav class="site-header-navigation" aria-label="Main navigation">
+    <button
+      class="site-header-menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-header-navigation"
+      aria-label="Open navigation"
+      hidden
+    >
+      <span
+        class="site-header-menu-icon"
+        aria-hidden="true"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </button>
+
+    <nav
+      id="site-header-navigation"
+      class="site-header-navigation"
+      aria-label="Main navigation"
+    >
       <a href="#pedal">
         Pedal
       </a>
@@ -99,12 +130,14 @@
             stroke-linecap="round"
             stroke-linejoin="round"
           />
+
           <circle
             cx="10"
             cy="19"
             r="1.3"
             fill="currentColor"
           />
+
           <circle
             cx="18"
             cy="19"
@@ -117,7 +150,9 @@
           Cart
         </span>
 
-        <span class="site-header-cart-count snipcart-items-count"></span>
+        <span
+          class="site-header-cart-count snipcart-items-count"
+        ></span>
       </button>
     </nav>
   </header>
@@ -637,7 +672,7 @@
       Privacy Policy
     </a>
 
-    <a href="mailto:contact@lateromanaudio.de">
+    <a href="mailto:info@lateromanaudio.de">
       Contact
     </a>
 
