@@ -1,0 +1,293 @@
+.routing-section {
+  width: 100%;
+  overflow: hidden;
+}
+
+.routing-diagram {
+  --routing-input: 1;
+  --routing-output: 1;
+
+  width: 100%;
+  margin-top: 3rem;
+
+  overflow-x: auto;
+}
+
+.routing-svg {
+  display: block;
+
+  width: 100%;
+  min-width: 760px;
+  height: auto;
+
+  color: var(--text);
+}
+
+
+/* Devices */
+
+.routing-device rect {
+  fill:
+    rgb(var(--text-rgb) / 2.5%);
+
+  stroke:
+    rgb(var(--text-rgb) / 28%);
+
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+
+  transition:
+    stroke 180ms ease,
+    fill 180ms ease;
+}
+
+.routing-device:hover rect {
+  fill:
+    rgb(var(--text-rgb) / 5%);
+
+  stroke:
+    rgb(var(--text-rgb) / 55%);
+}
+
+.routing-device--weltgeist rect {
+  stroke:
+    rgb(var(--text-rgb) / 45%);
+}
+
+
+/* Device typography */
+
+.routing-device-eyebrow {
+  fill: var(--muted);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.routing-device-name {
+  fill: var(--text);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.routing-device-name--weltgeist {
+  font-size: 25px;
+  letter-spacing: 5px;
+}
+
+.routing-device-description {
+  fill: var(--muted);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 9px;
+  letter-spacing: 1.7px;
+}
+
+
+/* Ports */
+
+.routing-port circle {
+  fill: var(--background);
+
+  stroke: var(--text);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+}
+
+.routing-port text {
+  fill: var(--muted);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+
+.routing-port--expression circle {
+  fill: var(--background);
+  stroke: var(--tertiary);
+}
+
+.routing-port--reactive circle {
+  fill: var(--tertiary);
+
+  fill-opacity:
+    calc(
+      0.18
+      + var(--routing-output) * 0.68
+    );
+
+  transition:
+    fill-opacity 120ms linear;
+}
+
+
+.routing-endpoint circle {
+  fill: var(--text);
+}
+
+.routing-endpoint text {
+  fill: var(--muted);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 10px;
+  letter-spacing: 1.8px;
+}
+
+
+.routing-cable {
+  fill: none;
+
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.routing-cable--audio {
+  stroke:
+    rgb(var(--text-rgb) / 72%);
+
+  opacity:
+    calc(
+      0.45
+      + var(--routing-input) * 0.55
+    );
+
+  transition:
+    opacity 120ms linear;
+}
+
+.routing-cable--expression {
+  stroke: var(--tertiary);
+
+  stroke-dasharray: 6 6;
+
+  opacity:
+    calc(
+      0.3
+      + var(--routing-output) * 0.7
+    );
+
+  transition:
+    opacity 120ms linear;
+}
+
+.routing-arrow--audio {
+  fill: var(--text);
+}
+
+.routing-arrow--expression {
+  fill: var(--tertiary);
+}
+
+.routing-cable-label {
+  fill:
+    rgb(var(--text-rgb) / 42%);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+
+.routing-cable-label--expression {
+  fill: var(--tertiary);
+}
+
+
+/* Legend */
+
+.routing-legend {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  margin-top: 1.25rem;
+
+  color: var(--muted);
+
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.routing-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.routing-legend-line {
+  display: block;
+
+  width: 2rem;
+  height: 1px;
+}
+
+.routing-legend-line--audio {
+  background:
+    rgb(var(--text-rgb) / 65%);
+}
+
+.routing-legend-line--expression {
+  height: 0;
+
+  border-top:
+    1px dashed var(--tertiary);
+}
+
+
+@media (max-width: 700px) {
+  .routing-diagram {
+    margin-top: 2rem;
+  }
+
+  .routing-legend {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    gap: 0.8rem 1.5rem;
+  }
+}
+
+
+.routing-port--audio-reactive circle {
+  fill: var(--text);
+
+  fill-opacity:
+    calc(
+      0.08
+      + var(--routing-input) * 0.5
+    );
+
+  transition:
+    fill-opacity 120ms linear;
+}

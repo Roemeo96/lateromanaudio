@@ -752,6 +752,444 @@
   </section>
 
   <section
+  class="routing-section reveal-section"
+  aria-labelledby="routing-heading"
+>
+  <div class="section-content">
+    <p class="section-eyebrow">
+      Signal Routing
+    </p>
+
+    <h2
+      id="routing-heading"
+      class="section-heading"
+    >
+      One Signal. Two Paths.
+    </h2>
+
+    <div class="routing-diagram">
+
+
+<svg
+  class="routing-svg"
+  viewBox="0 0 1000 520"
+  role="img"
+  aria-label="Guitar routed through Weltgeist and tremolo to an amplifier. EXP 1 controls the tremolo expression input."
+>
+  <defs>
+    <marker
+      id="routing-arrow-audio"
+      viewBox="0 0 10 10"
+      refX="8"
+      refY="5"
+      markerWidth="5"
+      markerHeight="5"
+      orient="auto"
+    >
+      <path
+        d="M 0 0 L 10 5 L 0 10 Z"
+        class="routing-arrow--audio"
+      />
+    </marker>
+
+    <marker
+      id="routing-arrow-expression"
+      viewBox="0 0 10 10"
+      refX="8"
+      refY="5"
+      markerWidth="5"
+      markerHeight="5"
+      orient="auto"
+    >
+      <path
+        d="M 0 0 L 10 5 L 0 10 Z"
+        class="routing-arrow--expression"
+      />
+    </marker>
+  </defs>
+
+
+  <!-- AUDIO: Guitar -> Weltgeist -->
+
+  <path
+    class="routing-cable routing-cable--audio"
+    d="
+      M 955 160
+      H 840
+      Q 820 160 820 180
+      V 230
+    "
+    marker-end="url(#routing-arrow-audio)"
+  />
+
+
+  <!-- AUDIO: Weltgeist -> Tremolo -->
+
+  <path
+    class="routing-cable routing-cable--audio"
+    d="
+      M 585 230
+      V 160
+      Q 585 145 570 145
+      H 300
+      Q 285 145 285 160
+      V 230
+    "
+    marker-end="url(#routing-arrow-audio)"
+  />
+
+
+  <!-- AUDIO: Tremolo -> Amp -->
+
+  <path
+    class="routing-cable routing-cable--audio"
+    d="
+      M 155 230
+      V 180
+      Q 155 160 135 160
+      H 45
+    "
+    marker-end="url(#routing-arrow-audio)"
+  />
+
+
+  <!-- EXP 1 -> Tremolo EXP -->
+
+  <path
+    class="
+      routing-cable
+      routing-cable--expression
+    "
+    d="
+      M 745 230
+      V 80
+      Q 745 60 725 60
+      H 240
+      Q 220 60 220 80
+      V 230
+    "
+    marker-end="url(#routing-arrow-expression)"
+  />
+
+
+  <!-- Labels -->
+
+  <text
+    x="480"
+    y="52"
+    text-anchor="middle"
+    class="
+      routing-cable-label
+      routing-cable-label--expression
+    "
+  >
+    EXP 1
+  </text>
+
+  <text
+    x="440"
+    y="137"
+    text-anchor="middle"
+    class="routing-cable-label"
+  >
+    AUDIO
+  </text>
+
+
+  <!-- AMP -->
+
+  <g class="routing-endpoint">
+    <circle
+      cx="45"
+      cy="160"
+      r="5"
+    />
+
+    <text
+      x="45"
+      y="132"
+      text-anchor="middle"
+    >
+      AMP
+    </text>
+  </g>
+
+
+  <!-- TREMOLO -->
+
+  <g
+    class="
+      routing-device
+      routing-device--tremolo
+    "
+  >
+    <rect
+      x="120"
+      y="230"
+      width="200"
+      height="220"
+      rx="3"
+    />
+
+    <!-- OUT -->
+
+    <g class="routing-port routing-port--audio-reactive">
+      <text
+        x="155"
+        y="204"
+        text-anchor="middle"
+      >
+        OUT
+      </text>
+
+      <circle
+        cx="155"
+        cy="230"
+        r="7"
+      />
+    </g>
+
+    <!-- EXP -->
+
+    <g
+      class="
+        routing-port
+        routing-port--expression
+        routing-port--reactive
+      "
+    >
+      <text
+        x="220"
+        y="204"
+        text-anchor="middle"
+      >
+        EXP
+      </text>
+
+      <circle
+        cx="220"
+        cy="230"
+        r="7"
+      />
+    </g>
+
+    <!-- IN -->
+
+    <g class="routing-port routing-port--audio-reactive">
+      <text
+        x="285"
+        y="204"
+        text-anchor="middle"
+      >
+        IN
+      </text>
+
+      <circle
+        cx="285"
+        cy="230"
+        r="7"
+      />
+    </g>
+
+    <text
+      x="220"
+      y="325"
+      text-anchor="middle"
+      class="routing-device-eyebrow"
+    >
+      EFFECT
+    </text>
+
+    <text
+      x="220"
+      y="362"
+      text-anchor="middle"
+      class="routing-device-name"
+    >
+      TREMOLO
+    </text>
+  </g>
+
+
+  <!-- WELTGEIST -->
+
+  <g
+    class="
+      routing-device
+      routing-device--weltgeist
+    "
+  >
+    <rect
+      x="530"
+      y="230"
+      width="330"
+      height="220"
+      rx="3"
+    />
+
+    <!-- OUTPUT -->
+
+    <g class="routing-port routing-port--audio-reactive">
+      <text
+        x="585"
+        y="204"
+        text-anchor="middle"
+      >
+        OUTPUT
+      </text>
+
+      <circle
+        cx="585"
+        cy="230"
+        r="7"
+      />
+    </g>
+
+    <!-- EXP 2: visible but unused -->
+
+    <g
+      class="
+        routing-port
+        routing-port--expression
+      "
+    >
+      <text
+        x="665"
+        y="204"
+        text-anchor="middle"
+      >
+        EXP 2
+      </text>
+
+      <circle
+        cx="665"
+        cy="230"
+        r="7"
+      />
+    </g>
+
+    <!-- EXP 1: controlled by simulation -->
+
+    <g
+      class="
+        routing-port
+        routing-port--expression
+        routing-port--reactive
+      "
+    >
+      <text
+        x="745"
+        y="204"
+        text-anchor="middle"
+      >
+        EXP 1
+      </text>
+
+      <circle
+        cx="745"
+        cy="230"
+        r="7"
+      />
+    </g>
+
+    <!-- INPUT -->
+
+    <g class="routing-port routing-port--audio-reactive">
+      <text
+        x="820"
+        y="204"
+        text-anchor="middle"
+      >
+        INPUT
+      </text>
+
+      <circle
+        cx="820"
+        cy="230"
+        r="7"
+      />
+    </g>
+
+    <text
+      x="695"
+      y="312"
+      text-anchor="middle"
+      class="routing-device-eyebrow"
+    >
+      LATE ROMAN AUDIO
+    </text>
+
+    <text
+      x="695"
+      y="350"
+      text-anchor="middle"
+      class="
+        routing-device-name
+        routing-device-name--weltgeist
+      "
+    >
+      WELTGEIST
+    </text>
+
+    <text
+      x="695"
+      y="382"
+      text-anchor="middle"
+      class="routing-device-description"
+    >
+      DYNAMICS → EXPRESSION
+    </text>
+  </g>
+
+
+  <!-- GUITAR -->
+
+  <g class="routing-endpoint">
+    <circle
+      cx="955"
+      cy="160"
+      r="5"
+    />
+
+    <text
+      x="955"
+      y="132"
+      text-anchor="middle"
+    >
+      GUITAR
+    </text>
+  </g>
+</svg>
+
+    </div>
+
+    <div
+      class="routing-legend"
+      aria-hidden="true"
+    >
+      <span class="routing-legend-item">
+        <span
+          class="
+            routing-legend-line
+            routing-legend-line--audio
+          "
+        ></span>
+        Audio signal
+      </span>
+
+      <span class="routing-legend-item">
+        <span
+          class="
+            routing-legend-line
+            routing-legend-line--expression
+          "
+        ></span>
+        Expression control
+      </span>
+    </div>
+  </div>
+</section>
+  <section
     id="specifications"
     class="content-section particle-section"
     aria-labelledby="specifications-heading"

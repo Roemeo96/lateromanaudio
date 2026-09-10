@@ -19,6 +19,10 @@ import {
   updateParticleWobble,
 } from './hero-particles.js';
 
+import {
+  updateRoutingVisualization,
+} from './routing-visualization.js';
+
 export function createPedalSimulation() {
   const state = {
     base: 0,
@@ -213,13 +217,21 @@ export function createPedalSimulation() {
     });
   }
 
-  function render() {
-    updateTargetOutput();
-    renderControls();
-    renderInput();
-    renderOutput();
-    renderChartPosition();
-  }
+  function renderRoutingVisualization() {
+  updateRoutingVisualization({
+    currentInput: state.input,
+    currentOutput: state.currentOutput,
+  });
+}
+
+function render() {
+  updateTargetOutput();
+  renderControls();
+  renderInput();
+  renderOutput();
+  renderChartPosition();
+  renderRoutingVisualization();
+}
 
   const liveAudio =
     createLiveAudioInput({
@@ -234,9 +246,10 @@ export function createPedalSimulation() {
         updateTargetOutput();
         renderInput();
         renderChartPosition();
+        renderRoutingVisualization();
 
         updateRangeFill(
-          inputLevelInput,
+        inputLevelInput,
         );
       },
     });
@@ -315,11 +328,12 @@ export function createPedalSimulation() {
 
     renderOutput();
     renderChartPosition();
+    renderRoutingVisualization();
 
     try {
-      updateParticleWobble(
+    updateParticleWobble(
         state.currentOutput,
-      );
+    );
     } catch (error) {
       console.error(
         'Particle wobble could not be updated:',
@@ -392,8 +406,9 @@ export function createPedalSimulation() {
             state.manualInput;
 
           updateTargetOutput();
-          renderInput();
-          renderChartPosition();
+            renderInput();
+            renderChartPosition();
+            renderRoutingVisualization();
 
           updateRangeFill(
             inputLevelInput,
@@ -485,8 +500,9 @@ export function createPedalSimulation() {
           }
 
           updateTargetOutput();
-          renderInput();
-          renderChartPosition();
+            renderInput();
+            renderChartPosition();
+            renderRoutingVisualization();
 
           updateRangeFill(
             inputLevelInput,
@@ -570,8 +586,9 @@ export function createPedalSimulation() {
         newValue;
 
       updateTargetOutput();
-      renderInput();
-      renderChartPosition();
+        renderInput();
+        renderChartPosition();
+        renderRoutingVisualization();
     },
   );
 
