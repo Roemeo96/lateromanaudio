@@ -1,0 +1,151 @@
+
+.landing-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 8rem 1rem 8rem;
+
+  color: #eee8d5;
+  background: #000;
+
+  text-align: left;
+}
+
+.landing-eyebrow {
+  margin: 0;
+
+  color: rgba(238, 232, 213, 0.5);
+
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.landing-product-name {
+  margin: 0.4rem 0 1.5rem;
+
+  color: var(--text);
+
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+
+.landing-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: clamp(1.25rem, 5vw, 1.75rem);
+
+  width: min(100%, 500px);
+}
+
+.text-logo {
+  color: #eee8d5;
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: clamp(1.8rem, 7vw, 2.375rem);
+  font-weight: 900;
+  line-height: 1.1;
+
+  letter-spacing: 0.22em;
+  text-align: right;
+  text-transform: uppercase;
+
+  transform: scaleY(1.08);
+  transform-origin: center;
+}
+
+.logo-symbol {
+  display: flex;
+
+  flex: 0 0 auto;
+
+  gap: 10px;
+
+  height: clamp(95px, 22vw, 130px);
+}
+
+.logo-bar-group {
+  display: flex;
+
+  gap: 5px;
+
+  height: 100%;
+}
+
+.logo-bar-group span {
+  display: block;
+
+  width: 3px;
+  height: 100%;
+
+  background: #eee8d5;
+}
+
+.landing-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  width: min(100%, 700px);
+  margin-top: 2.5rem;
+}
+
+
+.landing-tagline {
+  margin: 0;
+  color: #eee8d5;
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.landing-tagline {
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
+  letter-spacing: clamp(0.18em, 1vw, 0.35em);
+  line-height: 1.7;
+}
+
+
+
+@media (max-width: 650px) {
+  .landing-hero {
+    padding-inline: 1.25rem;
+  }
+
+  .landing-logo {
+    gap: 1rem;
+  }
+
+  .text-logo {
+    letter-spacing: 0.15em;
+  }
+
+  .logo-symbol {
+    gap: 7px;
+  }
+
+  .logo-bar-group {
+    gap: 4px;
+  }
+
+  .landing-tagline {
+    letter-spacing: 0.2em;
+  }
+}

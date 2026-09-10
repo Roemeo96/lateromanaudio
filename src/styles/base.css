@@ -1,0 +1,68 @@
+:root {
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  --background: #000000;
+  --border: rgb(255 255 255 / 12%);
+  --muted: #a8aa9f;
+  --text: #eee8d5;
+  --accent: #eee8d5;
+  --tertiary: #ff765f;
+
+  color: var(--accent);
+  background: var(--background);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgb(200 255 77 / 8%),
+      transparent 35rem
+    ),
+    var(--background);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 9rem;
+  }
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+
+  border: 0;
+}
