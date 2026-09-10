@@ -11,10 +11,11 @@ const MARGIN = {
 };
 
 /**
- * 
- *
  * @param {SVGSVGElement} svgElement
- * @returns {{ update: Function }}
+ * @returns {{
+ *   updateCurve: Function,
+ *   updateCurrentPosition: Function
+ * }}
  */
 export function createTransferChart(svgElement) {
   const svg = d3
@@ -127,27 +128,34 @@ export function createTransferChart(svgElement) {
     .attr('class', 'current-point')
     .attr('r', 8);
 
-
   /**
-   * 
+   * Aktualisiert ausschließlich die Transfer-Kennlinie.
    *
-   * @param {object} data
-   * @param {{ input: number, output: number }[]} data.points
-   * @param {number} data.currentInput
-   * @param {number} data.currentOutput
+   * @param {{ input: number, output: number }[]} points
    */
-  function update({
-    points,
-    currentInput,
-    currentOutput,
-  }) {
-
+  function updateCurve(points) {
     curvePath
       .datum(points)
       .attr('d', lineGenerator);
+  }
 
-    const pointX = xScale(currentInput);
-    const pointY = yScale(currentOutput);
+  /**
+   * Aktualisiert ausschließlich den aktuellen Arbeitspunkt
+   * und die zugehörigen Hilfslinien.
+   *
+   * @param {object} data
+   * @param {number} data.currentInput
+   * @param {number} data.currentOutput
+   */
+  function updateCurrentPosition({
+    currentInput,
+    currentOutput,
+  }) {
+    const pointX =
+      xScale(currentInput);
+
+    const pointY =
+      yScale(currentOutput);
 
     inputGuide
       .attr('x1', pointX)
@@ -167,6 +175,7 @@ export function createTransferChart(svgElement) {
   }
 
   return {
-    update,
+    updateCurve,
+    updateCurrentPosition,
   };
 }

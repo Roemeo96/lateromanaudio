@@ -128,35 +128,45 @@ export function createPedalSimulation() {
     };
   }
 
-  state.targetOutput = calculateOutput(
-    state.input,
-    getSettings(),
+  let curvePoints =
+    createCurvePoints(
+      getSettings(),
+    );
+
+  chart.updateCurve(
+    curvePoints,
   );
+
+  function updateCurvePoints() {
+    curvePoints =
+      createCurvePoints(
+        getSettings(),
+      );
+
+    chart.updateCurve(
+      curvePoints,
+    );
+  }
+
+  function updateTargetOutput() {
+    state.targetOutput =
+      calculateOutput(
+        state.input,
+        getSettings(),
+      );
+  }
+
+  updateTargetOutput();
 
   state.currentOutput =
     state.targetOutput;
 
-  function render() {
-    const settings =
-      getSettings();
-
-    const points =
-      createCurvePoints(settings);
-
-    state.targetOutput =
-      calculateOutput(
-        state.input,
-        settings,
-      );
-
+  function renderControls() {
     baseValue.textContent =
       state.base.toFixed(2);
 
     sensitivityValue.textContent =
       state.sensitivity.toFixed(1);
-
-    inputLevelValue.textContent =
-      state.input.toFixed(2);
 
     attackValue.textContent =
       `${state.attackMs} ms`;
@@ -164,20 +174,11 @@ export function createPedalSimulation() {
     releaseValue.textContent =
       `${state.releaseMs} ms`;
 
-    currentInputValue.textContent =
-      state.input.toFixed(2);
-
-    currentOutputValue.textContent =
-      state.currentOutput.toFixed(2);
-
     baseInput.value =
       String(state.base);
 
     sensitivityInput.value =
       String(state.sensitivity);
-
-    inputLevelInput.value =
-      String(state.input);
 
     attackInput.value =
       String(state.attackMs);
@@ -187,12 +188,37 @@ export function createPedalSimulation() {
 
     invertInput.checked =
       state.invert;
+  }
 
-    chart.update({
-      points,
+  function renderInput() {
+    inputLevelValue.textContent =
+      state.input.toFixed(2);
+
+    currentInputValue.textContent =
+      state.input.toFixed(2);
+
+    inputLevelInput.value =
+      String(state.input);
+  }
+
+  function renderOutput() {
+    currentOutputValue.textContent =
+      state.currentOutput.toFixed(2);
+  }
+
+  function renderChartPosition() {
+    chart.updateCurrentPosition({
       currentInput: state.input,
       currentOutput: state.currentOutput,
     });
+  }
+
+  function render() {
+    updateTargetOutput();
+    renderControls();
+    renderInput();
+    renderOutput();
+    renderChartPosition();
   }
 
   const liveAudio =
@@ -205,13 +231,33 @@ export function createPedalSimulation() {
         state.input =
           smoothedInput;
 
-        render();
+        updateTargetOutput();
+        renderInput();
+        renderChartPosition();
 
         updateRangeFill(
           inputLevelInput,
         );
       },
     });
+
+  let inputSourceRequestId = 0;
+
+  let liveAudioOperation =
+    Promise.resolve();
+
+  function runLiveAudioOperation(operation) {
+    const operationPromise =
+      liveAudioOperation.then(
+        operation,
+        operation,
+      );
+
+    liveAudioOperation =
+      operationPromise.catch(() => {});
+
+    return operationPromise;
+  }
 
   let previousFrameTime = null;
 
@@ -224,12 +270,14 @@ export function createPedalSimulation() {
       previousFrameTime = frameTime;
     }
 
-    const elapsedMs = Math.min(
-      frameTime - previousFrameTime,
-      50,
-    );
+    const elapsedMs =
+      Math.min(
+        frameTime - previousFrameTime,
+        50,
+      );
 
-    previousFrameTime = frameTime;
+    previousFrameTime =
+      frameTime;
 
     const difference =
       state.targetOutput
@@ -249,9 +297,13 @@ export function createPedalSimulation() {
         state.targetOutput;
     } else {
       const maximumChange =
-        (5 / durationMs) * elapsedMs;
+        (5 / durationMs)
+        * elapsedMs;
 
-      if (Math.abs(difference) <= maximumChange) {
+      if (
+        Math.abs(difference)
+        <= maximumChange
+      ) {
         state.currentOutput =
           state.targetOutput;
       } else {
@@ -261,7 +313,8 @@ export function createPedalSimulation() {
       }
     }
 
-    render();
+    renderOutput();
+    renderChartPosition();
 
     try {
       updateParticleWobble(
@@ -269,7 +322,7 @@ export function createPedalSimulation() {
       );
     } catch (error) {
       console.error(
-        "Particle wobble could not be updated:",
+        'Particle wobble could not be updated:',
         error,
       );
     }
@@ -278,18 +331,24 @@ export function createPedalSimulation() {
   function showLiveAudioInfo(
     message = '',
   ) {
-    liveAudioInfo.hidden = false;
+    liveAudioInfo.hidden =
+      false;
 
     if (message) {
-      liveAudioStatus.textContent = message;
-      liveAudioStatus.hidden = false;
+      liveAudioStatus.textContent =
+        message;
+
+      liveAudioStatus.hidden =
+        false;
     } else {
-      liveAudioStatus.hidden = true;
+      liveAudioStatus.hidden =
+        true;
     }
   }
 
   function hideLiveAudioInfo() {
-    liveAudioInfo.hidden = true;
+    liveAudioInfo.hidden =
+      true;
   }
 
   inputSourceInputs.forEach(input => {
@@ -300,22 +359,41 @@ export function createPedalSimulation() {
           return;
         }
 
+        const requestId =
+          ++inputSourceRequestId;
+
         const selectedSource =
           event.target.value;
 
-        if (selectedSource === 'manual') {
-          state.inputSource = 'manual';
+        if (
+          selectedSource
+          === 'manual'
+        ) {
+          state.inputSource =
+            'manual';
 
-          inputLevelInput.disabled = false;
+          inputLevelInput.disabled =
+            false;
 
           hideLiveAudioInfo();
 
-          await liveAudio.stop();
+          await runLiveAudioOperation(
+            () => liveAudio.stop(),
+          );
+
+          if (
+            requestId
+            !== inputSourceRequestId
+          ) {
+            return;
+          }
 
           state.input =
             state.manualInput;
 
-          render();
+          updateTargetOutput();
+          renderInput();
+          renderChartPosition();
 
           updateRangeFill(
             inputLevelInput,
@@ -324,7 +402,10 @@ export function createPedalSimulation() {
           return;
         }
 
-        if (selectedSource !== 'live') {
+        if (
+          selectedSource
+          !== 'live'
+        ) {
           return;
         }
 
@@ -333,22 +414,42 @@ export function createPedalSimulation() {
             'Requesting audio access…',
           );
 
-          await liveAudio.start();
+          await runLiveAudioOperation(
+            () => liveAudio.start(),
+          );
 
-          state.inputSource = 'live';
+          if (
+            requestId
+            !== inputSourceRequestId
+          ) {
+            return;
+          }
 
-          inputLevelInput.disabled = true;
+          state.inputSource =
+            'live';
+
+          inputLevelInput.disabled =
+            true;
 
           showLiveAudioInfo();
         } catch (error) {
+          if (
+            requestId
+            !== inputSourceRequestId
+          ) {
+            return;
+          }
+
           console.error(
             'Live audio could not be started:',
             error,
           );
 
-          state.inputSource = 'manual';
+          state.inputSource =
+            'manual';
 
-          inputLevelInput.disabled = false;
+          inputLevelInput.disabled =
+            false;
 
           state.input =
             state.manualInput;
@@ -359,14 +460,21 @@ export function createPedalSimulation() {
             );
 
           if (manualInput) {
-            manualInput.checked = true;
+            manualInput.checked =
+              true;
           }
 
-          if (error.name === 'NotAllowedError') {
+          if (
+            error.name
+            === 'NotAllowedError'
+          ) {
             showLiveAudioInfo(
               'Audio input access denied.',
             );
-          } else if (error.name === 'NotFoundError') {
+          } else if (
+            error.name
+            === 'NotFoundError'
+          ) {
             showLiveAudioInfo(
               'No audio input device found.',
             );
@@ -376,7 +484,9 @@ export function createPedalSimulation() {
             );
           }
 
-          render();
+          updateTargetOutput();
+          renderInput();
+          renderChartPosition();
 
           updateRangeFill(
             inputLevelInput,
@@ -390,14 +500,22 @@ export function createPedalSimulation() {
     'input',
     event => {
       const newValue =
-        Number(event.target.value);
+        Number(
+          event.target.value,
+        );
 
-      if (!Number.isFinite(newValue)) {
+      if (
+        !Number.isFinite(newValue)
+      ) {
         return;
       }
 
-      state.base = newValue;
-      render();
+      state.base =
+        newValue;
+
+      updateCurvePoints();
+      updateTargetOutput();
+      renderControls();
     },
   );
 
@@ -405,35 +523,55 @@ export function createPedalSimulation() {
     'input',
     event => {
       const newValue =
-        Number(event.target.value);
+        Number(
+          event.target.value,
+        );
 
-      if (!Number.isFinite(newValue)) {
+      if (
+        !Number.isFinite(newValue)
+      ) {
         return;
       }
 
-      state.sensitivity = newValue;
-      render();
+      state.sensitivity =
+        newValue;
+
+      updateCurvePoints();
+      updateTargetOutput();
+      renderControls();
     },
   );
 
   inputLevelInput.addEventListener(
     'input',
     event => {
-      if (state.inputSource !== 'manual') {
+      if (
+        state.inputSource
+        !== 'manual'
+      ) {
         return;
       }
 
       const newValue =
-        Number(event.target.value);
+        Number(
+          event.target.value,
+        );
 
-      if (!Number.isFinite(newValue)) {
+      if (
+        !Number.isFinite(newValue)
+      ) {
         return;
       }
 
-      state.manualInput = newValue;
-      state.input = newValue;
+      state.manualInput =
+        newValue;
 
-      render();
+      state.input =
+        newValue;
+
+      updateTargetOutput();
+      renderInput();
+      renderChartPosition();
     },
   );
 
@@ -441,14 +579,20 @@ export function createPedalSimulation() {
     'input',
     event => {
       const newValue =
-        Number(event.target.value);
+        Number(
+          event.target.value,
+        );
 
-      if (!Number.isFinite(newValue)) {
+      if (
+        !Number.isFinite(newValue)
+      ) {
         return;
       }
 
-      state.attackMs = newValue;
-      render();
+      state.attackMs =
+        newValue;
+
+      renderControls();
     },
   );
 
@@ -456,14 +600,20 @@ export function createPedalSimulation() {
     'input',
     event => {
       const newValue =
-        Number(event.target.value);
+        Number(
+          event.target.value,
+        );
 
-      if (!Number.isFinite(newValue)) {
+      if (
+        !Number.isFinite(newValue)
+      ) {
         return;
       }
 
-      state.releaseMs = newValue;
-      render();
+      state.releaseMs =
+        newValue;
+
+      renderControls();
     },
   );
 
@@ -473,7 +623,9 @@ export function createPedalSimulation() {
       state.invert =
         event.target.checked;
 
-      render();
+      updateCurvePoints();
+      updateTargetOutput();
+      renderControls();
     },
   );
 

@@ -14,7 +14,6 @@ export function createLiveAudioInput({
   let liveAudioSamples = null;
   let liveAudioAnimationFrame = null;
 
-  let lastAudioLevelLogTime = 0;
   let smoothedLiveInput = 0;
   let previousAudioFrameTime = null;
 
@@ -137,31 +136,6 @@ export function createLiveAudioInput({
 
     onInput(smoothedInput);
 
-    console.log(
-      'Live audio:',
-      {
-        rms:
-          audioLevel.rms.toFixed(5),
-
-        db:
-          audioLevel.db.toFixed(1),
-
-        normalized:
-          audioLevel.normalized.toFixed(2),
-      },
-    );
-
-    /*
-     * Nur etwa 10x pro Sekunde loggen,
-     * damit die Console nicht zugespammt wird.
-     */
-    if (
-      frameTime - lastAudioLevelLogTime
-      >= 100
-    ) {
-      lastAudioLevelLogTime =
-        frameTime;
-    }
 
     liveAudioAnimationFrame =
       requestAnimationFrame(
