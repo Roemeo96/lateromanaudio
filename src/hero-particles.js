@@ -173,8 +173,6 @@ export async function initializeSectionParticles() {
     initializeParticles("hero-particles"),
     initializeParticles("features-particles"),
     initializeParticles("specifications-particles"),
-
-    initializeParticles("simulation-showcase-particles"),
   ]);
 }
 
