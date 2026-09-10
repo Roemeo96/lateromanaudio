@@ -2,131 +2,179 @@ import { tsParticles } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import { loadWobbleUpdater } from "@tsparticles/updater-wobble";
 
-const particleContainers = [];
+const PARTICLE_CONTAINER_IDS = [
+  "hero-particles",
+  "features-particles",
+  "specifications-particles",
+  "simulation-showcase-particles",
+];
 
+const particleContainers = [];
 const particleWobbleFactors =
   new WeakMap();
 
-const particleOptions = {
-  fullScreen: {
-    enable: false,
-  },
+let particlesEngineReady = false;
+let themeObserver = null;
+let lastKnownOutput = 0;
 
-  background: {
-    color: {
-      value: "transparent",
-    },
-  },
+function getParticleColor() {
+  const rootStyles =
+    getComputedStyle(
+      document.documentElement,
+    );
 
-  fpsLimit: 60,
+  const particleColor =
+    rootStyles
+      .getPropertyValue(
+        "--particle-color",
+      )
+      .trim();
 
-  detectRetina: true,
+  if (particleColor) {
+    return particleColor;
+  }
 
-  interactivity: {
-    detectsOn: "window",
+  return "#eee8d5";
+}
 
-    events: {
-      onClick: {
-        enable: false,
-      },
-
-      onHover: {
-        enable: true,
-        mode: "repulse",
-      },
-
-      resize: {
-        enable: true,
-      },
-    },
-
-    modes: {
-      repulse: {
-        distance: 200,
-        duration: 0.2,
-        speed: 0.05,
-      },
-    },
-  },
-
-  particles: {
-    paint: {
-      color: {
-        value: "#eee8d5",
-      },
-    },
-
-    links: {
+function createParticleOptions() {
+  return {
+    fullScreen: {
       enable: false,
     },
 
-    move: {
-      enable: true,
-      direction: "top",
-      speed: {
-        min: 0.1,
-        max: 0.3,
-      },
-      random: true,
-      straight: false,
-
-      outModes: {
-        default: "out",
+    background: {
+      color: {
+        value: "transparent",
       },
     },
 
-    wobble: {
-      enable: true,
+    fpsLimit: 60,
 
-      distance: {
-        min: 0,
-        max: 0,
+    detectRetina: true,
+
+    interactivity: {
+      detectsOn: "window",
+
+      events: {
+        onClick: {
+          enable: false,
+        },
+
+        onHover: {
+          enable: true,
+          mode: "repulse",
+        },
+
+        resize: {
+          enable: true,
+        },
       },
 
-      speed: {
-        angle: 300,
-        move: 0,
+      modes: {
+        repulse: {
+          distance: 200,
+          duration: 0.2,
+          speed: 0.05,
+        },
       },
     },
 
-    number: {
-      value: 45,
+    particles: {
+      paint: {
+        fill: {
+          enable: true,
 
-      density: {
+          color: {
+            value: getParticleColor(),
+          },
+        },
+      },
+
+      links: {
+        enable: false,
+      },
+
+      move: {
         enable: true,
-        width: 1000,
-        height: 600,
-      },
-    },
+        direction: "top",
 
-    opacity: {
-      value: {
-        min: 0.1,
-        max: 0.6,
+        speed: {
+          min: 0.1,
+          max: 0.3,
+        },
+
+        random: true,
+        straight: false,
+
+        outModes: {
+          default: "out",
+        },
       },
 
-      animation: {
+      wobble: {
         enable: true,
-        speed: 0.2,
-        sync: false,
+
+        distance: {
+          min: 0,
+          max: 0,
+        },
+
+        speed: {
+          angle: 300,
+          move: 0,
+        },
+      },
+
+      number: {
+        value: 45,
+
+        density: {
+          enable: true,
+          width: 1000,
+          height: 600,
+        },
+      },
+
+      opacity: {
+        value: {
+          min: 0.1,
+          max: 0.6,
+        },
+
+        animation: {
+          enable: true,
+          speed: 0.2,
+          sync: false,
+        },
+      },
+
+      shape: {
+        type: "circle",
+      },
+
+      size: {
+        value: {
+          min: 1.5,
+          max: 4,
+        },
       },
     },
 
-    shape: {
-      type: "circle",
-    },
+    pauseOnBlur: true,
+    pauseOnOutsideViewport: true,
+  };
+}
 
-    size: {
-      value: {
-        min: 1.5,
-        max: 4,
-      },
+function clearParticleContainers() {
+  particleContainers.forEach(
+    container => {
+      container.destroy();
     },
-  },
+  );
 
-  pauseOnBlur: true,
-  pauseOnOutsideViewport: true,
-};
+  particleContainers.length = 0;
+}
 
 /**
  * Initialisiert einen einzelnen Partikel-Container.
@@ -141,14 +189,54 @@ async function initializeParticles(containerId) {
     return;
   }
 
-  const container = await tsParticles.load({
-    id: containerId,
-    options: particleOptions,
-  });
+  const container =
+    await tsParticles.load({
+      id: containerId,
+      options: createParticleOptions(),
+    });
 
   if (container) {
     particleContainers.push(container);
   }
+}
+async function initializeAllParticleContainers() {
+  clearParticleContainers();
+
+  await Promise.all(
+    PARTICLE_CONTAINER_IDS.map(
+      containerId =>
+        initializeParticles(containerId),
+    ),
+  );
+
+  updateParticleWobble(lastKnownOutput);
+}
+
+function initializeThemeObserver() {
+  if (themeObserver) {
+    return;
+  }
+
+  themeObserver =
+    new MutationObserver(() => {
+      refreshSectionParticles()
+        .catch(error => {
+          console.error(
+            "Section particles could not be refreshed:",
+            error,
+          );
+        });
+    });
+
+  themeObserver.observe(
+    document.documentElement,
+    {
+      attributes: true,
+      attributeFilter: [
+        "data-theme",
+      ],
+    },
+  );
 }
 
 /**
@@ -165,18 +253,39 @@ export async function initializeSectionParticles() {
     return;
   }
 
-  await loadSlim(tsParticles);
+  if (!particlesEngineReady) {
+    await loadSlim(tsParticles);
+    await loadWobbleUpdater(tsParticles);
 
-  await loadWobbleUpdater(tsParticles);
+    particlesEngineReady = true;
+  }
 
-  await Promise.all([
-    initializeParticles("hero-particles"),
-    initializeParticles("features-particles"),
-    initializeParticles("specifications-particles"),
-  ]);
+  initializeThemeObserver();
+
+  await initializeAllParticleContainers();
+}
+
+export async function refreshSectionParticles() {
+  const prefersReducedMotion =
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+  if (prefersReducedMotion) {
+    return;
+  }
+
+  if (!particlesEngineReady) {
+    return;
+  }
+
+  await initializeAllParticleContainers();
 }
 
 export function updateParticleWobble(currentOutput) {
+  lastKnownOutput =
+    currentOutput;
+
   const normalizedPosition = Math.min(
     1,
     Math.max(0, currentOutput / 5),
@@ -192,69 +301,73 @@ export function updateParticleWobble(currentOutput) {
     normalizedPosition * 1.5;
 
   const minimumOpacity =
-    0.2 + normalizedPosition * 0.25;
+    0.3 + normalizedPosition * 0.25;
 
   const maximumOpacity =
     0.7 + normalizedPosition * 0.25;
 
-  particleContainers.forEach((container) => {
-    const particles =
-      container.particles;
+  particleContainers.forEach(
+    container => {
+      const particles =
+        container.particles;
 
-    for (
-      let index = 0;
-      index < particles.count;
-      index += 1
-    ) {
-      const particle =
-        particles.get(index);
+      for (
+        let index = 0;
+        index < particles.count;
+        index += 1
+      ) {
+        const particle =
+          particles.get(index);
 
-      if (!particle) {
-        continue;
+        if (!particle) {
+          continue;
+        }
+
+        let factor =
+          particleWobbleFactors.get(
+            particle,
+          );
+
+        if (factor === undefined) {
+          factor = Math.random();
+
+          particleWobbleFactors.set(
+            particle,
+            factor,
+          );
+        }
+
+        const distance =
+          minimumDistance
+          + (
+            maximumDistance
+            - minimumDistance
+          )
+          * factor;
+
+        const opacity =
+          minimumOpacity
+          + (
+            maximumOpacity
+            - minimumOpacity
+          )
+          * factor;
+
+        if (particle.retina) {
+          particle.retina.wobbleDistance =
+            distance;
+        }
+
+        if (particle.wobble) {
+          particle.wobble.moveSpeed =
+            moveSpeed;
+        }
+
+        if (particle.opacity) {
+          particle.opacity.value =
+            opacity;
+        }
       }
-
-      let factor =
-        particleWobbleFactors.get(particle);
-
-      if (factor === undefined) {
-        factor = Math.random();
-
-        particleWobbleFactors.set(
-          particle,
-          factor,
-        );
-      }
-
-      const distance =
-        minimumDistance
-        + (
-          maximumDistance
-          - minimumDistance
-        )
-        * factor;
-
-      const opacity =
-        minimumOpacity
-        + (
-          maximumOpacity
-          - minimumOpacity
-        )
-        * factor;
-
-      if (particle.retina) {
-        particle.retina.wobbleDistance =
-          distance;
-      }
-
-      if (particle.wobble) {
-        particle.wobble.moveSpeed =
-          moveSpeed;
-      }
-
-      if (particle.opacity) {
-        particle.opacity.value =
-          opacity;
-      }
-    }
-  });
+    },
+  );
 }

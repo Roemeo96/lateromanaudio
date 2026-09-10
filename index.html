@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
 
@@ -8,7 +7,31 @@
 
 
   <link rel="canonical" href="https://lateromanaudio.de/">
+<script>
+  (() => {
+    let storedTheme = null;
 
+    try {
+      storedTheme =
+        localStorage.getItem("theme");
+    } catch {
+      // Use system preference if storage is unavailable.
+    }
+
+    const systemTheme =
+      window.matchMedia(
+        "(prefers-color-scheme: light)",
+      ).matches
+        ? "light"
+        : "dark";
+
+    document.documentElement.dataset.theme =
+      storedTheme === "light"
+      || storedTheme === "dark"
+        ? storedTheme
+        : systemTheme;
+  })();
+</script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -115,6 +138,44 @@
       <a href="#specifications">
         Specifications
       </a>
+
+      <button
+        class="site-header-theme-toggle"
+        type="button"
+        aria-label="Switch to light mode"
+      >
+        <svg
+          class="site-header-theme-icon site-header-theme-icon--sun"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <circle cx="12" cy="12" r="3.5"></circle>
+          <path d="M12 2v2"></path>
+          <path d="M12 20v2"></path>
+          <path d="M4.93 4.93l1.41 1.41"></path>
+          <path d="M17.66 17.66l1.41 1.41"></path>
+          <path d="M2 12h2"></path>
+          <path d="M20 12h2"></path>
+          <path d="M4.93 19.07l1.41-1.41"></path>
+          <path d="M17.66 6.34l1.41-1.41"></path>
+        </svg>
+
+        <svg
+          class="site-header-theme-icon site-header-theme-icon--moon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            d="
+              M20.5 15.2
+              A8.5 8.5 0 0 1
+              8.8 3.5
+              A8.5 8.5 0 1 0
+              20.5 15.2
+            "
+          ></path>
+        </svg>
+      </button>
 
       <button
         class="snipcart-checkout site-header-cart"

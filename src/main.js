@@ -29,9 +29,16 @@ import {
   initializeDemoCarousel,
 } from './demo-carousel.js';
 
+import {
+  initializeThemeToggle,
+} from "./theme.js";
+
+
 initializeDemoCarousel();
 
 initializeMobileMenu();
+
+initializeThemeToggle();
 
 initializePurchaseControls();
 

@@ -57,10 +57,10 @@
   background:
     radial-gradient(
       circle at center,
-      rgba(238, 232, 213, 0.05),
+      rgb(var(--text-rgb) / 5%),
       transparent 55%
     ),
-    #0e0e0d;
+    var(--surface);
 
   color: var(--muted);
 

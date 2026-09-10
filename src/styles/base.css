@@ -7,16 +7,86 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 
+  color-scheme: dark;
   --background: #000000;
-  --border: rgb(255 255 255 / 12%);
-  --muted: #a8aa9f;
-  --text: #eee8d5;
-  --accent: #eee8d5;
-  --tertiary: #ff765f;
+  --background-rgb: 0 0 0;
 
-  color: var(--accent);
+  --surface: #0e0e0d;
+  --surface-rgb: 14 14 13;
+  --surface-deep: #020202;
+  --control-surface: #222222;
+
+  --text: #eee8d5;
+  --text-rgb: 238 232 213;
+
+  --muted: #a8aa9f;
+
+  --accent: #eee8d5;
+  --accent-rgb: 238 232 213;
+  --on-accent: #11110f;
+
+  --tertiary: #ff765f;
+  --tertiary-rgb: 255 118 95;
+  --tertiary-strong: #ff705c;
+
+  --border: rgb(255 255 255 / 12%);
+
+  --shadow-rgb: 0 0 0;
+  --highlight-rgb: 255 255 255;
+  --chart-guide-rgb: 245 242 234;
+
+  --background-glow: rgb(200 255 77 / 8%);
+
+
+  color: var(--text);
   background: var(--background);
+
+  --panel-shadow:
+  0 1.5rem 4rem rgb(var(--shadow-rgb) / 25%),
+  inset 0 1px rgb(var(--highlight-rgb) / 6%);
+
+  --particle-color: #eee8d5;
 }
+
+
+
+:root[data-theme="light"] {
+  color-scheme: light;
+  --background: #eee8d5;
+  --background-rgb: 238 232 213;
+
+  --surface: #e5dfce;
+  --surface-rgb: 229 223 206;
+
+  --surface-deep: var(--background);
+  --control-surface: #cbc3b0;
+
+  --text: #171714;
+  --text-rgb: 23 23 20;
+
+  --muted: #6d695f;
+
+  --accent: #171714;
+  --accent-rgb: 23 23 20;
+  --on-accent: #eee8d5;
+
+
+  --tertiary: #45617f;
+  --tertiary-rgb: 69 97 127;
+  --tertiary-strong: #364d67;
+
+  --border: rgb(23 23 20 / 16%);
+
+  --shadow-rgb: 40 35 25;
+  --highlight-rgb: 255 255 255;
+  --chart-guide-rgb: 35 34 30;
+
+  --background-glow: rgb(120 104 62 / 9%);
+
+  --panel-shadow: none;
+  --particle-color: #2f2c27;
+}
+
 
 * {
   box-sizing: border-box;
@@ -30,7 +100,7 @@ body {
   background:
     radial-gradient(
       circle at top left,
-      rgb(200 255 77 / 8%),
+      var(--background-glow),
       transparent 35rem
     ),
     var(--background);
@@ -41,7 +111,7 @@ html {
   scroll-padding-top: 7rem;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 900px) {
   html {
     scroll-padding-top: 9rem;
   }
