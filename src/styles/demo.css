@@ -1,0 +1,200 @@
+.demo-showcase {
+  width: 100%;
+  padding: 5rem 0;
+  overflow: hidden;
+}
+
+.demo-carousel {
+  margin-top: 2rem;
+}
+
+.demo-carousel-viewport {
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.demo-carousel-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.demo-carousel-track {
+  display: flex;
+  gap: 1.5rem;
+
+  padding-right: 8%;
+}
+
+.demo-card {
+  flex: 0 0 92%;
+  min-width: 0;
+
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.demo-carousel-button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.demo-carousel-button:disabled:hover {
+  color: var(--muted);
+  border-color: var(--border);
+}
+
+.demo-media-placeholder {
+  display: grid;
+  place-items: center;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  border: 1px solid var(--border);
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(238, 232, 213, 0.05),
+      transparent 55%
+    ),
+    #0e0e0d;
+
+  color: var(--muted);
+
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.demo-card-content {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.4rem 1.5rem;
+
+  max-width: 48rem;
+  margin-top: 1rem;
+}
+
+.demo-card-number {
+  grid-row: 1 / 3;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+}
+
+.demo-card-content h3 {
+  margin: 0;
+
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.demo-card-content p {
+  margin: 0;
+
+  color: var(--muted);
+
+  line-height: 1.7;
+}
+
+.demo-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 1.25rem;
+}
+
+.demo-carousel-status {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.demo-carousel-status span {
+  display: block;
+
+  width: 1.75rem;
+  height: 1px;
+
+  background: var(--border);
+
+  transition: background 180ms ease;
+}
+
+.demo-carousel-status span.is-active {
+  background: var(--accent);
+}
+
+.demo-carousel-buttons {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.demo-carousel-button {
+  display: grid;
+  place-items: center;
+
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+
+  border: 1px solid var(--border);
+
+  background: transparent;
+  color: var(--muted);
+
+  font: inherit;
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition:
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.demo-carousel-button:hover,
+.demo-carousel-button:focus-visible {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.demo-carousel-button:focus-visible {
+  outline: 1px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 700px) {
+  .demo-showcase {
+    padding: 4rem 0;
+  }
+
+  .demo-carousel {
+    margin-top: 2rem;
+  }
+
+  .demo-carousel-track {
+    padding-right: 0;
+  }
+
+  .demo-card {
+    flex-basis: 100%;
+  }
+
+  .demo-card-content {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-card-number {
+    grid-row: auto;
+  }
+}

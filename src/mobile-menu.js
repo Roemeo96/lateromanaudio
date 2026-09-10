@@ -92,7 +92,7 @@ export function initializeMobileMenu() {
 
   const mobileBreakpoint =
     window.matchMedia(
-      '(max-width: 760px)',
+      '(max-width: 900px)',
     );
 
   mobileBreakpoint.addEventListener(

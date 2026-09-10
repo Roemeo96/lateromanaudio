@@ -25,6 +25,12 @@ import {
   initializeMobileMenu,
 } from './mobile-menu.js';
 
+import {
+  initializeDemoCarousel,
+} from './demo-carousel.js';
+
+initializeDemoCarousel();
+
 initializeMobileMenu();
 
 initializePurchaseControls();
