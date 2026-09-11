@@ -729,7 +729,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
     rgb(var(--text-rgb) / 12.16%);
 }
 
-@media (max-width: 850px) {
+@media (max-width: 1180px) {
   .visualization-panel {
     border-left: none;
   }

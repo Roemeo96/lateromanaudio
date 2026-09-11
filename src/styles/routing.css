@@ -31,6 +31,7 @@
   min-width: 760px;
 }
 
+
 /* Devices */
 
 .routing-device rect {
@@ -150,6 +151,8 @@
 }
 
 
+/* Endpoints */
+
 .routing-endpoint circle {
   fill: var(--text);
 }
@@ -168,6 +171,8 @@
   letter-spacing: 1.5px;
 }
 
+
+/* Cables */
 
 .routing-cable {
   fill: none;
@@ -277,32 +282,7 @@
 }
 
 
-@media (max-width: 700px) {
-  .routing-diagram {
-    margin-top: 2rem;
-  }
-
-  .routing-legend {
-    justify-content: flex-start;
-    flex-wrap: wrap;
-
-    gap: 0.8rem 1.5rem;
-  }
-
-    .visualization-view-switch {
-    width: 100%;
-  }
-
-  .visualization-view-button {
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-  }
-
-    .visualization-stage {
-    min-height: 360px;
-    }
-}
-
+/* Reactive audio ports */
 
 .routing-port--audio-reactive circle {
   fill: var(--text);
@@ -317,6 +297,8 @@
     fill-opacity 120ms linear;
 }
 
+
+/* Tremolo visualization */
 
 .routing-tremolo-wave {
   fill: none;
@@ -361,7 +343,7 @@
 }
 
 
-
+/* Input meter */
 
 .routing-input-meter-label {
   fill: var(--muted);
@@ -400,4 +382,79 @@
       0 0 4px
       rgb(var(--text-rgb) / 45%)
     );
+}
+
+
+/* Desktop / mobile routing switch */
+
+.routing-desktop {
+  display: block;
+}
+
+.routing-mobile {
+  display: none;
+}
+
+
+/* Mobile routing geometry */
+
+.visualization-view--routing .routing-svg--mobile {
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+  max-width: 340px;
+  height: auto;
+
+  margin: 0 auto;
+}
+
+.visualization-view--routing .routing-diagram--mobile {
+  width: 100%;
+  margin-top: 1.5rem;
+
+  overflow: visible;
+}
+
+
+/* Responsive */
+
+@media (max-width: 840px) {
+  .routing-desktop {
+    display: none;
+  }
+
+  .routing-mobile {
+    display: block;
+  }
+}
+
+@media (max-width: 700px) {
+  .routing-diagram {
+    margin-top: 2rem;
+  }
+
+  .visualization-view--routing .routing-diagram--mobile {
+    margin-top: 1.5rem;
+  }
+
+  .routing-legend {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    gap: 0.8rem 1.5rem;
+  }
+
+  .visualization-view-switch {
+    width: 100%;
+  }
+
+  .visualization-view-button {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+
+  .visualization-stage {
+    min-height: 360px;
+  }
 }

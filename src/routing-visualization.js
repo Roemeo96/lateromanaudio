@@ -9,12 +9,12 @@ export function updateRoutingVisualization({
   currentInput,
   currentOutput,
 }) {
-  const routingDiagram =
-    document.querySelector(
+  const routingDiagrams =
+    document.querySelectorAll(
       ".routing-diagram",
     );
 
-  if (!routingDiagram) {
+  if (routingDiagrams.length === 0) {
     return;
   }
 
@@ -24,28 +24,32 @@ export function updateRoutingVisualization({
   const normalizedOutput =
     clamp(currentOutput / 5, 0, 1);
 
-  routingDiagram.style.setProperty(
-    "--routing-input",
-    normalizedInput.toFixed(3),
-  );
-
-  routingDiagram.style.setProperty(
-    "--routing-output",
-    normalizedOutput.toFixed(3),
-  );
-
-  const inputLeds =
-    routingDiagram.querySelectorAll(
-      ".routing-input-led",
+  routingDiagrams.forEach((routingDiagram) => {
+    routingDiagram.style.setProperty(
+      "--routing-input",
+      normalizedInput.toFixed(3),
     );
 
-  inputLeds.forEach((led) => {
-    const threshold =
-      Number(led.dataset.threshold);
-
-    led.classList.toggle(
-      "is-active",
-      normalizedInput >= threshold,
+    routingDiagram.style.setProperty(
+      "--routing-output",
+      normalizedOutput.toFixed(3),
     );
+
+    const inputLeds =
+      routingDiagram.querySelectorAll(
+        ".routing-input-led",
+      );
+
+    inputLeds.forEach((led) => {
+      const threshold =
+        Number(
+          led.dataset.threshold,
+        );
+
+      led.classList.toggle(
+        "is-active",
+        normalizedInput >= threshold,
+      );
+    });
   });
 }
