@@ -50,42 +50,572 @@
 
 
 
-:root[data-theme="light"] {
-  color-scheme: light;
-  --background: #eee8d5;
-  --background-rgb: 238 232 213;
+/* =========================================================
+   MONDAY — OXBLOOD
+   Cream / black with a wine-red cast
+   Accent: oxblood
+   ========================================================= */
 
-  --surface: #e5dfce;
-  --surface-rgb: 229 223 206;
+:root[data-palette="oxblood"][data-theme="light"] {
+  color-scheme: light;
+
+  --background: #f0e6de;
+  --background-rgb: 240 230 222;
+
+  --surface: #e5d8cf;
+  --surface-rgb: 229 216 207;
 
   --surface-deep: var(--background);
-  --control-surface: #cbc3b0;
+  --control-surface: #cdbbb0;
 
-  --text: #171714;
-  --text-rgb: 23 23 20;
+  --text: #211918;
+  --text-rgb: 33 25 24;
 
-  --muted: #6d695f;
+  --muted: #776861;
 
-  --accent: #171714;
-  --accent-rgb: 23 23 20;
-  --on-accent: #eee8d5;
+  --accent: #211918;
+  --accent-rgb: 33 25 24;
+  --on-accent: #f0e6de;
 
+  --tertiary: #963d4a;
+  --tertiary-rgb: 150 61 74;
+  --tertiary-strong: #b54858;
 
-  --tertiary: #4a78ad;
-  --tertiary-rgb: 69 97 127;
-  --tertiary-strong: #364d67;
+  --border: rgb(33 25 24 / 16%);
 
-  --border: rgb(23 23 20 / 16%);
+  --shadow-rgb: 45 28 28;
+  --highlight-rgb: 255 251 245;
+  --chart-guide-rgb: 55 43 41;
 
-  --shadow-rgb: 40 35 25;
-  --highlight-rgb: 255 255 255;
-  --chart-guide-rgb: 35 34 30;
-
-  --background-glow: rgb(120 104 62 / 9%);
+  --background-glow: rgb(150 61 74 / 9%);
 
   --panel-shadow: none;
-  --particle-color: #2f2c27;
+--particle-color: #6f303b;
 }
+
+:root[data-palette="oxblood"][data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: #11090b;
+  --background-rgb: 17 9 11;
+
+  --surface: #1b1013;
+  --surface-rgb: 27 16 19;
+
+  --surface-deep: #080405;
+  --control-surface: #2a181d;
+
+  --text: #f0e4dc;
+  --text-rgb: 240 228 220;
+
+  --muted: #a98d92;
+
+  --accent: #f0e4dc;
+  --accent-rgb: 240 228 220;
+  --on-accent: #11090b;
+
+  --tertiary: #c84e61;
+  --tertiary-rgb: 200 78 97;
+  --tertiary-strong: #e86276;
+
+  --border: rgb(240 228 220 / 14%);
+
+  --shadow-rgb: 0 0 0;
+  --highlight-rgb: 255 241 234;
+  --chart-guide-rgb: 127 94 99;
+
+  --background-glow: rgb(200 78 97 / 13%);
+
+  --panel-shadow: none;
+  --particle-color: #86515a;
+}
+
+
+/* =========================================================
+   TUESDAY — ELECTRIC BYZANTIUM / SKY
+   Cream / black with a cold blue cast
+   Accent: clear sky blue
+   ========================================================= */
+
+:root[data-palette="electric-byzantium"][data-theme="light"] {
+  color-scheme: light;
+
+  --background: #ecebe2;
+  --background-rgb: 236 235 226;
+
+  --surface: #dfdfd7;
+  --surface-rgb: 223 223 215;
+
+  --surface-deep: var(--background);
+  --control-surface: #c5c7c0;
+
+  --text: #18212a;
+  --text-rgb: 24 33 42;
+
+  --muted: #68727a;
+
+  --accent: #18212a;
+  --accent-rgb: 24 33 42;
+  --on-accent: #ecebe2;
+
+  --tertiary: #5797c8;
+  --tertiary-rgb: 87 151 200;
+  --tertiary-strong: #72b9ec;
+
+  --border: rgb(24 33 42 / 15%);
+
+  --shadow-rgb: 30 37 44;
+  --highlight-rgb: 255 255 251;
+  --chart-guide-rgb: 54 64 72;
+
+  --background-glow: rgb(87 151 200 / 9%);
+
+  --panel-shadow: none;
+--particle-color: #395f7d;
+}
+
+:root[data-palette="electric-byzantium"][data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: #080d12;
+  --background-rgb: 8 13 18;
+
+  --surface: #101821;
+  --surface-rgb: 16 24 33;
+
+  --surface-deep: #04070a;
+  --control-surface: #1a2732;
+
+  --text: #e8edf0;
+  --text-rgb: 232 237 240;
+
+  --muted: #8698a6;
+
+  --accent: #e8edf0;
+  --accent-rgb: 232 237 240;
+  --on-accent: #080d12;
+
+  --tertiary: #64b8ee;
+  --tertiary-rgb: 100 184 238;
+  --tertiary-strong: #89d0ff;
+
+  --border: rgb(232 237 240 / 13%);
+
+  --shadow-rgb: 0 0 0;
+  --highlight-rgb: 240 249 255;
+  --chart-guide-rgb: 88 111 128;
+
+  --background-glow: rgb(100 184 238 / 13%);
+
+  --panel-shadow: none;
+  --particle-color: #527c99;
+}
+
+
+/* =========================================================
+   WEDNESDAY — OXIDIZED MACHINE
+   Cream / black with a green cast
+   Accent: verdigris
+   ========================================================= */
+
+:root[data-palette="oxidized-machine"][data-theme="light"] {
+  color-scheme: light;
+
+  --background: #e9eadf;
+  --background-rgb: 233 234 223;
+
+  --surface: #dce0d3;
+  --surface-rgb: 220 224 211;
+
+  --surface-deep: var(--background);
+  --control-surface: #c0c8b8;
+
+  --text: #17231e;
+  --text-rgb: 23 35 30;
+
+  --muted: #68736b;
+
+  --accent: #17231e;
+  --accent-rgb: 23 35 30;
+  --on-accent: #e9eadf;
+
+  --tertiary: #4f8f75;
+  --tertiary-rgb: 79 143 117;
+  --tertiary-strong: #62aa8c;
+
+  --border: rgb(23 35 30 / 15%);
+
+  --shadow-rgb: 31 41 34;
+  --highlight-rgb: 254 255 248;
+  --chart-guide-rgb: 52 67 58;
+
+  --background-glow: rgb(79 143 117 / 9%);
+
+  --panel-shadow: none;
+--particle-color: #365f50;
+}
+
+:root[data-palette="oxidized-machine"][data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: #080f0b;
+  --background-rgb: 8 15 11;
+
+  --surface: #101a14;
+  --surface-rgb: 16 26 20;
+
+  --surface-deep: #040806;
+  --control-surface: #19271e;
+
+  --text: #e7ede6;
+  --text-rgb: 231 237 230;
+
+  --muted: #82978a;
+
+  --accent: #e7ede6;
+  --accent-rgb: 231 237 230;
+  --on-accent: #080f0b;
+
+  --tertiary: #5bbf92;
+  --tertiary-rgb: 91 191 146;
+  --tertiary-strong: #78ddb0;
+
+  --border: rgb(231 237 230 / 13%);
+
+  --shadow-rgb: 0 0 0;
+  --highlight-rgb: 241 255 246;
+  --chart-guide-rgb: 80 110 91;
+
+  --background-glow: rgb(91 191 146 / 13%);
+
+  --panel-shadow: none;
+  --particle-color: #4f8069;
+}
+
+
+/* =========================================================
+   THURSDAY — PLUM ACID
+   Cream / black with a plum cast
+   Accent: acid yellow-green
+   ========================================================= */
+
+:root[data-palette="plum-acid"][data-theme="light"] {
+  color-scheme: light;
+
+  --background: #eee7e9;
+  --background-rgb: 238 231 233;
+
+  --surface: #e2d8df;
+  --surface-rgb: 226 216 223;
+
+  --surface-deep: var(--background);
+  --control-surface: #c8bac4;
+
+  --text: #261923;
+  --text-rgb: 38 25 35;
+
+  --muted: #756873;
+
+  --accent: #261923;
+  --accent-rgb: 38 25 35;
+  --on-accent: #eee7e9;
+
+  --tertiary: #87972e;
+  --tertiary-rgb: 135 151 46;
+  --tertiary-strong: #a6b832;
+
+  --border: rgb(38 25 35 / 16%);
+
+  --shadow-rgb: 43 29 41;
+  --highlight-rgb: 255 251 254;
+  --chart-guide-rgb: 66 49 62;
+
+  --background-glow: rgb(135 151 46 / 9%);
+
+  --panel-shadow: none;
+--particle-color: #62465f;
+}
+
+:root[data-palette="plum-acid"][data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: #100910;
+  --background-rgb: 16 9 16;
+
+  --surface: #1a1018;
+  --surface-rgb: 26 16 24;
+
+  --surface-deep: #080408;
+  --control-surface: #2a1927;
+
+  --text: #efe8ee;
+  --text-rgb: 239 232 238;
+
+  --muted: #a98e9f;
+
+  --accent: #efe8ee;
+  --accent-rgb: 239 232 238;
+  --on-accent: #100910;
+
+  --tertiary: #c9dc43;
+  --tertiary-rgb: 201 220 67;
+  --tertiary-strong: #e9f55f;
+
+  --border: rgb(239 232 238 / 14%);
+
+  --shadow-rgb: 0 0 0;
+  --highlight-rgb: 255 244 253;
+  --chart-guide-rgb: 120 91 113;
+
+  --background-glow: rgb(201 220 67 / 11%);
+
+  --panel-shadow: none;
+  --particle-color: #8c657f;
+}
+
+
+/* =========================================================
+   FRIDAY — COBALT APRICOT
+   Cream / black with a warm peach cast
+   Accent: apricot
+   ========================================================= */
+
+:root[data-palette="cobalt-apricot"][data-theme="light"] {
+  color-scheme: light;
+
+  --background: #f0e8dc;
+  --background-rgb: 240 232 220;
+
+  --surface: #e4dacd;
+  --surface-rgb: 228 218 205;
+
+  --surface-deep: var(--background);
+  --control-surface: #cbbdad;
+
+  --text: #25201b;
+  --text-rgb: 37 32 27;
+
+  --muted: #756d65;
+
+  --accent: #25201b;
+  --accent-rgb: 37 32 27;
+  --on-accent: #f0e8dc;
+
+  --tertiary: #ce7740;
+  --tertiary-rgb: 206 119 64;
+  --tertiary-strong: #e89358;
+
+  --border: rgb(37 32 27 / 16%);
+
+  --shadow-rgb: 49 39 29;
+  --highlight-rgb: 255 251 244;
+  --chart-guide-rgb: 68 57 46;
+
+  --background-glow: rgb(206 119 64 / 10%);
+
+  --panel-shadow: none;
+--particle-color: #7a4b2f;
+}
+
+:root[data-palette="cobalt-apricot"][data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: #110c08;
+  --background-rgb: 17 12 8;
+
+  --surface: #1a130e;
+  --surface-rgb: 26 19 14;
+
+  --surface-deep: #080604;
+  --control-surface: #2b1d14;
+
+  --text: #f0e8df;
+  --text-rgb: 240 232 223;
+
+  --muted: #a78d7c;
+
+  --accent: #f0e8df;
+  --accent-rgb: 240 232 223;
+  --on-accent: #110c08;
+
+  --tertiary: #f29b5f;
+  --tertiary-rgb: 242 155 95;
+  --tertiary-strong: #ffb27a;
+
+  --border: rgb(240 232 223 / 14%);
+
+  --shadow-rgb: 0 0 0;
+  --highlight-rgb: 255 245 233;
+  --chart-guide-rgb: 126 101 82;
+
+  --background-glow: rgb(242 155 95 / 12%);
+
+  --panel-shadow: none;
+  --particle-color: #8f674c;
+}
+
+
+/* =========================================================
+   SATURDAY — BLACK MASS
+   Cream / black with a violet cast
+   Accent: ultraviolet
+   ========================================================= */
+
+:root[data-palette="black-mass"][data-theme="light"] {
+  color-scheme: light;
+
+  --background: #ede7e3;
+  --background-rgb: 237 231 227;
+
+  --surface: #e0d7d5;
+  --surface-rgb: 224 215 213;
+
+  --surface-deep: var(--background);
+  --control-surface: #c6b9b7;
+
+  --text: #21191c;
+  --text-rgb: 33 25 28;
+
+  --muted: #72656b;
+
+  --accent: #21191c;
+  --accent-rgb: 33 25 28;
+  --on-accent: #ede7e3;
+
+  --tertiary: #7f4fb1;
+  --tertiary-rgb: 127 79 177;
+  --tertiary-strong: #9a64cf;
+
+  --border: rgb(33 25 28 / 16%);
+
+  --shadow-rgb: 41 31 37;
+  --highlight-rgb: 255 251 252;
+  --chart-guide-rgb: 65 51 59;
+
+  --background-glow: rgb(127 79 177 / 10%);
+
+  --panel-shadow: none;
+--particle-color: #58366f;
+}
+
+:root[data-palette="black-mass"][data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: #0e0912;
+  --background-rgb: 14 9 18;
+
+  --surface: #17101d;
+  --surface-rgb: 23 16 29;
+
+  --surface-deep: #070409;
+  --control-surface: #26192f;
+
+  --text: #eee7f0;
+  --text-rgb: 238 231 240;
+
+  --muted: #a38fa9;
+
+  --accent: #eee7f0;
+  --accent-rgb: 238 231 240;
+  --on-accent: #0e0912;
+
+  --tertiary: #a76edb;
+  --tertiary-rgb: 167 110 219;
+  --tertiary-strong: #c087f0;
+
+  --border: rgb(238 231 240 / 14%);
+
+  --shadow-rgb: 0 0 0;
+  --highlight-rgb: 250 242 255;
+  --chart-guide-rgb: 111 88 121;
+
+  --background-glow: rgb(167 110 219 / 13%);
+
+  --panel-shadow: none;
+  --particle-color: #77528e;
+}
+
+
+/* =========================================================
+   SUNDAY — INFRARED XEROX
+   Cream / black with a yellow-orange cast
+   Accent: vermilion
+   ========================================================= */
+
+:root[data-palette="infrared-xerox"][data-theme="light"] {
+  color-scheme: light;
+
+  --background: #f0ead9;
+  --background-rgb: 240 234 217;
+
+  --surface: #e4ddca;
+  --surface-rgb: 228 221 202;
+
+  --surface-deep: var(--background);
+  --control-surface: #cbc2aa;
+
+  --text: #211d14;
+  --text-rgb: 33 29 20;
+
+  --muted: #746e5f;
+
+  --accent: #211d14;
+  --accent-rgb: 33 29 20;
+  --on-accent: #f0ead9;
+
+  --tertiary: #d44a1f;
+  --tertiary-rgb: 212 74 31;
+  --tertiary-strong: #ef5c2d;
+
+  --border: rgb(33 29 20 / 17%);
+
+  --shadow-rgb: 45 37 24;
+  --highlight-rgb: 255 252 239;
+  --chart-guide-rgb: 67 59 44;
+
+  --background-glow: rgb(212 74 31 / 9%);
+
+  --panel-shadow: none;
+--particle-color: #7b3320;
+}
+
+:root[data-palette="infrared-xerox"][data-theme="dark"] {
+  color-scheme: dark;
+
+  --background: #0e0b07;
+  --background-rgb: 14 11 7;
+
+  --surface: #17130e;
+  --surface-rgb: 23 19 14;
+
+  --surface-deep: #070503;
+  --control-surface: #272016;
+
+  --text: #f1eadc;
+  --text-rgb: 241 234 220;
+
+  --muted: #a59a86;
+
+  --accent: #f1eadc;
+  --accent-rgb: 241 234 220;
+  --on-accent: #0e0b07;
+
+  --tertiary: #ff5b2f;
+  --tertiary-rgb: 255 91 47;
+  --tertiary-strong: #ff784f;
+
+  --border: rgb(241 234 220 / 14%);
+
+  --shadow-rgb: 0 0 0;
+  --highlight-rgb: 255 247 231;
+  --chart-guide-rgb: 124 109 84;
+
+  --background-glow: rgb(255 91 47 / 12%);
+
+  --panel-shadow: none;
+  --particle-color: #90704d;
+}
+
 
 
 * {
