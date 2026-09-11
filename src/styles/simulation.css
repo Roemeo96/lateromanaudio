@@ -431,6 +431,9 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 .chart-container {
   position: relative;
 
+  width: min(100%, 680px);
+  margin: 2.5rem auto;
+
   background:
     radial-gradient(
       circle at 50% 45%,
@@ -443,7 +446,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 #transfer-chart {
   display: block;
 
-  width: 92%;
+  width: 100%;
   height: auto;
   margin: 0 auto;
 }
@@ -473,7 +476,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 
 .chart-grid line {
   stroke:
-    rgb(var(--text-rgb) / 5.5%);
+    rgb(var(--text-rgb) / 25.5%);
 
   stroke-width: 1;
 }
