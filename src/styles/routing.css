@@ -13,6 +13,10 @@
   overflow-x: auto;
 }
 
+.visualization-view--routing .routing-diagram {
+  margin-top: 0;
+}
+
 .routing-svg {
   display: block;
 
@@ -23,6 +27,9 @@
   color: var(--text);
 }
 
+.visualization-view--routing .routing-svg {
+  min-width: 760px;
+}
 
 /* Devices */
 
@@ -65,7 +72,7 @@
     Times,
     serif;
 
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 2px;
 }
 
@@ -95,7 +102,7 @@
     Times,
     serif;
 
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 1.7px;
 }
 
@@ -111,15 +118,17 @@
 }
 
 .routing-port text {
-  fill: var(--muted);
+  fill:
+    rgb(var(--text-rgb) / 78%);
 
   font-family:
     "Times New Roman",
     Times,
     serif;
 
-  font-size: 9px;
-  letter-spacing: 1.2px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .routing-port--expression circle {
@@ -146,15 +155,17 @@
 }
 
 .routing-endpoint text {
-  fill: var(--muted);
+  fill:
+    rgb(var(--text-rgb) / 75%);
 
   font-family:
     "Times New Roman",
     Times,
     serif;
 
-  font-size: 10px;
-  letter-spacing: 1.8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
 }
 
 
@@ -207,15 +218,16 @@
 
 .routing-cable-label {
   fill:
-    rgb(var(--text-rgb) / 42%);
+    rgb(var(--text-rgb) / 65%);
 
   font-family:
     "Times New Roman",
     Times,
     serif;
 
-  font-size: 8px;
-  letter-spacing: 1.5px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.3px;
 }
 
 .routing-cable-label--expression {
@@ -276,6 +288,19 @@
 
     gap: 0.8rem 1.5rem;
   }
+
+    .visualization-view-switch {
+    width: 100%;
+  }
+
+  .visualization-view-button {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+  }
+
+    .visualization-stage {
+    min-height: 360px;
+    }
 }
 
 
@@ -290,4 +315,89 @@
 
   transition:
     fill-opacity 120ms linear;
+}
+
+
+.routing-tremolo-wave {
+  fill: none;
+
+  stroke: var(--tertiary);
+  stroke-width: 1.5;
+
+  vector-effect: non-scaling-stroke;
+
+  transform-box: fill-box;
+  transform-origin: center;
+
+  transform:
+    scaleY(
+      calc(
+        0.08
+        + var(--routing-output) * 0.92
+      )
+    );
+
+  opacity:
+    calc(
+      0.35
+      + var(--routing-output) * 0.65
+    );
+
+  transition:
+    transform 120ms linear,
+    opacity 120ms linear;
+}
+
+.routing-tremolo-label {
+  fill: var(--muted);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 8px;
+  letter-spacing: 1.4px;
+}
+
+
+
+
+.routing-input-meter-label {
+  fill: var(--muted);
+
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: 8px;
+  letter-spacing: 1.4px;
+}
+
+.routing-input-led {
+  fill: var(--background);
+
+  stroke:
+    rgb(var(--text-rgb) / 45%);
+
+  stroke-width: 1.2;
+
+  vector-effect: non-scaling-stroke;
+
+  transition:
+    fill 90ms linear,
+    stroke 90ms linear,
+    filter 90ms linear;
+}
+
+.routing-input-led.is-active {
+  fill: var(--text);
+  stroke: var(--text);
+
+  filter:
+    drop-shadow(
+      0 0 4px
+      rgb(var(--text-rgb) / 45%)
+    );
 }

@@ -3,35 +3,42 @@
 <head>
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
+  <link
+    rel="canonical"
+    href="https://lateromanaudio.de/"
+  >
 
-  <link rel="canonical" href="https://lateromanaudio.de/">
-<script>
-  (() => {
-    let storedTheme = null;
+  <script>
+    (() => {
+      let storedTheme = null;
 
-    try {
-      storedTheme =
-        localStorage.getItem("theme");
-    } catch {
-      // Use system preference if storage is unavailable.
-    }
+      try {
+        storedTheme =
+          localStorage.getItem("theme");
+      } catch {
+        // Use system preference if storage is unavailable.
+      }
 
-    const systemTheme =
-      window.matchMedia(
-        "(prefers-color-scheme: light)",
-      ).matches
-        ? "light"
-        : "dark";
+      const systemTheme =
+        window.matchMedia(
+          "(prefers-color-scheme: light)",
+        ).matches
+          ? "light"
+          : "dark";
 
-    document.documentElement.dataset.theme =
-      storedTheme === "light"
-      || storedTheme === "dark"
-        ? storedTheme
-        : systemTheme;
-  })();
-</script>
+      document.documentElement.dataset.theme =
+        storedTheme === "light"
+        || storedTheme === "dark"
+          ? storedTheme
+          : systemTheme;
+    })();
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -53,28 +60,33 @@
   }
   </script>
 
-  <meta name="description"
-    content="Weltgeist transforms your instrument's playing dynamics into expression-pedal control, letting you control compatible effects directly through your performance.">
+  <meta
+    name="description"
+    content="Weltgeist transforms your instrument's playing dynamics into expression-pedal control, letting you control compatible effects directly through your performance."
+  >
+
   <title>
     Weltgeist – Dynamics-Controlled Expression Pedal | Late Roman Audio
   </title>
 
-<link
-  rel="icon"
-  href="/favicon.svg"
-  type="image/svg+xml"
->
+  <link
+    rel="icon"
+    href="/favicon.svg"
+    type="image/svg+xml"
+  >
 
-<link
-  rel="alternate icon"
-  href="/favicon.ico"
-  type="image/x-icon"
->
+  <link
+    rel="alternate icon"
+    href="/favicon.ico"
+    type="image/x-icon"
+  >
 </head>
 
 <body>
-  <script type="module" src="/src/snipcart.js"></script>
-
+  <script
+    type="module"
+    src="/src/snipcart.js"
+  ></script>
 
   <header class="site-header">
     <a
@@ -149,7 +161,12 @@
           viewBox="0 0 24 24"
           aria-hidden="true"
         >
-          <circle cx="12" cy="12" r="3.5"></circle>
+          <circle
+            cx="12"
+            cy="12"
+            r="3.5"
+          ></circle>
+
           <path d="M12 2v2"></path>
           <path d="M12 20v2"></path>
           <path d="M4.93 4.93l1.41 1.41"></path>
@@ -224,1113 +241,1486 @@
 
   <main>
 
-  <!-- Hero -->
+    <!-- Hero -->
 
-  <section class="landing-hero particle-section">
+    <section class="landing-hero particle-section">
       <div
-      id="hero-particles"
-      class="section-particles"
-      aria-hidden="true"
-    ></div>
-    <h1 class="visually-hidden">
-      Weltgeist – An Expression Pedal Controlled by Your Playing Dynamics
-    </h1>
+        id="hero-particles"
+        class="section-particles"
+        aria-hidden="true"
+      ></div>
 
-    <div role="img" class="landing-logo" aria-label="Late Roman Audio">
-      <div class="text-logo" aria-hidden="true">
-        <div>Late</div>
-        <div>Roman</div>
-        <div>Avdio</div>
-      </div>
+      <h1 class="visually-hidden">
+        Weltgeist – An Expression Pedal Controlled by Your Playing Dynamics
+      </h1>
 
-      <div class="logo-symbol" aria-hidden="true">
-        <div class="logo-bar-group">
-          <span></span>
-          <span></span>
-        </div>
-
-        <div class="logo-bar-group">
-          <span></span>
-          <span></span>
-        </div>
-
-        <div class="logo-bar-group">
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-    </div>
-
-    <div class="landing-copy">
-      <p class="landing-eyebrow">
-        presents
-      </p>
-      <p class="landing-product-name">
-        Weltgeist
-      </p>
-      <p class="landing-tagline">
-        The Dynamics You Lost After Compression
-      </p>
-
-      <p class="landing-tagline">
-        Reborn as Control
-      </p>
-
-      <p class="landing-description">
-        Weltgeist turns your instrument's playing dynamics into expression control.
-        Instead of moving a conventional expression pedal with your foot, you can
-        control compatible effects directly through how softly or aggressively you
-        play.
-      </p>
-
-      <p class="landing-description">
-        Use it to control parameters such as delay feedback, reverb mix, filter
-        movement or modulation depth. Place Weltgeist before compression to capture
-        your original playing dynamics, or after compression to respond to the
-        processed signal.
-      </p>
-    </div>
-  </section>
-  <section
-    id="pedal"
-    class="pedal-showcase reveal-section"
-    aria-labelledby="pedal-heading"
-  >
-
-    <h2 id="pedal-heading" class="section-heading">
-      Weltgeist Pedal
-    </h2>
-
-    <div class="pedal-showcase-content">
-      <figure class="pedal-showcase-figure">
-        <div class="pedal-showcase-image-frame">
-          <img class="pedal-showcase-image" src="/images/weltgeist.webp" alt="Weltgeist pedal by Late Roman Audio"
-            loading="lazy">
-        </div>
-
-        <figcaption>
-          Weltgeist by Late Roman Audio
-        </figcaption>
-      </figure>
-
-      <div class="pedal-purchase">
-        <p class="eyebrow">
-          Late Roman Audio
-        </p>
-
-        <h3>
-          Weltgeist
-        </h3>
-
-        <p class="pedal-purchase-price">
-          €299.00
-        </p>
-
-        <p class="pedal-purchase-status">
-          Coming soon
-        </p>
-
-        <div class="pedal-purchase-controls">
-          <div class="quantity-control">
-            <label for="weltgeist-quantity">
-              Quantity
-            </label>
-
-            <input id="weltgeist-quantity" class="quantity-input" type="number" min="1" max="5" step="1" value="1"
-              inputmode="numeric">
-          </div>
-
-          <button id="weltgeist-add-to-cart" class="snipcart-add-item pedal-add-to-cart" type="button"
-            data-item-id="weltgeist" 
-            data-item-name="Weltgeist" 
-            data-item-price="299.00" 
-            data-item-url="/"
-            data-item-taxable="false"
-            data-item-image="/images/weltgeist.webp"
-            data-item-description="Dynamics-controlled expression pedal by Late Roman Audio" 
-            data-item-min-quantity="1"
-            data-item-max-quantity="5" 
-            data-item-quantity="1">
-            Add to cart
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section
-    id="features"
-    class="content-section reveal-section particle-section"
-    aria-labelledby="features-heading"
-  >
       <div
-      id="features-particles"
-      class="section-particles"
-      aria-hidden="true"
-    ></div>
-    <div class="section-content">
-    <h2 id="features-heading" class="section-heading">
-      Weltgeist Features
-    </h2>
-
-    <dl class="feature-list">
-      <div class="feature-row">
-        <dt>Base</dt>
-
-        <dd>
-          Sets the expression position used when the input signal is quiet.
-        </dd>
-      </div>
-
-      <div class="feature-row">
-        <dt>Sensitivity</dt>
-
-        <dd>
-          Adjusts how strongly the expression output responds to changes in input level.
-        </dd>
-      </div>
-
-      <div class="feature-row">
-        <dt>Rise</dt>
-
-        <dd>
-          Controls how quickly the pedal responds as the input level
-          increases.
-        </dd>
-      </div>
-
-      <div class="feature-row">
-        <dt>Fall</dt>
-
-        <dd>
-          Controls how quickly the pedal responds as the input level
-          decreases.
-        </dd>
-      </div>
-
-      <div class="feature-row">
-        <dt>Invert</dt>
-
-        <dd>
-          Reverses the response so louder playing moves the expression position in the opposite direction.
-        </dd>
-      </div>
-    </dl>
-    </div>
-  </section>
-
-
-
-
-  <section
-    class="demo-showcase reveal-section"
-    aria-labelledby="demo-heading"
-  >
-    <div 
-      id="demos"
-      class="section-content">
-      <p class="section-eyebrow">
-        See it in action
-      </p>
-
-      <h2
-        id="demo-heading"
-        class="section-heading"
+        role="img"
+        class="landing-logo"
+        aria-label="Late Roman Audio"
       >
-        Weltgeist in Motion
-      </h2>
-
-      <div class="demo-carousel">
-        <div class="demo-carousel-viewport">
-          <div class="demo-carousel-track">
-
-            <article class="demo-card">
-              <div class="demo-media-placeholder">
-                <span>
-                  Video 01
-                </span>
-              </div>
-
-              <div class="demo-card-content">
-                <p class="demo-card-number">
-                  01
-                </p>
-
-                <h3>
-                  Dual Expression
-                </h3>
-
-                <p>
-                  EXP1 drives tremolo. EXP2 controls an inverted
-                  delay mix. Then both come alive together.
-                </p>
-              </div>
-            </article>
-
-            <article class="demo-card">
-              <div class="demo-media-placeholder">
-                <span>
-                  Video 02
-                </span>
-              </div>
-
-              <div class="demo-card-content">
-                <p class="demo-card-number">
-                  02
-                </p>
-
-                <h3>
-                  Sidechain
-                </h3>
-
-                <p>
-                  An external signal drives the expression response,
-                  turning dynamics into control across another signal path.
-                </p>
-              </div>
-            </article>
-
-          </div>
+        <div
+          class="text-logo"
+          aria-hidden="true"
+        >
+          <div>Late</div>
+          <div>Roman</div>
+          <div>Avdio</div>
         </div>
 
-        <div class="demo-carousel-controls">
-          <div
-            class="demo-carousel-status"
-            aria-hidden="true"
-          >
-            <span class="is-active"></span>
+        <div
+          class="logo-symbol"
+          aria-hidden="true"
+        >
+          <div class="logo-bar-group">
+            <span></span>
             <span></span>
           </div>
 
-          <div class="demo-carousel-buttons">
-            <button
-              class="demo-carousel-button demo-carousel-previous"
-              type="button"
-              aria-label="Previous demo"
-            >
-              ←
-            </button>
+          <div class="logo-bar-group">
+            <span></span>
+            <span></span>
+          </div>
 
-            <button
-              class="demo-carousel-button demo-carousel-next"
-              type="button"
-              aria-label="Next demo"
-            >
-              →
-            </button>
+          <div class="logo-bar-group">
+            <span></span>
+            <span></span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-
-
-  <section id="simulation" class="content-section reveal-section simulation-showcase-start" aria-labelledby="simulation-heading">
-    <h2 id="simulation-heading" class="section-heading">
-      Pedal Simulation
-    </h2>
-
-    <p class="landing-description">
-      Try the interactive simulation below to explore the response curve of
-      the pedal and see how it reacts to different input levels and settings.
-      Change the input level to see how Rise and Fall affect the output.
-    </p>
-  </section>
-
-  <section id="pedal-simulation" class="app reveal-section simulation-showcase-end" aria-labelledby="simulation-panel-heading">
-    <h2 id="simulation-panel-heading" class="visually-hidden">
-      Interactive response curve
-    </h2>
-
-    <div class="pedal-panel">
-      <header class="pedal-header">
-        <p class="brand">
-          Late Roman Audio
+      <div class="landing-copy">
+        <p class="landing-eyebrow">
+          presents
         </p>
 
-        <p class="pedal-product-name">
+        <p class="landing-product-name">
           Weltgeist
         </p>
-      </header>
 
-      <div class="control control--horizontal">
-        <div class="control-heading">
-          <label for="sensitivity">
-            Sensitivity
-          </label>
+        <p class="landing-tagline">
+          The Dynamics You Lost After Compression
+        </p>
 
-          <output id="sensitivity-value" for="sensitivity">
-            6.5
-          </output>
-        </div>
+        <p class="landing-tagline">
+          Reborn as Control
+        </p>
 
-        <input id="sensitivity" type="range" min="0.5" max="10" step="0.1" value="6.5">
+        <p class="landing-description">
+          Weltgeist turns your instrument's playing dynamics into expression control.
+          Instead of moving a conventional expression pedal with your foot, you can
+          control compatible effects directly through how softly or aggressively you
+          play.
+        </p>
+
+        <p class="landing-description">
+          Use it to control parameters such as delay feedback, reverb mix, filter
+          movement or modulation depth. Place Weltgeist before compression to capture
+          your original playing dynamics, or after compression to respond to the
+          processed signal.
+        </p>
       </div>
+    </section>
 
-      <div class="control control--horizontal">
-        <div class="control-heading">
-          <label for="base">
-            Base
-          </label>
 
-          <output id="base-value" for="base">
-            1.00
-          </output>
-        </div>
+    <!-- Pedal -->
 
-        <input id="base" type="range" min="0" max="5" step="0.05" value="1">
-      </div>
+    <section
+      id="pedal"
+      class="pedal-showcase reveal-section"
+      aria-labelledby="pedal-heading"
+    >
+      <h2
+        id="pedal-heading"
+        class="section-heading"
+      >
+        Weltgeist Pedal
+      </h2>
 
-      <div class="control control--horizontal">
-        <div class="control-heading">
-          <label for="attack">
-            Rise
-          </label>
+      <div class="pedal-showcase-content">
+        <figure class="pedal-showcase-figure">
+          <div class="pedal-showcase-image-frame">
+            <img
+              class="pedal-showcase-image"
+              src="/images/weltgeist.webp"
+              alt="Weltgeist pedal by Late Roman Audio"
+              loading="lazy"
+            >
+          </div>
 
-          <output id="attack-value" for="attack">
-            250 ms
-          </output>
-        </div>
+          <figcaption>
+            Weltgeist by Late Roman Audio
+          </figcaption>
+        </figure>
 
-        <input id="attack" type="range" min="10" max="1000" step="10" value="250">
-      </div>
-
-      <div class="control control--horizontal">
-        <div class="control-heading">
-          <label for="release">
-            Fall
-          </label>
-
-          <output id="release-value" for="release">
-            3750 ms
-          </output>
-        </div>
-
-        <input id="release" type="range" min="10" max="4000" step="10" value="3750">
-      </div>
-
-      <div class="control control--horizontal">
-        <div class="control-heading">
-          <label for="invert">
-            Invert
-          </label>
-        </div>
-
-        <input id="invert" type="checkbox" aria-label="Invert expression direction">
-      </div>
-    </div>
-
-    <section class="visualization-panel">
-      <header class="visualization-header">
-        <div>
+        <div class="pedal-purchase">
           <p class="eyebrow">
-            Expression Mapping
+            Late Roman Audio
           </p>
 
           <h3>
-            From Dynamics to Expression
+            Weltgeist
           </h3>
-        </div>
 
-        <div class="simulation-input-control">
+          <p class="pedal-purchase-price">
+            €299.00
+          </p>
 
-          <fieldset class="input-source-selector">
-            <legend>
-              Input Source
-            </legend>
+          <p class="pedal-purchase-status">
+            Coming soon
+          </p>
 
-            <label class="input-source-option">
-              <input
-                type="radio"
-                name="input-source"
-                value="manual"
-                checked
-              >
-
-              <span>
-                Manual
-              </span>
-            </label>
-
-            <label class="input-source-option">
-            <input
-              type="radio"
-              name="input-source"
-              value="live"
-            >
-
-            <svg
-              class="input-source-icon"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path
-                d="
-                  M12 14
-                  A3 3 0 0 0 15 11
-                  V5
-                  A3 3 0 0 0 9 5
-                  V11
-                  A3 3 0 0 0 12 14
-
-                  M18 11
-                  A6 6 0 0 1 6 11
-
-                  M12 17
-                  V21
-
-                  M9 21
-                  H15
-                "
-              />
-            </svg>
-
-            <span>
-              Live Audio
-            </span>
-          </label>
-          </fieldset>
-          <div
-            id="live-audio-info"
-            class="live-audio-info"
-            aria-live="polite"
-            hidden
-          >
-            <p
-              id="live-audio-status"
-              class="live-audio-status"
-            >
-              Listening…
-            </p>
-
-            <p class="live-audio-privacy">
-              Processed locally in your browser. Not uploaded.
-            </p>
-          </div>
-
-          <div class="control control--horizontal input-level-control">
-            <div class="control-heading">
-              <label for="input-level">
-                Input Level
+          <div class="pedal-purchase-controls">
+            <div class="quantity-control">
+              <label for="weltgeist-quantity">
+                Quantity
               </label>
 
-              <output id="input-level-value" for="input-level">
-                0
-              </output>
+              <input
+                id="weltgeist-quantity"
+                class="quantity-input"
+                type="number"
+                min="1"
+                max="5"
+                step="1"
+                value="1"
+                inputmode="numeric"
+              >
             </div>
 
-            <input
-              id="input-level"
-              type="range"
-              min="0"
-              max="1"
-              step="0.01"
-              value="0"
+            <button
+              id="weltgeist-add-to-cart"
+              class="snipcart-add-item pedal-add-to-cart"
+              type="button"
+              data-item-id="weltgeist"
+              data-item-name="Weltgeist"
+              data-item-price="299.00"
+              data-item-url="/"
+              data-item-taxable="false"
+              data-item-image="/images/weltgeist.webp"
+              data-item-description="Dynamics-controlled expression pedal by Late Roman Audio"
+              data-item-min-quantity="1"
+              data-item-max-quantity="5"
+              data-item-quantity="1"
             >
+              Add to cart
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Features -->
+
+    <section
+      id="features"
+      class="content-section reveal-section particle-section"
+      aria-labelledby="features-heading"
+    >
+      <div
+        id="features-particles"
+        class="section-particles"
+        aria-hidden="true"
+      ></div>
+
+      <div class="section-content">
+        <h2
+          id="features-heading"
+          class="section-heading"
+        >
+          Weltgeist Features
+        </h2>
+
+        <dl class="feature-list">
+          <div class="feature-row">
+            <dt>
+              Base
+            </dt>
+
+            <dd>
+              Sets the expression position used when the input signal is quiet.
+            </dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>
+              Sensitivity
+            </dt>
+
+            <dd>
+              Adjusts how strongly the expression output responds to changes in input level.
+            </dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>
+              Rise
+            </dt>
+
+            <dd>
+              Controls how quickly the pedal responds as the input level increases.
+            </dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>
+              Fall
+            </dt>
+
+            <dd>
+              Controls how quickly the pedal responds as the input level decreases.
+            </dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>
+              Invert
+            </dt>
+
+            <dd>
+              Reverses the response so louder playing moves the expression position in the opposite direction.
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+
+    <!-- Demo -->
+
+    <section
+      class="demo-showcase reveal-section"
+      aria-labelledby="demo-heading"
+    >
+      <div
+        id="demos"
+        class="section-content"
+      >
+        <p class="section-eyebrow">
+          See it in action
+        </p>
+
+        <h2
+          id="demo-heading"
+          class="section-heading"
+        >
+          Weltgeist in Motion
+        </h2>
+
+        <div class="demo-carousel">
+          <div class="demo-carousel-viewport">
+            <div class="demo-carousel-track">
+
+              <article class="demo-card">
+                <div class="demo-media-placeholder">
+                  <span>
+                    Video 01
+                  </span>
+                </div>
+
+                <div class="demo-card-content">
+                  <p class="demo-card-number">
+                    01
+                  </p>
+
+                  <h3>
+                    Dual Expression
+                  </h3>
+
+                  <p>
+                    EXP1 drives tremolo. EXP2 controls an inverted
+                    delay mix. Then both come alive together.
+                  </p>
+                </div>
+              </article>
+
+              <article class="demo-card">
+                <div class="demo-media-placeholder">
+                  <span>
+                    Video 02
+                  </span>
+                </div>
+
+                <div class="demo-card-content">
+                  <p class="demo-card-number">
+                    02
+                  </p>
+
+                  <h3>
+                    Sidechain
+                  </h3>
+
+                  <p>
+                    An external signal drives the expression response,
+                    turning dynamics into control across another signal path.
+                  </p>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <div class="demo-carousel-controls">
+            <div
+              class="demo-carousel-status"
+              aria-hidden="true"
+            >
+              <span class="is-active"></span>
+              <span></span>
+            </div>
+
+            <div class="demo-carousel-buttons">
+              <button
+                class="demo-carousel-button demo-carousel-previous"
+                type="button"
+                aria-label="Previous demo"
+              >
+                ←
+              </button>
+
+              <button
+                class="demo-carousel-button demo-carousel-next"
+                type="button"
+                aria-label="Next demo"
+              >
+                →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Interactive Simulation -->
+
+    <section
+      id="simulation"
+      class="content-section reveal-section simulation-showcase-start"
+      aria-labelledby="simulation-heading"
+    >
+      <h2
+        id="simulation-heading"
+        class="section-heading"
+      >
+        Pedal Simulation
+      </h2>
+
+      <p class="landing-description">
+        Try the interactive simulation below to explore how Weltgeist
+        translates playing dynamics into expression control. Switch between
+        the transfer curve and the signal path to view the same response from
+        two different perspectives.
+      </p>
+    </section>
+
+
+    <section
+      id="pedal-simulation"
+      class="app reveal-section simulation-showcase-end"
+      aria-labelledby="simulation-panel-heading"
+    >
+      <h2
+        id="simulation-panel-heading"
+        class="visually-hidden"
+      >
+        Interactive Weltgeist simulation
+      </h2>
+
+
+      <!-- Controls -->
+
+      <div class="pedal-panel">
+        <header class="pedal-header">
+          <p class="brand">
+            Late Roman Audio
+          </p>
+
+          <p class="pedal-product-name">
+            Weltgeist
+          </p>
+        </header>
+
+        <div class="control control--horizontal">
+          <div class="control-heading">
+            <label for="sensitivity">
+              Sensitivity
+            </label>
+
+            <output
+              id="sensitivity-value"
+              for="sensitivity"
+            >
+              6.5
+            </output>
+          </div>
+
+          <input
+            id="sensitivity"
+            type="range"
+            min="0.5"
+            max="10"
+            step="0.1"
+            value="6.5"
+          >
+        </div>
+
+        <div class="control control--horizontal">
+          <div class="control-heading">
+            <label for="base">
+              Base
+            </label>
+
+            <output
+              id="base-value"
+              for="base"
+            >
+              1.00
+            </output>
+          </div>
+
+          <input
+            id="base"
+            type="range"
+            min="0"
+            max="5"
+            step="0.05"
+            value="1"
+          >
+        </div>
+
+        <div class="control control--horizontal">
+          <div class="control-heading">
+            <label for="attack">
+              Rise
+            </label>
+
+            <output
+              id="attack-value"
+              for="attack"
+            >
+              250 ms
+            </output>
+          </div>
+
+          <input
+            id="attack"
+            type="range"
+            min="10"
+            max="1000"
+            step="10"
+            value="250"
+          >
+        </div>
+
+        <div class="control control--horizontal">
+          <div class="control-heading">
+            <label for="release">
+              Fall
+            </label>
+
+            <output
+              id="release-value"
+              for="release"
+            >
+              3750 ms
+            </output>
+          </div>
+
+          <input
+            id="release"
+            type="range"
+            min="10"
+            max="4000"
+            step="10"
+            value="3750"
+          >
+        </div>
+
+        <div class="control control--horizontal">
+          <div class="control-heading">
+            <label for="invert">
+              Invert
+            </label>
+          </div>
+
+          <input
+            id="invert"
+            type="checkbox"
+            aria-label="Invert expression direction"
+          >
+        </div>
+      </div>
+
+
+      <!-- Visualization -->
+
+      <section class="visualization-panel">
+
+        <header class="visualization-header">
+          <div>
+            <p class="eyebrow">
+              Expression Mapping
+            </p>
+
+            <h3>
+              From Dynamics to Expression
+            </h3>
+          </div>
+
+
+          <!-- Input source -->
+
+          <div class="simulation-input-control">
+
+            <fieldset class="input-source-selector">
+              <legend>
+                Input Source
+              </legend>
+
+              <label class="input-source-option">
+                <input
+                  type="radio"
+                  name="input-source"
+                  value="manual"
+                  checked
+                >
+
+                <span>
+                  Manual
+                </span>
+              </label>
+
+              <label class="input-source-option">
+                <input
+                  type="radio"
+                  name="input-source"
+                  value="live"
+                >
+
+                <svg
+                  class="input-source-icon"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="
+                      M12 14
+                      A3 3 0 0 0 15 11
+                      V5
+                      A3 3 0 0 0 9 5
+                      V11
+                      A3 3 0 0 0 12 14
+
+                      M18 11
+                      A6 6 0 0 1 6 11
+
+                      M12 17
+                      V21
+
+                      M9 21
+                      H15
+                    "
+                  />
+                </svg>
+
+                <span>
+                  Live Audio
+                </span>
+              </label>
+            </fieldset>
+
+
+            <div
+              id="live-audio-info"
+              class="live-audio-info"
+              aria-live="polite"
+              hidden
+            >
+              <p
+                id="live-audio-status"
+                class="live-audio-status"
+              >
+                Listening…
+              </p>
+
+              <p class="live-audio-privacy">
+                Processed locally in your browser. Not uploaded.
+              </p>
+            </div>
+
+
+            <div
+              class="control control--horizontal input-level-control"
+            >
+              <div class="control-heading">
+                <label for="input-level">
+                  Input Level
+                </label>
+
+                <output
+                  id="input-level-value"
+                  for="input-level"
+                >
+                  0
+                </output>
+              </div>
+
+              <input
+                id="input-level"
+                type="range"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0"
+              >
+            </div>
+
+          </div>
+
+
+          <dl class="live-values">
+            <div>
+              <dt>
+                Input
+              </dt>
+
+              <dd id="current-input">
+                0.00
+              </dd>
+            </div>
+
+            <div>
+              <dt>
+                Output
+              </dt>
+
+              <dd id="current-output">
+                0.00
+              </dd>
+            </div>
+          </dl>
+        </header>
+
+
+        <!-- Visualization switch -->
+
+        <div
+          class="visualization-view-switch"
+          role="tablist"
+          aria-label="Simulation visualization"
+        >
+          <button
+            id="transfer-curve-tab"
+            class="visualization-view-button is-active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="transfer-curve-view"
+            data-visualization-view="transfer-curve"
+          >
+            Transfer Curve
+          </button>
+
+          <button
+            id="signal-path-tab"
+            class="visualization-view-button"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="signal-path-view"
+            data-visualization-view="signal-path"
+          >
+            Signal Path
+          </button>
+        </div>
+
+
+        <!-- Visualization stage -->
+
+        <div class="visualization-stage">
+
+
+          <!-- Transfer Curve -->
+
+          <div
+            id="transfer-curve-view"
+            class="visualization-view visualization-view--transfer is-active"
+            role="tabpanel"
+            aria-labelledby="transfer-curve-tab"
+          >
+            <div class="chart-container">
+              <svg
+                id="transfer-chart"
+                role="img"
+                aria-label="Weltgeist pedal response curve"
+              ></svg>
+            </div>
+          </div>
+
+
+          <!-- Signal Path -->
+
+          <div
+            id="signal-path-view"
+            class="visualization-view visualization-view--routing"
+            role="tabpanel"
+            aria-labelledby="signal-path-tab"
+            hidden
+          >
+
+            <div class="routing-diagram">
+
+              <svg
+                class="routing-svg"
+                viewBox="0 0 1000 520"
+                role="img"
+                aria-label="Guitar routed through Weltgeist and tremolo to an amplifier. EXP 1 controls the tremolo expression input."
+              >
+                <defs>
+
+                  <marker
+                    id="routing-arrow-audio"
+                    viewBox="0 0 10 10"
+                    refX="8"
+                    refY="5"
+                    markerWidth="5"
+                    markerHeight="5"
+                    orient="auto"
+                  >
+                    <path
+                      d="M 0 0 L 10 5 L 0 10 Z"
+                      class="routing-arrow--audio"
+                    />
+                  </marker>
+
+                  <marker
+                    id="routing-arrow-expression"
+                    viewBox="0 0 10 10"
+                    refX="8"
+                    refY="5"
+                    markerWidth="5"
+                    markerHeight="5"
+                    orient="auto"
+                  >
+                    <path
+                      d="M 0 0 L 10 5 L 0 10 Z"
+                      class="routing-arrow--expression"
+                    />
+                  </marker>
+
+                </defs>
+
+
+                <!-- AUDIO: Guitar -> Weltgeist -->
+
+                <path
+                  class="routing-cable routing-cable--audio"
+                  d="
+                    M 955 160
+                    H 840
+                    Q 820 160 820 180
+                    V 230
+                  "
+                  marker-end="url(#routing-arrow-audio)"
+                />
+
+
+                <!-- AUDIO: Weltgeist -> Tremolo -->
+
+                <path
+                  class="routing-cable routing-cable--audio"
+                  d="
+                    M 585 230
+                    V 160
+                    Q 585 145 570 145
+                    H 300
+                    Q 285 145 285 160
+                    V 230
+                  "
+                  marker-end="url(#routing-arrow-audio)"
+                />
+
+
+                <!-- AUDIO: Tremolo -> Amp -->
+
+                <path
+                  class="routing-cable routing-cable--audio"
+                  d="
+                    M 155 230
+                    V 180
+                    Q 155 160 135 160
+                    H 45
+                  "
+                  marker-end="url(#routing-arrow-audio)"
+                />
+
+
+                <!-- EXP 1 -> Tremolo EXP -->
+
+                <path
+                  class="
+                    routing-cable
+                    routing-cable--expression
+                  "
+                  d="
+                    M 745 230
+                    V 80
+                    Q 745 60 725 60
+                    H 240
+                    Q 220 60 220 80
+                    V 230
+                  "
+                  marker-end="url(#routing-arrow-expression)"
+                />
+
+
+                <!-- Labels -->
+
+                <text
+                  x="480"
+                  y="52"
+                  text-anchor="middle"
+                  class="
+                    routing-cable-label
+                    routing-cable-label--expression
+                  "
+                >
+                  EXP 1
+                </text>
+
+                <text
+                  x="440"
+                  y="137"
+                  text-anchor="middle"
+                  class="routing-cable-label"
+                >
+                  AUDIO
+                </text>
+
+
+                <!-- AMP -->
+
+                <g class="routing-endpoint">
+                  <circle
+                    cx="45"
+                    cy="160"
+                    r="5"
+                  />
+
+                  <text
+                    x="45"
+                    y="132"
+                    text-anchor="middle"
+                  >
+                    AMP
+                  </text>
+                </g>
+
+
+                <!-- TREMOLO -->
+
+                <g
+                  class="
+                    routing-device
+                    routing-device--tremolo
+                  "
+                >
+                  <rect
+                    x="120"
+                    y="230"
+                    width="200"
+                    height="220"
+                    rx="3"
+                  />
+
+
+                  <!-- OUT -->
+
+                  <g
+                    class="
+                      routing-port
+                      routing-port--audio-reactive
+                    "
+                  >
+                    <text
+                      x="155"
+                      y="204"
+                      text-anchor="middle"
+                    >
+                      OUT
+                    </text>
+
+                    <circle
+                      cx="155"
+                      cy="230"
+                      r="7"
+                    />
+                  </g>
+
+
+                  <!-- EXP -->
+
+                  <g
+                    class="
+                      routing-port
+                      routing-port--expression
+                      routing-port--reactive
+                    "
+                  >
+                    <text
+                      x="220"
+                      y="204"
+                      text-anchor="middle"
+                    >
+                      EXP
+                    </text>
+
+                    <circle
+                      cx="220"
+                      cy="230"
+                      r="7"
+                    />
+                  </g>
+
+
+                  <!-- IN -->
+
+                  <g
+                    class="
+                      routing-port
+                      routing-port--audio-reactive
+                    "
+                  >
+                    <text
+                      x="285"
+                      y="204"
+                      text-anchor="middle"
+                    >
+                      IN
+                    </text>
+
+                    <circle
+                      cx="285"
+                      cy="230"
+                      r="7"
+                    />
+                  </g>
+
+
+                  <text
+                    x="220"
+                    y="305"
+                    text-anchor="middle"
+                    class="routing-device-eyebrow"
+                  >
+                    EFFECT
+                  </text>
+
+                  <text
+                    x="220"
+                    y="342"
+                    text-anchor="middle"
+                    class="routing-device-name"
+                  >
+                    TREMOLO
+                  </text>
+                  <g class="routing-tremolo-visualization">
+
+                  <text
+                    x="220"
+                    y="374"
+                    text-anchor="middle"
+                    class="routing-tremolo-label"
+                  >
+                    DEPTH
+                  </text>
+
+                  <path
+                    class="routing-tremolo-wave"
+                    d="
+                      M 150 400
+                      C 160 380 170 380 180 400
+                      C 190 420 200 420 210 400
+                      C 220 380 230 380 240 400
+                      C 250 420 260 420 270 400
+                      C 280 380 290 380 300 400
+                    "
+                  />
+                </g>
+                </g>
+
+
+                <!-- WELTGEIST -->
+
+                <g
+                  class="
+                    routing-device
+                    routing-device--weltgeist
+                  "
+                >
+                  <rect
+                    x="530"
+                    y="230"
+                    width="330"
+                    height="220"
+                    rx="3"
+                  />
+
+
+                  <!-- OUTPUT -->
+
+                  <g
+                    class="
+                      routing-port
+                      routing-port--audio-reactive
+                    "
+                  >
+                    <text
+                      x="585"
+                      y="204"
+                      text-anchor="middle"
+                    >
+                      OUTPUT
+                    </text>
+
+                    <circle
+                      cx="585"
+                      cy="230"
+                      r="7"
+                    />
+                  </g>
+
+
+                  <!-- EXP 2 -->
+
+                  <g
+                    class="
+                      routing-port
+                      routing-port--expression
+                    "
+                  >
+                    <text
+                      x="665"
+                      y="204"
+                      text-anchor="middle"
+                    >
+                      EXP 2
+                    </text>
+
+                    <circle
+                      cx="665"
+                      cy="230"
+                      r="7"
+                    />
+                  </g>
+
+
+                  <!-- EXP 1 -->
+
+                  <g
+                    class="
+                      routing-port
+                      routing-port--expression
+                      routing-port--reactive
+                    "
+                  >
+                    <text
+                      x="745"
+                      y="204"
+                      text-anchor="middle"
+                    >
+                      EXP 1
+                    </text>
+
+                    <circle
+                      cx="745"
+                      cy="230"
+                      r="7"
+                    />
+                  </g>
+
+
+                  <!-- INPUT -->
+
+                  <g
+                    class="
+                      routing-port
+                      routing-port--audio-reactive
+                    "
+                  >
+                    <text
+                      x="820"
+                      y="204"
+                      text-anchor="middle"
+                    >
+                      INPUT
+                    </text>
+
+                    <circle
+                      cx="820"
+                      cy="230"
+                      r="7"
+                    />
+                  </g>
+
+
+                  <text
+                    x="695"
+                    y="312"
+                    text-anchor="middle"
+                    class="routing-device-eyebrow"
+                  >
+                    LATE ROMAN AUDIO
+                  </text>
+
+                  <text
+                    x="695"
+                    y="350"
+                    text-anchor="middle"
+                    class="
+                      routing-device-name
+                      routing-device-name--weltgeist
+                    "
+                  >
+                    WELTGEIST
+                  </text>
+                </g>
+
+                <g class="routing-input-meter">
+                  <text
+                    x="695"
+                    y="377"
+                    text-anchor="middle"
+                    class="routing-input-meter-label"
+                  >
+                    INPUT LEVEL
+                  </text>
+
+                  <circle
+                    class="routing-input-led"
+                    data-threshold="0.125"
+                    cx="632"
+                    cy="405"
+                    r="5"
+                  />
+
+                  <circle
+                    class="routing-input-led"
+                    data-threshold="0.250"
+                    cx="650"
+                    cy="405"
+                    r="5"
+                  />
+
+                  <circle
+                    class="routing-input-led"
+                    data-threshold="0.375"
+                    cx="668"
+                    cy="405"
+                    r="5"
+                  />
+
+                  <circle
+                    class="routing-input-led"
+                    data-threshold="0.500"
+                    cx="686"
+                    cy="405"
+                    r="5"
+                  />
+
+                  <circle
+                    class="routing-input-led"
+                    data-threshold="0.625"
+                    cx="704"
+                    cy="405"
+                    r="5"
+                  />
+
+                  <circle
+                    class="routing-input-led"
+                    data-threshold="0.750"
+                    cx="722"
+                    cy="405"
+                    r="5"
+                  />
+
+                  <circle
+                    class="routing-input-led"
+                    data-threshold="0.875"
+                    cx="740"
+                    cy="405"
+                    r="5"
+                  />
+
+                  <circle
+                    class="routing-input-led"
+                    data-threshold="1.000"
+                    cx="758"
+                    cy="405"
+                    r="5"
+                  />
+                </g>
+
+                <!-- GUITAR -->
+
+                <g class="routing-endpoint">
+                  <circle
+                    cx="955"
+                    cy="160"
+                    r="5"
+                  />
+
+                  <text
+                    x="955"
+                    y="132"
+                    text-anchor="middle"
+                  >
+                    GUITAR
+                  </text>
+                </g>
+
+              </svg>
+
+            </div>
+
+
+            <div
+              class="routing-legend"
+              aria-hidden="true"
+            >
+              <span class="routing-legend-item">
+                <span
+                  class="
+                    routing-legend-line
+                    routing-legend-line--audio
+                  "
+                ></span>
+
+                Audio signal
+              </span>
+
+              <span class="routing-legend-item">
+                <span
+                  class="
+                    routing-legend-line
+                    routing-legend-line--expression
+                  "
+                ></span>
+
+                Expression control
+              </span>
+            </div>
+
           </div>
 
         </div>
-
-        <dl class="live-values">
-          <div>
-            <dt>Input</dt>
-            <dd id="current-input">0.00</dd>
-          </div>
-
-          <div>
-            <dt>Output</dt>
-            <dd id="current-output">0.00</dd>
-          </div>
-        </dl>
-      </header>
-
-      <div class="chart-container">
-        <svg id="transfer-chart" role="img" aria-label="Weltgeist pedal response curve"></svg>
-      </div>
+      </section>
     </section>
-  </section>
 
-  <section
-  class="routing-section reveal-section"
-  aria-labelledby="routing-heading"
->
-  <div class="section-content">
-    <p class="section-eyebrow">
-      Signal Routing
-    </p>
 
-    <h2
-      id="routing-heading"
-      class="section-heading"
+    <!-- Specifications -->
+
+    <section
+      id="specifications"
+      class="content-section particle-section"
+      aria-labelledby="specifications-heading"
     >
-      One Signal. Two Paths.
-    </h2>
-
-    <div class="routing-diagram">
-
-
-<svg
-  class="routing-svg"
-  viewBox="0 0 1000 520"
-  role="img"
-  aria-label="Guitar routed through Weltgeist and tremolo to an amplifier. EXP 1 controls the tremolo expression input."
->
-  <defs>
-    <marker
-      id="routing-arrow-audio"
-      viewBox="0 0 10 10"
-      refX="8"
-      refY="5"
-      markerWidth="5"
-      markerHeight="5"
-      orient="auto"
-    >
-      <path
-        d="M 0 0 L 10 5 L 0 10 Z"
-        class="routing-arrow--audio"
-      />
-    </marker>
-
-    <marker
-      id="routing-arrow-expression"
-      viewBox="0 0 10 10"
-      refX="8"
-      refY="5"
-      markerWidth="5"
-      markerHeight="5"
-      orient="auto"
-    >
-      <path
-        d="M 0 0 L 10 5 L 0 10 Z"
-        class="routing-arrow--expression"
-      />
-    </marker>
-  </defs>
-
-
-  <!-- AUDIO: Guitar -> Weltgeist -->
-
-  <path
-    class="routing-cable routing-cable--audio"
-    d="
-      M 955 160
-      H 840
-      Q 820 160 820 180
-      V 230
-    "
-    marker-end="url(#routing-arrow-audio)"
-  />
-
-
-  <!-- AUDIO: Weltgeist -> Tremolo -->
-
-  <path
-    class="routing-cable routing-cable--audio"
-    d="
-      M 585 230
-      V 160
-      Q 585 145 570 145
-      H 300
-      Q 285 145 285 160
-      V 230
-    "
-    marker-end="url(#routing-arrow-audio)"
-  />
-
-
-  <!-- AUDIO: Tremolo -> Amp -->
-
-  <path
-    class="routing-cable routing-cable--audio"
-    d="
-      M 155 230
-      V 180
-      Q 155 160 135 160
-      H 45
-    "
-    marker-end="url(#routing-arrow-audio)"
-  />
-
-
-  <!-- EXP 1 -> Tremolo EXP -->
-
-  <path
-    class="
-      routing-cable
-      routing-cable--expression
-    "
-    d="
-      M 745 230
-      V 80
-      Q 745 60 725 60
-      H 240
-      Q 220 60 220 80
-      V 230
-    "
-    marker-end="url(#routing-arrow-expression)"
-  />
-
-
-  <!-- Labels -->
-
-  <text
-    x="480"
-    y="52"
-    text-anchor="middle"
-    class="
-      routing-cable-label
-      routing-cable-label--expression
-    "
-  >
-    EXP 1
-  </text>
-
-  <text
-    x="440"
-    y="137"
-    text-anchor="middle"
-    class="routing-cable-label"
-  >
-    AUDIO
-  </text>
-
-
-  <!-- AMP -->
-
-  <g class="routing-endpoint">
-    <circle
-      cx="45"
-      cy="160"
-      r="5"
-    />
-
-    <text
-      x="45"
-      y="132"
-      text-anchor="middle"
-    >
-      AMP
-    </text>
-  </g>
-
-
-  <!-- TREMOLO -->
-
-  <g
-    class="
-      routing-device
-      routing-device--tremolo
-    "
-  >
-    <rect
-      x="120"
-      y="230"
-      width="200"
-      height="220"
-      rx="3"
-    />
-
-    <!-- OUT -->
-
-    <g class="routing-port routing-port--audio-reactive">
-      <text
-        x="155"
-        y="204"
-        text-anchor="middle"
-      >
-        OUT
-      </text>
-
-      <circle
-        cx="155"
-        cy="230"
-        r="7"
-      />
-    </g>
-
-    <!-- EXP -->
-
-    <g
-      class="
-        routing-port
-        routing-port--expression
-        routing-port--reactive
-      "
-    >
-      <text
-        x="220"
-        y="204"
-        text-anchor="middle"
-      >
-        EXP
-      </text>
-
-      <circle
-        cx="220"
-        cy="230"
-        r="7"
-      />
-    </g>
-
-    <!-- IN -->
-
-    <g class="routing-port routing-port--audio-reactive">
-      <text
-        x="285"
-        y="204"
-        text-anchor="middle"
-      >
-        IN
-      </text>
-
-      <circle
-        cx="285"
-        cy="230"
-        r="7"
-      />
-    </g>
-
-    <text
-      x="220"
-      y="325"
-      text-anchor="middle"
-      class="routing-device-eyebrow"
-    >
-      EFFECT
-    </text>
-
-    <text
-      x="220"
-      y="362"
-      text-anchor="middle"
-      class="routing-device-name"
-    >
-      TREMOLO
-    </text>
-  </g>
-
-
-  <!-- WELTGEIST -->
-
-  <g
-    class="
-      routing-device
-      routing-device--weltgeist
-    "
-  >
-    <rect
-      x="530"
-      y="230"
-      width="330"
-      height="220"
-      rx="3"
-    />
-
-    <!-- OUTPUT -->
-
-    <g class="routing-port routing-port--audio-reactive">
-      <text
-        x="585"
-        y="204"
-        text-anchor="middle"
-      >
-        OUTPUT
-      </text>
-
-      <circle
-        cx="585"
-        cy="230"
-        r="7"
-      />
-    </g>
-
-    <!-- EXP 2: visible but unused -->
-
-    <g
-      class="
-        routing-port
-        routing-port--expression
-      "
-    >
-      <text
-        x="665"
-        y="204"
-        text-anchor="middle"
-      >
-        EXP 2
-      </text>
-
-      <circle
-        cx="665"
-        cy="230"
-        r="7"
-      />
-    </g>
-
-    <!-- EXP 1: controlled by simulation -->
-
-    <g
-      class="
-        routing-port
-        routing-port--expression
-        routing-port--reactive
-      "
-    >
-      <text
-        x="745"
-        y="204"
-        text-anchor="middle"
-      >
-        EXP 1
-      </text>
-
-      <circle
-        cx="745"
-        cy="230"
-        r="7"
-      />
-    </g>
-
-    <!-- INPUT -->
-
-    <g class="routing-port routing-port--audio-reactive">
-      <text
-        x="820"
-        y="204"
-        text-anchor="middle"
-      >
-        INPUT
-      </text>
-
-      <circle
-        cx="820"
-        cy="230"
-        r="7"
-      />
-    </g>
-
-    <text
-      x="695"
-      y="312"
-      text-anchor="middle"
-      class="routing-device-eyebrow"
-    >
-      LATE ROMAN AUDIO
-    </text>
-
-    <text
-      x="695"
-      y="350"
-      text-anchor="middle"
-      class="
-        routing-device-name
-        routing-device-name--weltgeist
-      "
-    >
-      WELTGEIST
-    </text>
-
-    <text
-      x="695"
-      y="382"
-      text-anchor="middle"
-      class="routing-device-description"
-    >
-      DYNAMICS → EXPRESSION
-    </text>
-  </g>
-
-
-  <!-- GUITAR -->
-
-  <g class="routing-endpoint">
-    <circle
-      cx="955"
-      cy="160"
-      r="5"
-    />
-
-    <text
-      x="955"
-      y="132"
-      text-anchor="middle"
-    >
-      GUITAR
-    </text>
-  </g>
-</svg>
-
-    </div>
-
-    <div
-      class="routing-legend"
-      aria-hidden="true"
-    >
-      <span class="routing-legend-item">
-        <span
-          class="
-            routing-legend-line
-            routing-legend-line--audio
-          "
-        ></span>
-        Audio signal
-      </span>
-
-      <span class="routing-legend-item">
-        <span
-          class="
-            routing-legend-line
-            routing-legend-line--expression
-          "
-        ></span>
-        Expression control
-      </span>
-    </div>
-  </div>
-</section>
-  <section
-    id="specifications"
-    class="content-section particle-section"
-    aria-labelledby="specifications-heading"
-  >
       <div
         id="specifications-particles"
         class="section-particles"
         aria-hidden="true"
       ></div>
+
       <div class="section-content">
-    <h2 id="specifications-heading" class="section-heading">
-      Specifications
-    </h2>
+        <h2
+          id="specifications-heading"
+          class="section-heading"
+        >
+          Specifications
+        </h2>
 
-    <dl class="feature-list">
-      <div class="feature-row">
-        <dt>Input</dt>
-        <dd>1× TS input jack</dd>
+        <dl class="feature-list">
+
+          <div class="feature-row">
+            <dt>
+              Input
+            </dt>
+
+            <dd>
+              1× TS input jack
+            </dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>
+              Expression
+            </dt>
+
+            <dd>
+              2× TRS expression output jacks
+            </dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>
+              Output
+            </dt>
+
+            <dd>
+              1× TS output jack
+            </dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>
+              Output impedance
+            </dt>
+
+            <dd>
+              100 Ω
+            </dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>
+              Power supply
+            </dt>
+
+            <dd>
+              9 V DC, center-negative
+            </dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>
+              Current draw
+            </dt>
+
+            <dd>
+              20 mA
+            </dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>
+              Bypass
+            </dt>
+
+            <dd>
+              True bypass
+            </dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>
+              Dimensions
+            </dt>
+
+            <dd>
+              145 mm × 100 mm × 100 mm
+            </dd>
+          </div>
+
+          <div class="feature-row">
+            <dt>
+              Weight
+            </dt>
+
+            <dd>
+              300 g
+            </dd>
+          </div>
+
+        </dl>
+
+
+        <h2 class="section-heading section-heading--subsequent">
+          Compatibility Notice
+        </h2>
+
+        <p class="landing-description">
+          The pedal emulates the 50 kΩ potentiometer of an expression pedal,
+          but it is not guaranteed to reproduce a perfectly linear response
+          curve. Use it only with devices that do not require a specific
+          potentiometer resistance. The output is not a true CV signal and
+          may not be compatible with all devices. Please check your device's
+          specifications before using the pedal.
+        </p>
       </div>
-
-      <div class="feature-row">
-        <dt>Expression</dt>
-        <dd>2× TRS expression output jacks</dd>
-      </div>
-
-      <div class="feature-row">
-        <dt>Output</dt>
-        <dd>1× TS output jack</dd>
-      </div>
-
-      <div class="feature-row">
-        <dt>Output impedance</dt>
-        <dd>100 Ω</dd>
-      </div>
-
-      <div class="feature-row">
-        <dt>Power supply</dt>
-        <dd>9 V DC, center-negative</dd>
-      </div>
-
-      <div class="feature-row">
-        <dt>Current draw</dt>
-        <dd>20 mA</dd>
-      </div>
-
-      <div class="feature-row">
-        <dt>Bypass</dt>
-        <dd>True bypass</dd>
-      </div>
-
-      <div class="feature-row">
-        <dt>Dimensions</dt>
-        <dd>145 mm × 100 mm × 100 mm</dd>
-      </div>
-
-      <div class="feature-row">
-        <dt>Weight</dt>
-        <dd>300 g</dd>
-      </div>
-    </dl>
-
-    <h2 class="section-heading section-heading--subsequent">
-      Compatibility Notice
-    </h2>
-
-    <p class="landing-description">
-      The pedal emulates the 50 kΩ potentiometer of an expression pedal,
-      but it is not guaranteed to reproduce a perfectly linear response
-      curve. Use it only with devices that do not require a specific
-      potentiometer resistance. The output is not a true CV signal and
-      may not be compatible with all devices. Please check your device's
-      specifications before using the pedal.
-    </p>
-    </div>
-  </section>
-
+    </section>
 
   </main>
 
-<footer class="site-footer">
-  <p class="site-footer-brand">
-    © Late Roman Audio
-  </p>
 
-  <nav class="site-footer-links" aria-label="Footer navigation">
-    <a href="/imprint.html">
-      Imprint
-    </a>
+  <footer class="site-footer">
+    <p class="site-footer-brand">
+      © Late Roman Audio
+    </p>
 
-    <a href="/privacy.html">
-      Privacy Policy
-    </a>
-
-    <a href="mailto:info@lateromanaudio.de">
-      Contact
-    </a>
-
-    <a
-      class="site-footer-social-link"
-      href="https://www.instagram.com/lateromanaudio/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Late Roman Audio on Instagram"
+    <nav
+      class="site-footer-links"
+      aria-label="Footer navigation"
     >
-      <svg
-        class="site-footer-social-icon"
-        viewBox="0 0 24 24"
-        aria-hidden="true"
+      <a href="/imprint.html">
+        Imprint
+      </a>
+
+      <a href="/privacy.html">
+        Privacy Policy
+      </a>
+
+      <a href="mailto:info@lateromanaudio.de">
+        Contact
+      </a>
+
+      <a
+        class="site-footer-social-link"
+        href="https://www.instagram.com/lateromanaudio/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Late Roman Audio on Instagram"
       >
-        <rect
-          x="3"
-          y="3"
-          width="18"
-          height="18"
-          rx="5"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-        ></rect>
+        <svg
+          class="site-footer-social-icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <rect
+            x="3"
+            y="3"
+            width="18"
+            height="18"
+            rx="5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          ></rect>
 
-        <circle
-          cx="12"
-          cy="12"
-          r="4"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.8"
-        ></circle>
+          <circle
+            cx="12"
+            cy="12"
+            r="4"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          ></circle>
 
-        <circle
-          cx="17.4"
-          cy="6.7"
-          r="1"
-          fill="currentColor"
-        ></circle>
-      </svg>
-    </a>
-  </nav>
-</footer>
+          <circle
+            cx="17.4"
+            cy="6.7"
+            r="1"
+            fill="currentColor"
+          ></circle>
+        </svg>
+      </a>
+    </nav>
+  </footer>
 
-  <script type="module" src="/src/main.js"></script>
+  <script
+    type="module"
+    src="/src/main.js"
+  ></script>
 </body>
-
 </html>

@@ -33,4 +33,19 @@ export function updateRoutingVisualization({
     "--routing-output",
     normalizedOutput.toFixed(3),
   );
+
+  const inputLeds =
+    routingDiagram.querySelectorAll(
+      ".routing-input-led",
+    );
+
+  inputLeds.forEach((led) => {
+    const threshold =
+      Number(led.dataset.threshold);
+
+    led.classList.toggle(
+      "is-active",
+      normalizedInput >= threshold,
+    );
+  });
 }
