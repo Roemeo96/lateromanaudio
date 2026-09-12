@@ -10,3 +10,10 @@
 @import "./legal.css";
 @import "./footer.css";
 @import "./accent.css";
+
+
+.weltgeist-model {
+  width: 100%;
+  height: 600px;
+  display: block;
+}
