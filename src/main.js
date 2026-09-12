@@ -1,5 +1,7 @@
 import './styles/main.css';
 
+import "@google/model-viewer";
+
 import {
   initializeRevealSections,
 } from './reveal-sections.js';
