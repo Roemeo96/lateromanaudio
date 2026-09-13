@@ -1,0 +1,104 @@
+.weltgeist-model-stage {
+    position: relative;
+
+    width: min(100%, 1100px);
+    height: clamp(520px, 65vw, 760px);
+
+    margin: 5rem auto;
+    overflow: hidden;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+
+    box-shadow: var(--panel-shadow);
+}
+
+.weltgeist-model {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    background: transparent;
+
+    --poster-color: transparent;
+}
+
+@media (max-width: 700px) {
+    .weltgeist-model-stage {
+        height: 520px;
+        margin: 3rem auto;
+    }
+}
+
+.weltgeist-model-section {
+    padding: 6rem 1.5rem;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.weltgeist-model-inner {
+    width: min(100%, 1200px);
+    margin: 0 auto;
+}
+
+.weltgeist-model-heading {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.weltgeist-model-kicker {
+    margin: 0 0 0.75rem;
+
+    color: var(--muted);
+
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+}
+
+.weltgeist-model-heading h2 {
+    margin: 0;
+
+    color: var(--text);
+
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 400;
+}
+
+.weltgeist-model-stage {
+    position: relative;
+
+    width: min(100%, 760px);
+    height: clamp(380px, 48vw, 540px);
+
+    margin: 0 auto;
+    overflow: hidden;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+
+    box-shadow: var(--panel-shadow);
+}
+
+.weltgeist-model {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    background: transparent;
+
+    --poster-color: transparent;
+}
+
+@media (max-width: 700px) {
+    .weltgeist-model-section {
+        padding: 4rem 1rem;
+    }
+
+    .weltgeist-model-stage {
+        width: 100%;
+        height: 420px;
+    }
+}

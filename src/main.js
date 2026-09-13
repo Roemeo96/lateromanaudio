@@ -37,6 +37,8 @@ import {
   initializeVisualizationSwitch,
 } from './visualization-switch.js';
 
+import "@google/model-viewer";
+
 initializeDemoCarousel();
 
 initializeMobileMenu();
