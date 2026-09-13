@@ -5,6 +5,7 @@ import { loadWobbleUpdater } from "@tsparticles/updater-wobble";
 const PARTICLE_CONTAINER_IDS = [
   "hero-particles",
   "features-particles",
+  "why-weltgeist-particles",
   "specifications-particles",
   "simulation-showcase-particles",
 ];
