@@ -535,85 +535,86 @@
   --particle-color: #77528e;
 }
 
-
 /* =========================================================
    SUNDAY — INFRARED XEROX
-   Cream / black with a yellow-orange cast
-   Accent: vermilion
+   Cold copier paper / graphite
+   Accent: infrared vermilion
    ========================================================= */
 
 :root[data-palette="infrared-xerox"][data-theme="light"] {
   color-scheme: light;
 
-  --background: #f0ead9;
-  --background-rgb: 240 234 217;
+  --background: #efefeb;
+  --background-rgb: 239 239 235;
 
-  --surface: #e4ddca;
-  --surface-rgb: 228 221 202;
+  --surface: #e2e3df;
+  --surface-rgb: 226 227 223;
 
   --surface-deep: var(--background);
-  --control-surface: #cbc2aa;
+  --control-surface: #c9cbc6;
 
-  --text: #211d14;
-  --text-rgb: 33 29 20;
+  --text: #1a1c1d;
+  --text-rgb: 26 28 29;
 
-  --muted: #746e5f;
+  --muted: #6c7071;
 
-  --accent: #211d14;
-  --accent-rgb: 33 29 20;
-  --on-accent: #f0ead9;
+  --accent: #1a1c1d;
+  --accent-rgb: 26 28 29;
+  --on-accent: #efefeb;
 
-  --tertiary: #d44a1f;
-  --tertiary-rgb: 212 74 31;
-  --tertiary-strong: #ef5c2d;
+  --tertiary: #d93f2b;
+  --tertiary-rgb: 217 63 43;
+  --tertiary-strong: #f0543b;
 
-  --border: rgb(33 29 20 / 17%);
+  --border: rgb(26 28 29 / 16%);
 
-  --shadow-rgb: 45 37 24;
-  --highlight-rgb: 255 252 239;
-  --chart-guide-rgb: 67 59 44;
+  --shadow-rgb: 29 31 32;
+  --highlight-rgb: 255 255 252;
+  --chart-guide-rgb: 56 60 61;
 
-  --background-glow: rgb(212 74 31 / 9%);
+  --background-glow: rgb(217 63 43 / 8%);
 
   --panel-shadow: none;
---particle-color: #7b3320;
+
+  --particle-color: #7d3329;
 }
 
 :root[data-palette="infrared-xerox"][data-theme="dark"] {
   color-scheme: dark;
 
-  --background: #0e0b07;
-  --background-rgb: 14 11 7;
+  --background: #090b0c;
+  --background-rgb: 9 11 12;
 
-  --surface: #17130e;
-  --surface-rgb: 23 19 14;
+  --surface: #121516;
+  --surface-rgb: 18 21 22;
 
-  --surface-deep: #070503;
-  --control-surface: #272016;
+  --surface-deep: #040506;
+  --control-surface: #202426;
 
-  --text: #f1eadc;
-  --text-rgb: 241 234 220;
+  --text: #ecece7;
+  --text-rgb: 236 236 231;
 
-  --muted: #a59a86;
+  --muted: #909696;
 
-  --accent: #f1eadc;
-  --accent-rgb: 241 234 220;
-  --on-accent: #0e0b07;
+  --accent: #ecece7;
+  --accent-rgb: 236 236 231;
+  --on-accent: #090b0c;
 
-  --tertiary: #ff5b2f;
-  --tertiary-rgb: 255 91 47;
-  --tertiary-strong: #ff784f;
+  --tertiary: #ff4a32;
+  --tertiary-rgb: 255 74 50;
+  --tertiary-strong: #ff6a52;
 
-  --border: rgb(241 234 220 / 14%);
+  --border: rgb(236 236 231 / 13%);
 
   --shadow-rgb: 0 0 0;
-  --highlight-rgb: 255 247 231;
-  --chart-guide-rgb: 124 109 84;
+  --highlight-rgb: 247 247 242;
+  --chart-guide-rgb: 111 119 120;
 
-  --background-glow: rgb(255 91 47 / 12%);
+  --background-glow: rgb(255 74 50 / 12%);
 
   --panel-shadow: none;
-  --particle-color: #90704d;
+
+  --particle-color: #8b5047;
 }
 
 
