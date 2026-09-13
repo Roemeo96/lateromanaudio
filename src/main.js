@@ -1,7 +1,5 @@
 import './styles/main.css';
 
-import "./model-viewer-lighting.js";
-
 import {
   initializeRevealSections,
 } from './reveal-sections.js';
