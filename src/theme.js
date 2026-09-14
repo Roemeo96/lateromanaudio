@@ -38,11 +38,19 @@ function updateThemeToggle() {
   const currentTheme =
     getCurrentTheme();
 
+  const lightLabel =
+  toggle.dataset.labelLight
+    || "Switch to light mode";
+
+  const darkLabel =
+    toggle.dataset.labelDark
+    || "Switch to dark mode";
+
   toggle.setAttribute(
     "aria-label",
     currentTheme === "dark"
-      ? "Switch to light mode"
-      : "Switch to dark mode",
+      ? lightLabel
+      : darkLabel,
   );
 }
 

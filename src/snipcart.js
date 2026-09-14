@@ -15,6 +15,14 @@ let pendingShopInteraction = null;
 document.addEventListener(
   'snipcart.ready',
   () => {
+    const language =
+      document.documentElement.lang
+      || 'en';
+
+    window.Snipcart.api.session.setLanguage(
+      language,
+    );
+
     snipcartReady = true;
     snipcartLoading = false;
 

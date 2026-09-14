@@ -18,6 +18,16 @@ const MARGIN = {
  * }}
  */
 export function createTransferChart(svgElement) {
+  const labels = {
+    inputVolume:
+      svgElement.dataset.inputVolume
+      || 'Input Volume',
+
+    expressionPosition:
+      svgElement.dataset.expressionPosition
+      || 'Expression Position',
+  };
+
   const svg = d3
     .select(svgElement)
     .attr('viewBox', `0 0 ${WIDTH} ${HEIGHT}`)
@@ -95,7 +105,7 @@ export function createTransferChart(svgElement) {
     .attr('x', (plotLeft + plotRight) / 2)
     .attr('y', HEIGHT - 15)
     .attr('text-anchor', 'middle')
-    .text('Input Volume');
+    .text(labels.inputVolume);
 
   svg
     .append('text')
@@ -104,7 +114,7 @@ export function createTransferChart(svgElement) {
     .attr('x', -(plotTop + plotBottom) / 2)
     .attr('y', 22)
     .attr('text-anchor', 'middle')
-    .text('Expression Position');
+    .text(labels.expressionPosition);
 
   const lineGenerator = d3
     .line()
@@ -128,25 +138,12 @@ export function createTransferChart(svgElement) {
     .attr('class', 'current-point')
     .attr('r', 8);
 
-  /**
-   * Aktualisiert ausschließlich die Transfer-Kennlinie.
-   *
-   * @param {{ input: number, output: number }[]} points
-   */
   function updateCurve(points) {
     curvePath
       .datum(points)
       .attr('d', lineGenerator);
   }
 
-  /**
-   * Aktualisiert ausschließlich den aktuellen Arbeitspunkt
-   * und die zugehörigen Hilfslinien.
-   *
-   * @param {object} data
-   * @param {number} data.currentInput
-   * @param {number} data.currentOutput
-   */
   function updateCurrentPosition({
     currentInput,
     currentOutput,

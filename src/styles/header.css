@@ -386,3 +386,42 @@
       rotate(-45deg);
   }
 }
+
+
+
+.site-header-language {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.site-header-language-link {
+  color: var(--text-muted);
+  text-decoration: none;
+
+  transition:
+    color 160ms ease,
+    opacity 160ms ease;
+}
+
+.site-header-language-link:hover {
+  color: var(--text);
+}
+
+.site-header-language-separator {
+  color: var(--text-muted);
+  opacity: 0.45;
+}
+
+html[lang="en"] .site-header-language-link--en,
+html[lang="de"] .site-header-language-link--de,
+html[lang="fr"] .site-header-language-link--fr,
+html[lang="it"] .site-header-language-link--it,
+html[lang="es"] .site-header-language-link--es {
+  color: var(--accent);
+  pointer-events: none;
+}

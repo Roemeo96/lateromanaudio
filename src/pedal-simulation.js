@@ -96,6 +96,19 @@ export function createPedalSimulation() {
     document.querySelector(
       '#live-audio-status',
     );
+  const liveAudioMessages = {
+    requesting:
+      liveAudioInfo?.dataset.requesting,
+
+    accessDenied:
+      liveAudioInfo?.dataset.accessDenied,
+
+    noDevice:
+      liveAudioInfo?.dataset.noDevice,
+
+    startFailed:
+      liveAudioInfo?.dataset.startFailed,
+  };
 
   if (
     !baseInput
@@ -426,7 +439,7 @@ function render() {
 
         try {
           showLiveAudioInfo(
-            'Requesting audio access…',
+            liveAudioMessages.requesting,
           );
 
           await runLiveAudioOperation(
@@ -484,18 +497,18 @@ function render() {
             === 'NotAllowedError'
           ) {
             showLiveAudioInfo(
-              'Audio input access denied.',
+              liveAudioMessages.accessDenied,
             );
           } else if (
             error.name
             === 'NotFoundError'
           ) {
             showLiveAudioInfo(
-              'No audio input device found.',
+              liveAudioMessages.noDevice,
             );
           } else {
             showLiveAudioInfo(
-              'Audio input could not be started.',
+              liveAudioMessages.startFailed,
             );
           }
 

@@ -22,6 +22,14 @@ export function initializeMobileMenu() {
     return;
   }
 
+  const openLabel =
+    toggle.dataset.labelOpen
+    || 'Open navigation';
+
+  const closeLabel =
+    toggle.dataset.labelClose
+    || 'Close navigation';
+
   header.classList.add(
     'has-mobile-menu',
   );
@@ -42,8 +50,8 @@ export function initializeMobileMenu() {
     toggle.setAttribute(
       'aria-label',
       isOpen
-        ? 'Close navigation'
-        : 'Open navigation',
+        ? closeLabel
+        : openLabel,
     );
   }
 
