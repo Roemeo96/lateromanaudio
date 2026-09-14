@@ -2,191 +2,222 @@
 <html lang="en">
 
 <head>
-    <script>
-  (() => {
-    let storedTheme = null;
+  <meta charset="UTF-8">
 
-    try {
-      storedTheme =
-        localStorage.getItem("theme");
-    } catch {
-      // Use system preference if storage is unavailable.
-    }
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    const systemTheme =
-      window.matchMedia(
-        "(prefers-color-scheme: light)",
-      ).matches
-        ? "light"
-        : "dark";
+  <!--
+    Sets both the light/dark theme and the current
+    day-dependent color palette before the page renders.
+  -->
+  <script src="/theme-bootstrap.js"></script>
 
-    document.documentElement.dataset.theme =
-      storedTheme === "light"
-      || storedTheme === "dark"
-        ? storedTheme
-        : systemTheme;
-  })();
-</script>
-    <meta charset="UTF-8">
+  <meta
+    name="robots"
+    content="noindex, follow"
+  >
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    Imprint | Late Roman Audio
+  </title>
 
-    <meta name="robots" content="noindex, follow">
+  <link
+    rel="stylesheet"
+    href="/src/styles/main.css"
+  >
 
-    <title>
-        Imprint | Late Roman Audio
-    </title>
-    <link rel="stylesheet" href="/src/styles/main.css">
+  <link
+    rel="icon"
+    href="/favicon.svg"
+    type="image/svg+xml"
+  >
 
-
-
-<link
-  rel="icon"
-  href="/favicon.svg"
-  type="image/svg+xml"
->
-
-<link
-  rel="alternate icon"
-  href="/favicon.ico"
-  type="image/x-icon"
->
+  <link
+    rel="alternate icon"
+    href="/favicon.ico"
+    type="image/x-icon"
+  >
 </head>
 
 <body>
-    <header class="site-header site-header--legal">
-        <a class="site-header-brand" href="/" aria-label="Late Roman Audio – Home">
-            <span class="site-header-wordmark">
-                Late Roman Avdio
-            </span>
-                  <span class="site-header-symbol" aria-hidden="true">
+
+  <header class="site-header site-header--legal">
+
+    <a
+      class="site-header-brand"
+      href="/"
+      aria-label="Late Roman Audio – Home"
+    >
+      <span class="site-header-wordmark">
+        Late Roman Avdio
+      </span>
+
+      <span
+        class="site-header-symbol"
+        aria-hidden="true"
+      >
         <span></span>
         <span></span>
         <span></span>
       </span>
+    </a>
+
+    <button
+      class="site-header-theme-toggle"
+      type="button"
+      aria-label="Switch to light mode"
+    >
+      <svg
+        class="site-header-theme-icon site-header-theme-icon--sun"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="3.5"
+        ></circle>
+
+        <path d="M12 2v2"></path>
+        <path d="M12 20v2"></path>
+        <path d="M4.93 4.93l1.41 1.41"></path>
+        <path d="M17.66 17.66l1.41 1.41"></path>
+        <path d="M2 12h2"></path>
+        <path d="M20 12h2"></path>
+        <path d="M4.93 19.07l1.41-1.41"></path>
+        <path d="M17.66 6.34l1.41-1.41"></path>
+      </svg>
+
+      <svg
+        class="site-header-theme-icon site-header-theme-icon--moon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          d="
+            M20.5 15.2
+            A8.5 8.5 0 0 1
+            8.8 3.5
+            A8.5 8.5 0 1 0
+            20.5 15.2
+          "
+        ></path>
+      </svg>
+    </button>
+
+  </header>
+
+
+  <main class="legal-page">
+
+    <h1>
+      Imprint
+    </h1>
+
+
+    <section>
+
+      <h2>
+        Information pursuant to Section 5 DDG
+      </h2>
+
+      <address>
+        Fabian Römer<br>
+        [STREET AND HOUSE NUMBER]<br>
+        [POSTAL CODE AND CITY]<br>
+        Germany
+      </address>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        Contact
+      </h2>
+
+      <p>
+        Email:
+        <a href="mailto:info@lateromanaudio.de">
+          info@lateromanaudio.de
         </a>
-        <button
-  class="site-header-theme-toggle"
-  type="button"
-  aria-label="Switch to light mode"
->
-  <svg
-    class="site-header-theme-icon site-header-theme-icon--sun"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-  >
-    <circle cx="12" cy="12" r="3.5"></circle>
-    <path d="M12 2v2"></path>
-    <path d="M12 20v2"></path>
-    <path d="M4.93 4.93l1.41 1.41"></path>
-    <path d="M17.66 17.66l1.41 1.41"></path>
-    <path d="M2 12h2"></path>
-    <path d="M20 12h2"></path>
-    <path d="M4.93 19.07l1.41-1.41"></path>
-    <path d="M17.66 6.34l1.41-1.41"></path>
-  </svg>
+      </p>
 
-  <svg
-    class="site-header-theme-icon site-header-theme-icon--moon"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-  >
-    <path
-      d="
-        M20.5 15.2
-        A8.5 8.5 0 0 1
-        8.8 3.5
-        A8.5 8.5 0 1 0
-        20.5 15.2
-      "
-    ></path>
-  </svg>
-</button>
-    </header>
+    </section>
 
-    <main class="legal-page">
-        <h1>
-            Imprint
-        </h1>
 
-        <section>
-            <h2>
-                Information pursuant to Section 5 DDG
-            </h2>
+    <section>
 
-            <address>
-                Fabian Römer<br>
-                [STREET AND HOUSE NUMBER]<br>
-                [POSTAL CODE AND CITY]<br>
-                Germany
-            </address>
-        </section>
+      <h2>
+        Responsible for editorial content
+      </h2>
 
-        <section>
-            <h2>
-                Contact
-            </h2>
+      <address>
+        Fabian Römer<br>
+        [STREET AND HOUSE NUMBER]<br>
+        [POSTAL CODE AND CITY]<br>
+        Germany
+      </address>
 
-            <p>
-                Email:
-                <a href="mailto:info@lateromanaudio.de">
-                    info@lateromanaudio.de
-                </a>
-            </p>
-        </section>
+    </section>
 
-        <section>
-            <h2>
-                Responsible for editorial content
-            </h2>
 
-            <address>
-                Fabian Römer<br>
-                [STREET AND HOUSE NUMBER]<br>
-                [POSTAL CODE AND CITY]<br>
-                Germany
-            </address>
-        </section>
+    <section>
 
-        <section>
-            <h2>
-                Consumer dispute resolution
-            </h2>
+      <h2>
+        Consumer dispute resolution
+      </h2>
 
-            <p>
-                I am neither willing nor obliged to participate in dispute
-                resolution proceedings before a consumer arbitration board.
-            </p>
-        </section>
+      <p>
+        I am neither willing nor obliged to participate in dispute
+        resolution proceedings before a consumer arbitration board.
+      </p>
 
-        <p class="legal-page-updated">
-            Last updated: July 2026
-        </p>
-    </main>
+    </section>
 
-    <footer class="site-footer">
-        <p class="site-footer-brand">
-            © Late Roman Audio
-        </p>
 
-        <nav class="site-footer-links" aria-label="Legal information">
-            <a href="/">
-                Home
-            </a>
+    <p class="legal-page-updated">
+      Last updated: July 2026
+    </p>
 
-            <a href="/privacy.html">
-                Privacy Policy
-            </a>
+  </main>
 
-            <a href="mailto:info@lateromanaudio.de">
-                Contact
-            </a>
-        </nav>
-    </footer>
-    <script
-  type="module"
-  src="/src/legal-theme.js"
-></script>
+
+  <footer class="site-footer">
+
+    <p class="site-footer-brand">
+      © Late Roman Audio
+    </p>
+
+    <nav
+      class="site-footer-links"
+      aria-label="Legal information"
+    >
+      <a href="/">
+        Home
+      </a>
+
+      <a href="/privacy.html">
+        Privacy Policy
+      </a>
+
+      <a href="mailto:info@lateromanaudio.de">
+        Contact
+      </a>
+    </nav>
+
+  </footer>
+
+
+  <script
+    type="module"
+    src="/src/legal-theme.js"
+  ></script>
+
 </body>
 
 </html>

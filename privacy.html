@@ -2,575 +2,721 @@
 <html lang="en">
 
 <head>
-    <script>
-  (() => {
-    let storedTheme = null;
+  <meta charset="UTF-8">
 
-    try {
-      storedTheme =
-        localStorage.getItem("theme");
-    } catch {
-      // Use system preference if storage is unavailable.
-    }
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-    const systemTheme =
-      window.matchMedia(
-        "(prefers-color-scheme: light)",
-      ).matches
-        ? "light"
-        : "dark";
+  <!--
+    Sets both the light/dark theme and the current
+    day-dependent color palette before the page renders.
+  -->
+  <script src="/theme-bootstrap.js"></script>
 
-    document.documentElement.dataset.theme =
-      storedTheme === "light"
-      || storedTheme === "dark"
-        ? storedTheme
-        : systemTheme;
-  })();
-</script>
-    <meta charset="UTF-8">
+  <meta
+    name="robots"
+    content="noindex, follow"
+  >
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+  <title>
+    Privacy Policy | Late Roman Audio
+  </title>
 
-    <meta
-        name="robots"
-        content="noindex, follow"
-    >
+  <link
+    rel="stylesheet"
+    href="/src/styles/main.css"
+  >
 
-    <title>
-        Privacy Policy | Late Roman Audio
-    </title>
+  <link
+    rel="icon"
+    href="/favicon.svg"
+    type="image/svg+xml"
+  >
 
-    <link
-        rel="stylesheet"
-        href="/src/styles/main.css"
-    >
-
-    <link
-        rel="icon"
-        href="/favicon.svg"
-        type="image/svg+xml"
-    >
-
-    <link
-        rel="alternate icon"
-        href="/favicon.ico"
-        type="image/x-icon"
-    >
+  <link
+    rel="alternate icon"
+    href="/favicon.ico"
+    type="image/x-icon"
+  >
 </head>
 
 <body>
-    <header class="site-header site-header--legal">
-        <a
-            class="site-header-brand"
-            href="/"
-            aria-label="Late Roman Audio – Home"
-        >
-            <span class="site-header-wordmark">
-                Late Roman Avdio
-            </span>
 
-            <span
-                class="site-header-symbol"
-                aria-hidden="true"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </span>
+  <header class="site-header site-header--legal">
+
+    <a
+      class="site-header-brand"
+      href="/"
+      aria-label="Late Roman Audio – Home"
+    >
+      <span class="site-header-wordmark">
+        Late Roman Avdio
+      </span>
+
+      <span
+        class="site-header-symbol"
+        aria-hidden="true"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </a>
+
+    <button
+      class="site-header-theme-toggle"
+      type="button"
+      aria-label="Switch to light mode"
+    >
+      <svg
+        class="site-header-theme-icon site-header-theme-icon--sun"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="3.5"
+        ></circle>
+
+        <path d="M12 2v2"></path>
+        <path d="M12 20v2"></path>
+        <path d="M4.93 4.93l1.41 1.41"></path>
+        <path d="M17.66 17.66l1.41 1.41"></path>
+        <path d="M2 12h2"></path>
+        <path d="M20 12h2"></path>
+        <path d="M4.93 19.07l1.41-1.41"></path>
+        <path d="M17.66 6.34l1.41-1.41"></path>
+      </svg>
+
+      <svg
+        class="site-header-theme-icon site-header-theme-icon--moon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          d="
+            M20.5 15.2
+            A8.5 8.5 0 0 1
+            8.8 3.5
+            A8.5 8.5 0 1 0
+            20.5 15.2
+          "
+        ></path>
+      </svg>
+    </button>
+
+  </header>
+
+
+  <main class="legal-page">
+
+    <h1>
+      Privacy Policy
+    </h1>
+
+
+    <section>
+
+      <h2>
+        1. Controller
+      </h2>
+
+      <p>
+        The controller responsible for the processing of personal data on
+        this website is:
+      </p>
+
+      <address>
+        Fabian Römer<br>
+        [STREET AND HOUSE NUMBER]<br>
+        [POSTAL CODE AND CITY]<br>
+        Germany
+      </address>
+
+      <p>
+        Email:
+        <a href="mailto:info@lateromanaudio.de">
+          info@lateromanaudio.de
         </a>
-                <button
-  class="site-header-theme-toggle"
-  type="button"
-  aria-label="Switch to light mode"
->
-  <svg
-    class="site-header-theme-icon site-header-theme-icon--sun"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-  >
-    <circle cx="12" cy="12" r="3.5"></circle>
-    <path d="M12 2v2"></path>
-    <path d="M12 20v2"></path>
-    <path d="M4.93 4.93l1.41 1.41"></path>
-    <path d="M17.66 17.66l1.41 1.41"></path>
-    <path d="M2 12h2"></path>
-    <path d="M20 12h2"></path>
-    <path d="M4.93 19.07l1.41-1.41"></path>
-    <path d="M17.66 6.34l1.41-1.41"></path>
-  </svg>
-
-  <svg
-    class="site-header-theme-icon site-header-theme-icon--moon"
-    viewBox="0 0 24 24"
-    aria-hidden="true"
-  >
-    <path
-      d="
-        M20.5 15.2
-        A8.5 8.5 0 0 1
-        8.8 3.5
-        A8.5 8.5 0 1 0
-        20.5 15.2
-      "
-    ></path>
-  </svg>
-</button>
-    </header>
-
-    <main class="legal-page">
-        <h1>
-            Privacy Policy
-        </h1>
-
-        <section>
-            <h2>
-                1. Controller
-            </h2>
-
-            <p>
-                The controller responsible for the processing of personal data on
-                this website is:
-            </p>
-
-            <address>
-                Fabian Römer<br>
-                [STREET AND HOUSE NUMBER]<br>
-                [POSTAL CODE AND CITY]<br>
-                Germany
-            </address>
-
-            <p>
-                Email:
-                <a href="mailto:info@lateromanaudio.de">
-                    info@lateromanaudio.de
-                </a>
-            </p>
-        </section>
-
-        <section>
-            <h2>
-                2. Cloudflare
-            </h2>
-
-            <p>
-                This website uses services provided by Cloudflare, Inc.,
-                101 Townsend Street, San Francisco, California 94107,
-                United States (“Cloudflare”).
-            </p>
-
-            <p>
-                Cloudflare acts as a reverse proxy between visitors and the hosting
-                provider. Requests to this website may therefore initially be
-                processed through Cloudflare's network.
-            </p>
-
-            <p>
-                In this context, Cloudflare may process technical connection and
-                request data, including the visitor's IP address, the date and time
-                of access, the requested URL, HTTP headers, device and browser
-                information, and security-related information.
-            </p>
-
-            <p>
-                Cloudflare is used to provide DNS services, TLS encryption,
-                content delivery and caching, as well as security functions
-                intended to protect the website against attacks, abuse and
-                automated malicious traffic.
-            </p>
-
-            <p>
-                The legal basis for this processing is Article 6(1)(f) GDPR.
-                The legitimate interest is the secure, reliable and efficient
-                operation of this website and its protection against attacks
-                and misuse.
-            </p>
-
-            <p>
-                Cloudflare may process personal data outside the European Economic
-                Area, particularly in the United States. Cloudflare states that
-                transfers from the European Economic Area to the United States may
-                be based on the EU–US Data Privacy Framework and, where applicable,
-                the European Commission's Standard Contractual Clauses.
-            </p>
-
-            <p>
-                Further information is available in Cloudflare's privacy
-                documentation.
-            </p>
-        </section>
-
-        <section>
-            <h2>
-                3. Hosting through GitHub Pages
-            </h2>
-
-            <p>
-                This website is hosted using GitHub Pages, a service provided by
-                GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco,
-                California 94107, United States.
-            </p>
-
-            <p>
-                When you access this website, technical information may be
-                processed by GitHub. This may include your IP address, browser
-                and device information, the date and time of access, and
-                information about the requested page.
-            </p>
-
-            <p>
-                GitHub states that the IP addresses of visitors to GitHub Pages
-                websites are logged and stored for security purposes.
-            </p>
-
-            <p>
-                The processing is necessary to provide the website securely and
-                reliably. The legal basis is Article 6(1)(f) GDPR. The legitimate
-                interest is the secure and technically reliable operation of this
-                website.
-            </p>
-
-            <p>
-                Since GitHub is based in the United States, personal data may also
-                be processed outside the European Economic Area. Further
-                information about GitHub's processing of personal data can be
-                found in GitHub's privacy documentation.
-            </p>
-        </section>
-
-        <section>
-            <h2>
-                4. Contact by email
-            </h2>
-
-            <p>
-                If you contact me by email, the information contained in your
-                message, including your email address and any other personal data
-                you provide, will be processed in order to respond to your enquiry.
-            </p>
-
-            <p>
-                Where your enquiry relates to a potential or existing contract,
-                the legal basis is Article 6(1)(b) GDPR. For other enquiries, the
-                legal basis is Article 6(1)(f) GDPR. The legitimate interest is to
-                respond to enquiries concerning Late Roman Audio and the Weltgeist
-                pedal.
-            </p>
-
-            <p>
-                The data will be deleted once your enquiry has been fully dealt
-                with, unless statutory retention obligations or other legal grounds
-                require longer storage.
-            </p>
-        </section>
-
-        <section>
-            <h2>
-                5. Cookies and local storage
-            </h2>
-
-            <p>
-                This website does not use Google Analytics, advertising trackers
-                or comparable services for profiling visitors for advertising
-                purposes.
-            </p>
-
-            <p>
-                Technical services used by the website may use cookies, local
-                storage or comparable browser technologies where these are
-                required for security, website operation or shopping-cart
-                functionality.
-            </p>
-
-            <p>
-                Cloudflare may, for example, set technically necessary cookies
-                when security functions such as a browser challenge are used.
-                A possible example is the
-                <code>cf_clearance</code>
-                cookie, which can record that a visitor has successfully completed
-                such a challenge.
-            </p>
-
-            <p>
-                Snipcart uses the
-                <code>snipcart-cart</code>
-                cookie to maintain the state of the shopping cart between page
-                views and visits. The cookie contains an identifier associated with
-                the current shopping cart and is stored for approximately one month.
-            </p>
-
-            <p>
-                Such technologies are not used by Late Roman Audio for advertising
-                or cross-site profiling. If non-essential cookies or comparable
-                technologies requiring consent are introduced in the future, they
-                will only be used after obtaining consent where required by law.
-            </p>
-        </section>
-
-        <section>
-            <h2>
-                6. Fonts
-            </h2>
-
-            <p>
-                This website uses fonts already available on the visitor's device.
-                No font files are currently retrieved from external font providers
-                such as Google Fonts.
-            </p>
-        </section>
-
-        <section>
-            <h2>
-                7. Live audio input
-            </h2>
-
-            <p>
-                The Weltgeist simulation provides an optional Live Audio mode.
-                When you actively select this function, your browser requests
-                permission to access an available audio input device, such as a
-                microphone or audio interface.
-            </p>
-
-            <p>
-                The incoming audio signal is processed locally in your browser
-                using browser audio functionality. The simulation analyses the
-                signal level in order to control the simulated expression
-                response.
-            </p>
-
-            <p>
-                Late Roman Audio does not receive, record or store the audio signal.
-                Audio samples used by the simulation are not transmitted by this
-                website to Late Roman Audio, GitHub, Cloudflare, Snipcart or another
-                external service.
-            </p>
-
-            <p>
-                You can stop the use of the audio input by switching the simulation
-                back to Manual mode. You can also revoke access to the audio input
-                through your browser's site-permission settings.
-            </p>
-        </section>
-
-        <section>
-            <h2>
-                8. Snipcart shopping cart and checkout
-            </h2>
-
-            <p>
-                This website integrates shopping-cart and checkout functionality
-                provided by Snipcart, a service operated from Québec, Canada.
-            </p>
-
-            <p>
-                Snipcart software and related resources are loaded from Snipcart's
-                infrastructure. When these resources are requested, technical
-                connection data such as the visitor's IP address, browser
-                information, the requested resource, and the date and time of the
-                request may be transmitted to Snipcart.
-            </p>
-
-            <p>
-                When you use the shopping cart or checkout, Snipcart may process
-                information required to provide these functions. Where an order is
-                placed, this may include in particular your name, email address,
-                billing and shipping address, telephone number where provided,
-                order information, cart contents, prices, currency, shipping
-                information and other information required to process the order.
-            </p>
-
-            <p>
-                The processing of order and customer information is carried out
-                where necessary to take steps at your request before entering into
-                a contract or to perform a contract. The legal basis is
-                Article 6(1)(b) GDPR.
-            </p>
-
-            <p>
-                Technical processing required for the reliable and secure operation
-                of the shopping-cart system may additionally be based on
-                Article 6(1)(f) GDPR. The legitimate interest is to provide a
-                functional, secure and reliable online ordering system.
-            </p>
-
-            <p>
-                Snipcart provides a Data Processing Addendum for the processing of
-                personal data in connection with its service.
-            </p>
-
-            <p>
-                Snipcart is based in Canada, which is outside the European Economic
-                Area. Depending on the infrastructure and service providers used
-                by Snipcart, processing may also involve recipients in other
-                countries. Where legally required, international transfers of
-                personal data must be protected by an applicable transfer
-                mechanism under the GDPR.
-            </p>
-
-            <p>
-                Order-related personal data will be retained for as long as
-                necessary to process the order and fulfil the resulting contractual
-                obligations. Statutory commercial and tax retention requirements
-                may require certain information to be retained for a longer period.
-            </p>
-        </section>
-
-        <section>
-            <h2>
-                9. Payment services
-            </h2>
-
-            <p>
-                A separate external payment service provider is not currently
-                activated for live payment processing on this website.
-            </p>
-
-            <p>
-                Snipcart supports the integration of external payment providers.
-                When live payment functionality is activated, the selected payment
-                provider may receive the information required to process the
-                payment.
-            </p>
-
-            <p>
-                Before such payment processing is activated, this Privacy Policy
-                will be updated to identify the payment service provider and
-                describe the relevant categories of personal data, purposes of
-                processing, legal bases, recipients and any applicable international
-                data transfers.
-            </p>
-        </section>
-
-        <section>
-            <h2>
-                10. Recipients of personal data
-            </h2>
-
-            <p>
-                Personal data may be disclosed to service providers where this is
-                necessary to operate the website, provide shopping-cart and checkout
-                functionality, process orders, maintain website security or respond
-                to enquiries.
-            </p>
-
-            <p>
-                Depending on the function used, recipients may include Cloudflare
-                as the DNS, reverse-proxy, security and content-delivery provider;
-                GitHub as the hosting provider; Snipcart as the shopping-cart and
-                checkout provider; and the email service providers involved in
-                email communication.
-            </p>
-
-            <p>
-                If an external payment provider is activated in the future, that
-                provider will also be identified separately in this Privacy Policy.
-            </p>
-        </section>
-
-        <section>
-            <h2>
-                11. Your rights
-            </h2>
-
-            <p>
-                Subject to the applicable legal requirements, you have the right to:
-            </p>
-
-            <ul>
-                <li>
-                    request access to your personal data;
-                </li>
-
-                <li>
-                    request correction of inaccurate personal data;
-                </li>
-
-                <li>
-                    request deletion of your personal data;
-                </li>
-
-                <li>
-                    request restriction of processing;
-                </li>
-
-                <li>
-                    receive personal data in a portable format where the legal
-                    requirements for data portability are met;
-                </li>
-
-                <li>
-                    object to processing based on legitimate interests; and
-                </li>
-
-                <li>
-                    withdraw consent at any time where processing is based on
-                    consent, without affecting the lawfulness of processing carried
-                    out before withdrawal.
-                </li>
-            </ul>
-
-            <p>
-                You also have the right to lodge a complaint with a competent
-                data protection supervisory authority.
-            </p>
-        </section>
-
-        <section>
-            <h2>
-                12. Objection to processing
-            </h2>
-
-            <p>
-                Where personal data are processed on the basis of Article 6(1)(f)
-                GDPR, you have the right to object to the processing on grounds
-                relating to your particular situation.
-            </p>
-        </section>
-
-        <section>
-            <h2>
-                13. Changes to this Privacy Policy
-            </h2>
-
-            <p>
-                This Privacy Policy may be updated if the website, the services
-                used or the applicable legal requirements change.
-            </p>
-        </section>
-
-        <p class="legal-page-updated">
-            Last updated: September 2026
-        </p>
-    </main>
-
-    <footer class="site-footer">
-        <p class="site-footer-brand">
-            © Late Roman Audio
-        </p>
-
-        <nav
-            class="site-footer-links"
-            aria-label="Legal information"
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        2. Cloudflare
+      </h2>
+
+      <p>
+        This website uses services provided by Cloudflare, Inc.,
+        101 Townsend Street, San Francisco, California 94107,
+        United States (“Cloudflare”).
+      </p>
+
+      <p>
+        Cloudflare acts as an intermediary between visitors and the
+        website's hosting infrastructure. Requests to this website may
+        therefore initially be processed through Cloudflare's network.
+      </p>
+
+      <p>
+        In this context, Cloudflare may process technical connection and
+        request data, including the visitor's IP address, the date and
+        time of access, the requested URL, HTTP headers, browser and
+        device information, and security-related information.
+      </p>
+
+      <p>
+        Cloudflare is used to provide services including DNS, TLS
+        encryption, content delivery, caching and security functions
+        intended to protect the website against attacks, abuse and
+        automated malicious traffic.
+      </p>
+
+      <p>
+        The legal basis for the processing of personal data in this
+        context is Article 6(1)(f) GDPR. The legitimate interest is the
+        secure, reliable and efficient operation of this website and its
+        protection against attacks and misuse.
+      </p>
+
+      <p>
+        Cloudflare may process personal data outside the European
+        Economic Area, particularly in the United States. Cloudflare
+        states that transfers from the European Economic Area to the
+        United States may be based on the EU–US Data Privacy Framework
+        and, where applicable, the European Commission's Standard
+        Contractual Clauses.
+      </p>
+
+      <p>
+        Further information is available in
+        <a
+          href="https://www.cloudflare.com/policies/privacy/"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-            <a href="/">
-                Home
-            </a>
+          Cloudflare's Privacy Policy
+        </a>.
+      </p>
 
-            <a href="/imprint.html">
-                Imprint
-            </a>
+    </section>
 
-            <a href="mailto:info@lateromanaudio.de">
-                Contact
-            </a>
-        </nav>
-    </footer>
-    <script
-  type="module"
-  src="/src/legal-theme.js"
-></script>
+
+    <section>
+
+      <h2>
+        3. Hosting through GitHub Pages
+      </h2>
+
+      <p>
+        This website is hosted using GitHub Pages, a service provided by
+        GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco,
+        California 94107, United States.
+      </p>
+
+      <p>
+        When you access this website, technical information may be
+        processed by GitHub. This may include your IP address, browser
+        and device information, the date and time of access, and
+        information about the requested page.
+      </p>
+
+      <p>
+        GitHub states that the IP addresses of visitors to GitHub Pages
+        websites are logged and stored for security purposes.
+      </p>
+
+      <p>
+        The processing is necessary to provide the website securely and
+        reliably. The legal basis is Article 6(1)(f) GDPR. The legitimate
+        interest is the secure and technically reliable operation of this
+        website.
+      </p>
+
+      <p>
+        Since GitHub is based in the United States, personal data may
+        also be processed outside the European Economic Area.
+      </p>
+
+      <p>
+        Further information is available in
+        <a
+          href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub's Privacy Statement
+        </a>.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        4. Contact by email
+      </h2>
+
+      <p>
+        If you contact me by email, the information contained in your
+        message, including your email address and any other personal data
+        you provide, will be processed in order to respond to your
+        enquiry.
+      </p>
+
+      <p>
+        Where your enquiry relates to a potential or existing contract,
+        the legal basis is Article 6(1)(b) GDPR.
+      </p>
+
+      <p>
+        For other enquiries, the legal basis is Article 6(1)(f) GDPR.
+        The legitimate interest is to respond to enquiries concerning
+        Late Roman Audio and the Weltgeist pedal.
+      </p>
+
+      <p>
+        The data will be deleted once your enquiry has been fully dealt
+        with, unless statutory retention obligations or another legal
+        basis require longer storage.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        5. Cookies, local storage and similar technologies
+      </h2>
+
+      <p>
+        This website does not use Google Analytics, advertising trackers
+        or comparable services for profiling visitors for advertising
+        purposes.
+      </p>
+
+      <h3>
+        Theme preference
+      </h3>
+
+      <p>
+        If you select a light or dark appearance using the theme control
+        on this website, your selected preference may be stored locally
+        in your browser using local storage.
+      </p>
+
+      <p>
+        This information is used only to restore your selected visual
+        theme on subsequent page views. It is not used by Late Roman
+        Audio for advertising, profiling or cross-site tracking.
+      </p>
+
+      <h3>
+        Technically necessary storage
+      </h3>
+
+      <p>
+        Technical services used by the website may use cookies, local
+        storage or comparable browser technologies where these are
+        required for website security, operation, shopping-cart
+        functionality or another function expressly requested by the
+        visitor.
+      </p>
+
+      <p>
+        Where the storage of information on, or access to information
+        stored on, a visitor's device is strictly necessary in order to
+        provide a digital service expressly requested by the visitor,
+        consent is not required under Section 25(2) no. 2 TDDDG.
+      </p>
+
+      <h3>
+        Cloudflare security cookies
+      </h3>
+
+      <p>
+        Cloudflare may set technically necessary cookies when security
+        functions such as browser or challenge verification are used.
+        For example, Cloudflare may use the
+        <code>cf_clearance</code>
+        cookie to record that a visitor has successfully passed a
+        security verification.
+      </p>
+
+      <h3>
+        Snipcart
+      </h3>
+
+      <p>
+        The shopping-cart and checkout functionality provided by
+        Snipcart may use cookies, browser storage or comparable
+        technologies where required to maintain the shopping-cart
+        session and provide the requested checkout functionality.
+      </p>
+
+      <p>
+        Such technologies are not used by Late Roman Audio for
+        advertising or cross-site profiling.
+      </p>
+
+      <p>
+        If non-essential cookies or comparable technologies requiring
+        consent are introduced in the future, they will only be used
+        after obtaining consent where required by law.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        6. Fonts and local website resources
+      </h2>
+
+      <p>
+        This website uses fonts already available on the visitor's
+        device. No font files are currently retrieved from external font
+        providers such as Google Fonts.
+      </p>
+
+      <p>
+        Product images, the interactive Weltgeist 3D model and other
+        website assets hosted directly with this website are loaded from
+        the website's own infrastructure. Loading these locally hosted
+        resources does not itself establish an additional connection to
+        a separate third-party content provider.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        7. Live audio input
+      </h2>
+
+      <p>
+        The Weltgeist simulation provides an optional Live Audio mode.
+        When you actively select this function, your browser requests
+        permission to access an available audio input device, such as a
+        microphone or audio interface.
+      </p>
+
+      <p>
+        The incoming audio signal is processed locally in your browser
+        using browser audio functionality. The simulation analyses the
+        signal level in order to control the simulated expression
+        response.
+      </p>
+
+      <p>
+        The audio signal itself is not transmitted by the Weltgeist
+        simulation to Late Roman Audio or to an external server, and
+        Late Roman Audio does not record or store the audio input.
+      </p>
+
+      <p>
+        You can stop the use of the audio input by switching the
+        simulation back to Manual mode. You can also revoke access to the
+        audio input through your browser's site-permission settings.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        8. Snipcart shopping cart and checkout
+      </h2>
+
+      <p>
+        This website integrates shopping-cart and checkout functionality
+        provided by Snipcart, a service operated from Québec, Canada.
+      </p>
+
+      <p>
+        Snipcart software and related resources are loaded from
+        Snipcart's infrastructure. When these resources are requested,
+        technical connection data such as the visitor's IP address,
+        browser information, the requested resource, and the date and
+        time of the request may be transmitted to Snipcart.
+      </p>
+
+      <p>
+        When you use the shopping cart or checkout, Snipcart may process
+        information required to provide these functions.
+      </p>
+
+      <p>
+        Where an order is placed, this may include in particular your
+        name, email address, billing and shipping address, telephone
+        number where provided, order information, cart contents, prices,
+        currency, shipping information and other information required to
+        process the order.
+      </p>
+
+      <p>
+        The processing of order and customer information is carried out
+        where necessary to take steps at your request before entering
+        into a contract or to perform a contract. The legal basis is
+        Article 6(1)(b) GDPR.
+      </p>
+
+      <p>
+        Technical processing required for the secure and reliable
+        operation of the shopping-cart system may additionally be based
+        on Article 6(1)(f) GDPR. The legitimate interest is to provide a
+        functional, secure and reliable online ordering system.
+      </p>
+
+      <p>
+        Snipcart states that it provides a Data Processing Addendum for
+        the processing of personal data in connection with its service.
+      </p>
+
+      <p>
+        Snipcart is based in Canada, which is outside the European
+        Economic Area. Depending on the infrastructure and service
+        providers used by Snipcart, processing may also involve
+        recipients in other countries.
+      </p>
+
+      <p>
+        Where legally required, international transfers of personal data
+        must be protected by an applicable transfer mechanism under the
+        GDPR.
+      </p>
+
+      <p>
+        Order-related personal data will be retained for as long as
+        necessary to process the order and fulfil the resulting
+        contractual obligations.
+      </p>
+
+      <p>
+        Statutory commercial and tax retention requirements may require
+        certain information to be retained for a longer period.
+      </p>
+
+      <p>
+        Further information about Snipcart is available on
+        <a
+          href="https://snipcart.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Snipcart's website
+        </a>.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        9. Payment services
+      </h2>
+
+      <p>
+        A separate external payment service provider is not currently
+        activated for live payment processing on this website.
+      </p>
+
+      <p>
+        Snipcart supports the integration of external payment providers.
+        When live payment functionality is activated, the selected
+        payment provider may receive the information required to process
+        the payment.
+      </p>
+
+      <p>
+        Before such payment processing is activated, this Privacy Policy
+        will be updated to identify the payment service provider and
+        describe the relevant categories of personal data, purposes of
+        processing, legal bases, recipients and any applicable
+        international data transfers.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        10. Recipients of personal data
+      </h2>
+
+      <p>
+        Personal data may be disclosed to service providers where this
+        is necessary to operate the website, provide shopping-cart and
+        checkout functionality, process orders, maintain website
+        security or respond to enquiries.
+      </p>
+
+      <p>
+        Depending on the function used, recipients may include:
+      </p>
+
+      <ul>
+        <li>
+          Cloudflare as the DNS, reverse-proxy, security and
+          content-delivery provider;
+        </li>
+
+        <li>
+          GitHub as the website hosting provider;
+        </li>
+
+        <li>
+          Snipcart as the shopping-cart and checkout provider; and
+        </li>
+
+        <li>
+          the email service providers involved in email communication.
+        </li>
+      </ul>
+
+      <p>
+        If an external payment provider is activated in the future, that
+        provider will also be identified separately in this Privacy
+        Policy.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        11. Your rights
+      </h2>
+
+      <p>
+        Subject to the applicable legal requirements, you have the right
+        to:
+      </p>
+
+      <ul>
+        <li>
+          request access to your personal data;
+        </li>
+
+        <li>
+          request correction of inaccurate personal data;
+        </li>
+
+        <li>
+          request deletion of your personal data;
+        </li>
+
+        <li>
+          request restriction of processing;
+        </li>
+
+        <li>
+          receive personal data in a portable format where the legal
+          requirements for data portability are met;
+        </li>
+
+        <li>
+          object to processing based on legitimate interests; and
+        </li>
+
+        <li>
+          withdraw consent at any time where processing is based on
+          consent, without affecting the lawfulness of processing carried
+          out before withdrawal.
+        </li>
+      </ul>
+
+      <p>
+        You also have the right to lodge a complaint with a competent
+        data protection supervisory authority.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        12. Objection to processing
+      </h2>
+
+      <p>
+        Where personal data are processed on the basis of
+        Article 6(1)(f) GDPR, you have the right to object to the
+        processing on grounds relating to your particular situation,
+        subject to the requirements of Article 21 GDPR.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        13. Changes to this Privacy Policy
+      </h2>
+
+      <p>
+        This Privacy Policy may be updated if the website, the services
+        used or the applicable legal requirements change.
+      </p>
+
+    </section>
+
+
+    <p class="legal-page-updated">
+      Last updated: September 2026
+    </p>
+
+  </main>
+
+
+  <footer class="site-footer">
+
+    <p class="site-footer-brand">
+      © Late Roman Audio
+    </p>
+
+    <nav
+      class="site-footer-links"
+      aria-label="Legal information"
+    >
+      <a href="/">
+        Home
+      </a>
+
+      <a href="/imprint.html">
+        Imprint
+      </a>
+
+      <a href="mailto:info@lateromanaudio.de">
+        Contact
+      </a>
+    </nav>
+
+  </footer>
+
+
+  <script
+    type="module"
+    src="/src/legal-theme.js"
+  ></script>
+
 </body>
 
 </html>
