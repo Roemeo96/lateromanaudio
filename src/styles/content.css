@@ -4,8 +4,8 @@
 
   width: min(100% - 3rem, 76rem);
   margin-inline: auto;
-  margin-top: 6rem;
-  margin-bottom: 6rem;
+  margin-top: 18rem;
+  margin-bottom: 18rem;
 }
 
 .section-heading {
@@ -29,7 +29,7 @@
 
 .feature-list {
   width: min(100% - 2rem, 800px);
-  margin: 2.5rem auto 0;
+  margin: 2.5rem auto 6rem;
 
   color: var(--text);
 
