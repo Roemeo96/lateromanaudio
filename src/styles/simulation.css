@@ -429,14 +429,6 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 
   width: min(100%, 680px);
   margin: 2.5rem auto;
-
-  background:
-    radial-gradient(
-      circle at 50% 45%,
-      rgb(var(--text-rgb) / 2.5%),
-      transparent 58%
-    ),
-    var(--surface-deep);
 }
 
 #transfer-chart {
