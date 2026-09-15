@@ -9,6 +9,10 @@ import {
   resolve,
 } from "node:path";
 
+import {
+  pathToFileURL,
+} from "node:url";
+
 const projectRoot = process.cwd();
 
 const templatePath = resolve(
@@ -92,7 +96,9 @@ for (
   const {
     default: translations,
   } = await import(
-    translationPath
+    pathToFileURL(
+      translationPath,
+    ).href,
   );
 
   const html =
@@ -123,20 +129,21 @@ for (
   console.log(
     `Generated ${locale}/index.html`,
   );
+
   if (locale === "en") {
-  const rootOutputPath = resolve(
-    projectRoot,
-    "index.html",
-  );
+    const rootOutputPath = resolve(
+      projectRoot,
+      "index.html",
+    );
 
-  await writeFile(
-    rootOutputPath,
-    html,
-    "utf8",
-  );
+    await writeFile(
+      rootOutputPath,
+      html,
+      "utf8",
+    );
 
-  console.log(
-    "Generated index.html (English default)",
-  );
-}
+    console.log(
+      "Generated index.html (English default)",
+    );
+  }
 }

@@ -1,0 +1,840 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <script src="/theme-bootstrap.js"></script>
+
+  <meta
+    name="robots"
+    content="index, follow"
+  >
+
+  <meta
+    name="description"
+    content="Engineering notes on the development of Weltgeist by Late Roman Audio."
+  >
+
+  <title>
+    Engineering Weltgeist | Late Roman Audio
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="/src/styles/main.css"
+  >
+
+  <link
+    rel="icon"
+    href="/favicon.svg"
+    type="image/svg+xml"
+  >
+
+  <link
+    rel="alternate icon"
+    href="/favicon.ico"
+    type="image/x-icon"
+  >
+</head>
+
+<body>
+
+  <header class="site-header site-header--legal">
+
+    <a
+      class="site-header-brand"
+      href="/"
+      aria-label="Late Roman Audio – Home"
+    >
+      <span class="site-header-wordmark">
+        Late Roman Avdio
+      </span>
+
+      <span
+        class="site-header-symbol"
+        aria-hidden="true"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </a>
+
+    <button
+      class="site-header-theme-toggle"
+      type="button"
+      aria-label="Switch to light mode"
+    >
+      <svg
+        class="site-header-theme-icon site-header-theme-icon--sun"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <circle
+          cx="12"
+          cy="12"
+          r="3.5"
+        ></circle>
+
+        <path d="M12 2v2"></path>
+        <path d="M12 20v2"></path>
+        <path d="M4.93 4.93l1.41 1.41"></path>
+        <path d="M17.66 17.66l1.41 1.41"></path>
+        <path d="M2 12h2"></path>
+        <path d="M20 12h2"></path>
+        <path d="M4.93 19.07l1.41-1.41"></path>
+        <path d="M17.66 6.34l1.41-1.41"></path>
+      </svg>
+
+      <svg
+        class="site-header-theme-icon site-header-theme-icon--moon"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          d="
+            M20.5 15.2
+            A8.5 8.5 0 0 1
+            8.8 3.5
+            A8.5 8.5 0 1 0
+            20.5 15.2
+          "
+        ></path>
+      </svg>
+    </button>
+
+  </header>
+
+
+  <main class="legal-page">
+
+    <h1>
+      Engineering Weltgeist
+    </h1>
+
+    <p>
+      Weltgeist began with a simple idea:
+      what if the dynamics of an instrument could control effects
+      that normally require an expression pedal?
+    </p>
+
+    <p>
+      Turning that idea into an actual circuit was considerably less
+      simple.
+    </p>
+
+    <p>
+      This page documents some of the engineering decisions,
+      unexpected behaviours and measurements that shaped Weltgeist.
+      It is not intended as a complete schematic or construction guide,
+      but as a record of how the pedal came to work the way it does.
+    </p>
+
+
+    <section>
+
+      <h2>
+        1. Motivation
+      </h2>
+
+      <p>
+        Many effects already react to the dynamics of a guitar or bass.
+        Envelope filters are probably the most obvious example.
+        But the relationship between dynamics and effect parameters is
+        normally fixed inside the effect itself.
+      </p>
+
+      <p>
+        Weltgeist approaches the problem differently.
+      </p>
+
+      <p>
+        Instead of processing the instrument signal into a particular
+        effect, it extracts information about the player's dynamics and
+        converts that information into an expression-pedal position.
+      </p>
+
+      <p>
+        The actual audio signal remains separate.
+        Weltgeist therefore does not need to know whether the connected
+        device is controlling a wah, delay time, modulation depth,
+        pitch, feedback or something entirely different.
+      </p>
+
+      <p>
+        The central engineering problem became:
+      </p>
+
+      <p>
+        How can the amplitude of an audio signal be transformed into
+        something that another pedal electrically interprets as a
+        conventional expression potentiometer?
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        2. Inside Weltgeist
+      </h2>
+
+      <p>
+        Conceptually, Weltgeist can be divided into several stages.
+      </p>
+
+      <p>
+        The instrument signal is first observed without making the
+        expression output part of the audio path. Its instantaneous
+        waveform is then transformed into a slowly changing control
+        signal representing the dynamics of the performance.
+      </p>
+
+      <p>
+        That control signal is shaped by the front-panel controls before
+        finally driving the circuit that emulates the expression
+        potentiometer.
+      </p>
+
+
+      <h3>
+        From waveform to envelope
+      </h3>
+
+      <p>
+        A guitar signal alternates continuously between positive and
+        negative voltage.
+        That is useful for audio, but not particularly useful when the
+        quantity we are interested in is simply how strong the signal
+        currently is.
+      </p>
+
+      <p>
+        Weltgeist therefore transforms the alternating waveform into a
+        unidirectional representation of its magnitude.
+      </p>
+
+      <p>
+        One way of visualising this is to imagine the negative half of a
+        sine wave being folded upwards.
+        Instead of positive and negative excursions cancelling each
+        other, both halves now contribute to the detected signal level.
+      </p>
+
+      <!--
+        Later:
+        waveform illustration / oscilloscope measurement
+      -->
+
+
+      <h3>
+        Rise and Fall
+      </h3>
+
+      <p>
+        The resulting waveform is still far too fast to directly control
+        an expression output.
+        It therefore has to be converted into an envelope.
+      </p>
+
+      <p>
+        Rise determines how quickly that envelope follows an increasing
+        signal level.
+        Fall determines how quickly it returns when the signal becomes
+        quieter.
+      </p>
+
+      <p>
+        These controls do more than merely change the subjective speed
+        of the response.
+      </p>
+
+      <p>
+        If the Rise time is long relative to the duration of a transient,
+        the envelope may never reach the peak that it would reach with a
+        faster setting.
+        Similarly, the Fall setting determines how much of the previous
+        signal level remains when the next note arrives.
+      </p>
+
+      <p>
+        As a result, Rise and Fall also influence the effective
+        sensitivity of Weltgeist.
+        Sensitivity, Rise and Fall are therefore related rather than
+        completely independent parameters.
+      </p>
+
+
+      <h3>
+        Sensitivity
+      </h3>
+
+      <p>
+        Different instruments, pickups and playing styles produce very
+        different signal levels.
+      </p>
+
+      <p>
+        Sensitivity determines how strongly the detected envelope is
+        translated into movement of the expression output.
+      </p>
+
+      <p>
+        A low setting requires a comparatively large change in playing
+        dynamics to move through the available expression range.
+        A high setting causes much smaller changes in the input signal to
+        create much larger movements.
+      </p>
+
+
+      <h3>
+        Base
+      </h3>
+
+      <p>
+        Base determines the resting position from which the dynamic
+        movement begins.
+      </p>
+
+      <p>
+        This is useful because many musical applications do not require
+        the full expression range.
+        A player may, for example, want dynamics to move a parameter only
+        through the upper part of its available range.
+      </p>
+
+      <p>
+        Together, Base and Sensitivity define the range of expression
+        movement, while Rise and Fall determine how that movement evolves
+        over time.
+      </p>
+
+
+      <h3>
+        Emulating an expression potentiometer
+      </h3>
+
+      <p>
+        Producing a control voltage would have been comparatively easy.
+        But a conventional expression input does not necessarily expect
+        a control voltage.
+      </p>
+
+      <p>
+        In many devices, an expression pedal is simply a potentiometer
+        connected through a TRS cable.
+      </p>
+
+      <p>
+        Weltgeist therefore has to behave electrically like a variable
+        resistance network rather than merely generating a voltage.
+      </p>
+
+      <p>
+        This led to one of the more unusual parts of the design:
+        two optically controlled resistors.
+      </p>
+
+
+      <h3>
+        Two NSL-32s and an unexpected result
+      </h3>
+
+      <p>
+        The resistance of an NSL-32 does not change linearly with its LED
+        drive.
+      </p>
+
+      <p>
+        Quite the opposite.
+        The relationship between LED current, illumination and LDR
+        resistance is strongly nonlinear.
+      </p>
+
+      <p>
+        Initially, this appeared to be a problem.
+        A strongly nonlinear resistance seemed likely to produce an
+        equally nonlinear expression response.
+      </p>
+
+      <p>
+        Weltgeist, however, does not use a single variable resistor.
+        Two NSL-32s form the two sides of the emulated potentiometer and
+        are driven in opposite directions.
+      </p>
+
+      <p>
+        As one resistance decreases, the other increases.
+      </p>
+
+      <p>
+        The important quantity for the resulting expression position is
+        therefore not either resistance in isolation, but the relationship
+        between them.
+      </p>
+
+      <p>
+        In simplified form, the position of such a divider can be
+        represented as:
+      </p>
+
+      <p>
+        R<sub>A</sub> /
+        (R<sub>A</sub> + R<sub>B</sub>)
+      </p>
+
+      <p>
+        The exact orientation depends on the expression wiring, but the
+        important observation remains the same:
+        the result depends on a ratio.
+      </p>
+
+      <p>
+        This produced one of the more surprising measurements during the
+        development of Weltgeist.
+      </p>
+
+      <p>
+        Although the resistance curves of the individual optocouplers are
+        highly nonlinear, their opposing behaviour produces a much more
+        linear movement of the resulting potentiometer position.
+      </p>
+
+      <!--
+        Later:
+        1. Individual NSL-32 resistance curves
+        2. Tip-Ring / Tip-Sleeve measurement table
+        3. Resulting potentiometer-position graph
+      -->
+
+      <p>
+        In other words, the nonlinear components do not become linear.
+        Their nonlinearities happen to interact in a useful way when they
+        are used together.
+      </p>
+
+    </section>
+
+    <section class="engineering-measurements" id="potentiometer-measurements">
+
+  <h3>
+    Measured virtual potentiometer behaviour
+  </h3>
+
+  <p>
+    To evaluate the behaviour of the optocoupler pair as a virtual
+    expression potentiometer, the two effective resistances between
+    Tip-Ring and Tip-Sleeve were measured across the control range.
+  </p>
+
+  <p>
+    Instead of listing the control input as an absolute voltage, the
+    values below use a normalized input amplitude from 0% to 100%.
+    Here, 100% corresponds to the maximum measured control range.
+  </p>
+
+  <p>
+    The resulting virtual potentiometer position tracks the ideal linear
+    response surprisingly closely, even though the individual
+    optocouplers are strongly nonlinear components.
+  </p>
+
+  <div class="engineering-table-wrap" >
+    <table class="engineering-table">
+      <thead>
+        <tr>
+          <th>Input amplitude</th>
+          <th>Tip-Ring R<sub>TR</sub></th>
+          <th>Tip-Sleeve R<sub>TS</sub></th>
+          <th>Measured pot position p</th>
+          <th>Ideal linear</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>0.0%</td>
+          <td>33 kΩ</td>
+          <td>0.5 kΩ</td>
+          <td>1.5%</td>
+          <td>0.0%</td>
+        </tr>
+        <tr>
+          <td>12.9%</td>
+          <td>4.7 kΩ</td>
+          <td>0.6 kΩ</td>
+          <td>11.3%</td>
+          <td>12.9%</td>
+        </tr>
+        <tr>
+          <td>25.4%</td>
+          <td>2.1 kΩ</td>
+          <td>0.7 kΩ</td>
+          <td>25.0%</td>
+          <td>25.4%</td>
+        </tr>
+        <tr>
+          <td>38.2%</td>
+          <td>1.3 kΩ</td>
+          <td>0.8 kΩ</td>
+          <td>38.1%</td>
+          <td>38.2%</td>
+        </tr>
+        <tr>
+          <td>51.1%</td>
+          <td>0.9 kΩ</td>
+          <td>1.1 kΩ</td>
+          <td>55.0%</td>
+          <td>51.1%</td>
+        </tr>
+        <tr>
+          <td>63.9%</td>
+          <td>0.8 kΩ</td>
+          <td>1.5 kΩ</td>
+          <td>65.2%</td>
+          <td>63.9%</td>
+        </tr>
+        <tr>
+          <td>76.4%</td>
+          <td>0.6 kΩ</td>
+          <td>2.5 kΩ</td>
+          <td>80.6%</td>
+          <td>76.4%</td>
+        </tr>
+        <tr>
+          <td>89.3%</td>
+          <td>0.57 kΩ</td>
+          <td>6.5 kΩ</td>
+          <td>91.9%</td>
+          <td>89.3%</td>
+        </tr>
+        <tr>
+          <td>100.0%</td>
+          <td>0.5 kΩ</td>
+          <td>39.3 kΩ</td>
+          <td>98.7%</td>
+          <td>100.0%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <figure class="engineering-chart">
+    <svg
+      viewBox="0 0 760 520"
+      role="img"
+      aria-label="Measured pot position compared to an ideal linear response"
+      class="engineering-chart-svg"
+    >
+      <defs>
+        <clipPath id="engineering-chart-clip">
+          <rect x="80" y="30" width="620" height="380"></rect>
+        </clipPath>
+      </defs>
+
+      <rect x="0" y="0" width="760" height="520" fill="none"></rect>
+
+      <!-- Plot area -->
+      <rect x="80" y="30" width="620" height="380" fill="none"></rect>
+
+      <!-- Horizontal grid -->
+      <line x1="80" y1="410" x2="700" y2="410"></line>
+      <line x1="80" y1="334" x2="700" y2="334"></line>
+      <line x1="80" y1="258" x2="700" y2="258"></line>
+      <line x1="80" y1="182" x2="700" y2="182"></line>
+      <line x1="80" y1="106" x2="700" y2="106"></line>
+      <line x1="80" y1="30" x2="700" y2="30"></line>
+
+      <!-- Vertical grid -->
+      <line x1="80" y1="30" x2="80" y2="410"></line>
+      <line x1="160" y1="30" x2="160" y2="410"></line>
+      <line x1="240" y1="30" x2="240" y2="410"></line>
+      <line x1="320" y1="30" x2="320" y2="410"></line>
+      <line x1="400" y1="30" x2="400" y2="410"></line>
+      <line x1="480" y1="30" x2="480" y2="410"></line>
+      <line x1="560" y1="30" x2="560" y2="410"></line>
+      <line x1="640" y1="30" x2="640" y2="410"></line>
+      <line x1="700" y1="30" x2="700" y2="410"></line>
+
+      <!-- Axes -->
+      <line x1="80" y1="410" x2="700" y2="410"></line>
+      <line x1="80" y1="30" x2="80" y2="410"></line>
+
+      <!-- Ideal linear -->
+      <polyline
+        points="80,410 160,361 240,313 320,265 400,216 480,167 560,120 640,72 700,30"
+        fill="none"
+        class="engineering-line engineering-line--ideal"
+        clip-path="url(#engineering-chart-clip)"
+      ></polyline>
+
+      <!-- Measured -->
+      <polyline
+        points="80,404 160,367 240,315 320,265 400,201 480,162 560,104 640,61 700,35"
+        fill="none"
+        class="engineering-line engineering-line--measured"
+        clip-path="url(#engineering-chart-clip)"
+      ></polyline>
+
+      <!-- Measured points -->
+      <g class="engineering-points">
+        <circle cx="80" cy="404" r="5"></circle>
+        <circle cx="160" cy="367" r="5"></circle>
+        <circle cx="240" cy="315" r="5"></circle>
+        <circle cx="320" cy="265" r="5"></circle>
+        <circle cx="400" cy="201" r="5"></circle>
+        <circle cx="480" cy="162" r="5"></circle>
+        <circle cx="560" cy="104" r="5"></circle>
+        <circle cx="640" cy="61" r="5"></circle>
+        <circle cx="700" cy="35" r="5"></circle>
+      </g>
+
+      <!-- X labels -->
+      <text x="80" y="440">0</text>
+      <text x="160" y="440">12.5</text>
+      <text x="240" y="440">25</text>
+      <text x="320" y="440">37.5</text>
+      <text x="400" y="440">50</text>
+      <text x="480" y="440">62.5</text>
+      <text x="560" y="440">75</text>
+      <text x="640" y="440">87.5</text>
+      <text x="700" y="440">100</text>
+
+      <!-- Y labels -->
+      <text x="60" y="414">0</text>
+      <text x="52" y="338">20</text>
+      <text x="52" y="262">40</text>
+      <text x="52" y="186">60</text>
+      <text x="52" y="110">80</text>
+      <text x="44" y="34">100</text>
+
+      <!-- Axis labels -->
+      <text x="390" y="485" text-anchor="middle">
+        Input amplitude (%)
+      </text>
+
+      <text
+        x="20"
+        y="220"
+        text-anchor="middle"
+        transform="rotate(-90 20 220)"
+      >
+        Pot position (%)
+      </text>
+
+      <!-- Legend -->
+      <line x1="460" y1="465" x2="500" y2="465" class="engineering-line engineering-line--measured"></line>
+      <text x="510" y="470">Measured</text>
+
+      <line x1="590" y1="465" x2="630" y2="465" class="engineering-line engineering-line--ideal"></line>
+      <text x="640" y="470">Ideal linear</text>
+    </svg>
+
+    <figcaption>
+      Measured virtual potentiometer position compared to an ideal
+      linear response across the normalized control range.
+    </figcaption>
+  </figure>
+
+</section>
+
+    <section>
+
+      <h2>
+        3. Result and possible improvements
+      </h2>
+
+      <p>
+        The resulting circuit turns the dynamics of the instrument into
+        a continuously varying resistance network that can be interpreted
+        by compatible devices as an expression pedal.
+      </p>
+
+      <p>
+        The behaviour is not mathematically perfect, nor does it need to
+        be.
+        What matters is that the resulting movement is predictable,
+        musically useful and sufficiently close to the behaviour expected
+        from a conventional expression control.
+      </p>
+
+      <p>
+        Measurements of the current prototype suggest that the
+        complementary optocoupler arrangement provides a considerably
+        more useful transfer characteristic than the behaviour of either
+        optocoupler would suggest on its own.
+      </p>
+
+
+      <h3>
+        Component variation
+      </h3>
+
+      <p>
+        Optocouplers are analogue components and their characteristics
+        vary from device to device.
+        One area of continued testing is therefore how much the resulting
+        expression curve varies across different NSL-32 pairs.
+      </p>
+
+
+      <h3>
+        Calibration
+      </h3>
+
+      <p>
+        Another question during development has been how much calibration
+        should be performed inside each pedal and how much behaviour can
+        instead be defined by fixed component values.
+      </p>
+
+      <p>
+        A design with fewer calibration points is simpler to manufacture
+        and potentially more consistent, but only if component tolerances
+        allow it.
+      </p>
+
+
+      <h3>
+        Compatibility
+      </h3>
+
+      <p>
+        Expression inputs are not completely standardised.
+        Different manufacturers may use different potentiometer values,
+        wiring conventions or internal circuits.
+      </p>
+
+      <p>
+        Continued testing therefore focuses not only on the transfer
+        characteristic of Weltgeist itself, but also on how that
+        characteristic behaves when connected to real-world expression
+        inputs.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        4. What changed along the way
+      </h2>
+
+      <p>
+        Weltgeist did not begin with the circuit it has today.
+      </p>
+
+      <p>
+        Several parts of the design changed because measurements behaved
+        differently from what I initially expected.
+      </p>
+
+      <p>
+        Some stages that appeared nonlinear in isolation became much more
+        predictable when considered as part of the complete system.
+        Other controls turned out to interact more strongly than their
+        labels might initially suggest.
+      </p>
+
+      <p>
+        The relationship between Rise, Fall and effective sensitivity is
+        one example.
+        The behaviour of the two optocouplers is another.
+      </p>
+
+      <p>
+        This is also why much of the development process has consisted of
+        measuring the actual circuit rather than trying to force it to
+        behave like an idealised model.
+      </p>
+
+      <p>
+        Future revisions of this page will document some of those
+        measurements and discarded approaches in more detail.
+      </p>
+
+    </section>
+
+
+    <section>
+
+      <h2>
+        5. A note on these engineering notes
+      </h2>
+
+      <p>
+        This page documents the development of a specific analogue
+        circuit and reflects the measurements and prototypes available at
+        the time of writing.
+      </p>
+
+      <p>
+        It is not intended as a complete circuit description, service
+        manual or construction guide.
+      </p>
+
+      <p>
+        Some details may continue to change as Weltgeist moves from
+        prototype measurements to production hardware.
+      </p>
+
+    </section>
+
+
+    <p class="legal-page-updated">
+      Engineering notes last updated: September 2026
+    </p>
+
+  </main>
+
+
+  <footer class="site-footer">
+
+    <p class="site-footer-brand">
+      © Late Roman Audio
+    </p>
+
+    <nav
+      class="site-footer-links"
+      aria-label="Site information"
+    >
+      <a href="/">
+        Home
+      </a>
+
+      <a href="/engineering/weltgeist/">
+        Engineering
+      </a>
+
+      <a href="/imprint.html">
+        Imprint
+      </a>
+
+      <a href="/privacy.html">
+        Privacy Policy
+      </a>
+
+      <a href="mailto:info@lateromanaudio.de">
+        Contact
+      </a>
+    </nav>
+
+  </footer>
+
+
+  <script
+    type="module"
+    src="/src/legal-theme.js"
+  ></script>
+
+</body>
+
+</html>

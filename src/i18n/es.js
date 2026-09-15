@@ -262,11 +262,11 @@ export default {
       label: "Peso",
       value: "300 g",
     },
-    compatibility: {
-      heading: "Aviso de compatibilidad",
-      description:
-        "El pedal emula el potenciómetro de 50 kΩ de un Expression Pedal, pero no garantiza una curva de respuesta perfectamente lineal. Utilízalo únicamente con dispositivos que no requieran un valor específico de resistencia del potenciómetro. La salida no es una señal CV real y puede no ser compatible con todos los dispositivos. Comprueba las especificaciones técnicas de tu dispositivo antes de utilizar el pedal.",
-    },
+compatibility: {
+  heading: "Aviso de compatibilidad",
+  description:
+    "El pedal emula el comportamiento del potenciómetro de un pedal de expresión, pero no garantiza ni una curva de respuesta perfectamente lineal ni una resistencia total constante a lo largo de todo el recorrido emulado. Utilízalo únicamente con dispositivos que no requieran un valor específico de resistencia del potenciómetro. La salida no es una verdadera señal CV y puede no ser compatible con todos los dispositivos. Para quienes estén interesados en los detalles técnicos, la curva de respuesta medida del potenciómetro emulado está disponible <a href='/engineering/weltgeist/#potentiometer-measurements'>aquí</a>.",
+},
   },
 
   footer: {

@@ -249,10 +249,10 @@ export default {
       value: "300 g",
     },
     compatibility: {
-      heading: "Compatibility Notice",
-      description:
-        "The pedal emulates the 50 kΩ potentiometer of an expression pedal, but it is not guaranteed to reproduce a perfectly linear response curve. Use it only with devices that do not require a specific potentiometer resistance. The output is not a true CV signal and may not be compatible with all devices. Please check your device's specifications before using the pedal.",
-    },
+  heading: "Compatibility Notice",
+  description:
+    "The pedal emulates the behavior of an expression-pedal potentiometer, but neither a perfectly linear transfer characteristic nor a constant total resistance across the emulated travel is guaranteed. Use it only with devices that do not require a specific potentiometer resistance. The output is not a true CV signal and may not be compatible with all devices. For technically interested readers, the measured transfer characteristic of the emulated potentiometer is available <a href='/engineering/weltgeist/#potentiometer-measurements'>here</a>.",
+},
   },
 
   footer: {
