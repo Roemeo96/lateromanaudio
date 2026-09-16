@@ -213,13 +213,6 @@
     opacity 120ms linear;
 }
 
-.routing-arrow--audio {
-  fill: var(--text);
-}
-
-.routing-arrow--expression {
-  fill: var(--tertiary);
-}
 
 .routing-cable-label {
   fill:
