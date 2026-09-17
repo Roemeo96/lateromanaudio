@@ -548,7 +548,7 @@
     <!-- Demo -->
 
     <section class="demo-showcase reveal-section" aria-labelledby="demo-heading">
-      <div id="demos" class="section-content">
+      <div id="demos" class="demo-content">
         <p class="section-eyebrow">
           Guardalo in azione
         </p>
@@ -897,291 +897,275 @@
           <div id="signal-path-view" class="visualization-view visualization-view--routing" role="tabpanel"
             aria-labelledby="signal-path-tab" hidden>
 
-            <div class="routing-desktop">
-              <div class="routing-diagram">
+<div class="routing-desktop">
+  <div class="routing-diagram">
 
-                <svg class="routing-svg" viewBox="0 0 1000 520" role="img"
-                  aria-label="Una chitarra viene instradata attraverso Weltgeist e un tremolo verso un amplificatore. EXP 1 controlla l'Expression Input del tremolo.">
-                  <defs>
+    <svg class="routing-svg" viewBox="0 0 1000 520" role="img"
+      aria-label="Una chitarra viene instradata attraverso Weltgeist e un tremolo verso un amplificatore. EXP 1 controlla l'Expression Input del tremolo.">
 
-                    <marker id="routing-arrow-audio" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5"
-                      markerHeight="5" orient="auto">
-                      <path d="M 0 0 L 10 5 L 0 10 Z" class="routing-arrow--audio" />
-                    </marker>
 
-                    <marker id="routing-arrow-expression" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5"
-                      markerHeight="5" orient="auto">
-                      <path d="M 0 0 L 10 5 L 0 10 Z" class="routing-arrow--expression" />
-                    </marker>
+      <!-- AUDIO: Guitar -> Weltgeist -->
 
-                  </defs>
+      <path class="routing-cable routing-cable--audio" d="
+        M 955 160
+        H 840
+        Q 820 160 820 180
+        V 230
+      " />
 
 
-                  <!-- AUDIO: Guitar -> Weltgeist -->
+      <!-- AUDIO: Weltgeist -> Tremolo -->
 
-                  <path class="routing-cable routing-cable--audio" d="
-                    M 955 160
-                    H 840
-                    Q 820 160 820 180
-                    V 230
-                  " marker-end="url(#routing-arrow-audio)" />
+      <path class="routing-cable routing-cable--audio" d="
+        M 585 230
+        V 160
+        Q 585 145 570 145
+        H 300
+        Q 285 145 285 160
+        V 230
+      " />
 
 
-                  <!-- AUDIO: Weltgeist -> Tremolo -->
+      <!-- AUDIO: Tremolo -> Amp -->
 
-                  <path class="routing-cable routing-cable--audio" d="
-                    M 585 230
-                    V 160
-                    Q 585 145 570 145
-                    H 300
-                    Q 285 145 285 160
-                    V 230
-                  " marker-end="url(#routing-arrow-audio)" />
+      <path class="routing-cable routing-cable--audio" d="
+        M 155 230
+        V 180
+        Q 155 160 135 160
+        H 45
+      " />
 
 
-                  <!-- AUDIO: Tremolo -> Amp -->
+      <!-- EXP 1 -> Tremolo EXP -->
 
-                  <path class="routing-cable routing-cable--audio" d="
-                    M 155 230
-                    V 180
-                    Q 155 160 135 160
-                    H 45
-                  " marker-end="url(#routing-arrow-audio)" />
+      <path class="
+        routing-cable
+        routing-cable--expression
+      " d="
+        M 745 230
+        V 80
+        Q 745 60 725 60
+        H 240
+        Q 220 60 220 80
+        V 230
+      " />
 
 
-                  <!-- EXP 1 -> Tremolo EXP -->
+      <!-- Labels -->
 
-                  <path class="
-                    routing-cable
-                    routing-cable--expression
-                  " d="
-                    M 745 230
-                    V 80
-                    Q 745 60 725 60
-                    H 240
-                    Q 220 60 220 80
-                    V 230
-                  " marker-end="url(#routing-arrow-expression)" />
+      <text x="480" y="52" text-anchor="middle" class="
+        routing-cable-label
+        routing-cable-label--expression
+      ">
+        EXP 1
+      </text>
 
+      <text x="440" y="137" text-anchor="middle" class="routing-cable-label">
+        AUDIO
+      </text>
 
-                  <!-- Labels -->
 
-                  <text x="480" y="52" text-anchor="middle" class="
-                    routing-cable-label
-                    routing-cable-label--expression
-                  ">
-                    EXP 1
-                  </text>
+      <!-- AMP -->
 
-                  <text x="440" y="137" text-anchor="middle" class="routing-cable-label">
-                    AUDIO
-                  </text>
+      <g class="routing-endpoint">
+        <circle cx="45" cy="160" r="5" />
 
+        <text x="45" y="132" text-anchor="middle">
+          AMP
+        </text>
+      </g>
 
-                  <!-- AMP -->
 
-                  <g class="routing-endpoint">
-                    <circle cx="45" cy="160" r="5" />
+      <!-- TREMOLO -->
 
-                    <text x="45" y="132" text-anchor="middle">
-                      AMP
-                    </text>
-                  </g>
+      <g class="
+        routing-device
+        routing-device--tremolo
+      ">
+        <rect x="120" y="230" width="200" height="220" rx="3" />
 
 
-                  <!-- TREMOLO -->
+        <!-- OUT -->
 
-                  <g class="
-                    routing-device
-                    routing-device--tremolo
-                  ">
-                    <rect x="120" y="230" width="200" height="220" rx="3" />
+        <g class="
+          routing-port
+          routing-port--audio-reactive
+        ">
+          <text x="155" y="204" text-anchor="middle">
+            OUT
+          </text>
 
+          <circle cx="155" cy="230" r="7" />
+        </g>
 
-                    <!-- OUT -->
 
-                    <g class="
-                      routing-port
-                      routing-port--audio-reactive
-                    ">
-                      <text x="155" y="204" text-anchor="middle">
-                        OUT
-                      </text>
+        <!-- EXP -->
 
-                      <circle cx="155" cy="230" r="7" />
-                    </g>
+        <g class="
+          routing-port
+          routing-port--expression
+          routing-port--reactive
+        ">
+          <text x="220" y="204" text-anchor="middle">
+            EXP
+          </text>
 
+          <circle cx="220" cy="230" r="7" />
+        </g>
 
-                    <!-- EXP -->
 
-                    <g class="
-                      routing-port
-                      routing-port--expression
-                      routing-port--reactive
-                    ">
-                      <text x="220" y="204" text-anchor="middle">
-                        EXP
-                      </text>
+        <!-- IN -->
 
-                      <circle cx="220" cy="230" r="7" />
-                    </g>
+        <g class="
+          routing-port
+          routing-port--audio-reactive
+        ">
+          <text x="285" y="204" text-anchor="middle">
+            IN
+          </text>
 
+          <circle cx="285" cy="230" r="7" />
+        </g>
 
-                    <!-- IN -->
 
-                    <g class="
-                      routing-port
-                      routing-port--audio-reactive
-                    ">
-                      <text x="285" y="204" text-anchor="middle">
-                        IN
-                      </text>
+        <text x="220" y="305" text-anchor="middle" class="routing-device-eyebrow">
+          EFFETTO
+        </text>
 
-                      <circle cx="285" cy="230" r="7" />
-                    </g>
+        <text x="220" y="342" text-anchor="middle" class="routing-device-name">
+          TREMOLO
+        </text>
 
+        <g class="routing-tremolo-visualization">
 
-                    <text x="220" y="305" text-anchor="middle" class="routing-device-eyebrow">
-                      EFFETTO
-                    </text>
+          <text x="220" y="374" text-anchor="middle" class="routing-tremolo-label">
+            DEPTH
+          </text>
 
-                    <text x="220" y="342" text-anchor="middle" class="routing-device-name">
-                      TREMOLO
-                    </text>
-                    <g class="routing-tremolo-visualization">
+          <path class="routing-tremolo-wave" d="
+            M 150 400
+            C 160 380 170 380 180 400
+            C 190 420 200 420 210 400
+            C 220 380 230 380 240 400
+            C 250 420 260 420 270 400
+            C 280 380 290 380 300 400
+          " />
 
-                      <text x="220" y="374" text-anchor="middle" class="routing-tremolo-label">
-                        DEPTH
-                      </text>
+        </g>
+      </g>
 
-                      <path class="routing-tremolo-wave" d="
-                      M 150 400
-                      C 160 380 170 380 180 400
-                      C 190 420 200 420 210 400
-                      C 220 380 230 380 240 400
-                      C 250 420 260 420 270 400
-                      C 280 380 290 380 300 400
-                    " />
-                    </g>
-                  </g>
 
+      <!-- WELTGEIST -->
 
-                  <!-- WELTGEIST -->
+      <g class="
+        routing-device
+        routing-device--weltgeist
+      ">
+        <rect x="530" y="230" width="330" height="220" rx="3" />
 
-                  <g class="
-                    routing-device
-                    routing-device--weltgeist
-                  ">
-                    <rect x="530" y="230" width="330" height="220" rx="3" />
 
+        <!-- OUTPUT -->
 
-                    <!-- OUTPUT -->
+        <g class="
+          routing-port
+          routing-port--audio-reactive
+        ">
+          <text x="585" y="204" text-anchor="middle">
+            OUT
+          </text>
 
-                    <g class="
-                      routing-port
-                      routing-port--audio-reactive
-                    ">
-                      <text x="585" y="204" text-anchor="middle">
-                        OUT
-                      </text>
+          <circle cx="585" cy="230" r="7" />
+        </g>
 
-                      <circle cx="585" cy="230" r="7" />
-                    </g>
 
+        <!-- EXP 2 -->
 
-                    <!-- EXP 2 -->
+        <g class="
+          routing-port
+          routing-port--expression
+        ">
+          <text x="665" y="204" text-anchor="middle">
+            EXP 2
+          </text>
 
-                    <g class="
-                      routing-port
-                      routing-port--expression
-                    ">
-                      <text x="665" y="204" text-anchor="middle">
-                        EXP 2
-                      </text>
+          <circle cx="665" cy="230" r="7" />
+        </g>
 
-                      <circle cx="665" cy="230" r="7" />
-                    </g>
 
+        <!-- EXP 1 -->
 
-                    <!-- EXP 1 -->
+        <g class="
+          routing-port
+          routing-port--expression
+          routing-port--reactive
+        ">
+          <text x="745" y="204" text-anchor="middle">
+            EXP 1
+          </text>
 
-                    <g class="
-                      routing-port
-                      routing-port--expression
-                      routing-port--reactive
-                    ">
-                      <text x="745" y="204" text-anchor="middle">
-                        EXP 1
-                      </text>
+          <circle cx="745" cy="230" r="7" />
+        </g>
 
-                      <circle cx="745" cy="230" r="7" />
-                    </g>
 
+        <!-- INPUT -->
 
-                    <!-- INPUT -->
+        <g class="
+          routing-port
+          routing-port--audio-reactive
+        ">
+          <text x="820" y="204" text-anchor="middle">
+            IN
+          </text>
 
-                    <g class="
-                      routing-port
-                      routing-port--audio-reactive
-                    ">
-                      <text x="820" y="204" text-anchor="middle">
-                        IN
-                      </text>
+          <circle cx="820" cy="230" r="7" />
+        </g>
 
-                      <circle cx="820" cy="230" r="7" />
-                    </g>
 
+        <text x="695" y="312" text-anchor="middle" class="routing-device-eyebrow">
+          LATE ROMAN AUDIO
+        </text>
 
-                    <text x="695" y="312" text-anchor="middle" class="routing-device-eyebrow">
-                      LATE ROMAN AUDIO
-                    </text>
+        <text x="695" y="350" text-anchor="middle" class="
+          routing-device-name
+          routing-device-name--weltgeist
+        ">
+          WELTGEIST
+        </text>
+      </g>
 
-                    <text x="695" y="350" text-anchor="middle" class="
-                      routing-device-name
-                      routing-device-name--weltgeist
-                    ">
-                      WELTGEIST
-                    </text>
-                  </g>
 
-                  <g class="routing-input-meter">
-                    <text x="695" y="377" text-anchor="middle" class="routing-input-meter-label">
-                      INPUT LEVEL
-                    </text>
+      <g class="routing-input-meter">
 
-                    <circle class="routing-input-led" data-threshold="0.125" cx="632" cy="405" r="5" />
+        <text x="695" y="377" text-anchor="middle" class="routing-input-meter-label">
+          INPUT LEVEL
+        </text>
 
-                    <circle class="routing-input-led" data-threshold="0.250" cx="650" cy="405" r="5" />
+        <circle class="routing-input-led" data-threshold="0.125" cx="632" cy="405" r="5" />
+        <circle class="routing-input-led" data-threshold="0.250" cx="650" cy="405" r="5" />
+        <circle class="routing-input-led" data-threshold="0.375" cx="668" cy="405" r="5" />
+        <circle class="routing-input-led" data-threshold="0.500" cx="686" cy="405" r="5" />
+        <circle class="routing-input-led" data-threshold="0.625" cx="704" cy="405" r="5" />
+        <circle class="routing-input-led" data-threshold="0.750" cx="722" cy="405" r="5" />
+        <circle class="routing-input-led" data-threshold="0.875" cx="740" cy="405" r="5" />
+        <circle class="routing-input-led" data-threshold="1.000" cx="758" cy="405" r="5" />
 
-                    <circle class="routing-input-led" data-threshold="0.375" cx="668" cy="405" r="5" />
+      </g>
 
-                    <circle class="routing-input-led" data-threshold="0.500" cx="686" cy="405" r="5" />
 
-                    <circle class="routing-input-led" data-threshold="0.625" cx="704" cy="405" r="5" />
+      <!-- GUITAR -->
 
-                    <circle class="routing-input-led" data-threshold="0.750" cx="722" cy="405" r="5" />
+      <g class="routing-endpoint">
+        <circle cx="955" cy="160" r="5" />
 
-                    <circle class="routing-input-led" data-threshold="0.875" cx="740" cy="405" r="5" />
+        <text x="955" y="132" text-anchor="middle">
+          CHITARRA
+        </text>
+      </g>
 
-                    <circle class="routing-input-led" data-threshold="1.000" cx="758" cy="405" r="5" />
-                  </g>
+    </svg>
 
-                  <!-- GUITAR -->
-
-                  <g class="routing-endpoint">
-                    <circle cx="955" cy="160" r="5" />
-
-                    <text x="955" y="132" text-anchor="middle">
-                      CHITARRA
-                    </text>
-                  </g>
-
-                </svg>
-
-              </div>
-
-
-            </div>
+  </div>
+</div>
 
 <div class="routing-mobile">
 

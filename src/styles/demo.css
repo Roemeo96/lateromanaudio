@@ -1,7 +1,18 @@
 .demo-showcase {
   width: 100%;
-  padding: 5rem 0;
+  padding: 2.5rem 0;
   overflow: hidden;
+}
+
+
+.demo-content {
+  position: relative;
+  z-index: 1;
+
+  width: min(100% - 3rem, 76rem);
+  margin-inline: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .demo-carousel {
