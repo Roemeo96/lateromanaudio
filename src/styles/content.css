@@ -97,7 +97,7 @@
 }
 
 .content-section > .landing-description {
-  width: min(100%, 800px);
+  width: min(800px, calc(100% - 6rem));
   margin: 1.25rem auto 0;
 }
 
