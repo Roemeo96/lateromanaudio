@@ -27,9 +27,6 @@
   min-height: auto;
   padding: 1.5rem;
 
-  border-radius: 1.25rem;
-
-  box-shadow: var(--panel-shadow);
 }
 
 .visualization-panel {
