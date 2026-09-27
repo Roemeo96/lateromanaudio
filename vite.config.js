@@ -44,10 +44,6 @@ export default defineConfig({
           process.cwd(),
           "privacy.html",
         ),
-        engineeringWeltgeist: resolve(
-        process.cwd(),
-        "engineering/weltgeist/index.html",
-      ),
       },
     },
   },
