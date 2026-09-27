@@ -265,7 +265,7 @@ export default {
 compatibility: {
   heading: "Compatibilité",
   description:
-    "La pédale émule le comportement du potentiomètre d’une pédale d’expression, mais ne garantit ni une courbe de réponse parfaitement linéaire ni une résistance totale constante sur toute la course émulée. Utilisez-la uniquement avec des appareils qui n’exigent pas une valeur de résistance de potentiomètre spécifique. La sortie n’est pas un véritable signal CV et peut ne pas être compatible avec tous les appareils. Pour les personnes intéressées par les détails techniques, la courbe de réponse mesurée du potentiomètre émulé est disponible <a href='/engineering/weltgeist/#potentiometer-measurements'>ici</a>.",
+    "La pédale émule le comportement du potentiomètre d’une pédale d’expression, mais ne garantit ni une courbe de réponse parfaitement linéaire ni une résistance totale constante sur toute la course émulée. Utilisez-la uniquement avec des appareils qui n’exigent pas une valeur de résistance de potentiomètre spécifique. La sortie n’est pas un véritable signal CV et peut ne pas être compatible avec tous les appareils.",
 },
   },
 

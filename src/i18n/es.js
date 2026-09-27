@@ -265,7 +265,7 @@ export default {
 compatibility: {
   heading: "Aviso de compatibilidad",
   description:
-    "El pedal emula el comportamiento del potenciómetro de un pedal de expresión, pero no garantiza ni una curva de respuesta perfectamente lineal ni una resistencia total constante a lo largo de todo el recorrido emulado. Utilízalo únicamente con dispositivos que no requieran un valor específico de resistencia del potenciómetro. La salida no es una verdadera señal CV y puede no ser compatible con todos los dispositivos. Para quienes estén interesados en los detalles técnicos, la curva de respuesta medida del potenciómetro emulado está disponible <a href='/engineering/weltgeist/#potentiometer-measurements'>aquí</a>.",
+    "El pedal emula el comportamiento del potenciómetro de un pedal de expresión, pero no garantiza ni una curva de respuesta perfectamente lineal ni una resistencia total constante a lo largo de todo el recorrido emulado. Utilízalo únicamente con dispositivos que no requieran un valor específico de resistencia del potenciómetro. La salida no es una verdadera señal CV y puede no ser compatible con todos los dispositivos.",
 },
   },
 

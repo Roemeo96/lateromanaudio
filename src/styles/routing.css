@@ -297,7 +297,7 @@
   fill: none;
 
   stroke: var(--tertiary);
-  stroke-width: 1.5;
+  stroke-width: 3.5;
 
   vector-effect: non-scaling-stroke;
 
@@ -315,7 +315,7 @@
   opacity:
     calc(
       0.35
-      + var(--routing-output) * 0.65
+      + var(--routing-output) * 0.75
     );
 
   transition:

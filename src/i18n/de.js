@@ -251,7 +251,7 @@ export default {
 compatibility: {
   heading: "Kompatibilitätshinweis",
   description:
-    "Das Pedal emuliert das Verhalten des Potentiometers eines Expression-Pedals, garantiert jedoch weder eine perfekt lineare Kennlinie noch einen konstanten Gesamtwiderstand über den emulierten Regelweg. Verwende es nur mit Geräten, die keinen bestimmten Potentiometerwiderstand voraussetzen. Der Ausgang ist kein echtes CV-Signal und möglicherweise nicht mit allen Geräten kompatibel. Für technisch Interessierte ist die gemessene Kennlinie des emulierten Potentiometers <a href='/engineering/weltgeist/#potentiometer-measurements'>hier</a> verfügbar.",
+    "Das Pedal emuliert das Verhalten des Potentiometers eines Expression-Pedals, garantiert jedoch weder eine perfekt lineare Kennlinie noch einen konstanten Gesamtwiderstand über den emulierten Regelweg. Verwende es nur mit Geräten, die keinen bestimmten Potentiometerwiderstand voraussetzen. Der Ausgang ist kein echtes CV-Signal und möglicherweise nicht mit allen Geräten kompatibel.",
 },
   },
 

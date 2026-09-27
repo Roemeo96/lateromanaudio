@@ -251,7 +251,7 @@ export default {
     compatibility: {
   heading: "Compatibility Notice",
   description:
-    "The pedal emulates the behavior of an expression-pedal potentiometer, but neither a perfectly linear transfer characteristic nor a constant total resistance across the emulated travel is guaranteed. Use it only with devices that do not require a specific potentiometer resistance. The output is not a true CV signal and may not be compatible with all devices. For technically interested readers, the measured transfer characteristic of the emulated potentiometer is available <a href='/engineering/weltgeist/#potentiometer-measurements'>here</a>.",
+    "The pedal emulates the behavior of an expression-pedal potentiometer, but neither a perfectly linear transfer characteristic nor a constant total resistance across the emulated travel is guaranteed. Use it only with devices that do not require a specific potentiometer resistance. The output is not a true CV signal and may not be compatible with all devices.",
 },
   },
 

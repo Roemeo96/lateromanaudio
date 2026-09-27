@@ -3,3 +3,5 @@ dist/
 .vite/
 logos/
 particles-video.html
+3d-video.html
+simulation-fixed.html
