@@ -72,7 +72,7 @@
 
   flex: 0 0 auto;
 
-  gap: 10px;
+  gap: 18px;
 
   height: clamp(95px, 22vw, 150px);
 }
@@ -80,7 +80,7 @@
 .logo-bar-group {
   display: flex;
 
-  gap: 5px;
+  gap: 8px;
 
   height: 100%;
 }
@@ -88,7 +88,7 @@
 .logo-bar-group span {
   display: block;
 
-  width: 3px;
+  width: 5px;
   height: 100%;
 
   background: var(--text);
