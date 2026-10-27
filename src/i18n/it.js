@@ -3,7 +3,7 @@ export default {
 
   seo: {
     canonical: "https://lateromanaudio.de/it/",
-    title: "Weltgeist – Expression Pedal controllato dalla dinamica | Late Roman Audio",
+    title: "Late Roman Audio | Weltgeist – Expression Pedal controllato dalla dinamica",
     description:
       "Weltgeist trasforma la dinamica del tuo strumento in Expression Control, permettendoti di controllare effetti compatibili direttamente attraverso il tuo modo di suonare.",
     productDescription:
