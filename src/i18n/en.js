@@ -57,12 +57,16 @@ export default {
     heading: "Weltgeist Pedal",
     imageAlt: "Weltgeist pedal by Late Roman Audio",
     figcaption: "Weltgeist by Late Roman Audio",
-    price: "€299.00",
+    price: "€229.00",
     status: "Coming soon",
     quantity: "Quantity",
     addToCart: "Add to cart",
-    description: "Dynamics-controlled expression pedal by Late Roman Audio",
-    itemUrl: "/en/",
+        itemUrl: "/en/",
+    
+description: "Dynamics-controlled expression pedal by Late Roman Audio. Includes 2 × 60 cm TRS cables.",
+cablesIncluded: "2 × TRS cables (60 cm each) included",
+cablesDescription: "Two basic TRS cables are included so you can connect Weltgeist right out of the box. Since cable length, color, and connector type depend on your pedalboard, they're intended as a practical starting point rather than a one-size-fits-all solution.",
+
   },
 
   why: {

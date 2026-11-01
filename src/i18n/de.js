@@ -53,17 +53,19 @@ export default {
       "Steuere damit Parameter wie Delay-Feedback, Reverb-Mix, Filterbewegung oder Modulationstiefe. Platziere Weltgeist vor der Kompression, um deine ursprüngliche Spieldynamik zu erfassen, oder dahinter, damit es auf das bereits bearbeitete Signal reagiert.",
   },
 
-  purchase: {
-    heading: "Weltgeist Pedal",
-    imageAlt: "Weltgeist Pedal von Late Roman Audio",
-    figcaption: "Weltgeist von Late Roman Audio",
-    price: "299,00 €",
-    status: "Demnächst verfügbar",
-    quantity: "Anzahl",
-    addToCart: "In den Warenkorb",
-    description: "Dynamikgesteuertes Expression-Pedal von Late Roman Audio",
-    itemUrl: "/de/",
-  },
+purchase: {
+  heading: "Weltgeist Pedal",
+  imageAlt: "Weltgeist Pedal von Late Roman Audio",
+  figcaption: "Weltgeist von Late Roman Audio",
+  price: "229,00 €",
+  status: "Demnächst verfügbar",
+  quantity: "Anzahl",
+  addToCart: "In den Warenkorb",
+  description: "Dynamikgesteuertes Expression-Pedal von Late Roman Audio. Inklusive 2 × 60 cm TRS-Kabel.",
+  itemUrl: "/de/",
+  cablesIncluded: "2 × TRS-Kabel (je 60 cm) inklusive",
+  cablesDescription: "Damit du Weltgeist direkt nach dem Auspacken anschließen kannst, liegen zwei einfache TRS-Kabel bei. Da Kabellänge, Farbe und Steckerform vom jeweiligen Pedalboard abhängen, sind sie bewusst als praktische Starthilfe gedacht.",
+},
 
   why: {
     heading: "Warum Weltgeist?",

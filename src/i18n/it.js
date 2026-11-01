@@ -57,12 +57,16 @@ export default {
     heading: "Weltgeist Pedal",
     imageAlt: "Weltgeist Pedal di Late Roman Audio",
     figcaption: "Weltgeist di Late Roman Audio",
-    price: "299,00 €",
+    price: "229,00 €",
     status: "Disponibile a breve",
     quantity: "Quantità",
     addToCart: "Aggiungi al carrello",
-    description: "Expression Pedal controllato dalla dinamica di Late Roman Audio",
     itemUrl: "/it/",
+    
+description: "Pedale d’espressione controllato dalla dinamica esecutiva, realizzato da Late Roman Audio. Include 2 cavi TRS da 60 cm.",
+cablesIncluded: "2 cavi TRS inclusi (60 cm ciascuno)",
+cablesDescription: "Sono inclusi due semplici cavi TRS per permetterti di collegare Weltgeist appena estratto dalla confezione. Poiché lunghezza, colore e tipo di connettore dipendono dalla tua pedaliera, sono pensati come una pratica soluzione iniziale, non come una soluzione universale.",
+
   },
 
   why: {
