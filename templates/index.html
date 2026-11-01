@@ -948,11 +948,26 @@
     <span>{{simulation.pedal.toeDown}}</span>
     <span>{{simulation.pedal.heelDown}}</span>
   </figcaption>
-  <div class="expression-position-meter" role="progressbar"
-       aria-label="{{simulation.values.output}}" aria-valuemin="0"
-       aria-valuemax="100" aria-valuenow="0" id="expression-position-meter">
-    <span class="expression-position-meter__fill" id="expression-position-meter-fill"></span>
-  </div>
+<div
+  class="expression-position-meter"
+  id="expression-position-meter"
+  role="progressbar"
+  aria-label="{{simulation.values.output}}"
+  aria-valuemin="0"
+  aria-valuemax="100"
+  aria-valuenow="0"
+>
+  <span
+    class="expression-position-meter__maximum-fill"
+    id="expression-position-meter-maximum"
+    aria-hidden="true"
+  ></span>
+
+  <span
+    class="expression-position-meter__fill"
+    id="expression-position-meter-fill"
+  ></span>
+</div>
 </figure>
 
 

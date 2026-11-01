@@ -215,8 +215,8 @@ input[type="range"] {
   background:
     linear-gradient(
       to right,
-      var(--tertiary) 0%,
-      var(--tertiary) var(--range-percentage),
+      var(--range-accent, var(--text)) 0%,
+      var(--range-accent, var(--text)) var(--range-percentage),
       rgb(var(--text-rgb) / 30%)
         var(--range-percentage),
       rgb(var(--text-rgb) / 30%) 100%
@@ -241,10 +241,10 @@ input[type="range"]::-webkit-slider-thumb {
   height: 12px;
   margin-top: -5px;
 
-  border: 1px solid var(--tertiary);
+  border: 1px solid var(--range-accent, var(--text));
   border-radius: 50%;
 
-  background: var(--tertiary);
+  background: var(--range-accent, var(--text));
 }
 
 input[type="range"]::-moz-range-track {
@@ -259,7 +259,7 @@ input[type="range"]::-moz-range-track {
 input[type="range"]::-moz-range-progress {
   height: 2px;
 
-  background: var(--tertiary);
+  background: var(--range-accent, var(--text));
 
   border-radius: 999px;
 }
@@ -268,10 +268,10 @@ input[type="range"]::-moz-range-thumb {
   width: 12px;
   height: 12px;
 
-  border: 1px solid var(--tertiary);
+  border: 1px solid var(--range-accent, var(--text));
   border-radius: 50%;
 
-  background: var(--tertiary);
+  background: var(--range-accent, var(--text));
 }
 
 input[type="range"]:focus-visible {
@@ -818,7 +818,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   height: 2px;
   margin-top: 0.9rem;
   background: var(--border);
-  overflow: hidden;
+  overflow: visible;
 }
 .expression-position-meter__fill {
   display: block;
@@ -843,4 +843,37 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   .expression-position-meter__fill {
     transition: none;
   }
+}
+
+
+#input-level {
+  --range-accent: var(--tertiary);
+}
+
+.expression-position-meter {
+  position: relative;
+  overflow: hidden;
+}
+
+.expression-position-meter__maximum-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: block;
+  width: 0;
+  height: 100%;
+
+  background: #999995;
+  border-radius: inherit;
+
+  transition: width 120ms ease-out;
+  pointer-events: none;
+}
+
+.expression-position-meter__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }

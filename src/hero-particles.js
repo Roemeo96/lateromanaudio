@@ -128,7 +128,7 @@ function createParticleOptions() {
       },
 
       number: {
-        value: 45,
+        value: 10,
 
         density: {
           enable: true,
@@ -140,7 +140,7 @@ function createParticleOptions() {
       opacity: {
         value: {
           min: 0.1,
-          max: 0.6,
+          max: 0.45,
         },
 
         animation: {

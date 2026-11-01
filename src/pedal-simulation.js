@@ -17,7 +17,7 @@ import {
 export function createPedalSimulation() {
   const state = {
     base: 0,
-    sensitivity: 6.5,
+    sensitivity: 4,
 
     input: 0,
     manualInput: 0,
@@ -77,6 +77,9 @@ export function createPedalSimulation() {
 
   const pedalTreadle =
     document.querySelector('#expression-pedal-treadle');
+
+  const positionMeterMaximum =
+    document.querySelector('#expression-position-meter-maximum');
 
   const positionMeter = document.querySelector('#expression-position-meter');
   const positionMeterFill = document.querySelector('#expression-position-meter-fill');
@@ -139,6 +142,16 @@ export function createPedalSimulation() {
         state.input,
         getSettings(),
       );
+      if (positionMeterMaximum) {
+  const maximumOutput = calculateOutput(
+    1,
+    getSettings(),
+  );
+
+  const percentage = maximumOutput / 5 * 100;
+
+  positionMeterMaximum.style.width = `${percentage}%`;
+}
   }
 
   updateTargetOutput();
