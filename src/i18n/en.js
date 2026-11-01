@@ -156,6 +156,13 @@ export default {
         ". Switch between the transfer curve and the signal path to view the same response from two different perspectives.",
     },
     panelHeading: "Interactive Weltgeist simulation",
+    pedal: {
+  brand: "WELTGEIST",
+  heelDown: "HEEL-DOWN",
+  toeDown: "TOE-DOWN",
+  ariaLabel: "Expression pedal position",
+  description: "The treadle tilts according to the expression output.",
+},
     controls: {
       sensitivity: "Sensitivity",
       base: "Base",

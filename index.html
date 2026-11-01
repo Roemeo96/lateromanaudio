@@ -63,7 +63,7 @@
       "@type": "Offer",
       "url": "https://lateromanaudio.de/en/#pedal",
       "priceCurrency": "EUR",
-      "price": "299.00",
+      "price": "209.00",
       "availability": "https://schema.org/PreOrder"
     }
   }
@@ -75,7 +75,7 @@
 >
 
   <title>
-  Weltgeist – Dynamics-Controlled Expression Pedal | Late Roman Audio
+  Late Roman Audio | Weltgeist – Dynamics-Controlled Expression Pedal
 </title>
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -380,7 +380,7 @@
             </div>
 
             <button id="weltgeist-add-to-cart" class="snipcart-add-item pedal-add-to-cart" type="button"
-              data-item-id="weltgeist" data-item-name="Weltgeist" data-item-price="299.00" data-item-url="/en/"
+              data-item-id="weltgeist" data-item-name="Weltgeist" data-item-price="209.00" data-item-url="/en/"
               data-item-taxable="false" data-item-image="/images/weltgeist.webp"
               data-item-description="Dynamics-controlled expression pedal by Late Roman Audio"
               data-item-min-quantity="1" data-item-max-quantity="5" data-item-quantity="1">
@@ -699,11 +699,11 @@
             </label>
 
             <output id="attack-value" for="attack">
-              250 ms
+              0 ms
             </output>
           </div>
 
-          <input id="attack" type="range" min="10" max="1000" step="10" value="250">
+          <input id="attack" type="range" min="10" max="4000" step="10" value="0">
         </div>
 
         <div class="control control--horizontal">
@@ -713,11 +713,11 @@
             </label>
 
             <output id="release-value" for="release">
-              3750 ms
+              4000 ms
             </output>
           </div>
 
-          <input id="release" type="range" min="10" max="4000" step="10" value="3750">
+          <input id="release" type="range" min="10" max="4000" step="10" value="4000">
         </div>
 
         <div class="control control--horizontal">
@@ -858,630 +858,85 @@
 
         <!-- Visualization switch -->
 
-        <div class="visualization-view-switch" role="tablist" aria-label="Simulation visualization">
-          <button id="transfer-curve-tab" class="visualization-view-button is-active" type="button" role="tab"
-            aria-selected="true" aria-controls="transfer-curve-view" data-visualization-view="transfer-curve">
-            Transfer Curve
-          </button>
+<div class="expression-pedal-stage">
+  
+  <p
+    class="expression-pedal-position"
+    id="expression-pedal-position"
+    aria-live="polite"
+    data-heel-down="HEEL-DOWN"
+    data-toe-down="TOE-DOWN"
+  >
+    HEEL-DOWN
+  </p>
 
-          <button id="signal-path-tab" class="visualization-view-button" type="button" role="tab" aria-selected="false"
-            aria-controls="signal-path-view" data-visualization-view="signal-path">
-            Signal Path
-          </button>
-        </div>
 
 
-        <!-- Visualization stage -->
+<figure class="expression-pedal-illustration">
+  <svg viewBox="100 102 660 218"
+       aria-hidden="true"
+       focusable="false">
+    <!-- Gusskörper -->
+<path class="expression-pedal-illustration__body"
+      d="M164 222 H440 L700 276 H708 V294
+         H152 V234 Q152 222 164 222 Z"/>
 
-        <div class="visualization-stage">
+<!-- Feine Linie entlang der Oberkante -->
+<path class="expression-pedal-illustration__detail"
+      d="M166 232 H438 L670 280.2"/>
 
+    <!-- Eigene Gruppe für die spätere Kippbewegung -->
+    <g class="expression-pedal-illustration__treadle"
+       id="expression-pedal-treadle"
+       transform="rotate(-9 440 207)">
+      <path class="expression-pedal-illustration__plate"
+            d="M171 145 L697 234 Q702 235 704 240
+               L706 247 Q706 251 701 252
+               L168 161 Q162 159 162 153
+               V150 Q162 146 171 145 Z"/>
 
-          <!-- Transfer Curve -->
+      <path class="expression-pedal-illustration__grip"
+            d="M185 146 L268 160
+               M286 164 L369 178
+               M389 181 L472 195
+               M490 198 L573 212
+               M592 215 L679 229"/>
+    </g>
 
-          <div id="transfer-curve-view" class="visualization-view visualization-view--transfer is-active"
-            role="tabpanel" aria-labelledby="transfer-curve-tab">
-            <div class="chart-container">
-                <svg
-                    id="transfer-chart"
-                    role="img"
-                    aria-label="Weltgeist pedal response curve"
-                    data-input-volume="Input Volume"
-                    data-expression-position="Expression Position"
-                ></svg>
-                </div>
-          </div>
+    <path class="expression-pedal-illustration__feet"
+          d="M183 294 v5 h28 v-5
+             M655 294 v5 h28 v-5"/>
 
+    <text class="expression-pedal-illustration__brand"
+          x="260" y="278">WELTGEIST</text>
 
-          <!-- Signal Path -->
+    <path class="expression-pedal-illustration__ground"
+          d="M106 311 H754"/>
+  </svg>
 
-          <div id="signal-path-view" class="visualization-view visualization-view--routing" role="tabpanel"
-            aria-labelledby="signal-path-tab" hidden>
+  <figcaption class="expression-pedal-illustration__labels">
+    <span>HEEL-DOWN</span>
+    <span>TOE-DOWN</span>
+  </figcaption>
+</figure>
 
-<div class="routing-desktop">
-  <div class="routing-diagram">
 
-    <svg class="routing-svg" viewBox="0 0 1000 520" role="img"
-      aria-label="Guitar routed through Weltgeist and tremolo to an amplifier. EXP 1 controls the tremolo expression input.">
 
 
-      <!-- AUDIO: Guitar -> Weltgeist -->
 
-      <path class="routing-cable routing-cable--audio" d="
-        M 955 160
-        H 840
-        Q 820 160 820 180
-        V 230
-      " />
 
 
-      <!-- AUDIO: Weltgeist -> Tremolo -->
 
-      <path class="routing-cable routing-cable--audio" d="
-        M 585 230
-        V 160
-        Q 585 145 570 145
-        H 300
-        Q 285 145 285 160
-        V 230
-      " />
 
 
-      <!-- AUDIO: Tremolo -> Amp -->
 
-      <path class="routing-cable routing-cable--audio" d="
-        M 155 230
-        V 180
-        Q 155 160 135 160
-        H 45
-      " />
 
 
-      <!-- EXP 1 -> Tremolo EXP -->
 
-      <path class="
-        routing-cable
-        routing-cable--expression
-      " d="
-        M 745 230
-        V 80
-        Q 745 60 725 60
-        H 240
-        Q 220 60 220 80
-        V 230
-      " />
 
 
-      <!-- Labels -->
-
-      <text x="480" y="52" text-anchor="middle" class="
-        routing-cable-label
-        routing-cable-label--expression
-      ">
-        EXP 1
-      </text>
-
-      <text x="440" y="137" text-anchor="middle" class="routing-cable-label">
-        AUDIO
-      </text>
-
-
-      <!-- AMP -->
-
-      <g class="routing-endpoint">
-        <circle cx="45" cy="160" r="5" />
-
-        <text x="45" y="132" text-anchor="middle">
-          AMP
-        </text>
-      </g>
-
-
-      <!-- TREMOLO -->
-
-      <g class="
-        routing-device
-        routing-device--tremolo
-      ">
-        <rect x="120" y="230" width="200" height="220" rx="3" />
-
-
-        <!-- OUT -->
-
-        <g class="
-          routing-port
-          routing-port--audio-reactive
-        ">
-          <text x="155" y="204" text-anchor="middle">
-            OUT
-          </text>
-
-          <circle cx="155" cy="230" r="7" />
-        </g>
-
-
-        <!-- EXP -->
-
-        <g class="
-          routing-port
-          routing-port--expression
-          routing-port--reactive
-        ">
-          <text x="220" y="204" text-anchor="middle">
-            EXP
-          </text>
-
-          <circle cx="220" cy="230" r="7" />
-        </g>
-
-
-        <!-- IN -->
-
-        <g class="
-          routing-port
-          routing-port--audio-reactive
-        ">
-          <text x="285" y="204" text-anchor="middle">
-            IN
-          </text>
-
-          <circle cx="285" cy="230" r="7" />
-        </g>
-
-
-        <text x="220" y="305" text-anchor="middle" class="routing-device-eyebrow">
-          EFFECT
-        </text>
-
-        <text x="220" y="342" text-anchor="middle" class="routing-device-name">
-          TREMOLO
-        </text>
-
-        <g class="routing-tremolo-visualization">
-
-          <text x="220" y="374" text-anchor="middle" class="routing-tremolo-label">
-            DEPTH
-          </text>
-
-          <path class="routing-tremolo-wave" d="
-            M 150 400
-            C 160 380 170 380 180 400
-            C 190 420 200 420 210 400
-            C 220 380 230 380 240 400
-            C 250 420 260 420 270 400
-            C 280 380 290 380 300 400
-          " />
-
-        </g>
-      </g>
-
-
-      <!-- WELTGEIST -->
-
-      <g class="
-        routing-device
-        routing-device--weltgeist
-      ">
-        <rect x="530" y="230" width="330" height="220" rx="3" />
-
-
-        <!-- OUTPUT -->
-
-        <g class="
-          routing-port
-          routing-port--audio-reactive
-        ">
-          <text x="585" y="204" text-anchor="middle">
-            OUT
-          </text>
-
-          <circle cx="585" cy="230" r="7" />
-        </g>
-
-
-        <!-- EXP 2 -->
-
-        <g class="
-          routing-port
-          routing-port--expression
-        ">
-          <text x="665" y="204" text-anchor="middle">
-            EXP 2
-          </text>
-
-          <circle cx="665" cy="230" r="7" />
-        </g>
-
-
-        <!-- EXP 1 -->
-
-        <g class="
-          routing-port
-          routing-port--expression
-          routing-port--reactive
-        ">
-          <text x="745" y="204" text-anchor="middle">
-            EXP 1
-          </text>
-
-          <circle cx="745" cy="230" r="7" />
-        </g>
-
-
-        <!-- INPUT -->
-
-        <g class="
-          routing-port
-          routing-port--audio-reactive
-        ">
-          <text x="820" y="204" text-anchor="middle">
-            IN
-          </text>
-
-          <circle cx="820" cy="230" r="7" />
-        </g>
-
-
-        <text x="695" y="312" text-anchor="middle" class="routing-device-eyebrow">
-          LATE ROMAN AUDIO
-        </text>
-
-        <text x="695" y="350" text-anchor="middle" class="
-          routing-device-name
-          routing-device-name--weltgeist
-        ">
-          WELTGEIST
-        </text>
-      </g>
-
-
-      <g class="routing-input-meter">
-
-        <text x="695" y="377" text-anchor="middle" class="routing-input-meter-label">
-          INPUT LEVEL
-        </text>
-
-        <circle class="routing-input-led" data-threshold="0.125" cx="632" cy="405" r="5" />
-        <circle class="routing-input-led" data-threshold="0.250" cx="650" cy="405" r="5" />
-        <circle class="routing-input-led" data-threshold="0.375" cx="668" cy="405" r="5" />
-        <circle class="routing-input-led" data-threshold="0.500" cx="686" cy="405" r="5" />
-        <circle class="routing-input-led" data-threshold="0.625" cx="704" cy="405" r="5" />
-        <circle class="routing-input-led" data-threshold="0.750" cx="722" cy="405" r="5" />
-        <circle class="routing-input-led" data-threshold="0.875" cx="740" cy="405" r="5" />
-        <circle class="routing-input-led" data-threshold="1.000" cx="758" cy="405" r="5" />
-
-      </g>
-
-
-      <!-- GUITAR -->
-
-      <g class="routing-endpoint">
-        <circle cx="955" cy="160" r="5" />
-
-        <text x="955" y="132" text-anchor="middle">
-          GUITAR
-        </text>
-      </g>
-
-    </svg>
-
-  </div>
-</div>
-
-<div class="routing-mobile">
-
-  <div class="
-      routing-diagram
-      routing-diagram--mobile
-    ">
-
-    <svg class="
-        routing-svg
-        routing-svg--mobile
-      " viewBox="0 0 360 630" role="img"
-      aria-label="Vertical signal path from guitar through Weltgeist and tremolo to an amplifier.">
-
-
-      <!-- AUDIO: Guitar -> Weltgeist INPUT -->
-
-      <path class="routing-cable routing-cable--audio" d="
-        M 275 45
-        V 115
-      " />
-
-
-      <!-- AUDIO: Weltgeist OUTPUT -> Tremolo IN -->
-
-      <path class="routing-cable routing-cable--audio" d="
-        M 85 115
-        V 82
-        Q 85 68 71 68
-        H 30
-        Q 14 68 14 82
-        V 306
-        Q 14 320 30 320
-        H 229
-        Q 245 320 245 346
-        V 370
-      " />
-
-
-      <!-- EXP 1 -> Tremolo EXP -->
-
-      <path class="
-        routing-cable
-        routing-cable--expression
-      " d="
-        M 210 115
-        V 78
-        Q 210 66 222 66
-        H 330
-        Q 346 66 346 82
-        V 328
-        Q 346 342 330 342
-        H 196
-        Q 180 342 180 358
-        V 370
-      " />
-
-
-      <!-- AUDIO: Tremolo OUT -> AMP -->
-
-      <path class="routing-cable routing-cable--audio" d="
-        M 115 370
-        V 355
-        Q 115 343 102 343
-        H 58
-        Q 45 343 45 356
-        V 536
-        Q 45 550 59 550
-        H 165
-        Q 180 550 180 564
-        V 590
-      " />
-
-
-      <!-- GUITAR -->
-
-      <g class="routing-endpoint">
-        <circle cx="275" cy="45" r="5" />
-
-        <text x="275" y="23" text-anchor="middle">
-          GUITAR
-        </text>
-      </g>
-
-
-      <!-- WELTGEIST -->
-
-      <g class="
-          routing-device
-          routing-device--weltgeist
-        ">
-
-        <rect x="45" y="115" width="270" height="165" rx="3" />
-
-
-        <!-- OUTPUT -->
-
-        <g class="
-            routing-port
-            routing-port--audio-reactive
-          ">
-          <text x="85" y="90" text-anchor="middle">
-            OUT
-          </text>
-
-          <circle cx="85" cy="115" r="7" />
-        </g>
-
-
-        <!-- EXP 2 -->
-
-        <g class="
-            routing-port
-            routing-port--expression
-          ">
-          <text x="145" y="90" text-anchor="middle">
-            EXP 2
-          </text>
-
-          <circle cx="145" cy="115" r="7" />
-        </g>
-
-
-        <!-- EXP 1 -->
-
-        <g class="
-            routing-port
-            routing-port--expression
-            routing-port--reactive
-          ">
-          <text x="210" y="90" text-anchor="middle">
-            EXP 1
-          </text>
-
-          <circle cx="210" cy="115" r="7" />
-        </g>
-
-
-        <!-- INPUT -->
-
-        <g class="
-            routing-port
-            routing-port--audio-reactive
-          ">
-          <text x="275" y="90" text-anchor="middle">
-            IN
-          </text>
-
-          <circle cx="275" cy="115" r="7" />
-        </g>
-
-
-        <!-- Device text -->
-
-        <text x="180" y="170" text-anchor="middle" class="routing-device-eyebrow">
-          LATE ROMAN AUDIO
-        </text>
-
-        <text x="180" y="205" text-anchor="middle" class="
-            routing-device-name
-            routing-device-name--weltgeist
-          ">
-          WELTGEIST
-        </text>
-
-
-        <!-- INPUT METER -->
-
-        <g class="routing-input-meter">
-
-          <text x="180" y="232" text-anchor="middle" class="routing-input-meter-label">
-            INPUT LEVEL
-          </text>
-
-          <circle class="routing-input-led" data-threshold="0.125" cx="117" cy="257" r="5" />
-          <circle class="routing-input-led" data-threshold="0.250" cx="135" cy="257" r="5" />
-          <circle class="routing-input-led" data-threshold="0.375" cx="153" cy="257" r="5" />
-          <circle class="routing-input-led" data-threshold="0.500" cx="171" cy="257" r="5" />
-          <circle class="routing-input-led" data-threshold="0.625" cx="189" cy="257" r="5" />
-          <circle class="routing-input-led" data-threshold="0.750" cx="207" cy="257" r="5" />
-          <circle class="routing-input-led" data-threshold="0.875" cx="225" cy="257" r="5" />
-          <circle class="routing-input-led" data-threshold="1.000" cx="243" cy="257" r="5" />
-
-        </g>
-
-      </g>
-
-
-      <!-- TREMOLO -->
-
-      <g class="
-          routing-device
-          routing-device--tremolo
-        ">
-
-        <rect x="75" y="370" width="210" height="145" rx="3" />
-
-
-        <!-- OUT -->
-
-        <g class="
-            routing-port
-            routing-port--audio-reactive
-          ">
-          <text x="115" y="345" text-anchor="middle">
-            OUT
-          </text>
-
-          <circle cx="115" cy="370" r="7" />
-        </g>
-
-
-        <!-- EXP -->
-
-        <g class="
-            routing-port
-            routing-port--expression
-            routing-port--reactive
-          ">
-          <text x="180" y="345" text-anchor="middle">
-            EXP
-          </text>
-
-          <circle cx="180" cy="370" r="7" />
-        </g>
-
-
-        <!-- IN -->
-
-        <g class="
-            routing-port
-            routing-port--audio-reactive
-          ">
-          <text x="245" y="345" text-anchor="middle">
-            IN
-          </text>
-
-          <circle cx="245" cy="370" r="7" />
-        </g>
-
-
-        <!-- Device text -->
-
-        <text x="180" y="410" text-anchor="middle" class="routing-device-eyebrow">
-          EFFECT
-        </text>
-
-        <text x="180" y="443" text-anchor="middle" class="routing-device-name">
-          TREMOLO
-        </text>
-
-
-        <!-- Tremolo visualization -->
-
-        <g class="routing-tremolo-visualization">
-
-          <text x="180" y="468" text-anchor="middle" class="routing-tremolo-label">
-            DEPTH
-          </text>
-
-          <path class="routing-tremolo-wave" d="
-            M 110 490
-            C 120 475 130 475 140 490
-            C 150 505 160 505 170 490
-            C 180 475 190 475 200 490
-            C 210 505 220 505 230 490
-            C 240 475 250 475 260 490
-          " />
-
-        </g>
-
-      </g>
-
-
-      <!-- AMP -->
-
-      <g class="routing-endpoint">
-
-        <circle cx="180" cy="590" r="5" />
-
-        <text x="180" y="620" text-anchor="middle">
-          AMP
-        </text>
-
-      </g>
-
-    </svg>
-
-  </div>
 
 </div>
-            <div class="routing-legend" aria-hidden="true">
-              <span class="routing-legend-item">
-                <span class="
-                    routing-legend-line
-                    routing-legend-line--audio
-                  "></span>
-
-                Audio signal
-              </span>
-
-              <span class="routing-legend-item">
-                <span class="
-                    routing-legend-line
-                    routing-legend-line--expression
-                  "></span>
-
-                Expression control
-              </span>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-    </section>
 
 
     <!-- Specifications -->
@@ -1608,11 +1063,6 @@
     </p>
 
     <nav class="site-footer-links" aria-label="Footer navigation">
-
-      
-      <a href="/engineering/weltgeist/">
-        Engineering
-      </a>
       
       <a href="/imprint.html">
         Imprint

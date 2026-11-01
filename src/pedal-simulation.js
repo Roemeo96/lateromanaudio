@@ -8,20 +8,11 @@ import {
 
 import {
   calculateOutput,
-  createCurvePoints,
 } from './pedal-model.js';
-
-import {
-  createTransferChart,
-} from './transfer-chart.js';
 
 import {
   updateParticleWobble,
 } from './hero-particles.js';
-
-import {
-  updateRoutingVisualization,
-} from './routing-visualization.js';
 
 export function createPedalSimulation() {
   const state = {
@@ -32,8 +23,8 @@ export function createPedalSimulation() {
     manualInput: 0,
     inputSource: 'manual',
 
-    attackMs: 250,
-    releaseMs: 3750,
+    attackMs: 0,
+    releaseMs: 4000,
     invert: false,
 
     currentOutput: 0,
@@ -84,18 +75,18 @@ export function createPedalSimulation() {
   const currentOutputValue =
     document.querySelector('#current-output');
 
-  const chartElement =
-    document.querySelector('#transfer-chart');
+  const pedalTreadle =
+    document.querySelector('#expression-pedal-treadle');
+
+  const pedalPosition =
+    document.querySelector('#expression-pedal-position');
 
   const liveAudioInfo =
-    document.querySelector(
-      '#live-audio-info',
-    );
+    document.querySelector('#live-audio-info');
 
   const liveAudioStatus =
-    document.querySelector(
-      '#live-audio-status',
-    );
+    document.querySelector('#live-audio-status');
+
   const liveAudioMessages = {
     requesting:
       liveAudioInfo?.dataset.requesting,
@@ -125,7 +116,8 @@ export function createPedalSimulation() {
     || !invertInput
     || !currentInputValue
     || !currentOutputValue
-    || !chartElement
+    || !pedalTreadle
+    || !pedalPosition
     || !liveAudioInfo
     || !liveAudioStatus
   ) {
@@ -134,35 +126,12 @@ export function createPedalSimulation() {
     );
   }
 
-  const chart =
-    createTransferChart(chartElement);
-
   function getSettings() {
     return {
       base: state.base,
       sensitivity: state.sensitivity,
       invert: state.invert,
     };
-  }
-
-  let curvePoints =
-    createCurvePoints(
-      getSettings(),
-    );
-
-  chart.updateCurve(
-    curvePoints,
-  );
-
-  function updateCurvePoints() {
-    curvePoints =
-      createCurvePoints(
-        getSettings(),
-      );
-
-    chart.updateCurve(
-      curvePoints,
-    );
   }
 
   function updateTargetOutput() {
@@ -218,33 +187,36 @@ export function createPedalSimulation() {
       String(state.input);
   }
 
+function renderPedalPosition() {
+  if (!pedalTreadle) return;
+
+  // currentOutput reicht im Projekt von 0 bis 5.
+  const position = Math.max(
+    0,
+    Math.min(1, state.currentOutput / 5),
+  );
+
+  //const angle = -9 + position * 10;
+  const angle = 3 - position * 13;
+  pedalTreadle.setAttribute(
+    'transform',
+    `rotate(${angle.toFixed(2)} 440 207)`,
+  );
+}
+
   function renderOutput() {
     currentOutputValue.textContent =
       state.currentOutput.toFixed(2);
+
+    renderPedalPosition();
   }
 
-  function renderChartPosition() {
-    chart.updateCurrentPosition({
-      currentInput: state.input,
-      currentOutput: state.currentOutput,
-    });
+  function render() {
+    updateTargetOutput();
+    renderControls();
+    renderInput();
+    renderOutput();
   }
-
-  function renderRoutingVisualization() {
-  updateRoutingVisualization({
-    currentInput: state.input,
-    currentOutput: state.currentOutput,
-  });
-}
-
-function render() {
-  updateTargetOutput();
-  renderControls();
-  renderInput();
-  renderOutput();
-  renderChartPosition();
-  renderRoutingVisualization();
-}
 
   const liveAudio =
     createLiveAudioInput({
@@ -258,11 +230,9 @@ function render() {
 
         updateTargetOutput();
         renderInput();
-        renderChartPosition();
-        renderRoutingVisualization();
 
         updateRangeFill(
-        inputLevelInput,
+          inputLevelInput,
         );
       },
     });
@@ -340,13 +310,11 @@ function render() {
     }
 
     renderOutput();
-    renderChartPosition();
-    renderRoutingVisualization();
 
     try {
-    updateParticleWobble(
+      updateParticleWobble(
         state.currentOutput,
-    );
+      );
     } catch (error) {
       console.error(
         'Particle wobble could not be updated:',
@@ -355,27 +323,21 @@ function render() {
     }
   }
 
-  function showLiveAudioInfo(
-    message = '',
-  ) {
-    liveAudioInfo.hidden =
-      false;
+  function showLiveAudioInfo(message = '') {
+    liveAudioInfo.hidden = false;
 
     if (message) {
       liveAudioStatus.textContent =
         message;
 
-      liveAudioStatus.hidden =
-        false;
+      liveAudioStatus.hidden = false;
     } else {
-      liveAudioStatus.hidden =
-        true;
+      liveAudioStatus.hidden = true;
     }
   }
 
   function hideLiveAudioInfo() {
-    liveAudioInfo.hidden =
-      true;
+    liveAudioInfo.hidden = true;
   }
 
   inputSourceInputs.forEach(input => {
@@ -392,15 +354,9 @@ function render() {
         const selectedSource =
           event.target.value;
 
-        if (
-          selectedSource
-          === 'manual'
-        ) {
-          state.inputSource =
-            'manual';
-
-          inputLevelInput.disabled =
-            false;
+        if (selectedSource === 'manual') {
+          state.inputSource = 'manual';
+          inputLevelInput.disabled = false;
 
           hideLiveAudioInfo();
 
@@ -419,9 +375,7 @@ function render() {
             state.manualInput;
 
           updateTargetOutput();
-            renderInput();
-            renderChartPosition();
-            renderRoutingVisualization();
+          renderInput();
 
           updateRangeFill(
             inputLevelInput,
@@ -430,10 +384,7 @@ function render() {
           return;
         }
 
-        if (
-          selectedSource
-          !== 'live'
-        ) {
+        if (selectedSource !== 'live') {
           return;
         }
 
@@ -453,11 +404,8 @@ function render() {
             return;
           }
 
-          state.inputSource =
-            'live';
-
-          inputLevelInput.disabled =
-            true;
+          state.inputSource = 'live';
+          inputLevelInput.disabled = true;
 
           showLiveAudioInfo();
         } catch (error) {
@@ -473,14 +421,9 @@ function render() {
             error,
           );
 
-          state.inputSource =
-            'manual';
-
-          inputLevelInput.disabled =
-            false;
-
-          state.input =
-            state.manualInput;
+          state.inputSource = 'manual';
+          inputLevelInput.disabled = false;
+          state.input = state.manualInput;
 
           const manualInput =
             document.querySelector(
@@ -488,21 +431,14 @@ function render() {
             );
 
           if (manualInput) {
-            manualInput.checked =
-              true;
+            manualInput.checked = true;
           }
 
-          if (
-            error.name
-            === 'NotAllowedError'
-          ) {
+          if (error.name === 'NotAllowedError') {
             showLiveAudioInfo(
               liveAudioMessages.accessDenied,
             );
-          } else if (
-            error.name
-            === 'NotFoundError'
-          ) {
+          } else if (error.name === 'NotFoundError') {
             showLiveAudioInfo(
               liveAudioMessages.noDevice,
             );
@@ -513,9 +449,7 @@ function render() {
           }
 
           updateTargetOutput();
-            renderInput();
-            renderChartPosition();
-            renderRoutingVisualization();
+          renderInput();
 
           updateRangeFill(
             inputLevelInput,
@@ -529,20 +463,14 @@ function render() {
     'input',
     event => {
       const newValue =
-        Number(
-          event.target.value,
-        );
+        Number(event.target.value);
 
-      if (
-        !Number.isFinite(newValue)
-      ) {
+      if (!Number.isFinite(newValue)) {
         return;
       }
 
-      state.base =
-        newValue;
+      state.base = newValue;
 
-      updateCurvePoints();
       updateTargetOutput();
       renderControls();
     },
@@ -552,20 +480,14 @@ function render() {
     'input',
     event => {
       const newValue =
-        Number(
-          event.target.value,
-        );
+        Number(event.target.value);
 
-      if (
-        !Number.isFinite(newValue)
-      ) {
+      if (!Number.isFinite(newValue)) {
         return;
       }
 
-      state.sensitivity =
-        newValue;
+      state.sensitivity = newValue;
 
-      updateCurvePoints();
       updateTargetOutput();
       renderControls();
     },
@@ -574,34 +496,22 @@ function render() {
   inputLevelInput.addEventListener(
     'input',
     event => {
-      if (
-        state.inputSource
-        !== 'manual'
-      ) {
+      if (state.inputSource !== 'manual') {
         return;
       }
 
       const newValue =
-        Number(
-          event.target.value,
-        );
+        Number(event.target.value);
 
-      if (
-        !Number.isFinite(newValue)
-      ) {
+      if (!Number.isFinite(newValue)) {
         return;
       }
 
-      state.manualInput =
-        newValue;
-
-      state.input =
-        newValue;
+      state.manualInput = newValue;
+      state.input = newValue;
 
       updateTargetOutput();
-        renderInput();
-        renderChartPosition();
-        renderRoutingVisualization();
+      renderInput();
     },
   );
 
@@ -609,19 +519,13 @@ function render() {
     'input',
     event => {
       const newValue =
-        Number(
-          event.target.value,
-        );
+        Number(event.target.value);
 
-      if (
-        !Number.isFinite(newValue)
-      ) {
+      if (!Number.isFinite(newValue)) {
         return;
       }
 
-      state.attackMs =
-        newValue;
-
+      state.attackMs = newValue;
       renderControls();
     },
   );
@@ -630,19 +534,13 @@ function render() {
     'input',
     event => {
       const newValue =
-        Number(
-          event.target.value,
-        );
+        Number(event.target.value);
 
-      if (
-        !Number.isFinite(newValue)
-      ) {
+      if (!Number.isFinite(newValue)) {
         return;
       }
 
-      state.releaseMs =
-        newValue;
-
+      state.releaseMs = newValue;
       renderControls();
     },
   );
@@ -653,7 +551,6 @@ function render() {
       state.invert =
         event.target.checked;
 
-      updateCurvePoints();
       updateTargetOutput();
       renderControls();
     },

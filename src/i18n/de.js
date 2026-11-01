@@ -156,6 +156,13 @@ export default {
         ". Wechsle zwischen Übertragungskurve und Signalweg, um dieselbe Reaktion aus zwei unterschiedlichen Perspektiven zu betrachten.",
     },
     panelHeading: "Interaktive Weltgeist-Simulation",
+    pedal: {
+  brand: "WELTGEIST",
+  heelDown: "HEEL-DOWN",
+  toeDown: "TOE-DOWN",
+  ariaLabel: "Expression pedal position",
+  description: "The treadle tilts according to the expression output.",
+},
     controls: {
       sensitivity: "Sensitivity",
       base: "Base",
