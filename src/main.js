@@ -33,10 +33,6 @@ import {
   initializeThemeToggle,
 } from "./theme.js";
 
-import {
-  initializeVisualizationSwitch,
-} from './visualization-switch.js';
-
 import "@google/model-viewer";
 
 initializeDemoCarousel();
@@ -49,8 +45,6 @@ initializePurchaseControls();
 
 const pedalSimulation =
   createPedalSimulation();
-
-initializeVisualizationSwitch();
 
 initializeRevealSections();
 

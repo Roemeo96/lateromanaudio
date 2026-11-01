@@ -631,17 +631,26 @@
 
     <!-- Interactive Simulation -->
 
-    <section id="simulation" class="content-section reveal-section simulation-showcase-start"
-      aria-labelledby="simulation-heading">
-      <h2 id="simulation-heading" class="section-heading">
-        Simulation de la pédale
-      </h2>
+<section
+  id="simulation"
+  class="content-section reveal-section particle-section simulation-showcase-start"
+  aria-labelledby="simulation-heading"
+>
+  <div
+    id="simulation-particles"
+    class="section-particles"
+    aria-hidden="true"
+  ></div>
 
-      <p class="landing-description">
-        Essaie la simulation interactive et découvre comment Weltgeist 
-        <span class="accent-inline">transforme la dynamique de jeu en contrôle d'Expression</span>. Passe de la courbe de transfert au chemin du signal pour observer la même réponse sous deux perspectives différentes.
-      </p>
-    </section>
+  <h2 id="simulation-heading" class="section-heading">
+    Simulation de la pédale
+  </h2>
+
+  <p class="landing-description">
+    Essaie la simulation interactive et découvre comment Weltgeist 
+    <span class="accent-inline">transforme la dynamique de jeu en contrôle d'Expression</span>. Passe de la courbe de transfert au chemin du signal pour observer la même réponse sous deux perspectives différentes.
+  </p>
+</section>
 
 
     <section id="pedal-simulation" class="app reveal-section simulation-showcase-end"
@@ -663,90 +672,6 @@
             Weltgeist
           </p>
         </header>
-
-        <div class="control control--horizontal">
-          <div class="control-heading">
-            <label for="sensitivity">
-              Sensitivity
-            </label>
-
-            <output id="sensitivity-value" for="sensitivity">
-              6.5
-            </output>
-          </div>
-
-          <input id="sensitivity" type="range" min="0.5" max="10" step="0.1" value="6.5">
-        </div>
-
-        <div class="control control--horizontal">
-          <div class="control-heading">
-            <label for="base">
-              Base
-            </label>
-
-            <output id="base-value" for="base">
-              1.00
-            </output>
-          </div>
-
-          <input id="base" type="range" min="0" max="5" step="0.05" value="1">
-        </div>
-
-        <div class="control control--horizontal">
-          <div class="control-heading">
-            <label for="attack">
-              Rise
-            </label>
-
-            <output id="attack-value" for="attack">
-              0 ms
-            </output>
-          </div>
-
-          <input id="attack" type="range" min="10" max="4000" step="10" value="0">
-        </div>
-
-        <div class="control control--horizontal">
-          <div class="control-heading">
-            <label for="release">
-              Fall
-            </label>
-
-            <output id="release-value" for="release">
-              4000 ms
-            </output>
-          </div>
-
-          <input id="release" type="range" min="10" max="4000" step="10" value="4000">
-        </div>
-
-        <div class="control control--horizontal">
-          <div class="control-heading">
-            <label for="invert">
-              Invert
-            </label>
-          </div>
-
-          <input id="invert" type="checkbox" aria-label="Inverser la direction d'Expression">
-        </div>
-      </div>
-
-
-      <!-- Visualization -->
-
-      <section class="visualization-panel">
-
-        <header class="visualization-header">
-          <div>
-            <p class="eyebrow">
-              Expression Mapping
-            </p>
-
-            <h3>
-              De la dynamique à l'Expression
-            </h3>
-          </div>
-
 
           <!-- Input source -->
 
@@ -832,6 +757,93 @@
           </div>
 
 
+
+        <div class="simulation-controls-group">
+        <div class="control control--horizontal">
+          <div class="control-heading">
+            <label for="sensitivity">
+              Sensitivity
+            </label>
+
+            <output id="sensitivity-value" for="sensitivity">
+              6.5
+            </output>
+          </div>
+
+          <input id="sensitivity" type="range" min="0.5" max="10" step="0.1" value="6.5">
+        </div>
+
+        <div class="control control--horizontal">
+          <div class="control-heading">
+            <label for="base">
+              Base
+            </label>
+
+            <output id="base-value" for="base">
+              1.00
+            </output>
+          </div>
+
+          <input id="base" type="range" min="0" max="5" step="0.05" value="1">
+        </div>
+
+        <div class="control control--horizontal">
+          <div class="control-heading">
+            <label for="attack">
+              Rise
+            </label>
+
+            <output id="attack-value" for="attack">
+              0 ms
+            </output>
+          </div>
+
+          <input id="attack" type="range" min="0" max="4000" step="10" value="0">
+        </div>
+
+        <div class="control control--horizontal">
+          <div class="control-heading">
+            <label for="release">
+              Fall
+            </label>
+
+            <output id="release-value" for="release">
+              4000 ms
+            </output>
+          </div>
+
+          <input id="release" type="range" min="10" max="4000" step="10" value="4000">
+        </div>
+
+        <div class="control control--horizontal">
+          <div class="control-heading">
+            <label for="invert">
+              Invert
+            </label>
+          </div>
+
+          <input id="invert" type="checkbox" aria-label="Inverser la direction d'Expression">
+        </div>
+        </div> <!-- simulation-controls-group -->
+      </div>
+
+
+      <!-- Visualization -->
+
+      <section class="visualization-panel">
+
+        <header class="visualization-header">
+          <div>
+            <p class="eyebrow">
+              Expression Mapping
+            </p>
+
+            <h3>
+              De la dynamique à l'Expression
+            </h3>
+          </div>
+
+
           <dl class="live-values">
             <div>
               <dt>
@@ -859,18 +871,6 @@
         <!-- Visualization switch -->
 
 <div class="expression-pedal-stage">
-  
-  <p
-    class="expression-pedal-position"
-    id="expression-pedal-position"
-    aria-live="polite"
-    data-heel-down="HEEL-DOWN"
-    data-toe-down="TOE-DOWN"
-  >
-    HEEL-DOWN
-  </p>
-
-
 
 <figure class="expression-pedal-illustration">
   <svg viewBox="100 102 660 218"
@@ -915,29 +915,20 @@
   </svg>
 
   <figcaption class="expression-pedal-illustration__labels">
-    <span>HEEL-DOWN</span>
     <span>TOE-DOWN</span>
+    <span>HEEL-DOWN</span>
   </figcaption>
+  <div class="expression-position-meter" role="progressbar"
+       aria-label="Sortie" aria-valuemin="0"
+       aria-valuemax="100" aria-valuenow="0" id="expression-position-meter">
+    <span class="expression-position-meter__fill" id="expression-position-meter-fill"></span>
+  </div>
 </figure>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
-
+      </section> <!-- visualization-panel -->
+    </section> <!-- pedal-simulation -->
 
     <!-- Specifications -->
 

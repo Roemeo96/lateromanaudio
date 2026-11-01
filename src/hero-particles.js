@@ -7,7 +7,7 @@ const PARTICLE_CONTAINER_IDS = [
   "features-particles",
   "why-weltgeist-particles",
   "specifications-particles",
-  "simulation-showcase-particles",
+  "simulation-particles",
 ];
 
 const particleContainers = [];

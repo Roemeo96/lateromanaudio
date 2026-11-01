@@ -78,8 +78,8 @@ export function createPedalSimulation() {
   const pedalTreadle =
     document.querySelector('#expression-pedal-treadle');
 
-  const pedalPosition =
-    document.querySelector('#expression-pedal-position');
+  const positionMeter = document.querySelector('#expression-position-meter');
+  const positionMeterFill = document.querySelector('#expression-position-meter-fill');
 
   const liveAudioInfo =
     document.querySelector('#live-audio-info');
@@ -117,7 +117,6 @@ export function createPedalSimulation() {
     || !currentInputValue
     || !currentOutputValue
     || !pedalTreadle
-    || !pedalPosition
     || !liveAudioInfo
     || !liveAudioStatus
   ) {
@@ -202,6 +201,13 @@ function renderPedalPosition() {
     'transform',
     `rotate(${angle.toFixed(2)} 440 207)`,
   );
+
+  // Show the normalized expression output without changing treadle motion.
+  if (positionMeter && positionMeterFill) {
+    const percentage = position * 100;
+    positionMeterFill.style.width = `${percentage}%`;
+    positionMeter.setAttribute('aria-valuenow', String(Math.round(percentage)));
+  }
 }
 
   function renderOutput() {
