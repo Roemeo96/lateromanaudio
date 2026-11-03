@@ -128,7 +128,7 @@ function createParticleOptions() {
       },
 
       number: {
-        value: 10,
+        value: 25,
 
         density: {
           enable: true,
