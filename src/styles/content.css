@@ -232,6 +232,7 @@
   background: #f4f1e6;
   color: #11110f;
   text-align: center;
+  border: 1px solid var(--border);
 }
 
 .manual-preview__brand,
