@@ -148,7 +148,20 @@
     dt { font-weight: bold; }
     .tip { margin: 1mm 0 3mm; color: var(--muted); }
     .tip + .tip { margin-top: 0; }
+.page[aria-labelledby="controls"] .controls > div {
+  padding-block: 1.7mm;
+}
 
+.tip {
+  margin: 1.5mm 0 2mm;
+  color: var(--muted);
+  font-size: 9pt;
+  line-height: 1.2;
+}
+
+.tip + .tip {
+  margin-top: 0;
+}
     .example {
       display: grid;
       grid-template-columns: 22mm 1fr;
@@ -270,8 +283,16 @@
         </div>
       </dl>
 
-      <p class="tip">Set Base while playing softly, then adjust Sensitivity while picking hard. Fine-tune Rise and Fall last.</p>
-      <p class="tip"><strong>Rise and Fall also affect how far the expression position moves.</strong> A very slow Rise may keep short notes from reaching full travel, even at maximum Sensitivity. A very short Fall can bring the position back down between notes, limiting how far it builds up across a phrase.</p>
+      <p class="tip">
+        Set Base while playing softly. Adjust Sensitivity with hard attacks,
+        then fine-tune Rise and Fall.
+      </p>
+
+      <p class="tip">
+        <strong>Rise and Fall affect expression travel.</strong>
+        A slow Rise can keep short notes from reaching full travel, even at
+        maximum Sensitivity. A fast Fall can reset the position between notes.
+      </p>
       <footer><span>Weltgeist</span><span>3 / 4</span></footer>
     </section>
 
@@ -285,7 +306,7 @@
 
 <div class="example">
   <h3>Auto-Swell</h3>
-  <p>Use a slow Rise and a low Base to fade notes in through an expression-controlled <strong>Volume Pedal</strong>.</p>
+  <p>Use a slow Rise and a low Base to fade notes in through an expression-controllable <strong>Volume</strong> Knob.</p>
 </div>
 
 <div class="example">
@@ -305,7 +326,7 @@
 
 <div class="example">
   <h3>Sidechain Ducking</h3>
-  <p>Feed the bass into Weltgeist. Use EXP to turn down the guitar’s <strong>Volume</strong> or cut just its low end with an <strong>EQ</strong> while the bass plays.</p>
+  <p>Feed the bass or bassdrum into Weltgeist. Use EXP to turn down the guitar’s <strong>Volume</strong> or cut just its low end with an <strong>EQ</strong> while the bass plays.</p>
 </div>
 
       <footer><span>Weltgeist</span><span>4 / 4</span></footer>
