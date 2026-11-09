@@ -178,7 +178,6 @@ function clearParticleContainers() {
 }
 
 /**
- * Initialisiert einen einzelnen Partikel-Container.
  *
  * @param {string} containerId
  */
@@ -240,10 +239,7 @@ function initializeThemeObserver() {
   );
 }
 
-/**
- * Initialisiert die dekorativen Staubpartikel
- * in allen vorgesehenen Bereichen.
- */
+
 export async function initializeSectionParticles() {
   const prefersReducedMotion =
     window.matchMedia(

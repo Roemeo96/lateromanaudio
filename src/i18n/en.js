@@ -49,8 +49,7 @@ export default {
       after:
         ". Instead of moving a conventional expression pedal with your foot, you can control compatible effects directly through how softly or aggressively you play.",
     },
-    description2:
-      "Use it to control parameters such as delay feedback, reverb mix, filter movement or modulation depth. Place Weltgeist before compression to capture your original playing dynamics, or after compression to respond to the processed signal.",
+    description2: "Control a modulation pedal’s depth or rate with your picking dynamics. Sweep an EQ band’s frequency as you play to create an envelope filter, or control the level for auto-swell. Feed Weltgeist a separate sidechain signal to create ducking. Make reverb recede while you play and come back in the gaps, or use your picking dynamics to make delay repeats linger or fade faster.",
   },
 
   purchase: {
@@ -165,12 +164,9 @@ why: {
     },
     panelHeading: "Interactive Weltgeist simulation",
     pedal: {
-  brand: "WELTGEIST",
-  heelDown: "HEEL-DOWN",
-  toeDown: "TOE-DOWN",
-  ariaLabel: "Expression pedal position",
-  description: "The treadle tilts according to the expression output.",
-},
+      heelDown: "HEEL-DOWN",
+      toeDown: "TOE-DOWN",
+    },
     controls: {
       sensitivity: "Sensitivity",
       base: "Base",
@@ -180,14 +176,8 @@ why: {
     },
     invertAriaLabel: "Invert expression direction",
     visualization: {
-      inputVolume: "Input Volume",
-      expressionPosition: "Expression Position",
       eyebrow: "Expression Mapping",
       heading: "From Dynamics to Expression",
-      tabsAriaLabel: "Simulation visualization",
-      transferCurve: "Transfer Curve",
-      signalPath: "Signal Path",
-      chartAriaLabel: "Weltgeist pedal response curve",
     },
     input: {
         source: "Input Source",
@@ -208,22 +198,6 @@ why: {
     },
   },
 
-  routing: {
-    desktopAriaLabel:
-      "Guitar routed through Weltgeist and tremolo to an amplifier. EXP 1 controls the tremolo expression input.",
-    mobileAriaLabel:
-      "Vertical signal path from guitar through Weltgeist and tremolo to an amplifier.",
-    audio: "AUDIO",
-    amp: "AMP",
-    effect: "EFFECT",
-    depth: "DEPTH",
-    inputLevel: "INPUT LEVEL",
-    guitar: "GUITAR",
-    legend: {
-      audioSignal: "Audio signal",
-      expressionControl: "Expression control",
-    },
-  },
 
   specifications: {
     heading: "Specifications",

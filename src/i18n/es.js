@@ -49,8 +49,7 @@ export default {
       after:
         ". En lugar de mover un pedal de expresión convencional con el pie, puedes controlar efectos compatibles directamente según toques de forma más suave o más intensa.",
     },
-    description2:
-      "Úsalo para controlar parámetros como Delay Feedback, Reverb Mix, movimiento de filtros o profundidad de modulación. Coloca Weltgeist antes de la compresión para capturar la dinámica original de tu interpretación, o después de la compresión para que responda a la señal ya procesada.",
+    description2: "Controla la profundidad o la velocidad de un pedal de modulación con la dinámica de tu interpretación. Varía la frecuencia de una banda del ecualizador mientras tocas para crear un filtro de envolvente, o controla el nivel para lograr un efecto auto-swell. Envía a Weltgeist una señal sidechain independiente para crear ducking. Haz que la reverberación baje mientras tocas y vuelva en las pausas, o usa la dinámica de tu interpretación para que las repeticiones del delay duren más o se desvanezcan antes.",
   },
 
   purchase: {
@@ -168,12 +167,9 @@ why: {
     },
     panelHeading: "Simulación interactiva de Weltgeist",
     pedal: {
-  brand: "WELTGEIST",
-  heelDown: "HEEL-DOWN",
-  toeDown: "TOE-DOWN",
-  ariaLabel: "Expression pedal position",
-  description: "The treadle tilts according to the expression output.",
-},
+      heelDown: "HEEL-DOWN",
+      toeDown: "TOE-DOWN",
+    },
     controls: {
       sensitivity: "Sensitivity",
       base: "Base",
@@ -183,15 +179,8 @@ why: {
     },
     invertAriaLabel: "Invertir la dirección de Expression",
     visualization: {
-      inputVolume: "Nivel de entrada",
-      expressionPosition: "Expression Position",
       eyebrow: "Expression Mapping",
       heading: "De la dinámica a Expression",
-      tabsAriaLabel: "Visualización de la simulación",
-      transferCurve: "Curva de transferencia",
-      signalPath: "Ruta de señal",
-      chartAriaLabel:
-        "Curva de respuesta del pedal Weltgeist",
     },
     input: {
       source: "Fuente de entrada",
@@ -217,22 +206,6 @@ why: {
     },
   },
 
-  routing: {
-    desktopAriaLabel:
-      "Una guitarra se conecta a través de Weltgeist y un tremolo hasta un amplificador. EXP 1 controla la entrada Expression del tremolo.",
-    mobileAriaLabel:
-      "Ruta de señal vertical desde la guitarra a través de Weltgeist y un tremolo hasta un amplificador.",
-    audio: "AUDIO",
-    amp: "AMP",
-    effect: "EFECTO",
-    depth: "INTENSIDAD",
-    inputLevel: "NIVEL DE ENTRADA",
-    guitar: "GUITARRA",
-    legend: {
-      audioSignal: "Señal de audio",
-      expressionControl: "Expression Control",
-    },
-  },
 
   specifications: {
     heading: "Especificaciones técnicas",

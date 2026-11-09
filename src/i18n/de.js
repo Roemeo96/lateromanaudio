@@ -49,8 +49,7 @@ export default {
       after:
         ". Statt ein herkömmliches Expression-Pedal mit dem Fuß zu bewegen, steuerst du kompatible Effekte direkt dadurch, wie sanft oder aggressiv du spielst.",
     },
-    description2:
-      "Steuere damit Parameter wie Delay-Feedback, Reverb-Mix, Filterbewegung oder Modulationstiefe. Platziere Weltgeist vor der Kompression, um deine ursprüngliche Spieldynamik zu erfassen, oder dahinter, damit es auf das bereits bearbeitete Signal reagiert.",
+    description2: "Steuere Depth oder Rate eines Modulationspedals mit deiner Spieldynamik. Verändere beim Spielen die Frequenz eines EQ-Bands für einen Envelope-Filter-Effekt oder steuere den Pegel für Auto-Swell. Gib Weltgeist ein separates Sidechain-Signal, um Ducking zu erzeugen. Lass den Hall beim Spielen zurücktreten und in den Pausen wieder aufkommen. Mit deiner Spieldynamik kannst du auch Delay-Wiederholungen länger nachklingen oder schneller abklingen lassen.",
   },
 
 purchase: {
@@ -163,12 +162,9 @@ why: {
     },
     panelHeading: "Interaktive Weltgeist-Simulation",
     pedal: {
-  brand: "WELTGEIST",
-  heelDown: "HEEL-DOWN",
-  toeDown: "TOE-DOWN",
-  ariaLabel: "Expression pedal position",
-  description: "The treadle tilts according to the expression output.",
-},
+      heelDown: "HEEL-DOWN",
+      toeDown: "TOE-DOWN",
+    },
     controls: {
       sensitivity: "Sensitivity",
       base: "Base",
@@ -178,14 +174,8 @@ why: {
     },
     invertAriaLabel: "Expression-Richtung umkehren",
     visualization: {
-      inputVolume: "Eingangspegel",
-      expressionPosition: "Expression-Position",
       eyebrow: "Expression-Mapping",
       heading: "Von Dynamik zu Expression",
-      tabsAriaLabel: "Visualisierung der Simulation",
-      transferCurve: "Übertragungskurve",
-      signalPath: "Signalweg",
-      chartAriaLabel: "Reaktionskurve des Weltgeist Pedals",
     },
     input: {
         source: "Eingangsquelle",
@@ -206,22 +196,6 @@ why: {
     },
   },
 
-  routing: {
-    desktopAriaLabel:
-      "Eine Gitarre wird durch Weltgeist und ein Tremolo zu einem Verstärker geführt. EXP 1 steuert den Expression-Eingang des Tremolos.",
-    mobileAriaLabel:
-      "Vertikaler Signalweg von der Gitarre durch Weltgeist und ein Tremolo zu einem Verstärker.",
-    audio: "AUDIO",
-    amp: "AMP",
-    effect: "EFFEKT",
-    depth: "INTENSITÄT",
-    inputLevel: "EINGANGSPEGEL",
-    guitar: "GITARRE",
-    legend: {
-      audioSignal: "Audiosignal",
-      expressionControl: "Expression-Steuerung",
-    },
-  },
 
   specifications: {
     heading: "Technische Daten",

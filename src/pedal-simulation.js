@@ -202,20 +202,19 @@ export function createPedalSimulation() {
 function renderPedalPosition() {
   if (!pedalTreadle) return;
 
-  // currentOutput reicht im Projekt von 0 bis 5.
+
   const position = Math.max(
     0,
     Math.min(1, state.currentOutput / 5),
   );
 
-  //const angle = -9 + position * 10;
+
   const angle = 3 - position * 13;
   pedalTreadle.setAttribute(
     'transform',
     `rotate(${angle.toFixed(2)} 440 207)`,
   );
 
-  // Show the normalized expression output without changing treadle motion.
   if (positionMeter && positionMeterFill) {
     const percentage = position * 100;
     positionMeterFill.style.width = `${percentage}%`;

@@ -1,5 +1,4 @@
 /**
- * Begrenzt einen Wert auf einen festgelegten Bereich.
  *
  * @param {number} value
  * @param {number} minimum
@@ -14,12 +13,6 @@ export function clamp(value, minimum, maximum) {
 }
 
 /**
- * Berechnet den noch nicht invertierten Ausgangswert.
- *
- * BASE verschiebt die Kennlinie vertikal.
- * SENSITIVITY bestimmt ihre Steigung.
- *
- * output = base + sensitivity × input
  *
  * @param {number} input
  * @param {object} settings
@@ -38,11 +31,6 @@ export function calculateRawOutput(input, settings) {
 }
 
 /**
- * Berechnet den endgültigen Ausgangswert.
- *
- * Der Ausgang wird zunächst auf 0 bis 5 begrenzt.
- * Bei aktiviertem INVERT wird anschließend die
- * Expression-Position umgekehrt.
  *
  * @param {number} input
  * @param {object} settings
@@ -67,34 +55,4 @@ export function calculateOutput(input, settings) {
   }
 
   return limitedOutput;
-}
-
-/**
- * Erzeugt Punkte für die vollständige Kennlinie.
- *
- * @param {object} settings
- * @param {number} sampleCount
- * @returns {{ input: number, output: number }[]}
- */
-export function createCurvePoints(
-  settings,
-  sampleCount = 200,
-) {
-  return Array.from(
-    {
-      length: sampleCount + 1,
-    },
-    (_, index) => {
-      const input =
-        index / sampleCount;
-
-      return {
-        input,
-        output: calculateOutput(
-          input,
-          settings,
-        ),
-      };
-    },
-  );
 }

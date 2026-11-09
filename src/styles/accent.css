@@ -1,8 +1,3 @@
-/* =========================================================
-   ACCENT DETAILS
-   ========================================================= */
-
-
 /* Selected key phrases inside body copy */
 .accent-inline {
   color: var(--tertiary);
@@ -24,12 +19,6 @@
 /* Dynamic simulation output */
 .accent-value {
   color: var(--tertiary-strong);
-}
-
-
-/* Active simulation view */
-.visualization-view-button.is-active::after {
-  background: var(--tertiary);
 }
 
 
