@@ -4,7 +4,7 @@
 
   width: min(100% - 3rem, 76rem);
   margin-inline: auto;
-  margin-top: 18rem;
+  margin-top: 6rem;
   margin-bottom: 18rem;
 }
 
@@ -22,7 +22,7 @@
 .landing-description {
   margin-top: 3.5rem;
 
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-size: clamp(0.8rem, 1.8vw, 1rem);
   line-height: 1.6;
   letter-spacing: 0.15em;
 }
@@ -195,4 +195,93 @@
   margin-top: 0.85rem;
   font-size: 0.95rem;
   opacity: 0.8;
+}
+
+
+.manual-preview {
+  display: grid;
+  grid-template-columns: clamp(5rem, 18vw, 7rem) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(.85rem, 3vw, 1.5rem);
+  width: min(100%, 31rem);
+  margin: 2rem auto 0;
+  padding: clamp(.75rem, 2vw, 1.25rem);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 180ms ease;
+}
+
+.manual-preview:hover {
+  border-color: var(--tertiary);
+}
+
+.manual-preview:focus-visible {
+  outline: 2px solid var(--tertiary);
+  outline-offset: 4px;
+}
+
+.manual-preview__cover {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: .4rem;
+  aspect-ratio: 105 / 148;
+  padding: .35rem;
+  background: #f4f1e6;
+  color: #11110f;
+  text-align: center;
+}
+
+.manual-preview__brand,
+.manual-preview__edition {
+  font-size: .5rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.manual-preview__columns {
+  display: flex;
+  gap: 4px;
+  height: 1.35rem;
+}
+
+.manual-preview__columns > span {
+  width: 5px;
+  border-inline: 1px solid currentColor;
+}
+
+.manual-preview__cover-title {
+  font-size: clamp(.95rem, 3vw, 1.25rem);
+}
+
+.manual-preview__copy {
+  display: grid;
+  gap: .4rem;
+}
+
+.manual-preview__title {
+  font-size: 1.2rem;
+}
+
+.manual-preview__description {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.manual-preview__action {
+  margin-top: .25rem;
+  color: var(--tertiary);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+#why-weltgeist > .section-content {
+  max-width: 800px;
+}
+
+.effect-keywords-line {
+  text-align: center;
 }

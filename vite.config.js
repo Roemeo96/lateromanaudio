@@ -44,6 +44,10 @@ export default defineConfig({
           process.cwd(),
           "privacy.html",
         ),
+        manual: resolve(
+          process.cwd(),
+          "weltgeist-manual.html",
+        ),
       },
     },
   },

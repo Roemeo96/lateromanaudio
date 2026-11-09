@@ -51,3 +51,15 @@
 :focus-visible {
   outline-color: var(--tertiary);
 }
+
+
+.effect-keywords > span {
+  display: inline-block;
+  transition: color 380ms ease;
+}
+
+@media (hover: hover) {
+  .effect-keywords > span:hover {
+    color: var(--tertiary);
+  }
+}

@@ -25,9 +25,9 @@
   --accent-rgb: 238 232 213;
   --on-accent: #11110f;
 
-  --tertiary: #ff765f;
-  --tertiary-rgb: 255 118 95;
-  --tertiary-strong: #ff705c;
+--tertiary: #f5787b;
+--tertiary-rgb: 245 120 123;
+--tertiary-strong: #ff9294;
 
   --border: rgb(255 255 255 / 12%);
 
@@ -52,13 +52,13 @@
 :root[data-theme="light"] {
   color-scheme: light;
 
-  --background: #eee8d5;
-  --background-rgb: 238 232 213;
+--background: #f4f1e6;
+--background-rgb: 244 241 230;
 
-  --surface: #e4decb;
-  --surface-rgb: 228 222 203;
-  --surface-deep: #f5f0df;
-  --control-surface: #d8d2c0;
+--surface: #f1f0ec;
+--surface-rgb: 241 240 236;
+--surface-deep: #fdfcfa;
+--control-surface: #e5e4df;
 
   --text: #11110f;
   --text-rgb: 17 17 15;
@@ -67,11 +67,11 @@
 
   --accent: #11110f;
   --accent-rgb: 17 17 15;
-  --on-accent: #eee8d5;
+--on-accent: #faf9f6;
 
-  --tertiary: #ff765f;
-  --tertiary-rgb: 255 118 95;
-  --tertiary-strong: #e85e4b;
+--tertiary: #b42126;
+--tertiary-rgb: 180 33 38;
+--tertiary-strong: #96191e;
 
   --border: rgb(0 0 0 / 14%);
 
