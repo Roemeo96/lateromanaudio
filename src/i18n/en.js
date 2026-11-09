@@ -69,22 +69,26 @@ cablesDescription: "Two basic TRS cables are included so you can connect Weltgei
 
   },
 
-  why: {
-    heading: "Why Weltgeist?",
-    paragraph1: {
-      before: "There are dynamic pedals, and there are favorite pedals. ",
-      accent: "Weltgeist turns your favorite pedal into a dynamic one.",
-    },
-    paragraph2: {
-      before:
-        "Instead of replacing the effects you already love, Weltgeist adds a new layer of control to compatible pedals with an expression input. Your playing dynamics can shape parameters that would otherwise stay fixed or require a conventional expression pedal — tying you to that pedal instead of letting you control the effect naturally ",
-      accent: "from wherever you move on stage.",
-    },
-    paragraph3: {
-      before: "Keep the sound of the pedal you chose for its character — ",
-      accent: "and let Weltgeist make it respond to how you play.",
-    },
+why: {
+  heading: "Why Weltgeist?",
+  principle:
+    "Weltgeist emulates the potentiometer inside a traditional expression pedal. As you play, it changes the resistance seen by a compatible expression input, moving the assigned parameter in real time.",
+  benefit:
+    "That lets the pedals you already own respond to your playing dynamics, even if they have no built-in dynamic control. Here are a few things you can do with it.",
+  effects: {
+    modulation: "Dynamic Modulation",
+    swell: "Auto-Swell",
+    filters: "Envelope Filters",
+    dirt: "Dynamic Dirt",
+    delayReverb: "Dynamic Delay &amp; Reverb",
+    ducking: "Sidechain Ducking",
   },
+  manual: {
+    title: "Weltgeist Manual",
+    description: "Signal routing, controls and example setups.",
+    action: "Open manual",
+  },
+},
 
   model: {
     kicker: "WELTGEIST / INTERACTIVE 3D",

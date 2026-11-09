@@ -69,27 +69,26 @@ cablesDescription: "Deux câbles TRS simples sont fournis pour que vous puissiez
 
   },
 
-  why: {
-    heading: "Pourquoi Weltgeist ?",
-    paragraph1: {
-      before:
-        "Il existe des pédales dynamiques – et il y a tes pédales préférées. ",
-      accent:
-        "Weltgeist rend ta pédale préférée dynamique.",
-    },
-    paragraph2: {
-      before:
-        "Au lieu de remplacer les effets que tu aimes déjà, Weltgeist ajoute un nouveau niveau de contrôle aux pédales compatibles disposant d'une entrée Expression. Ta dynamique de jeu peut modifier des paramètres qui resteraient autrement statiques ou nécessiteraient une pédale d'expression traditionnelle – sans te lier à une pédale d'expression. Tu peux ainsi contrôler naturellement l'effet ",
-      accent:
-        "où que tu te trouves sur scène.",
-    },
-    paragraph3: {
-      before:
-        "Conserve le son de la pédale que tu as choisie pour son caractère – ",
-      accent:
-        "et laisse Weltgeist réagir à ta manière de jouer.",
-    },
+why: {
+  heading: "Pourquoi Weltgeist ?",
+  principle:
+    "Weltgeist reproduit le comportement du potentiomètre d’une pédale d’expression classique. Quand vous jouez, il fait varier la résistance vue par une entrée d’expression compatible et pilote ainsi le paramètre assigné en temps réel.",
+  benefit:
+    "Vos pédales peuvent ainsi réagir à votre dynamique de jeu, même si elles n’intègrent aucun contrôle dynamique. Voici quelques exemples d’utilisation.",
+  effects: {
+    modulation: "Modulation dynamique",
+    swell: "Auto-Swell",
+    filters: "Filtres d’enveloppe",
+    dirt: "Saturation dynamique",
+    delayReverb: "Delay et réverbération dynamiques",
+    ducking: "Ducking en sidechain",
   },
+  manual: {
+    title: "Manuel Weltgeist",
+    description: "Routage du signal, réglages et exemples de configuration.",
+    action: "Ouvrir le manuel (EN)",
+  },
+},
 
   model: {
     kicker: "WELTGEIST / MODÈLE 3D INTERACTIF",

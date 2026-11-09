@@ -67,22 +67,26 @@ purchase: {
   cablesDescription: "Damit du Weltgeist direkt nach dem Auspacken anschließen kannst, liegen zwei einfache TRS-Kabel bei. Da Kabellänge, Farbe und Steckerform vom jeweiligen Pedalboard abhängen, sind sie bewusst als praktische Starthilfe gedacht.",
 },
 
-  why: {
-    heading: "Warum Weltgeist?",
-    paragraph1: {
-      before: "Es gibt dynamische Pedale – und es gibt deine Lieblingspedale. ",
-      accent: "Weltgeist macht dein Lieblingspedal dynamisch.",
-    },
-    paragraph2: {
-      before:
-        "Statt die Effekte zu ersetzen, die du bereits liebst, erweitert Weltgeist kompatible Pedale mit Expression-Eingang um eine neue Steuerungsebene. Deine Spieldynamik kann Parameter formen, die sonst statisch bleiben oder ein herkömmliches Expression-Pedal erfordern würden – ohne dich an ein Expression-Pedal zu ketten. So steuerst du den Effekt ganz natürlich ",
-      accent: "von überall auf der Bühne.",
-    },
-    paragraph3: {
-      before: "Behalte den Klang des Pedals, das du wegen seines Charakters gewählt hast – ",
-      accent: "und lass Weltgeist darauf reagieren, wie du spielst.",
-    },
+why: {
+  heading: "Warum Weltgeist?",
+  principle:
+    "Weltgeist bildet das Potentiometer eines klassischen Expression-Pedals nach. Beim Spielen verändert es den Widerstand am kompatiblen Expression-Eingang und steuert so den zugewiesenen Parameter in Echtzeit.",
+  benefit:
+    "So reagieren die Pedale, die du schon hast, auf deine Spieldynamik, auch wenn sie selbst keine dynamische Steuerung bieten. Das kannst du damit ausprobieren.",
+  effects: {
+    modulation: "Dynamische Modulation",
+    swell: "Auto-Swell",
+    filters: "Envelope-Filter",
+    dirt: "Dynamische Verzerrung",
+    delayReverb: "Dynamisches Delay &amp; Reverb",
+    ducking: "Sidechain-Ducking",
   },
+  manual: {
+    title: "Weltgeist-Handbuch",
+    description: "Signalführung, Regler und Beispiel-Setups.",
+    action: "Handbuch öffnen (EN)",
+  },
+},
 
   model: {
     kicker: "WELTGEIST / INTERAKTIVES 3D-MODELL",
