@@ -197,49 +197,49 @@ why: {
   },
 
 
-  specifications: {
-    heading: "Technische Daten",
-    input: {
-      label: "Eingang",
-      value: "1× TS-Eingangsbuchse",
-    },
-    expression: {
-      label: "Expression",
-      value: "2× TRS-Expression-Ausgangsbuchsen",
-    },
-    output: {
-      label: "Ausgang",
-      value: "1× TS-Ausgangsbuchse",
-    },
-    outputImpedance: {
-      label: "Ausgangsimpedanz",
-      value: "100 Ω",
-    },
-    powerSupply: {
-      label: "Stromversorgung",
-      value: "9 V DC, Minuspol innen",
-    },
-    currentDraw: {
-      label: "Stromaufnahme",
-      value: "20 mA",
-    },
-    bypass: {
-      label: "Bypass",
-      value: "True Bypass",
-    },
-    dimensions: {
-      label: "Abmessungen",
-      value: "145 mm × 100 mm × 100 mm",
-    },
+specifications: {
+  heading: "Technische Daten",
+  input: {
+    label: "Eingang",
+    value: "1× TS-Eingangsbuchse",
+  },
+  expression: {
+    label: "Expression",
+    value: "2× TRS-Expression-Ausgangsbuchsen",
+  },
+  output: {
+    label: "Ausgang",
+    value: "1× TS-Ausgangsbuchse",
+  },
+  outputImpedance: {
+    label: "Ausgangsimpedanz",
+    value: "ca. 2 kΩ",
+  },
+  powerSupply: {
+    label: "Stromversorgung",
+    value: "9 V DC,  negative",
+  },
+  currentDraw: {
+    label: "Stromaufnahme",
+    value: "20mA",
+  },
+  bypass: {
+    label: "Bypass",
+    value: "True Bypass",
+  },
+  dimensions: {
+    label: "Abmessungen (L × B × H)",
+    value: "ca. 120 mm × 90 mm × 60 mm",
+  },
     weight: {
       label: "Gewicht",
-      value: "300 g",
+      value: "300g",
     },
-compatibility: {
-  heading: "Kompatibilitätshinweis",
-  description:
-    "Das Pedal emuliert das Verhalten des Potentiometers eines Expression-Pedals, garantiert jedoch weder eine perfekt lineare Kennlinie noch einen konstanten Gesamtwiderstand über den emulierten Regelweg. Verwende es nur mit Geräten, die keinen bestimmten Potentiometerwiderstand voraussetzen. Der Ausgang ist kein echtes CV-Signal und möglicherweise nicht mit allen Geräten kompatibel.",
-},
+    compatibility: {
+      heading: "Kompatibilitätshinweis",
+      description:
+        "Das Pedal emuliert das Verhalten des Potentiometers eines Expression-Pedals, garantiert jedoch weder eine perfekt lineare Kennlinie noch einen konstanten Gesamtwiderstand über den emulierten Regelweg. Verwende es nur mit Geräten, die keinen bestimmten Potentiometerwiderstand voraussetzen. Der Ausgang ist kein echtes CV-Signal und möglicherweise nicht mit allen Geräten kompatibel.",
+    },
   },
 
   footer: {

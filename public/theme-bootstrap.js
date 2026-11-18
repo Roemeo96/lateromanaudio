@@ -1,7 +1,13 @@
 (() => {
-  const root = document.documentElement;
-  const savedTheme = localStorage.getItem("theme");
-  const theme = savedTheme === "light" ? "light" : "dark";
+  let theme = "light";
 
-  root.dataset.theme = theme;
+  try {
+    if (localStorage.getItem("theme") === "dark") {
+      theme = "dark";
+    }
+  } catch {
+    // Use light mode when theme storage is unavailable.
+  }
+
+  document.documentElement.dataset.theme = theme;
 })();

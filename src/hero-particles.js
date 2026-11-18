@@ -39,6 +39,8 @@ function getParticleColor() {
 }
 
 function createParticleOptions() {
+  const isLightMode = document.documentElement.dataset.theme !== "dark";
+
   return {
     fullScreen: {
       enable: false,
@@ -139,10 +141,9 @@ function createParticleOptions() {
 
       opacity: {
         value: {
-          min: 0.1,
-          max: 0.45,
+          min: isLightMode ? 0.25 : 0.1,
+          max: isLightMode ? 0.65 : 0.45,
         },
-
         animation: {
           enable: true,
           speed: 0.2,

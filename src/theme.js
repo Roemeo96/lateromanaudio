@@ -1,10 +1,7 @@
 const THEME_STORAGE_KEY = "theme";
 
 function getCurrentTheme() {
-  return document.documentElement.dataset.theme ===
-    "light"
-    ? "light"
-    : "dark";
+  return document.documentElement.dataset.theme === "dark" ? "dark" : "light";
 }
 
 function setTheme(theme, persist = true) {

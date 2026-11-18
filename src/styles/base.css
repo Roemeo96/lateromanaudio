@@ -49,7 +49,7 @@
 }
 
 
-:root[data-theme="light"] {
+:root:not([data-theme="dark"]) {
   color-scheme: light;
 
 --background: #f4f1e6;
@@ -137,4 +137,11 @@ input {
   white-space: nowrap;
 
   border: 0;
+}
+
+
+@media (min-width: 1024px) {
+  html {
+    zoom: 0.8;
+  }
 }
