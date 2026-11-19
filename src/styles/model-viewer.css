@@ -47,8 +47,8 @@
 .weltgeist-model-stage {
     position: relative;
 
-    width: min(100%, 860px);
-    height: clamp(420px, 46vw, 520px);
+    width: min(100%, 52rem);
+    height: clamp(400px, 44vw, 432px);
 
     margin: 0 auto;
     overflow: hidden;

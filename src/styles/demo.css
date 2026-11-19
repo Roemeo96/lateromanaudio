@@ -9,7 +9,7 @@
   position: relative;
   z-index: 1;
 
-  width: min(100% - 3rem, 76rem);
+  width: min(100% - 3rem, 64rem);
   margin-inline: auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
