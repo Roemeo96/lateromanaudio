@@ -214,12 +214,31 @@
   gap: clamp(2rem, 5vw, 4rem);
 }
 
-.why-intro .section-heading {
-  text-align: left;
+.pillar-copy {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  width: min(100%, 50rem);
+  margin-inline: auto;
+  text-align: right;
 }
 
-.why-intro .landing-description {
+#simulation > .pillar-copy {
+  width: min(var(--layout-content-width), 50rem);
+}
+
+.pillar-copy .section-heading {
+  text-align: right;
+}
+
+.pillar-copy .landing-description {
   margin: 1rem 0 0;
+}
+
+.pillar-copy .pillar-copy-mark {
+  height: auto;
 }
 
 .why-intro .manual-preview {

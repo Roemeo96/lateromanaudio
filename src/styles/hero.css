@@ -9,7 +9,7 @@
   color: var(--text);
   background: var(--background);
 
-  text-align: left;
+  text-align: center;
 }
 
 .landing-eyebrow {
@@ -66,7 +66,7 @@
   display: flex;
   flex: 0 0 auto;
 
-  gap: 18px;
+  gap: 14px;
 
   height: clamp(95px, 22vw, 125px);
 }
@@ -74,7 +74,7 @@
 .logo-bar-group {
   display: flex;
 
-  gap: 8px;
+  gap: 6px;
 
   height: 100%;
 }
@@ -82,7 +82,7 @@
 .logo-bar-group span {
   display: block;
 
-  width: 5px;
+  width: 6px;
   height: 100%;
 
   background: var(--text);
