@@ -82,6 +82,14 @@ why: {
     delayReverb: "Delay e riverbero dinamici",
     ducking: "Sidechain Ducking",
   },
+  effectDescriptions: {
+    modulation: "Fai seguire alla velocità o alla profondità di un tremolo la dinamica della tua pennata.",
+    swell: "Controlla il livello per far entrare le note gradualmente.",
+    filters: "Varia la frequenza di una banda di EQ con la dinamica del tuo modo di suonare.",
+    dirt: "Controlla il mix di un overdrive o di un fuzz con la tua pennata.",
+    delayReverb: "Fai durare più a lungo le ripetizioni del delay o attenua il riverbero mentre suoni.",
+    ducking: "Usa un segnale separato per attenuare un effetto in un altro percorso audio.",
+  },
   manual: {
     title: "Manuale Weltgeist",
     description: "Percorso del segnale, controlli ed esempi di configurazione.",

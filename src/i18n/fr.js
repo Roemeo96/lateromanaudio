@@ -82,6 +82,14 @@ why: {
     delayReverb: "Delay et réverbération dynamiques",
     ducking: "Ducking en sidechain",
   },
+  effectDescriptions: {
+    modulation: "Faites suivre la vitesse ou la profondeur d’un trémolo à votre attaque.",
+    swell: "Contrôlez le niveau pour faire apparaître les notes progressivement.",
+    filters: "Faites varier la fréquence d’une bande d’égalisation selon votre dynamique de jeu.",
+    dirt: "Dosez le mix d’une overdrive ou d’une fuzz avec votre attaque.",
+    delayReverb: "Prolongez les répétitions du delay ou faites reculer la réverbération quand vous jouez.",
+    ducking: "Utilisez un signal séparé pour atténuer un effet dans une autre chaîne audio.",
+  },
   manual: {
     title: "Manuel Weltgeist",
     description: "Routage du signal, réglages et exemples de configuration.",

@@ -421,164 +421,140 @@
   class="content-section reveal-section particle-section"
   aria-labelledby="why-weltgeist-heading"
 >
-  <div
-    id="why-weltgeist-particles"
-    class="section-particles"
-    aria-hidden="true"
-  ></div>
+  <div id="why-weltgeist-particles" class="section-particles" aria-hidden="true"></div>
 
-  <div class="section-content">
-    <h2 id="why-weltgeist-heading" class="section-heading">
-      Why Weltgeist?
-    </h2>
+  <div class="section-content why-layout">
+    <div class="why-intro">
+      <h2 id="why-weltgeist-heading" class="section-heading">Why Weltgeist?</h2>
+      <p class="landing-description">Weltgeist emulates the potentiometer inside a traditional expression pedal. As you play, it changes the resistance seen by a compatible expression input, moving the assigned parameter in real time.</p>
+      <p class="landing-description">That lets the pedals you already own respond to your playing dynamics, even if they have no built-in dynamic control. Here are a few things you can do with it.</p>
 
-    <p class="landing-description">Weltgeist emulates the potentiometer inside a traditional expression pedal. As you play, it changes the resistance seen by a compatible expression input, moving the assigned parameter in real time.</p>
-    <p class="landing-description">That lets the pedals you already own respond to your playing dynamics, even if they have no built-in dynamic control. Here are a few things you can do with it.</p>
-
-    <p class="landing-description effect-keywords-line">
-      <strong class="effect-keywords">
-        <span>Dynamic Modulation</span> ·
-        <span>Auto-Swell</span> ·
-        <span>Envelope Filters</span> ·
-        <span>Dynamic Dirt</span> ·
-        <span>Dynamic Delay &amp; Reverb</span> ·
-        <span>Sidechain Ducking</span>
-      </strong>
-    </p>
-
-    <a class="manual-preview" href="/weltgeist-manual.html" hreflang="en">
-      <span class="manual-preview__cover" aria-hidden="true">
-        <span class="manual-preview__brand">Late Roman Avdio</span>
-        <span class="manual-preview__columns">
-          <span></span><span></span><span></span>
+      <a class="manual-preview" href="/weltgeist-manual.html" hreflang="en">
+        <span class="manual-preview__cover" aria-hidden="true">
+          <span class="manual-preview__brand">Late Roman Avdio</span>
+          <span class="manual-preview__columns">
+            <span></span><span></span><span></span>
+          </span>
+          <span class="manual-preview__cover-title">Weltgeist</span>
+          <span class="manual-preview__edition">Manual</span>
         </span>
-        <span class="manual-preview__cover-title">Weltgeist</span>
-        <span class="manual-preview__edition">Manual</span>
-      </span>
 
-      <span class="manual-preview__copy">
-        <strong class="manual-preview__title">Weltgeist Manual</strong>
-        <span class="manual-preview__description">
-          Signal routing, controls and example setups.
+        <span class="manual-preview__copy">
+          <strong class="manual-preview__title">Weltgeist Manual</strong>
+          <span class="manual-preview__description">Signal routing, controls and example setups.</span>
+          <span class="manual-preview__action">
+            Open manual <span aria-hidden="true">↗</span>
+          </span>
         </span>
-        <span class="manual-preview__action">
-          Open manual <span aria-hidden="true">↗</span>
-        </span>
-      </span>
-    </a>
+      </a>
+    </div>
+
+    <ul class="why-effects" role="list">
+      <li>
+        <h3>Dynamic Modulation</h3>
+        <p>Let tremolo rate or depth follow your picking dynamics.</p>
+      </li>
+      <li>
+        <h3>Auto-Swell</h3>
+        <p>Control the level to make notes fade in smoothly.</p>
+      </li>
+      <li>
+        <h3>Envelope Filters</h3>
+        <p>Sweep an EQ band’s frequency with your playing dynamics.</p>
+      </li>
+      <li>
+        <h3>Dynamic Dirt</h3>
+        <p>Use your attack to control the mix of an overdrive or fuzz pedal.</p>
+      </li>
+      <li>
+        <h3>Dynamic Delay &amp; Reverb</h3>
+        <p>Let delay repeats linger longer or make reverb recede while you play.</p>
+      </li>
+      <li>
+        <h3>Sidechain Ducking</h3>
+        <p>Use a separate signal to turn down an effect in another signal path.</p>
+      </li>
+    </ul>
   </div>
 </section>
 
 
-<section class="weltgeist-model-section">
-  <div class="weltgeist-model-inner">
+<section
+  id="features"
+  class="weltgeist-model-section reveal-section particle-section"
+  aria-labelledby="weltgeist-model-heading"
+>
+  <div id="features-particles" class="section-particles" aria-hidden="true"></div>
 
+  <div class="weltgeist-model-inner">
     <div class="weltgeist-model-heading">
       <p class="weltgeist-model-kicker">WELTGEIST / INTERACTIVE 3D</p>
-
-      <h2>Explore the pedal.</h2>
-
-      <p class="weltgeist-model-description">
-        Get a closer look at the controls, switches and physical layout of Weltgeist.
-      </p>
+      <h2 id="weltgeist-model-heading">Explore the pedal.</h2>
+      <p class="weltgeist-model-description">Get a closer look at the controls, switches and physical layout of Weltgeist.</p>
     </div>
 
-    <div class="weltgeist-model-stage">
+    <div class="weltgeist-model-layout">
+      <div class="weltgeist-model-media">
+        <div class="weltgeist-model-stage">
+          <div class="weltgeist-model-label weltgeist-model-label-top">
+            INTERACTIVE MODEL
+          </div>
 
-      <div class="weltgeist-model-label weltgeist-model-label-top">
-        INTERACTIVE MODEL
+          <model-viewer
+            class="weltgeist-model"
+            src="/models/weltgeist.glb"
+            alt="Weltgeist expression control pedal"
+            camera-controls
+            auto-rotate
+            exposure="1.8"
+            shadow-intensity="1"
+          ></model-viewer>
+
+          <div class="weltgeist-model-label weltgeist-model-label-bottom">
+            DRAG TO ROTATE · SCROLL TO ZOOM
+          </div>
+        </div>
+
+        <div class="weltgeist-model-meta">
+          <span>CONTROLS</span>
+          <span aria-hidden="true">/</span>
+          <span>SWITCHES</span>
+          <span aria-hidden="true">/</span>
+          <span>LEVEL DISPLAY</span>
+          <span aria-hidden="true">/</span>
+          <span>EXPRESSION CONTROL</span>
+        </div>
       </div>
 
-      <model-viewer
-        class="weltgeist-model"
-        src="/models/weltgeist.glb"
-        alt="Weltgeist expression control pedal"
-        camera-controls
-        auto-rotate
-        exposure="1.8"
-        shadow-intensity="1"
-      ></model-viewer>
+      <div class="weltgeist-model-controls">
+        <h3 id="features-heading" class="section-heading">Weltgeist Features</h3>
 
-      <div class="weltgeist-model-label weltgeist-model-label-bottom">
-        DRAG TO ROTATE · SCROLL TO ZOOM
-      </div>
-
-    </div>
-
-    <div class="weltgeist-model-meta">
-      <span>CONTROLS</span>
-      <span aria-hidden="true">/</span>
-      <span>SWITCHES</span>
-      <span aria-hidden="true">/</span>
-      <span>LEVEL DISPLAY</span>
-      <span aria-hidden="true">/</span>
-      <span>EXPRESSION CONTROL</span>
-    </div>
-
-  </div>
-</section>
-
-    <section id="features" class="content-section reveal-section particle-section" aria-labelledby="features-heading">
-      <div id="features-particles" class="section-particles" aria-hidden="true"></div>
-
-      <div class="section-content">
-        <h2 id="features-heading" class="section-heading">
-          Weltgeist Features
-        </h2>
-
-        <dl class="feature-list">
-          <div class="feature-row">
-            <dt>
-              Base
-            </dt>
-
-            <dd>
-              Sets the expression position used when the input signal is quiet.
-            </dd>
+        <dl class="weltgeist-model-controls-list">
+          <div>
+            <dt>Base</dt>
+            <dd>Sets the expression position used when the input signal is quiet.</dd>
           </div>
-
-          <div class="feature-row">
-            <dt>
-              Sensitivity
-            </dt>
-
-            <dd>
-              Adjusts how strongly the expression output responds to changes in input level.
-            </dd>
+          <div>
+            <dt>Sensitivity</dt>
+            <dd>Adjusts how strongly the expression output responds to changes in input level.</dd>
           </div>
-
-          <div class="feature-row">
-            <dt>
-              Rise
-            </dt>
-
-            <dd>
-              Controls how quickly the pedal responds as the input level increases.
-            </dd>
+          <div>
+            <dt>Rise</dt>
+            <dd>Controls how quickly the pedal responds as the input level increases.</dd>
           </div>
-
-          <div class="feature-row">
-            <dt>
-              Fall
-            </dt>
-
-            <dd>
-              Controls how quickly the pedal responds as the input level decreases.
-            </dd>
+          <div>
+            <dt>Fall</dt>
+            <dd>Controls how quickly the pedal responds as the input level decreases.</dd>
           </div>
-
-          <div class="feature-row">
-            <dt>
-              Invert
-            </dt>
-
-            <dd>
-              Reverses the response so louder playing moves the expression position in the opposite direction.
-            </dd>
+          <div>
+            <dt>Invert</dt>
+            <dd>Reverses the response so louder playing moves the expression position in the opposite direction.</dd>
           </div>
         </dl>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
 
     <section class="demo-showcase reveal-section" aria-labelledby="demo-heading">
@@ -603,7 +579,7 @@
                 </div>
 
                 <div class="demo-card-content">
-                  <p class="demo-card-number accent-marker">
+                  <p class="demo-card-number">
                     01
                   </p>
 
@@ -625,7 +601,7 @@
                 </div>
 
                 <div class="demo-card-content">
-                  <p class="demo-card-number accent-marker">
+                  <p class="demo-card-number">
                     02
                   </p>
 

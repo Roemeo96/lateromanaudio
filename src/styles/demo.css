@@ -9,14 +9,18 @@
   position: relative;
   z-index: 1;
 
-  width: min(100% - 3rem, 64rem);
+  width: var(--layout-content-width);
   margin-inline: auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
 
 .demo-carousel {
-  margin-top: 2rem;
+  --demo-card-width: 76%;
+  --demo-gap: clamp(0.75rem, 2vw, 1.5rem);
+
+  width: min(100%, 62rem);
+  margin: 2rem auto 0;
 }
 
 .demo-carousel-viewport {
@@ -33,16 +37,21 @@
 
 .demo-carousel-track {
   display: flex;
-  gap: 1.5rem;
+  gap: var(--demo-gap);
+}
 
-  padding-right: 8%;
+.demo-carousel-track::before,
+.demo-carousel-track::after {
+  content: "";
+  flex: 0 0 calc((100% - var(--demo-card-width)) / 2 - var(--demo-gap));
 }
 
 .demo-card {
-  flex: 0 0 92%;
+  position: relative;
+  flex: 0 0 var(--demo-card-width);
   min-width: 0;
 
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   scroll-snap-stop: always;
 }
 
@@ -56,7 +65,36 @@
   border-color: var(--border);
 }
 
+.demo-card:not(.is-active) {
+  cursor: pointer;
+}
+
+.demo-card:not(.is-active)::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 1rem;
+  left: 0.65rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-top: 2px solid var(--text);
+  border-right: 2px solid var(--text);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+
+.demo-card.is-before-active::after {
+  right: 0.65rem;
+  left: auto;
+  transform: rotate(-135deg);
+}
+
+.demo-card:not(.is-active) video {
+  pointer-events: none;
+}
+
 .demo-media-placeholder {
+  position: relative;
   display: grid;
   place-items: center;
 
@@ -190,15 +228,8 @@
   }
 
   .demo-carousel {
-    margin-top: 2rem;
-  }
-
-  .demo-carousel-track {
-    padding-right: 0;
-  }
-
-  .demo-card {
-    flex-basis: 100%;
+    --demo-card-width: 78%;
+    --demo-gap: 0.5rem;
   }
 
   .demo-card-content {

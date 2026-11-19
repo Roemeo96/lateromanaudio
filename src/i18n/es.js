@@ -83,6 +83,14 @@ why: {
     delayReverb: "Delay y reverberación dinámicos",
     ducking: "Ducking por sidechain",
   },
+  effectDescriptions: {
+    modulation: "Haz que la velocidad o la profundidad de un trémolo siga la dinámica de tu ataque.",
+    swell: "Controla el nivel para que las notas entren de forma gradual.",
+    filters: "Desplaza la frecuencia de una banda de ecualización con tu dinámica al tocar.",
+    dirt: "Controla la mezcla de un overdrive o fuzz con tu ataque.",
+    delayReverb: "Alarga las repeticiones del delay o atenúa la reverberación mientras tocas.",
+    ducking: "Usa una señal independiente para atenuar un efecto en otra ruta de audio.",
+  },
   manual: {
     title: "Manual de Weltgeist",
     description: "Ruta de señal, controles y ejemplos de configuración.",

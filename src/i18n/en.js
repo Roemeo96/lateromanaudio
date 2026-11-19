@@ -82,6 +82,14 @@ why: {
     delayReverb: "Dynamic Delay &amp; Reverb",
     ducking: "Sidechain Ducking",
   },
+  effectDescriptions: {
+    modulation: "Let tremolo rate or depth follow your picking dynamics.",
+    swell: "Control the level to make notes fade in smoothly.",
+    filters: "Sweep an EQ band’s frequency with your playing dynamics.",
+    dirt: "Use your attack to control the mix of an overdrive or fuzz pedal.",
+    delayReverb: "Let delay repeats linger longer or make reverb recede while you play.",
+    ducking: "Use a separate signal to turn down an effect in another signal path.",
+  },
   manual: {
     title: "Weltgeist Manual",
     description: "Signal routing, controls and example setups.",

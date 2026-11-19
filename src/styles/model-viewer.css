@@ -1,131 +1,125 @@
 .weltgeist-model-section {
-    padding: 5rem 1.5rem;
-
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+  padding-block: 5rem;
+  border-block: 1px solid var(--border);
 }
 
 .weltgeist-model-inner {
-    width: min(100%, 1200px);
-    margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  width: var(--layout-content-width);
+  margin-inline: auto;
 }
 
 .weltgeist-model-heading {
-    width: min(100%, 680px);
-    margin: 0 auto 2.25rem;
-
-    text-align: center;
+  margin-bottom: 2rem;
 }
 
 .weltgeist-model-kicker {
-    margin: 0 0 0.75rem;
-
-    color: var(--muted);
-
-    font-size: 0.8rem;
-    letter-spacing: 0.18em;
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
 }
 
 .weltgeist-model-heading h2 {
-    margin: 0;
-
-    color: var(--text);
-
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 400;
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
 }
 
 .weltgeist-model-description {
-    margin: 1rem auto 0;
+  max-width: 60ch;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
 
-    color: var(--muted);
-
-    font-size: 1rem;
-    line-height: 1.65;
+.weltgeist-model-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  align-items: start;
+  gap: clamp(2rem, 5vw, 4rem);
 }
 
 .weltgeist-model-stage {
-    position: relative;
+  position: relative;
+  height: clamp(320px, 40vw, 432px);
+  overflow: hidden;
 
-    width: min(100%, 52rem);
-    height: clamp(400px, 44vw, 432px);
-
-    margin: 0 auto;
-    overflow: hidden;
-
-    background: var(--surface);
-    border: 1px solid var(--border);
-
-    box-shadow: var(--panel-shadow);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--panel-shadow);
 }
 
 .weltgeist-model {
-    display: block;
-
-    width: 100%;
-    height: 100%;
-
-    background: transparent;
-
-    --poster-color: transparent;
-}
-
-@media (max-width: 700px) {
-    .weltgeist-model-section {
-        padding: 4rem 1rem;
-    }
-
-    .weltgeist-model-stage {
-        height: 400px;
-    }
-
-    .weltgeist-model-description {
-        font-size: 0.95rem;
-    }
-}
-
-.weltgeist-model-description {
-    max-width: 620px;
-    margin: 1.25rem auto 0;
-
-    color: var(--muted);
-
-    font-size: 1rem;
-    line-height: 1.65;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  --poster-color: transparent;
 }
 
 .weltgeist-model-label {
-    position: absolute;
-    z-index: 2;
-
-    color: var(--muted);
-
-    font-size: 0.68rem;
-    letter-spacing: 0.14em;
-
-    pointer-events: none;
+  position: absolute;
+  z-index: 2;
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  pointer-events: none;
 }
 
 .weltgeist-model-label-top {
-    top: 1rem;
-    left: 1.25rem;
+  top: 1rem;
+  left: 1.25rem;
 }
 
 .weltgeist-model-label-bottom {
-    right: 1.25rem;
-    bottom: 1rem;
+  right: 1.25rem;
+  bottom: 1rem;
+  left: 1.25rem;
+  text-align: right;
 }
 
 .weltgeist-model-meta {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.65rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.25rem;
 
-    margin-top: 1.25rem;
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+}
 
-    color: var(--muted);
+.weltgeist-model-controls .section-heading {
+  text-align: left;
+}
 
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
+.weltgeist-model-controls-list {
+  margin: 1rem 0 0;
+}
+
+.weltgeist-model-controls-list > div {
+  padding-block: 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.weltgeist-model-controls-list dt {
+  font-weight: 700;
+}
+
+.weltgeist-model-controls-list dd {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 820px) {
+  .weltgeist-model-section {
+    padding-block: 4rem;
+  }
+
+  .weltgeist-model-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
