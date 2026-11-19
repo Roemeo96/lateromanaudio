@@ -49,33 +49,57 @@
 
   <script src="/theme-bootstrap.js"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Weltgeist",
-    "image": "https://lateromanaudio.de/images/weltgeist.webp",
-    "description": "Pédale d'expression contrôlée par la dynamique de Late Roman Audio.",
-    "brand": {
-      "@type": "Brand",
-      "name": "Late Roman Audio"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://lateromanaudio.de/#organization",
+      "name": "Late Roman Audio",
+      "url": "https://lateromanaudio.de/"
     },
-    "offers": {
-      "@type": "Offer",
-      "url": "https://lateromanaudio.de/fr/#pedal",
-      "priceCurrency": "EUR",
-      "price": "229.00",
-      "availability": "https://schema.org/PreOrder"
+    {
+      "@type": "Product",
+      "name": "Weltgeist",
+      "image": "https://lateromanaudio.de/images/weltgeist-beauty-shot.jpg",
+      "description": "Pédale d'expression contrôlée par la dynamique de Late Roman Audio.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Late Roman Audio"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://lateromanaudio.de/fr/#pedal",
+        "priceCurrency": "EUR",
+        "price": "229.00",
+        "availability": "https://schema.org/OutOfStock"
+      }
     }
-  }
+  ]
+}
   </script>
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Late Roman Audio">
+  <meta property="og:url" content="https://lateromanaudio.de/fr/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="Late Roman Audio | Weltgeist: Pédale d’expression pilotée par la dynamique de jeu">
+  <meta property="og:description" content="Weltgeist exploite la dynamique de votre instrument pour piloter des effets compatibles via leur entrée d’expression.">
+  <meta property="og:image" content="https://lateromanaudio.de/images/weltgeist-beauty-shot.jpg">
+  <meta property="og:image:alt" content="Pédale Weltgeist de Late Roman Audio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Late Roman Audio | Weltgeist: Pédale d’expression pilotée par la dynamique de jeu">
+  <meta name="twitter:description" content="Weltgeist exploite la dynamique de votre instrument pour piloter des effets compatibles via leur entrée d’expression.">
+  <meta name="twitter:image" content="https://lateromanaudio.de/images/weltgeist-beauty-shot.jpg">
+  <meta name="twitter:image:alt" content="Pédale Weltgeist de Late Roman Audio">
 
   <meta
   name="description"
-  content="Weltgeist transforme la dynamique de ton instrument en contrôle d'expression et te permet de contrôler directement des effets compatibles par ta manière de jouer."
+  content="Weltgeist exploite la dynamique de votre instrument pour piloter des effets compatibles via leur entrée d’expression."
 >
 
   <title>
-  Late Roman Audio | Weltgeist – Pédale d'expression contrôlée par la dynamique
+  Late Roman Audio | Weltgeist: Pédale d’expression pilotée par la dynamique de jeu
 </title>
 
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -116,7 +140,7 @@
 
     <nav id="site-header-navigation" class="site-header-navigation" aria-label="Navigation principale">
       <a href="#pedal">
-        Pedal
+        Pédale
         </a>
 
         <a href="#features">
@@ -124,7 +148,7 @@
         </a>
 
         <a href="#demos">
-        Demo
+        Démos
         </a>
 
         <a href="#simulation">
@@ -268,7 +292,7 @@
       <div id="hero-particles" class="section-particles" aria-hidden="true"></div>
 
       <h1 class="visually-hidden">
-        Weltgeist – Une pédale d'expression contrôlée par ta dynamique de jeu
+        Weltgeist: Pédale d’expression pilotée par la dynamique de jeu
       </h1>
 
       <div role="img" class="landing-logo" aria-label="Late Roman Audio">
@@ -306,35 +330,36 @@
 </p>
 
 <p class="landing-tagline">
-  The Dynamics You Lost After Compression
+  La dynamique perdue à la compression
 </p>
 
 <p class="landing-tagline">
-  Reborn as Control
+  Devient un signal de commande
 </p>
 
         <p class="landing-description">
-          Weltgeist transforme la 
-          <span class="">dynamique de ton instrument en contrôle d'Expression</span>. Au lieu de déplacer une pédale d'expression traditionnelle avec le pied, tu contrôles directement des effets compatibles selon que tu joues doucement ou avec davantage d'intensité.
+          Weltgeist exploite la dynamique de votre instrument
+          <span class="">pour piloter l’entrée d’expression d’une pédale d’effet compatible</span>.
         </p>
 
-        <p class="landing-description">
-          Contrôle la profondeur ou la vitesse d’une pédale de modulation avec la dynamique de ton jeu. Fais varier la fréquence d’une bande d’égaliseur en jouant pour créer un filtre d’enveloppe, ou contrôle le niveau pour obtenir un effet auto-swell. Envoie un signal sidechain séparé à Weltgeist pour créer un effet de ducking. Atténue la réverbération pendant que tu joues et fais-la revenir dans les silences, ou joue sur ta dynamique pour faire durer les répétitions du delay ou les faire disparaître plus vite.
-        </p>
+        <p class="landing-description"></p>
       </div>
     </section>
 
 
     <section id="pedal" class="pedal-showcase reveal-section" aria-labelledby="pedal-heading">
       <div class="pedal-showcase-content">
-        <figure class="pedal-showcase-figure" data-product-gallery>
+        <figure class="pedal-showcase-figure" data-product-gallery
+          data-top-label="Weltgeist: Vue de dessus"
+          data-front-label="Weltgeist: Vue de face"
+          data-low-angle-label="Weltgeist: Vue en contre-plongée">
           <div class="pedal-gallery-thumbnails" hidden></div>
           <div class="pedal-showcase-image-frame">
             <div class="pedal-gallery-stage">
               <img
                 class="pedal-showcase-image"
                 src="/images/weltgeist-beauty-shot.jpg"
-                alt="Weltgeist Pedal de Late Roman Audio"
+                alt="Pédale Weltgeist de Late Roman Audio"
                 width="1200"
                 height="960"
                 loading="lazy"
@@ -361,7 +386,7 @@
             </h2>
 
             <p class="pedal-purchase-price">
-              229,00 €
+              229,00 €
             </p>
 
             <p class="pedal-purchase-status accent-status">
@@ -378,7 +403,7 @@
                   inputmode="numeric">
               </div>
 
-              <button id="weltgeist-add-to-cart" class="snipcart-add-item pedal-add-to-cart" type="button"
+              <button id="weltgeist-add-to-cart" class="snipcart-add-item pedal-add-to-cart" type="button" disabled
                 data-item-id="weltgeist" data-item-name="Weltgeist" data-item-price="229.00" data-item-url="/fr/"
                 data-item-taxable="false" data-item-image="/images/weltgeist.webp"
                 data-item-description="Pédale d’expression contrôlée par la dynamique de jeu, conçue par Late Roman Audio. Livrée avec 2 câbles TRS de 60 cm."
@@ -387,8 +412,8 @@
               </button>
             </div>
             <div class="pedal-purchase-includes">
-              <p class="pedal-purchase-includes-title">2 câbles TRS inclus (60 cm chacun)</p>
-              <p class="pedal-purchase-includes-description">Deux câbles TRS simples sont fournis pour que vous puissiez brancher Weltgeist dès le déballage. Comme la longueur, la couleur et le type de fiche dépendent de votre pedalboard, ils sont pensés comme une solution de départ pratique plutôt que comme une solution universelle.</p>
+              <p class="pedal-purchase-includes-title">2 câbles TRS de 60 cm chacun sont fournis.</p>
+              <p class="pedal-purchase-includes-description"></p>
             </div>
           </div>
         </div>
@@ -408,8 +433,8 @@
       <div class="pillar-copy">
         <div class="pillar-copy-text">
           <h2 id="why-weltgeist-heading" class="section-heading">Pourquoi Weltgeist ?</h2>
-          <p class="landing-description">Weltgeist reproduit le comportement du potentiomètre d’une pédale d’expression classique. Quand vous jouez, il fait varier la résistance vue par une entrée d’expression compatible et pilote ainsi le paramètre assigné en temps réel.</p>
-          <p class="landing-description">Vos pédales peuvent ainsi réagir à votre dynamique de jeu, même si elles n’intègrent aucun contrôle dynamique. Voici quelques exemples d’utilisation.</p>
+          <p class="landing-description">Pilotez un paramètre d’une pédale compatible par la dynamique de votre jeu.</p>
+          <p class="landing-description">Vous pouvez aussi piloter ce paramètre avec un signal séparé.</p>
         </div>
         <div class="logo-bar-group pillar-copy-mark" aria-hidden="true">
           <span></span><span></span>
@@ -424,7 +449,7 @@
       </li>
       <li>
         <h3>Auto-Swell</h3>
-        <p>Contrôlez le niveau pour faire apparaître les notes progressivement.</p>
+        <p>Agissez sur le niveau pour faire monter chaque note progressivement.</p>
       </li>
       <li>
         <h3>Filtres d’enveloppe</h3>
@@ -477,7 +502,7 @@
     <div class="weltgeist-model-heading">
       <p class="weltgeist-model-kicker">WELTGEIST / MODÈLE 3D INTERACTIF</p>
       <h2 id="weltgeist-model-heading">Découvre la pédale</h2>
-      <p class="weltgeist-model-description">Observe de plus près les potentiomètres, les switches et la conception physique de Weltgeist.</p>
+      <p class="weltgeist-model-description">Examinez les réglages, les commutateurs et les connecteurs.</p>
     </div>
 
     <div class="weltgeist-model-layout">
@@ -490,7 +515,7 @@
           <model-viewer
             class="weltgeist-model"
             src="/models/weltgeist.glb"
-            alt="Weltgeist Expression Control Pedal"
+            alt="Weltgeist, pédale d’expression pilotée par la dynamique"
             camera-controls
             auto-rotate
             exposure="1.8"
@@ -503,13 +528,13 @@
         </div>
 
         <div class="weltgeist-model-meta">
-          <span>CONTRÔLES</span>
+          <span>RÉGLAGES</span>
           <span aria-hidden="true">/</span>
-          <span>SWITCHES</span>
+          <span>COMMUTATEURS</span>
           <span aria-hidden="true">/</span>
           <span>AFFICHAGE DU NIVEAU</span>
           <span aria-hidden="true">/</span>
-          <span>EXPRESSION CONTROL</span>
+          <span>COMMANDE D’EXPRESSION</span>
         </div>
       </div>
 
@@ -519,23 +544,23 @@
         <dl class="weltgeist-model-controls-list">
           <div>
             <dt>Base</dt>
-            <dd>Définit la position d'Expression utilisée lorsque le niveau du signal d'entrée est faible.</dd>
+            <dd>Définit la position d’expression lorsque le niveau d’entrée est faible.</dd>
           </div>
           <div>
             <dt>Sensitivity</dt>
-            <dd>Détermine à quel point la sortie Expression réagit aux variations du niveau d'entrée.</dd>
+            <dd>Détermine l’amplitude du mouvement d’expression quand le niveau d’entrée varie.</dd>
           </div>
           <div>
             <dt>Rise</dt>
-            <dd>Détermine la vitesse à laquelle la pédale réagit lorsque le niveau d'entrée augmente.</dd>
+            <dd>Règle la vitesse de réaction quand le niveau d’entrée monte.</dd>
           </div>
           <div>
             <dt>Fall</dt>
-            <dd>Détermine la vitesse à laquelle la pédale réagit lorsque le niveau d'entrée diminue.</dd>
+            <dd>Règle la vitesse de réaction quand le niveau d’entrée baisse.</dd>
           </div>
           <div>
             <dt>Invert</dt>
-            <dd>Inverse la réponse afin qu'un jeu plus fort déplace la position d'Expression dans la direction opposée.</dd>
+            <dd>Inverse le sens du mouvement d’expression lorsque le niveau d’entrée varie.</dd>
           </div>
         </dl>
       </div>
@@ -546,12 +571,10 @@
 
     <section class="demo-showcase reveal-section" aria-labelledby="demo-heading">
       <div id="demos" class="demo-content">
-        <p class="section-eyebrow">
-          Découvre-la en action
-        </p>
+        <p class="section-eyebrow"></p>
 
         <h2 id="demo-heading" class="section-heading">
-          Weltgeist Live
+          Démos de Weltgeist
         </h2>
 
         <div class="demo-carousel">
@@ -561,7 +584,7 @@
               <article class="demo-card">
                 <div class="demo-media-placeholder">
                   <span>
-                    Video 01
+                    Vidéo 01
                   </span>
                 </div>
 
@@ -571,11 +594,11 @@
                   </p>
 
                   <h3>
-                    Dual Expression
+                    Deux sorties d’expression
                   </h3>
 
                   <p>
-                    EXP1 contrôle le tremolo. EXP2 règle un Delay Mix inversé. Les deux prennent ensuite vie simultanément.
+                    EXP 1 pilote le trémolo. EXP 2 règle la proportion de delay avec une réponse inversée. Les deux sont actifs en fin de vidéo.
                   </p>
                 </div>
               </article>
@@ -583,7 +606,7 @@
               <article class="demo-card">
                 <div class="demo-media-placeholder">
                   <span>
-                    Video 02
+                    Vidéo 02
                   </span>
                 </div>
 
@@ -597,7 +620,7 @@
                   </h3>
 
                   <p>
-                    Un signal externe contrôle la réponse Expression et transforme la dynamique en contrôle sur un autre chemin de signal.
+                    Un signal d’entrée séparé pilote le paramètre d’expression d’un effet dans une autre chaîne audio.
                   </p>
                 </div>
               </article>
@@ -612,11 +635,11 @@
             </div>
 
             <div class="demo-carousel-buttons">
-              <button class="demo-carousel-button demo-carousel-previous" type="button" aria-label="Demo précédente">
+              <button class="demo-carousel-button demo-carousel-previous" type="button" aria-label="Démo précédente">
                 ←
               </button>
 
-              <button class="demo-carousel-button demo-carousel-next" type="button" aria-label="Demo suivante">
+              <button class="demo-carousel-button demo-carousel-next" type="button" aria-label="Démo suivante">
                 →
               </button>
             </div>
@@ -644,7 +667,7 @@
       </h2>
 
       <p class="landing-description">
-        Essaie la simulation interactive et découvre comment Weltgeist <span class="accent-inline">transforme la dynamique de jeu en contrôle d'Expression</span>. Règle le niveau d’entrée à la main ou utilise ton micro comme entrée en direct. Ajuste les réglages de la pédale et observe la réaction du signal d’expression simulé.
+        Weltgeist fait varier la résistance présentée à une entrée d’expression compatible <span class="accent-inline">comme le ferait une pédale d’expression</span>. Réglez le niveau d’entrée manuellement ou sélectionnez « Audio en direct » pour utiliser votre micro. Modifiez les réglages et observez la position d’expression simulée.
       </p>
     </div>
     <div class="logo-bar-group pillar-copy-mark" aria-hidden="true">
@@ -710,7 +733,7 @@
                 </svg>
 
                 <span>
-                  Live Audio
+                  Audio en direct
                 </span>
               </label>
             </fieldset>
@@ -731,7 +754,7 @@
               </p>
 
               <p class="live-audio-privacy">
-                Traité localement dans ton navigateur. Aucun envoi.
+                Le traitement s’effectue dans votre navigateur. Aucune donnée audio n’est envoyée.
               </p>
             </div>
 
@@ -739,7 +762,7 @@
             <div class="control control--horizontal input-level-control">
               <div class="control-heading">
                 <label for="input-level">
-                  Niveau d'entrée
+                  Niveau d’entrée
                 </label>
 
                 <output id="input-level-value" for="input-level">
@@ -830,11 +853,11 @@
         <header class="visualization-header">
           <div>
             <p class="eyebrow">
-              Expression Mapping
+              Position d’expression
             </p>
 
             <h3>
-              De la dynamique à l'Expression
+              De la dynamique à l’expression
             </h3>
           </div>
 
@@ -904,8 +927,8 @@
   </svg>
 
   <figcaption class="expression-pedal-illustration__labels">
-    <span>TOE-DOWN</span>
-    <span>HEEL-DOWN</span>
+    <span>Pointe en bas</span>
+    <span>Talon en bas</span>
   </figcaption>
 <div
   class="expression-position-meter"
@@ -950,7 +973,7 @@
                 <td>1× entrée TS</td>
               </tr>
               <tr>
-                <th scope="row">Expression</th>
+                <th scope="row">Sorties d’expression</th>
                 <td>2× sorties TRS Expression</td>
               </tr>
               <tr>
@@ -992,7 +1015,7 @@
             </h2>
 
             <p class="landing-description">
-              La pédale émule le comportement du potentiomètre d’une pédale d’expression, mais ne garantit ni une courbe de réponse parfaitement linéaire ni une résistance totale constante sur toute la course émulée. Utilisez-la uniquement avec des appareils qui n’exigent pas une valeur de résistance de potentiomètre spécifique. La sortie n’est pas un véritable signal CV et peut ne pas être compatible avec tous les appareils.
+              La linéarité de la réponse et la constance de la résistance totale sur toute la course émulée ne sont pas garanties. Utilisez Weltgeist uniquement avec des appareils qui n’exigent pas une valeur précise de résistance du potentiomètre. La sortie d’expression ne fournit pas de véritable signal CV. La compatibilité dépend de l’appareil.
             </p>
           </div>
           <div class="logo-bar-group pillar-copy-mark" aria-hidden="true">
@@ -1017,7 +1040,7 @@
       </a>
 
       <a href="/privacy.html">
-        Privacy Policy
+        Politique de confidentialité
       </a>
 
       <a href="mailto:info@lateromanaudio.de">

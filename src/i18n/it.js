@@ -3,12 +3,11 @@ export default {
 
   seo: {
     canonical: "https://lateromanaudio.de/it/",
-    title: "Late Roman Audio | Weltgeist – Expression Pedal controllato dalla dinamica",
+    title: "Late Roman Audio | {product.name}: Pedale d’espressione controllato dalla dinamica",
     description:
-      "Weltgeist trasforma la dinamica del tuo strumento in Expression Control, permettendoti di controllare effetti compatibili direttamente attraverso il tuo modo di suonare.",
+      "{product.name} usa la dinamica dello strumento per controllare gli effetti compatibili tramite il loro ingresso d’espressione.",
     productDescription:
       "Expression Pedal controllato dalla dinamica di Late Roman Audio.",
-    productUrl: "https://lateromanaudio.de/it/#pedal",
   },
 
   links: {
@@ -16,7 +15,7 @@ export default {
   },
 
   header: {
-    homeAriaLabel: "Late Roman Audio – Home",
+    homeAriaLabel: "Late Roman Audio, pagina iniziale",
     openNavigationAriaLabel: "Apri navigazione",
     closeNavigationAriaLabel: "Chiudi navigazione",
     themeToggleAriaLabel: "Passa alla modalità chiara",
@@ -27,7 +26,7 @@ export default {
 
   nav: {
     ariaLabel: "Navigazione principale",
-    pedal: "Pedal",
+    pedal: "Pedale",
     features: "Funzioni",
     demo: "Demo",
     simulation: "Simulazione",
@@ -39,41 +38,43 @@ export default {
   },
 
   hero: {
-    heading: "Weltgeist – Un Expression Pedal controllato dalla dinamica del tuo modo di suonare",
+    heading: "{product.name}: Pedale d’espressione controllato dalla dinamica",
     presents: "presenta",
-    tagline1: "The Dynamics You Lost After Compression",
-    tagline2: "Reborn as Control",
+    tagline1: "La dinamica persa con la compressione",
+    tagline2: "Diventa un segnale di controllo",
     description1: {
-      before: "Weltgeist trasforma la ",
-      accent: "dinamica del tuo strumento in Expression Control",
+      before: "{product.name} usa la dinamica del tuo strumento",
+      accent: "per controllare l’ingresso d’espressione di un pedale effetto compatibile",
       after:
-        ". Invece di muovere un Expression Pedal tradizionale con il piede, puoi controllare effetti compatibili direttamente attraverso quanto delicatamente o aggressivamente suoni.",
+        ".",
     },
-    description2: "Controlla la profondità o la velocità di un pedale di modulazione con la dinamica del tuo modo di suonare. Varia la frequenza di una banda dell’equalizzatore mentre suoni per ottenere un filtro d’inviluppo, oppure controlla il livello per creare un effetto auto-swell. Invia a Weltgeist un segnale sidechain separato per ottenere il ducking. Fai arretrare il riverbero mentre suoni e fallo riemergere nelle pause, oppure usa la dinamica per far durare più a lungo le ripetizioni del delay o farle svanire più in fretta.",
+    description2: "",
   },
 
   purchase: {
-    heading: "Weltgeist Pedal",
-    imageAlt: "Weltgeist Pedal di Late Roman Audio",
-    figcaption: "Weltgeist di Late Roman Audio",
-    price: "229,00 €",
-    status: "Disponibile a breve",
+    gallery: {
+      top: "{product.name}: Vista dall’alto",
+      front: "{product.name}: Vista frontale",
+      lowAngle: "{product.name}: Vista dal basso",
+    },
+    imageAlt: "Pedale {product.name} di Late Roman Audio",
+    figcaption: "{product.name} di Late Roman Audio",
+    status: { OutOfStock: "Disponibile a breve" },
     quantity: "Quantità",
     addToCart: "Aggiungi al carrello",
-    itemUrl: "/it/",
     
-description: "Pedale d’espressione controllato dalla dinamica esecutiva, realizzato da Late Roman Audio. Include 2 cavi TRS da 60 cm.",
-cablesIncluded: "2 cavi TRS inclusi (60 cm ciascuno)",
-cablesDescription: "Sono inclusi due semplici cavi TRS per permetterti di collegare Weltgeist appena estratto dalla confezione. Poiché lunghezza, colore e tipo di connettore dipendono dalla tua pedaliera, sono pensati come una pratica soluzione iniziale, non come una soluzione universale.",
+description: "Pedale d’espressione controllato dalla dinamica esecutiva, realizzato da Late Roman Audio. Include {product.cables.count} cavi {product.cables.connector} da {product.cables.lengthCm} cm.",
+cablesIncluded: "Sono inclusi {product.cables.count} cavi {product.cables.connector} da {product.cables.lengthCm} cm ciascuno.",
+cablesDescription: "",
 
   },
 
 why: {
-  heading: "Perché Weltgeist?",
+  heading: "Perché {product.name}?",
   principle:
-    "Weltgeist emula il potenziometro di un pedale di espressione tradizionale. Mentre suoni, varia la resistenza rilevata da un ingresso di espressione compatibile e controlla in tempo reale il parametro assegnato.",
+    "Fai seguire a un parametro di un pedale compatibile la dinamica della tua pennata.",
   benefit:
-    "Così i pedali che hai già possono rispondere alla dinamica del tuo modo di suonare, anche senza un controllo dinamico integrato. Ecco qualche esempio.",
+    "Puoi anche controllare quel parametro con un segnale separato.",
   effects: {
     modulation: "Modulazione dinamica",
     swell: "Auto-Swell",
@@ -84,96 +85,96 @@ why: {
   },
   effectDescriptions: {
     modulation: "Fai seguire alla velocità o alla profondità di un tremolo la dinamica della tua pennata.",
-    swell: "Controlla il livello per far entrare le note gradualmente.",
+    swell: "Regola il livello per far entrare ogni nota gradualmente.",
     filters: "Varia la frequenza di una banda di EQ con la dinamica del tuo modo di suonare.",
     dirt: "Controlla il mix di un overdrive o di un fuzz con la tua pennata.",
     delayReverb: "Fai durare più a lungo le ripetizioni del delay o attenua il riverbero mentre suoni.",
     ducking: "Usa un segnale separato per attenuare un effetto in un altro percorso audio.",
   },
   manual: {
-    title: "Manuale Weltgeist",
+    title: "Manuale {product.name}",
     description: "Percorso del segnale, controlli ed esempi di configurazione.",
     action: "Apri il manuale (EN)",
   },
 },
 
   model: {
-    kicker: "WELTGEIST / MODELLO 3D INTERATTIVO",
-    heading: "Scopri il pedal",
+    kicker: "{product.uppercaseName} / MODELLO 3D INTERATTIVO",
+    heading: "Esplora il pedale",
     description:
-      "Osserva da vicino controlli, switch e struttura fisica di Weltgeist.",
+      "Esamina i controlli, i selettori e le connessioni.",
     interactiveLabel: "MODELLO INTERATTIVO",
-    alt: "Weltgeist Expression Control Pedal",
+    alt: "{product.name}, pedale d’espressione controllato dalla dinamica",
     instructions: "TRASCINA PER RUOTARE · SCORRI PER ZOOMARE",
     meta: {
       controls: "CONTROLLI",
-      switches: "SWITCH",
-      levelDisplay: "LEVEL DISPLAY",
-      expressionControl: "EXPRESSION CONTROL",
+      switches: "SELETTORI",
+      levelDisplay: "INDICATORE DI LIVELLO",
+      expressionControl: "CONTROLLO D’ESPRESSIONE",
     },
   },
 
   features: {
-    heading: "Funzioni di Weltgeist",
+    heading: "Funzioni di {product.name}",
     base: {
       label: "Base",
       description:
-        "Imposta la Expression Position utilizzata quando il segnale in ingresso è basso.",
+        "Imposta la posizione d’espressione a livelli d’ingresso bassi.",
     },
     sensitivity: {
       label: "Sensitivity",
       description:
-        "Determina quanto intensamente l'Expression Output reagisce alle variazioni del livello in ingresso.",
+        "Regola quanto varia la posizione d’espressione al variare del livello d’ingresso.",
     },
     rise: {
       label: "Rise",
       description:
-        "Determina quanto rapidamente il pedal reagisce quando il livello in ingresso aumenta.",
+        "Regola la velocità di risposta quando il livello d’ingresso sale.",
     },
     fall: {
       label: "Fall",
       description:
-        "Determina quanto rapidamente il pedal reagisce quando il livello in ingresso diminuisce.",
+        "Regola la velocità di risposta quando il livello d’ingresso scende.",
     },
     invert: {
       label: "Invert",
       description:
-        "Inverte la risposta, facendo sì che un'esecuzione più forte sposti la Expression Position nella direzione opposta.",
+        "Inverte il senso di movimento della posizione d’espressione quando varia il livello d’ingresso.",
     },
   },
 
   demo: {
-    eyebrow: "Guardalo in azione",
-    heading: "Weltgeist Live",
+    eyebrow: "",
+    heading: "Demo di {product.name}",
     previousAriaLabel: "Demo precedente",
     nextAriaLabel: "Demo successiva",
     video1: {
       label: "Video 01",
-      heading: "Dual Expression",
+      heading: "Due uscite d’espressione",
       description:
-        "EXP1 controlla il tremolo. EXP2 regola un Delay Mix invertito. Poi entrambi prendono vita insieme.",
+        "EXP 1 controlla il tremolo. EXP 2 regola la quantità di delay con risposta invertita. Alla fine del video sono attivi entrambi.",
     },
     video2: {
       label: "Video 02",
       heading: "Sidechain",
       description:
-        "Un segnale esterno controlla la risposta Expression, trasformando la dinamica in controllo lungo un altro percorso del segnale.",
+        "Un segnale d’ingresso separato controlla il parametro d’espressione di un effetto in un altro percorso audio.",
     },
   },
 
   simulation: {
-    heading: "Simulazione del pedal",
+    heading: "Simulazione del pedale",
     description: {
       before:
-        "Prova la simulazione interattiva e scopri come Weltgeist ",
-      accent: "trasforma la dinamica del tuo modo di suonare in Expression Control",
+        "{product.name} varia la resistenza vista da un ingresso d’espressione compatibile ",
+      accent: "come un pedale d’espressione",
       after:
-        ". Regola manualmente il livello di ingresso oppure usa il microfono come ingresso in tempo reale. Modifica le impostazioni del pedale e osserva come risponde il segnale di espressione simulato.",
+        ". Imposta il livello d’ingresso a mano oppure seleziona «Audio in tempo reale» per usare il microfono. Prova i controlli e osserva la posizione d’espressione simulata.",
     },
-    panelHeading: "Simulazione interattiva di Weltgeist",
+    panelHeading: "Simulazione interattiva di {product.name}",
     pedal: {
-      heelDown: "HEEL-DOWN",
-      toeDown: "TOE-DOWN",
+      heelDown: "Tallone giù",
+      toeDown: "Punta giù",
     },
     controls: {
       sensitivity: "Sensitivity",
@@ -184,16 +185,16 @@ why: {
     },
     invertAriaLabel: "Inverti la direzione Expression",
     visualization: {
-      eyebrow: "Expression Mapping",
-      heading: "Dalla dinamica all'Expression",
+      eyebrow: "Posizione d’espressione",
+      heading: "Dalla dinamica all’espressione",
     },
     input: {
       source: "Sorgente di ingresso",
       manual: "Manuale",
-      liveAudio: "Live Audio",
+      liveAudio: "Audio in tempo reale",
       listening: "In ascolto…",
-      privacy: "Elaborato localmente nel browser. Nessun upload.",
-      level: "Livello in ingresso",
+      privacy: "L’audio viene elaborato nel browser. Non viene inviato alcun dato audio.",
+      level: "Livello d’ingresso",
 
       requesting: "Richiesta di accesso all'audio…",
       accessDenied: "Accesso all'ingresso audio negato.",
@@ -211,15 +212,15 @@ why: {
     heading: "Specifiche tecniche",
     input: {
       label: "Ingresso",
-      value: "1× ingresso TS",
+      value: "{product.connections.input.count}× ingresso {product.connections.input.connector}",
     },
     expression: {
-      label: "Expression",
-      value: "2× uscite TRS Expression",
+      label: "Uscite d’espressione",
+      value: "{product.connections.expression.count}× uscite {product.connections.expression.connector} Expression",
     },
     output: {
       label: "Uscita",
-      value: "1× uscita TS",
+      value: "{product.connections.output.count}× uscita {product.connections.output.connector}",
     },
     outputImpedance: {
       label: "Impedenza di uscita",
@@ -227,15 +228,13 @@ why: {
     },
     powerSupply: {
       label: "Alimentazione",
-      value: "9 V DC, centro negativo",
+      polarity: { centerNegative: "centro negativo" },
     },
     currentDraw: {
       label: "Assorbimento",
-      value: "20 mA",
     },
     bypass: {
       label: "Bypass",
-      value: "True Bypass",
     },
     dimensions: {
       label: "Dimensioni",
@@ -243,19 +242,18 @@ why: {
     },
     weight: {
       label: "Peso",
-      value: "300 g",
     },
 compatibility: {
   heading: "Avvertenza sulla compatibilità",
   description:
-    "Il pedale emula il comportamento del potenziometro di un pedale d’espressione, ma non garantisce né una curva di risposta perfettamente lineare né una resistenza totale costante lungo l’intera corsa emulata. Utilizzalo solo con dispositivi che non richiedono uno specifico valore di resistenza del potenziometro. L’uscita non è un vero segnale CV e potrebbe non essere compatibile con tutti i dispositivi.",
+    "La linearità della risposta e la costanza della resistenza totale lungo tutta la corsa emulata non sono garantite. Usa {product.name} solo con dispositivi che non richiedono un valore preciso di resistenza del potenziometro. L’uscita d’espressione non fornisce un vero segnale CV. La compatibilità dipende dal dispositivo.",
 },
   },
 
   footer: {
     ariaLabel: "Navigazione footer",
     imprint: "Impressum",
-    privacy: "Privacy Policy",
+    privacy: "Informativa sulla privacy",
     contact: "Contatti",
     instagramAriaLabel: "Late Roman Audio su Instagram",
   },

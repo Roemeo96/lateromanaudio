@@ -1,0 +1,20 @@
+export const product = {
+  name: "Weltgeist",
+  id: "weltgeist",
+  price: 229,
+  currency: "EUR",
+  availability: "OutOfStock",
+  photo: "/images/weltgeist-beauty-shot.jpg",
+  checkoutImage: "/images/weltgeist.webp",
+  quantity: { min: 1, max: 5 },
+  connections: {
+    input: { count: 1, connector: "TS" },
+    expression: { count: 2, connector: "TRS" },
+    output: { count: 1, connector: "TS" },
+  },
+  supply: { volts: 9, type: "DC", polarity: "centerNegative" },
+  currentMilliamps: 20,
+  bypass: "True Bypass",
+  weightGrams: 300,
+  cables: { count: 2, connector: "TRS", lengthCm: 60 },
+};

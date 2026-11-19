@@ -1,5 +1,6 @@
 :root {
   --layout-gutter: clamp(1rem, 4vw, 5rem);
+  --layout-content-max-width: 69rem;
   --layout-content-width: calc(100% - 2 * var(--layout-gutter));
 
   font-family:

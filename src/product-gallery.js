@@ -10,9 +10,9 @@ export function initializeProductGallery() {
   // Videos use { type: 'video', src, label, thumbnail }.
   const media = [
     { type: 'image', src: initialPhoto.getAttribute('src'), label: initialPhoto.alt },
-    { type: 'image', src: '/images/weltgeist-top.jpg', label: 'Weltgeist · Top view' },
-    { type: 'image', src: '/images/weltgeist-front.jpg', label: 'Weltgeist · Front view' },
-    { type: 'image', src: '/images/weltgeist-low-angle.jpg', label: 'Weltgeist · Low-angle view' },
+    { type: 'image', src: '/images/weltgeist-top.jpg', label: gallery.dataset.topLabel },
+    { type: 'image', src: '/images/weltgeist-front.jpg', label: gallery.dataset.frontLabel },
+    { type: 'image', src: '/images/weltgeist-low-angle.jpg', label: gallery.dataset.lowAngleLabel },
   ];
 
   let selected = 0;

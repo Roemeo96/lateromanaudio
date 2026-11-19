@@ -27,52 +27,6 @@
   letter-spacing: 0.15em;
 }
 
-.feature-list {
-  width: min(100% - 2rem, 800px);
-  margin: 2.5rem auto 6rem;
-
-  color: var(--text);
-
-  font-family:
-    "Times New Roman",
-    Times,
-    serif;
-
-  letter-spacing: 0.12em;
-}
-
-.feature-row {
-  position: relative;
-
-  display: grid;
-  grid-template-columns: 14rem minmax(0, 1fr);
-  gap: 1.5rem;
-
-  margin-bottom: 0.9rem;
-  padding-left: 1.2rem;
-}
-
-.feature-row::before {
-  content: "•";
-
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.feature-row dt {
-  margin: 0;
-
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.feature-row dd {
-  margin: 0;
-
-  line-height: 1.5;
-}
-
 .reveal-section {
   opacity: 0;
   transform: translateY(3rem);
@@ -85,15 +39,6 @@
 .reveal-section.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-.section-heading--subsequent {
-  margin-top: 7.5rem;
-}
-
-.content-section > .feature-list {
-  width: min(100%, 800px);
-  margin: 2.5rem auto 0;
 }
 
 .content-section > .landing-description {
@@ -112,19 +57,6 @@
   text-align: center;
   text-transform: uppercase;
 }
-
-@media (max-width: 650px) {
-  .feature-row {
-    grid-template-columns: 1fr;
-    gap: 0.25rem;
-  }
-
-  .feature-row dd {
-    line-height: 1.6;
-  }
-}
-
-
 
 .manual-preview {
   grid-column: 1 / -1;
@@ -287,7 +219,7 @@
   grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
   align-items: start;
   gap: clamp(2rem, 5vw, 4rem);
-  max-width: 69rem;
+  max-width: var(--layout-content-max-width);
   margin-block: clamp(2.5rem, 5vw, 4.5rem) clamp(2rem, 4vw, 3rem);
 }
 

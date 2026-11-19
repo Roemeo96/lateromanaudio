@@ -49,29 +49,26 @@
 
   <script src="/theme-bootstrap.js"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Weltgeist",
-    "image": "https://lateromanaudio.de/images/weltgeist.webp",
-    "description": "{{seo.productDescription}}",
-    "brand": {
-      "@type": "Brand",
-      "name": "Late Roman Audio"
-    },
-    "offers": {
-      "@type": "Offer",
-      "url": "{{seo.productUrl}}",
-      "priceCurrency": "EUR",
-      "price": "229.00",
-      "availability": "https://schema.org/PreOrder"
-    }
-  }
+{{structuredData}}
   </script>
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Late Roman Audio">
+  <meta property="og:url" content="{{seo.canonical}}">
+  <meta property="og:locale" content="{{social.locale}}">
+  <meta property="og:title" content="{{social.title}}">
+  <meta property="og:description" content="{{social.description}}">
+  <meta property="og:image" content="{{social.image}}">
+  <meta property="og:image:alt" content="{{social.imageAlt}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{social.title}}">
+  <meta name="twitter:description" content="{{social.description}}">
+  <meta name="twitter:image" content="{{social.image}}">
+  <meta name="twitter:image:alt" content="{{social.imageAlt}}">
 
   <meta
   name="description"
-  content="{{seo.description}}"
+  content="{{social.description}}"
 >
 
   <title>
@@ -302,7 +299,7 @@
 </p>
 
 <p class="landing-product-name">
-  Weltgeist
+  {{product.name}}
 </p>
 
 <p class="landing-tagline">
@@ -318,22 +315,23 @@
           <span class="">{{hero.description1.accent}}</span>{{hero.description1.after}}
         </p>
 
-        <p class="landing-description">
-          {{hero.description2}}
-        </p>
+        <p class="landing-description">{{hero.description2}}</p>
       </div>
     </section>
 
 
     <section id="pedal" class="pedal-showcase reveal-section" aria-labelledby="pedal-heading">
       <div class="pedal-showcase-content">
-        <figure class="pedal-showcase-figure" data-product-gallery>
+        <figure class="pedal-showcase-figure" data-product-gallery
+          data-top-label="{{purchase.gallery.top}}"
+          data-front-label="{{purchase.gallery.front}}"
+          data-low-angle-label="{{purchase.gallery.lowAngle}}">
           <div class="pedal-gallery-thumbnails" hidden></div>
           <div class="pedal-showcase-image-frame">
             <div class="pedal-gallery-stage">
               <img
                 class="pedal-showcase-image"
-                src="/images/weltgeist-beauty-shot.jpg"
+                src="{{product.photo}}"
                 alt="{{purchase.imageAlt}}"
                 width="1200"
                 height="960"
@@ -357,15 +355,15 @@
             </p>
 
             <h2 id="pedal-heading">
-              Weltgeist
+              {{product.name}}
             </h2>
 
             <p class="pedal-purchase-price">
-              {{purchase.price}}
+              {{product.displayPrice}}
             </p>
 
             <p class="pedal-purchase-status accent-status">
-              {{purchase.status}}
+              {{product.availabilityLabel}}
             </p>
 
             <div class="pedal-purchase-controls">
@@ -374,15 +372,15 @@
                   {{purchase.quantity}}
                 </label>
 
-                <input id="weltgeist-quantity" class="quantity-input" type="number" min="1" max="5" step="1" value="1"
+                <input id="weltgeist-quantity" class="quantity-input" type="number" min="{{product.quantity.min}}" max="{{product.quantity.max}}" step="1" value="{{product.quantity.min}}"
                   inputmode="numeric">
               </div>
 
-              <button id="weltgeist-add-to-cart" class="snipcart-add-item pedal-add-to-cart" type="button"
-                data-item-id="weltgeist" data-item-name="Weltgeist" data-item-price="229.00" data-item-url="{{purchase.itemUrl}}"
-                data-item-taxable="false" data-item-image="/images/weltgeist.webp"
+              <button id="weltgeist-add-to-cart" class="snipcart-add-item pedal-add-to-cart" type="button" {{product.purchaseState}}
+                data-item-id="{{product.id}}" data-item-name="{{product.name}}" data-item-price="{{product.decimalPrice}}" data-item-url="{{product.itemUrl}}"
+                data-item-taxable="false" data-item-image="{{product.checkoutImage}}"
                 data-item-description="{{purchase.description}}"
-                data-item-min-quantity="1" data-item-max-quantity="5" data-item-quantity="1">
+                data-item-min-quantity="{{product.quantity.min}}" data-item-max-quantity="{{product.quantity.max}}" data-item-quantity="{{product.quantity.min}}">
                 {{purchase.addToCart}}
               </button>
             </div>
@@ -450,7 +448,7 @@
         <span class="manual-preview__columns">
           <span></span><span></span><span></span>
         </span>
-        <span class="manual-preview__cover-title">Weltgeist</span>
+        <span class="manual-preview__cover-title">{{product.name}}</span>
         <span class="manual-preview__edition">Manual</span>
       </span>
 
@@ -546,9 +544,7 @@
 
     <section class="demo-showcase reveal-section" aria-labelledby="demo-heading">
       <div id="demos" class="demo-content">
-        <p class="section-eyebrow">
-          {{demo.eyebrow}}
-        </p>
+        <p class="section-eyebrow">{{demo.eyebrow}}</p>
 
         <h2 id="demo-heading" class="section-heading">
           {{demo.heading}}
@@ -667,7 +663,7 @@
           </p>
 
           <p class="pedal-product-name">
-            Weltgeist
+            {{product.name}}
           </p>
         </header>
 
@@ -897,7 +893,7 @@
              M655 294 v5 h28 v-5"/>
 
     <text class="expression-pedal-illustration__brand"
-          x="260" y="278">WELTGEIST</text>
+          x="260" y="278">{{product.uppercaseName}}</text>
 
     <path class="expression-pedal-illustration__ground"
           d="M106 311 H754"/>
@@ -963,15 +959,15 @@
               </tr>
               <tr>
                 <th scope="row">{{specifications.powerSupply.label}}</th>
-                <td>{{specifications.powerSupply.value}}</td>
+                <td>{{product.supplyRating}}</td>
               </tr>
               <tr>
                 <th scope="row">{{specifications.currentDraw.label}}</th>
-                <td>{{specifications.currentDraw.value}}</td>
+                <td>{{product.current}}</td>
               </tr>
               <tr>
                 <th scope="row">{{specifications.bypass.label}}</th>
-                <td>{{specifications.bypass.value}}</td>
+                <td>{{product.bypass}}</td>
               </tr>
               <tr>
                 <th scope="row">{{specifications.dimensions.label}}</th>
@@ -979,7 +975,7 @@
               </tr>
               <tr>
                 <th scope="row">{{specifications.weight.label}}</th>
-                <td>{{specifications.weight.value}}</td>
+                <td>{{product.weight}}</td>
               </tr>
             </tbody>
           </table>

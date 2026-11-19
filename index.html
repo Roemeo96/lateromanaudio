@@ -49,25 +49,49 @@
 
   <script src="/theme-bootstrap.js"></script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Weltgeist",
-    "image": "https://lateromanaudio.de/images/weltgeist.webp",
-    "description": "Dynamics-controlled expression pedal by Late Roman Audio.",
-    "brand": {
-      "@type": "Brand",
-      "name": "Late Roman Audio"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://lateromanaudio.de/#organization",
+      "name": "Late Roman Audio",
+      "url": "https://lateromanaudio.de/"
     },
-    "offers": {
-      "@type": "Offer",
-      "url": "https://lateromanaudio.de/en/#pedal",
-      "priceCurrency": "EUR",
-      "price": "229.00",
-      "availability": "https://schema.org/PreOrder"
+    {
+      "@type": "Product",
+      "name": "Weltgeist",
+      "image": "https://lateromanaudio.de/images/weltgeist-beauty-shot.jpg",
+      "description": "Dynamics-controlled expression pedal by Late Roman Audio.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Late Roman Audio"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://lateromanaudio.de/en/#pedal",
+        "priceCurrency": "EUR",
+        "price": "229.00",
+        "availability": "https://schema.org/OutOfStock"
+      }
     }
-  }
+  ]
+}
   </script>
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Late Roman Audio">
+  <meta property="og:url" content="https://lateromanaudio.de/en/">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="Late Roman Audio | Weltgeist – Dynamics-Controlled Expression Pedal">
+  <meta property="og:description" content="Weltgeist transforms your instrument's playing dynamics into expression-pedal control, letting you control compatible effects directly through your performance.">
+  <meta property="og:image" content="https://lateromanaudio.de/images/weltgeist-beauty-shot.jpg">
+  <meta property="og:image:alt" content="Weltgeist pedal by Late Roman Audio">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Late Roman Audio | Weltgeist – Dynamics-Controlled Expression Pedal">
+  <meta name="twitter:description" content="Weltgeist transforms your instrument's playing dynamics into expression-pedal control, letting you control compatible effects directly through your performance.">
+  <meta name="twitter:image" content="https://lateromanaudio.de/images/weltgeist-beauty-shot.jpg">
+  <meta name="twitter:image:alt" content="Weltgeist pedal by Late Roman Audio">
 
   <meta
   name="description"
@@ -318,16 +342,17 @@
           <span class="">playing dynamics into expression control</span>. Instead of moving a conventional expression pedal with your foot, you can control compatible effects directly through how softly or aggressively you play.
         </p>
 
-        <p class="landing-description">
-          Control a modulation pedal’s depth or rate with your picking dynamics. Sweep an EQ band’s frequency as you play to create an envelope filter, or control the level for auto-swell. Feed Weltgeist a separate sidechain signal to create ducking. Make reverb recede while you play and come back in the gaps, or use your picking dynamics to make delay repeats linger or fade faster.
-        </p>
+        <p class="landing-description">Control a modulation pedal’s depth or rate with your picking dynamics. Sweep an EQ band’s frequency as you play to create an envelope filter, or control the level for auto-swell. Feed Weltgeist a separate sidechain signal to create ducking. Make reverb recede while you play and come back in the gaps, or use your picking dynamics to make delay repeats linger or fade faster.</p>
       </div>
     </section>
 
 
     <section id="pedal" class="pedal-showcase reveal-section" aria-labelledby="pedal-heading">
       <div class="pedal-showcase-content">
-        <figure class="pedal-showcase-figure" data-product-gallery>
+        <figure class="pedal-showcase-figure" data-product-gallery
+          data-top-label="Weltgeist: Top view"
+          data-front-label="Weltgeist: Front view"
+          data-low-angle-label="Weltgeist: Low-angle view">
           <div class="pedal-gallery-thumbnails" hidden></div>
           <div class="pedal-showcase-image-frame">
             <div class="pedal-gallery-stage">
@@ -378,7 +403,7 @@
                   inputmode="numeric">
               </div>
 
-              <button id="weltgeist-add-to-cart" class="snipcart-add-item pedal-add-to-cart" type="button"
+              <button id="weltgeist-add-to-cart" class="snipcart-add-item pedal-add-to-cart" type="button" disabled
                 data-item-id="weltgeist" data-item-name="Weltgeist" data-item-price="229.00" data-item-url="/en/"
                 data-item-taxable="false" data-item-image="/images/weltgeist.webp"
                 data-item-description="Dynamics-controlled expression pedal by Late Roman Audio. Includes 2 × 60 cm TRS cables."
@@ -388,7 +413,7 @@
             </div>
             <div class="pedal-purchase-includes">
               <p class="pedal-purchase-includes-title">2 × TRS cables (60 cm each) included</p>
-              <p class="pedal-purchase-includes-description">Two basic TRS cables are included so you can connect Weltgeist right out of the box. Since cable length, color, and connector type depend on your pedalboard, they're intended as a practical starting point rather than a one-size-fits-all solution.</p>
+              <p class="pedal-purchase-includes-description">2 basic TRS cables are included so you can connect Weltgeist right out of the box. Since cable length, color, and connector type depend on your pedalboard, they're intended as a practical starting point rather than a one-size-fits-all solution.</p>
             </div>
           </div>
         </div>
@@ -546,9 +571,7 @@
 
     <section class="demo-showcase reveal-section" aria-labelledby="demo-heading">
       <div id="demos" class="demo-content">
-        <p class="section-eyebrow">
-          See it in action
-        </p>
+        <p class="section-eyebrow">See it in action</p>
 
         <h2 id="demo-heading" class="section-heading">
           Weltgeist in Motion
@@ -971,7 +994,7 @@
               </tr>
               <tr>
                 <th scope="row">Bypass</th>
-                <td>True bypass</td>
+                <td>True Bypass</td>
               </tr>
               <tr>
                 <th scope="row">Dimensions</th>
