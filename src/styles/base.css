@@ -1,4 +1,7 @@
 :root {
+  --layout-gutter: clamp(1rem, 4vw, 5rem);
+  --layout-content-width: calc(100% - 2 * var(--layout-gutter));
+
   font-family:
     "Times New Roman",
     Times,
@@ -52,8 +55,8 @@
 :root:not([data-theme="dark"]) {
   color-scheme: light;
 
---background: #f4f1e6;
---background-rgb: 244 241 230;
+--background: #eeedeb;
+--background-rgb: 238 237 235;
 
 --surface: #f1f0ec;
 --surface-rgb: 241 240 236;

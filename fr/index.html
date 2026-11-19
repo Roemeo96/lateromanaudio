@@ -115,9 +115,7 @@
     </button>
 
     <nav id="site-header-navigation" class="site-header-navigation" aria-label="Navigation principale">
-      <a href="#pedal">
-        Pedal
-        </a>
+      <a href="#purchase">Acheter</a>
 
         <a href="#features">
         Fonctions
@@ -263,70 +261,209 @@
   </header>
 
   <main>
-
-    <section class="landing-hero particle-section">
+    <section id="pedal" class="landing-hero particle-section" aria-labelledby="pedal-heading">
       <div id="hero-particles" class="section-particles" aria-hidden="true"></div>
+      <div class="landing-hero-inner">
+        <div class="landing-product">
+          <div class="landing-logo" aria-hidden="true">
+            <div class="text-logo" aria-hidden="true">
+              <div>Late</div>
+              <div>Roman</div>
+              <div>Avdio</div>
+            </div>
 
-      <h1 class="visually-hidden">
-        Weltgeist – Une pédale d'expression contrôlée par ta dynamique de jeu
-      </h1>
+            <div class="logo-symbol" aria-hidden="true">
+              <div class="logo-bar-group">
+                <span></span>
+                <span></span>
+              </div>
 
-      <div role="img" class="landing-logo" aria-label="Late Roman Audio">
-        <div class="text-logo" aria-hidden="true">
-          <div>Late</div>
-          <div>Roman</div>
-          <div>Avdio</div>
+              <div class="logo-bar-group">
+                <span></span>
+                <span></span>
+              </div>
+
+              <div class="logo-bar-group">
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+          </div>
+          <h1 id="pedal-heading">
+            <span class="landing-presenter"><span class="visually-hidden">Late Roman Audio </span>présente</span>
+            Weltgeist
+          </h1>
+          <p class="landing-description">Weltgeist transforme la dynamique de ton instrument en contrôle d'Expression.</p>
+          <a class="landing-demo-link" href="#demos">
+            Écouter Weltgeist <span aria-hidden="true">↓</span>
+          </a>
         </div>
 
-        <div class="logo-symbol" aria-hidden="true">
-          <div class="logo-bar-group">
-            <span></span>
-            <span></span>
-          </div>
-
-          <div class="logo-bar-group">
-            <span></span>
-            <span></span>
-          </div>
-
-          <div class="logo-bar-group">
-            <span></span>
-            <span></span>
-          </div>
-        </div>
+        <figure class="landing-visual">
+          <img class="landing-pedal-image" src="/images/weltgeist.webp"
+            alt="Weltgeist Pedal de Late Roman Audio" width="1122" height="1402" fetchpriority="high">
+          <figcaption class="landing-caption">
+            <span>The Dynamics You Lost After Compression</span>
+            <span>Reborn as Control</span>
+          </figcaption>
+        </figure>
       </div>
+    </section>
 
-      <div class="landing-copy">
-        <p class="landing-eyebrow">
-  présente
-</p>
-
-<p class="landing-product-name">
-  Weltgeist
-</p>
-
-<p class="landing-tagline">
-  The Dynamics You Lost After Compression
-</p>
-
-<p class="landing-tagline">
-  Reborn as Control
-</p>
-
-        <p class="landing-description">
-          Weltgeist transforme la 
-          <span class="">dynamique de ton instrument en contrôle d'Expression</span>. Au lieu de déplacer une pédale d'expression traditionnelle avec le pied, tu contrôles directement des effets compatibles selon que tu joues doucement ou avec davantage d'intensité.
+    <section class="demo-showcase reveal-section" aria-labelledby="demo-heading">
+      <div id="demos" class="demo-content">
+        <p class="section-eyebrow">
+          Découvre-la en action
         </p>
 
-        <p class="landing-description">
-          Contrôle la profondeur ou la vitesse d’une pédale de modulation avec la dynamique de ton jeu. Fais varier la fréquence d’une bande d’égaliseur en jouant pour créer un filtre d’enveloppe, ou contrôle le niveau pour obtenir un effet auto-swell. Envoie un signal sidechain séparé à Weltgeist pour créer un effet de ducking. Atténue la réverbération pendant que tu joues et fais-la revenir dans les silences, ou joue sur ta dynamique pour faire durer les répétitions du delay ou les faire disparaître plus vite.
-        </p>
+        <h2 id="demo-heading" class="section-heading">
+          Weltgeist Live
+        </h2>
+
+        <div class="demo-carousel">
+          <div class="demo-carousel-viewport">
+            <div class="demo-carousel-track">
+
+              <article class="demo-card">
+                <div class="demo-media-placeholder">
+                  <span>
+                    Video 01
+                  </span>
+                </div>
+
+                <div class="demo-card-content">
+                  <p class="demo-card-number">
+                    01
+                  </p>
+
+                  <h3>
+                    Dual Expression
+                  </h3>
+
+                  <p>
+                    EXP1 contrôle le tremolo. EXP2 règle un Delay Mix inversé. Les deux prennent ensuite vie simultanément.
+                  </p>
+                </div>
+              </article>
+
+              <article class="demo-card">
+                <div class="demo-media-placeholder">
+                  <span>
+                    Video 02
+                  </span>
+                </div>
+
+                <div class="demo-card-content">
+                  <p class="demo-card-number">
+                    02
+                  </p>
+
+                  <h3>
+                    Sidechain
+                  </h3>
+
+                  <p>
+                    Un signal externe contrôle la réponse Expression et transforme la dynamique en contrôle sur un autre chemin de signal.
+                  </p>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+          <div class="demo-carousel-controls">
+            <div class="demo-carousel-status" aria-hidden="true">
+              <span class="is-active"></span>
+              <span></span>
+            </div>
+
+            <div class="demo-carousel-buttons">
+              <button class="demo-carousel-button demo-carousel-previous" type="button" aria-label="Demo précédente">
+                ←
+              </button>
+
+              <button class="demo-carousel-button demo-carousel-next" type="button" aria-label="Demo suivante">
+                →
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
 
-    <section id="pedal" class="pedal-showcase reveal-section" aria-labelledby="pedal-heading">
-      <h2 id="pedal-heading" class="section-heading">
+    <div class="landing-details">
+      <!-- Placeholder for the LED and controls photo. -->
+      <img src="/images/weltgeist.webp" alt="" width="1122" height="1402" loading="lazy">
+      <!-- Placeholder for the jacks and cables photo. -->
+      <img src="/images/weltgeist.webp" alt="" width="1122" height="1402" loading="lazy">
+    </div>
+
+
+<section
+  id="why-weltgeist"
+  class="content-section reveal-section particle-section"
+  aria-labelledby="why-weltgeist-heading"
+>
+  <div id="why-weltgeist-particles" class="section-particles" aria-hidden="true"></div>
+
+  <div class="section-content why-layout">
+    <div class="why-intro">
+      <h2 id="why-weltgeist-heading" class="section-heading">Pourquoi Weltgeist ?</h2>
+      <p class="landing-description">Weltgeist reproduit le comportement du potentiomètre d’une pédale d’expression classique. Quand vous jouez, il fait varier la résistance vue par une entrée d’expression compatible et pilote ainsi le paramètre assigné en temps réel.</p>
+      <p class="landing-description">Vos pédales peuvent ainsi réagir à votre dynamique de jeu, même si elles n’intègrent aucun contrôle dynamique. Voici quelques exemples d’utilisation.</p>
+
+      <a class="manual-preview" href="/weltgeist-manual.html" hreflang="en">
+        <span class="manual-preview__cover" aria-hidden="true">
+          <span class="manual-preview__brand">Late Roman Avdio</span>
+          <span class="manual-preview__columns">
+            <span></span><span></span><span></span>
+          </span>
+          <span class="manual-preview__cover-title">Weltgeist</span>
+          <span class="manual-preview__edition">Manual</span>
+        </span>
+
+        <span class="manual-preview__copy">
+          <strong class="manual-preview__title">Manuel Weltgeist</strong>
+          <span class="manual-preview__description">Routage du signal, réglages et exemples de configuration.</span>
+          <span class="manual-preview__action">
+            Ouvrir le manuel (EN) <span aria-hidden="true">↗</span>
+          </span>
+        </span>
+      </a>
+    </div>
+
+    <ul class="why-effects" role="list">
+      <li>
+        <h3>Modulation dynamique</h3>
+        <p>Faites suivre la vitesse ou la profondeur d’un trémolo à votre attaque.</p>
+      </li>
+      <li>
+        <h3>Auto-Swell</h3>
+        <p>Contrôlez le niveau pour faire apparaître les notes progressivement.</p>
+      </li>
+      <li>
+        <h3>Filtres d’enveloppe</h3>
+        <p>Faites varier la fréquence d’une bande d’égalisation selon votre dynamique de jeu.</p>
+      </li>
+      <li>
+        <h3>Saturation dynamique</h3>
+        <p>Dosez le mix d’une overdrive ou d’une fuzz avec votre attaque.</p>
+      </li>
+      <li>
+        <h3>Delay et réverbération dynamiques</h3>
+        <p>Prolongez les répétitions du delay ou faites reculer la réverbération quand vous jouez.</p>
+      </li>
+      <li>
+        <h3>Ducking en sidechain</h3>
+        <p>Utilisez un signal séparé pour atténuer un effet dans une autre chaîne audio.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="purchase" class="pedal-showcase reveal-section" aria-labelledby="purchase-heading">
+      <h2 id="purchase-heading" class="section-heading">
         Weltgeist Pedal
       </h2>
 
@@ -415,252 +552,83 @@
       </div>
     </section>
 
-
 <section
-  id="why-weltgeist"
-  class="content-section reveal-section particle-section"
-  aria-labelledby="why-weltgeist-heading"
+  id="features"
+  class="weltgeist-model-section reveal-section particle-section"
+  aria-labelledby="weltgeist-model-heading"
 >
-  <div
-    id="why-weltgeist-particles"
-    class="section-particles"
-    aria-hidden="true"
-  ></div>
+  <div id="features-particles" class="section-particles" aria-hidden="true"></div>
 
-  <div class="section-content">
-    <h2 id="why-weltgeist-heading" class="section-heading">
-      Pourquoi Weltgeist ?
-    </h2>
-
-    <p class="landing-description">Weltgeist reproduit le comportement du potentiomètre d’une pédale d’expression classique. Quand vous jouez, il fait varier la résistance vue par une entrée d’expression compatible et pilote ainsi le paramètre assigné en temps réel.</p>
-    <p class="landing-description">Vos pédales peuvent ainsi réagir à votre dynamique de jeu, même si elles n’intègrent aucun contrôle dynamique. Voici quelques exemples d’utilisation.</p>
-
-    <p class="landing-description effect-keywords-line">
-      <strong class="effect-keywords">
-        <span>Modulation dynamique</span> ·
-        <span>Auto-Swell</span> ·
-        <span>Filtres d’enveloppe</span> ·
-        <span>Saturation dynamique</span> ·
-        <span>Delay et réverbération dynamiques</span> ·
-        <span>Ducking en sidechain</span>
-      </strong>
-    </p>
-
-    <a class="manual-preview" href="/weltgeist-manual.html" hreflang="en">
-      <span class="manual-preview__cover" aria-hidden="true">
-        <span class="manual-preview__brand">Late Roman Avdio</span>
-        <span class="manual-preview__columns">
-          <span></span><span></span><span></span>
-        </span>
-        <span class="manual-preview__cover-title">Weltgeist</span>
-        <span class="manual-preview__edition">Manual</span>
-      </span>
-
-      <span class="manual-preview__copy">
-        <strong class="manual-preview__title">Manuel Weltgeist</strong>
-        <span class="manual-preview__description">
-          Routage du signal, réglages et exemples de configuration.
-        </span>
-        <span class="manual-preview__action">
-          Ouvrir le manuel (EN) <span aria-hidden="true">↗</span>
-        </span>
-      </span>
-    </a>
-  </div>
-</section>
-
-
-<section class="weltgeist-model-section">
   <div class="weltgeist-model-inner">
-
     <div class="weltgeist-model-heading">
       <p class="weltgeist-model-kicker">WELTGEIST / MODÈLE 3D INTERACTIF</p>
-
-      <h2>Découvre la pédale</h2>
-
-      <p class="weltgeist-model-description">
-        Observe de plus près les potentiomètres, les switches et la conception physique de Weltgeist.
-      </p>
+      <h2 id="weltgeist-model-heading">Découvre la pédale</h2>
+      <p class="weltgeist-model-description">Observe de plus près les potentiomètres, les switches et la conception physique de Weltgeist.</p>
     </div>
 
-    <div class="weltgeist-model-stage">
+    <div class="weltgeist-model-layout">
+      <div class="weltgeist-model-media">
+        <div class="weltgeist-model-stage">
+          <div class="weltgeist-model-label weltgeist-model-label-top">
+            MODÈLE INTERACTIF
+          </div>
 
-      <div class="weltgeist-model-label weltgeist-model-label-top">
-        MODÈLE INTERACTIF
+          <model-viewer
+            class="weltgeist-model"
+            src="/models/weltgeist.glb"
+            alt="Weltgeist Expression Control Pedal"
+            camera-controls
+            auto-rotate
+            exposure="1.8"
+            shadow-intensity="1"
+          ></model-viewer>
+
+          <div class="weltgeist-model-label weltgeist-model-label-bottom">
+            FAIRE GLISSER POUR TOURNER · FAIRE DÉFILER POUR ZOOMER
+          </div>
+        </div>
+
+        <div class="weltgeist-model-meta">
+          <span>CONTRÔLES</span>
+          <span aria-hidden="true">/</span>
+          <span>SWITCHES</span>
+          <span aria-hidden="true">/</span>
+          <span>AFFICHAGE DU NIVEAU</span>
+          <span aria-hidden="true">/</span>
+          <span>EXPRESSION CONTROL</span>
+        </div>
       </div>
 
-      <model-viewer
-        class="weltgeist-model"
-        src="/models/weltgeist.glb"
-        alt="Weltgeist Expression Control Pedal"
-        camera-controls
-        auto-rotate
-        exposure="1.8"
-        shadow-intensity="1"
-      ></model-viewer>
+      <div class="weltgeist-model-controls">
+        <h3 id="features-heading" class="section-heading">Fonctions de Weltgeist</h3>
 
-      <div class="weltgeist-model-label weltgeist-model-label-bottom">
-        FAIRE GLISSER POUR TOURNER · FAIRE DÉFILER POUR ZOOMER
-      </div>
-
-    </div>
-
-    <div class="weltgeist-model-meta">
-      <span>CONTRÔLES</span>
-      <span aria-hidden="true">/</span>
-      <span>SWITCHES</span>
-      <span aria-hidden="true">/</span>
-      <span>AFFICHAGE DU NIVEAU</span>
-      <span aria-hidden="true">/</span>
-      <span>EXPRESSION CONTROL</span>
-    </div>
-
-  </div>
-</section>
-
-    <section id="features" class="content-section reveal-section particle-section" aria-labelledby="features-heading">
-      <div id="features-particles" class="section-particles" aria-hidden="true"></div>
-
-      <div class="section-content">
-        <h2 id="features-heading" class="section-heading">
-          Fonctions de Weltgeist
-        </h2>
-
-        <dl class="feature-list">
-          <div class="feature-row">
-            <dt>
-              Base
-            </dt>
-
-            <dd>
-              Définit la position d'Expression utilisée lorsque le niveau du signal d'entrée est faible.
-            </dd>
+        <dl class="weltgeist-model-controls-list">
+          <div>
+            <dt>Base</dt>
+            <dd>Définit la position d'Expression utilisée lorsque le niveau du signal d'entrée est faible.</dd>
           </div>
-
-          <div class="feature-row">
-            <dt>
-              Sensitivity
-            </dt>
-
-            <dd>
-              Détermine à quel point la sortie Expression réagit aux variations du niveau d'entrée.
-            </dd>
+          <div>
+            <dt>Sensitivity</dt>
+            <dd>Détermine à quel point la sortie Expression réagit aux variations du niveau d'entrée.</dd>
           </div>
-
-          <div class="feature-row">
-            <dt>
-              Rise
-            </dt>
-
-            <dd>
-              Détermine la vitesse à laquelle la pédale réagit lorsque le niveau d'entrée augmente.
-            </dd>
+          <div>
+            <dt>Rise</dt>
+            <dd>Détermine la vitesse à laquelle la pédale réagit lorsque le niveau d'entrée augmente.</dd>
           </div>
-
-          <div class="feature-row">
-            <dt>
-              Fall
-            </dt>
-
-            <dd>
-              Détermine la vitesse à laquelle la pédale réagit lorsque le niveau d'entrée diminue.
-            </dd>
+          <div>
+            <dt>Fall</dt>
+            <dd>Détermine la vitesse à laquelle la pédale réagit lorsque le niveau d'entrée diminue.</dd>
           </div>
-
-          <div class="feature-row">
-            <dt>
-              Invert
-            </dt>
-
-            <dd>
-              Inverse la réponse afin qu'un jeu plus fort déplace la position d'Expression dans la direction opposée.
-            </dd>
+          <div>
+            <dt>Invert</dt>
+            <dd>Inverse la réponse afin qu'un jeu plus fort déplace la position d'Expression dans la direction opposée.</dd>
           </div>
         </dl>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-
-    <section class="demo-showcase reveal-section" aria-labelledby="demo-heading">
-      <div id="demos" class="demo-content">
-        <p class="section-eyebrow">
-          Découvre-la en action
-        </p>
-
-        <h2 id="demo-heading" class="section-heading">
-          Weltgeist Live
-        </h2>
-
-        <div class="demo-carousel">
-          <div class="demo-carousel-viewport">
-            <div class="demo-carousel-track">
-
-              <article class="demo-card">
-                <div class="demo-media-placeholder">
-                  <span>
-                    Video 01
-                  </span>
-                </div>
-
-                <div class="demo-card-content">
-                  <p class="demo-card-number accent-marker">
-                    01
-                  </p>
-
-                  <h3>
-                    Dual Expression
-                  </h3>
-
-                  <p>
-                    EXP1 contrôle le tremolo. EXP2 règle un Delay Mix inversé. Les deux prennent ensuite vie simultanément.
-                  </p>
-                </div>
-              </article>
-
-              <article class="demo-card">
-                <div class="demo-media-placeholder">
-                  <span>
-                    Video 02
-                  </span>
-                </div>
-
-                <div class="demo-card-content">
-                  <p class="demo-card-number accent-marker">
-                    02
-                  </p>
-
-                  <h3>
-                    Sidechain
-                  </h3>
-
-                  <p>
-                    Un signal externe contrôle la réponse Expression et transforme la dynamique en contrôle sur un autre chemin de signal.
-                  </p>
-                </div>
-              </article>
-
-            </div>
-          </div>
-
-          <div class="demo-carousel-controls">
-            <div class="demo-carousel-status" aria-hidden="true">
-              <span class="is-active"></span>
-              <span></span>
-            </div>
-
-            <div class="demo-carousel-buttons">
-              <button class="demo-carousel-button demo-carousel-previous" type="button" aria-label="Demo précédente">
-                ←
-              </button>
-
-              <button class="demo-carousel-button demo-carousel-next" type="button" aria-label="Demo suivante">
-                →
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
 
 <section
@@ -680,7 +648,7 @@
 
   <p class="landing-description">
     Essaie la simulation interactive et découvre comment Weltgeist 
-    <span class="accent-inline">transforme la dynamique de jeu en contrôle d'Expression</span>. Passe de la courbe de transfert au chemin du signal pour observer la même réponse sous deux perspectives différentes.
+    <strong>transforme la dynamique de jeu en contrôle d'Expression</strong>. Passe de la courbe de transfert au chemin du signal pour observer la même réponse sous deux perspectives différentes.
   </p>
 </section>
 

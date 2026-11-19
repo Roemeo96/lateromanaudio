@@ -1,37 +1,72 @@
 .landing-hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-
-  padding: 4rem 1rem;
-
-  color: var(--text);
   background: var(--background);
-
-  text-align: left;
+  border-bottom: 1px solid var(--border);
 }
 
-.landing-eyebrow {
-  margin: 0;
+.landing-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  width: min(var(--layout-content-width), 72rem);
+  margin-inline: auto;
+  padding-block: clamp(2.25rem, 5vw, 4.5rem);
+}
 
-  color: rgb(var(--text-rgb) / 50%);
-
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
+.landing-product {
+  display: grid;
+  justify-items: center;
   text-align: center;
+}
+
+.landing-product h1 {
+  margin: 1.5rem 0 0;
+  font-size: clamp(2.5rem, 4.4vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.landing-presenter {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
-.landing-product-name {
-  margin: 0.4rem 0 1.5rem;
+.landing-product .landing-description {
+  max-width: 38ch;
+  margin: 1.1rem 0;
+  letter-spacing: 0.06em;
+}
 
-  color: var(--text);
+.landing-visual {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
 
-  font-size: clamp(1.5rem, 6vw, 2rem);
-  font-weight: 500;
-  letter-spacing: 0.08em;
+.landing-pedal-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 4;
+  object-fit: cover;
+  object-position: center 54%;
+}
+
+.landing-caption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 1rem;
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font: 0.72rem / 1.5 ui-monospace, monospace;
+  letter-spacing: 0.1em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -41,7 +76,7 @@
   align-items: center;
   justify-content: center;
 
-  gap: clamp(1.25rem, 5vw, 1.5rem);
+  gap: clamp(1.25rem, 5vw, 1.75rem);
 
   width: min(100%, 500px);
 }
@@ -49,8 +84,12 @@
 .text-logo {
   color: var(--text);
 
-  font-family: "Times New Roman", Times, serif;
-  font-size: clamp(1.8rem, 6vw, 2rem);
+  font-family:
+    "Times New Roman",
+    Times,
+    serif;
+
+  font-size: clamp(1.8rem, 7vw, 2.375rem);
   font-weight: 900;
   line-height: 1.4;
 
@@ -64,11 +103,12 @@
 
 .logo-symbol {
   display: flex;
+
   flex: 0 0 auto;
 
   gap: 18px;
 
-  height: clamp(95px, 22vw, 125px);
+  height: clamp(95px, 22vw, 150px);
 }
 
 .logo-bar-group {
@@ -88,44 +128,51 @@
   background: var(--text);
 }
 
-.landing-copy {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  gap: 1rem;
-
-  width: min(100%, 700px);
-  margin-top: 2rem;
-}
-
-.landing-tagline {
-  margin: 0;
-
-  color: var(--text);
-
-  font-family: "Times New Roman", Times, serif;
-  font-size: clamp(0.75rem, 2.5vw, 1rem);
-  line-height: 1.7;
-  letter-spacing: clamp(0.18em, 1vw, 0.35em);
-
-  text-align: center;
+.landing-demo-link {
+  display: inline-flex;
+  gap: 0.75rem;
+  padding-block: 0.35rem;
+  border-bottom: 1px solid currentColor;
+  color: var(--tertiary);
+  font: 0.85rem / 1.4 ui-monospace, monospace;
+  letter-spacing: 0.12em;
+  text-decoration: none;
   text-transform: uppercase;
 }
 
-.landing-copy .landing-description {
-  margin: 0;
+.landing-demo-link:hover {
+  color: var(--tertiary-strong);
 }
 
-.landing-tagline + .landing-description {
-  margin-top: 0.75rem;
+.landing-details {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  width: var(--layout-content-width);
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  margin: clamp(1rem, 2.5vw, 2rem) auto;
+}
+
+.landing-details img {
+  display: block;
+  width: 100%;
+  height: clamp(13rem, 27vw, 32rem);
+  padding: clamp(0.5rem, 1vw, 1rem);
+  object-fit: contain;
+}
+
+@media (max-width: 850px) {
+  .landing-hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .landing-visual {
+    max-width: 32rem;
+    margin-inline: auto;
+  }
 }
 
 @media (max-width: 650px) {
-  .landing-hero {
-    padding-inline: 1.25rem;
-  }
-
   .landing-logo {
     gap: 1rem;
   }
@@ -141,8 +188,10 @@
   .logo-bar-group {
     gap: 4px;
   }
+}
 
-  .landing-tagline {
-    letter-spacing: 0.2em;
+@media (max-width: 600px) {
+  .landing-details {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

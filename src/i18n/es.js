@@ -26,6 +26,7 @@ export default {
   },
 
   nav: {
+    purchase: "Comprar",
     ariaLabel: "Navegación principal",
     pedal: "Pedal",
     features: "Funciones",
@@ -39,6 +40,7 @@ export default {
   },
 
   hero: {
+    demoAction: "Escucha Weltgeist",
     heading: "Weltgeist – Un pedal de expresión controlado por tu dinámica al tocar",
     presents: "presenta",
     tagline1: "The Dynamics You Lost After Compression",
@@ -82,6 +84,14 @@ why: {
     dirt: "Saturación dinámica",
     delayReverb: "Delay y reverberación dinámicos",
     ducking: "Ducking por sidechain",
+  },
+  effectDescriptions: {
+    modulation: "Haz que la velocidad o la profundidad de un trémolo siga la dinámica de tu ataque.",
+    swell: "Controla el nivel para que las notas entren de forma gradual.",
+    filters: "Desplaza la frecuencia de una banda de ecualización con tu dinámica al tocar.",
+    dirt: "Controla la mezcla de un overdrive o fuzz con tu ataque.",
+    delayReverb: "Alarga las repeticiones del delay o atenúa la reverberación mientras tocas.",
+    ducking: "Usa una señal independiente para atenuar un efecto en otra ruta de audio.",
   },
   manual: {
     title: "Manual de Weltgeist",

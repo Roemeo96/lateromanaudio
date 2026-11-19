@@ -20,12 +20,7 @@ export function initializeDemoCarousel() {
       ),
     );
 
-  const indicators =
-    Array.from(
-      carousel.querySelectorAll(
-        '.demo-carousel-status span',
-      ),
-    );
+  const status = carousel.querySelector('.demo-carousel-status');
 
   const previousButton =
     carousel.querySelector(
@@ -45,6 +40,9 @@ export function initializeDemoCarousel() {
   ) {
     return;
   }
+
+  const indicators = cards.map(() => document.createElement('span'));
+  status?.replaceChildren(...indicators);
 
   let activeIndex = 0;
 
@@ -73,6 +71,11 @@ export function initializeDemoCarousel() {
   }
 
   function updateControls() {
+    cards.forEach((card, index) => {
+      card.classList.toggle('is-active', index === activeIndex);
+      card.classList.toggle('is-before-active', index < activeIndex);
+    });
+
     indicators.forEach(
       (indicator, index) => {
         indicator.classList.toggle(
@@ -132,6 +135,14 @@ export function initializeDemoCarousel() {
       );
     },
   );
+
+  cards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+      if (index !== activeIndex) {
+        goToSlide(index);
+      }
+    });
+  });
 
   let scrollFrame = null;
 

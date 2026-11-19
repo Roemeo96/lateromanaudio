@@ -26,6 +26,7 @@ export default {
     },
 
   nav: {
+    purchase: "Buy",
     ariaLabel: "Main navigation",
     pedal: "Pedal",
     features: "Features",
@@ -39,6 +40,7 @@ export default {
   },
 
   hero: {
+    demoAction: "Hear Weltgeist",
     heading: "Weltgeist – An Expression Pedal Controlled by Your Playing Dynamics",
     presents: "presents",
     tagline1: "The Dynamics You Lost After Compression",
@@ -81,6 +83,14 @@ why: {
     dirt: "Dynamic Dirt",
     delayReverb: "Dynamic Delay &amp; Reverb",
     ducking: "Sidechain Ducking",
+  },
+  effectDescriptions: {
+    modulation: "Let tremolo rate or depth follow your picking dynamics.",
+    swell: "Control the level to make notes fade in smoothly.",
+    filters: "Sweep an EQ band’s frequency with your playing dynamics.",
+    dirt: "Use your attack to control the mix of an overdrive or fuzz pedal.",
+    delayReverb: "Let delay repeats linger longer or make reverb recede while you play.",
+    ducking: "Use a separate signal to turn down an effect in another signal path.",
   },
   manual: {
     title: "Weltgeist Manual",

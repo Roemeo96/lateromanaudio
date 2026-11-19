@@ -26,6 +26,7 @@ export default {
     },
 
   nav: {
+    purchase: "Kaufen",
     ariaLabel: "Hauptnavigation",
     pedal: "Pedal",
     features: "Funktionen",
@@ -39,6 +40,7 @@ export default {
   },
 
   hero: {
+    demoAction: "Weltgeist hören",
     heading: "Weltgeist – Ein Expression-Pedal, gesteuert durch deine Spieldynamik",
     presents: "präsentiert",
     tagline1: "The Dynamics You Lost After Compression",
@@ -79,6 +81,14 @@ why: {
     dirt: "Dynamische Verzerrung",
     delayReverb: "Dynamisches Delay &amp; Reverb",
     ducking: "Sidechain-Ducking",
+  },
+  effectDescriptions: {
+    modulation: "Lass Geschwindigkeit oder Tiefe eines Tremolos deinem Anschlag folgen.",
+    swell: "Steuere den Pegel für weich einblendende Töne.",
+    filters: "Verschiebe die Frequenz eines EQ-Bands mit deiner Spieldynamik.",
+    dirt: "Steuere den Mix eines Overdrives oder Fuzz-Pedals mit deinem Anschlag.",
+    delayReverb: "Lass Delay-Wiederholungen länger nachklingen oder Hall beim Spielen zurücktreten.",
+    ducking: "Nutze ein separates Signal, um einen Effekt in einem anderen Signalweg abzusenken.",
   },
   manual: {
     title: "Weltgeist-Handbuch",

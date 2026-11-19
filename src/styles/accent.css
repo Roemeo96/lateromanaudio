@@ -1,54 +1,17 @@
-/* Selected key phrases inside body copy */
-.accent-inline {
-  color: var(--tertiary);
-}
-
-
-/* Product availability */
-.accent-status {
-  color: var(--tertiary);
-}
-
-
-/* Demo numbers */
-.accent-marker {
-  color: var(--tertiary);
-}
-
-
-/* Dynamic simulation output */
 .accent-value {
   color: var(--tertiary-strong);
 }
 
-
-/* Active demo position */
 .demo-carousel-status span.is-active {
   background: var(--tertiary);
   border-color: var(--tertiary);
 }
 
-
-/* Subtle interactive accent */
 .site-header-navigation a:hover,
 .site-footer-links a:hover {
   color: var(--tertiary);
 }
 
-
-/* Keyboard interaction */
 :focus-visible {
   outline-color: var(--tertiary);
-}
-
-
-.effect-keywords > span {
-  display: inline-block;
-  transition: color 380ms ease;
-}
-
-@media (hover: hover) {
-  .effect-keywords > span:hover {
-    color: var(--tertiary);
-  }
 }
