@@ -171,7 +171,7 @@ why: {
       accent:
         "transforma la dinámica al tocar en Expression Control",
       after:
-        ". Cambia entre la curva de transferencia y la ruta de señal para observar la misma respuesta desde dos perspectivas diferentes.",
+        ". Ajusta el nivel de entrada manualmente o usa el micrófono como entrada en directo. Mueve los controles del pedal y observa cómo responde la señal de expresión simulada.",
     },
     panelHeading: "Simulación interactiva de Weltgeist",
     pedal: {

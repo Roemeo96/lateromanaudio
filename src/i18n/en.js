@@ -168,7 +168,7 @@ why: {
         "Try the interactive simulation below to explore how Weltgeist translates ",
       accent: "playing dynamics into expression control",
       after:
-        ". Switch between the transfer curve and the signal path to view the same response from two different perspectives.",
+        ". Set the input level by hand or use your microphone as a live input. Adjust the pedal controls and watch how the simulated expression signal responds.",
     },
     panelHeading: "Interactive Weltgeist simulation",
     pedal: {

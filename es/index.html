@@ -326,19 +326,20 @@
 
 
     <section id="pedal" class="pedal-showcase reveal-section" aria-labelledby="pedal-heading">
-      <h2 id="pedal-heading" class="section-heading">
-        Weltgeist Pedal
-      </h2>
-
       <div class="pedal-showcase-content">
-        <figure class="pedal-showcase-figure">
+        <figure class="pedal-showcase-figure" data-product-gallery>
+          <div class="pedal-gallery-thumbnails" hidden></div>
           <div class="pedal-showcase-image-frame">
-            <img
-              class="pedal-showcase-image"
-              src="/images/weltgeist.webp"
-              alt="Weltgeist Pedal de Late Roman Audio"
-              loading="lazy"
-            >
+            <div class="pedal-gallery-stage">
+              <img
+                class="pedal-showcase-image"
+                src="/images/weltgeist-beauty-shot.jpg"
+                alt="Weltgeist Pedal de Late Roman Audio"
+                width="1200"
+                height="960"
+                loading="lazy"
+              >
+            </div>
           </div>
 
           <figcaption>
@@ -346,71 +347,50 @@
           </figcaption>
         </figure>
 
-        <div class="pedal-purchase">
-          <p class="eyebrow">
-            Late Roman Audio
-          </p>
-
-          <h3>
-            Weltgeist
-          </h3>
-
-          <p class="pedal-purchase-price">
-            229,00 €
-          </p>
-
-          <p class="pedal-purchase-status accent-status">
-            Disponible próximamente
-          </p>
-
-          <div class="pedal-purchase-controls">
-            <div class="quantity-control">
-              <label for="weltgeist-quantity">
-                Cantidad
-              </label>
-
-              <input id="weltgeist-quantity" class="quantity-input" type="number" min="1" max="5" step="1" value="1"
-                inputmode="numeric">
-            </div>
-
-            <button id="weltgeist-add-to-cart" class="snipcart-add-item pedal-add-to-cart" type="button"
-              data-item-id="weltgeist" data-item-name="Weltgeist" data-item-price="229.00" data-item-url="/es/"
-              data-item-taxable="false" data-item-image="/images/weltgeist.webp"
-              data-item-description="Pedal de expresión controlado por la dinámica de interpretación de Late Roman Audio. Incluye 2 cables TRS de 60 cm."
-              data-item-min-quantity="1" data-item-max-quantity="5" data-item-quantity="1">
-              Añadir al carrito
-            </button>
+        <div class="pedal-purchase-panel">
+          <div class="logo-bar-group pedal-purchase-mark" aria-hidden="true">
+            <span></span><span></span>
           </div>
-          <div class="pedal-purchase-includes">
-            <svg
-              class="pedal-purchase-includes-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              aria-hidden="true"
-            >
-              <path d="M17 19a1 1 0 0 1-1-1v-2a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2a1 1 0 0 1-1 1z"/>
-              <path d="M17 21v-2"/>
-              <path d="M19 14V6.5a1 1 0 0 0-7 0v11a1 1 0 0 1-7 0V10"/>
-              <path d="M21 21v-2"/>
-              <path d="M3 5V3"/>
-              <path d="M4 10a2 2 0 0 1-2-2V6a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2a2 2 0 0 1-2 2z"/>
-              <path d="M7 5V3"/>
-            </svg>
+          <div class="pedal-purchase">
+            <p class="eyebrow">
+              Late Roman Audio
+            </p>
 
-              <div class="pedal-purchase-includes-text">
-                <span class="pedal-purchase-includes-title">
-                  2 cables TRS incluidos (60 cm cada uno)
-                </span>
-                <span class="pedal-purchase-includes-description">
-                  Se incluyen dos cables TRS sencillos para que puedas conectar Weltgeist nada más sacarlo de la caja. Como la longitud, el color y el tipo de conector dependen de tu pedalera, están pensados como una solución práctica para empezar, no como una solución universal.
-                </span>
+            <h2 id="pedal-heading">
+              Weltgeist
+            </h2>
+
+            <p class="pedal-purchase-price">
+              229,00 €
+            </p>
+
+            <p class="pedal-purchase-status accent-status">
+              Disponible próximamente
+            </p>
+
+            <div class="pedal-purchase-controls">
+              <div class="quantity-control">
+                <label for="weltgeist-quantity">
+                  Cantidad
+                </label>
+
+                <input id="weltgeist-quantity" class="quantity-input" type="number" min="1" max="5" step="1" value="1"
+                  inputmode="numeric">
               </div>
+
+              <button id="weltgeist-add-to-cart" class="snipcart-add-item pedal-add-to-cart" type="button"
+                data-item-id="weltgeist" data-item-name="Weltgeist" data-item-price="229.00" data-item-url="/es/"
+                data-item-taxable="false" data-item-image="/images/weltgeist.webp"
+                data-item-description="Pedal de expresión controlado por la dinámica de interpretación de Late Roman Audio. Incluye 2 cables TRS de 60 cm."
+                data-item-min-quantity="1" data-item-max-quantity="5" data-item-quantity="1">
+                Añadir al carrito
+              </button>
             </div>
+            <div class="pedal-purchase-includes">
+              <p class="pedal-purchase-includes-title">2 cables TRS incluidos (60 cm cada uno)</p>
+              <p class="pedal-purchase-includes-description">Se incluyen dos cables TRS sencillos para que puedas conectar Weltgeist nada más sacarlo de la caja. Como la longitud, el color y el tipo de conector dependen de tu pedalera, están pensados como una solución práctica para empezar, no como una solución universal.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -435,25 +415,6 @@
           <span></span><span></span>
         </div>
       </div>
-
-      <a class="manual-preview" href="/weltgeist-manual.html" hreflang="en">
-        <span class="manual-preview__cover" aria-hidden="true">
-          <span class="manual-preview__brand">Late Roman Avdio</span>
-          <span class="manual-preview__columns">
-            <span></span><span></span><span></span>
-          </span>
-          <span class="manual-preview__cover-title">Weltgeist</span>
-          <span class="manual-preview__edition">Manual</span>
-        </span>
-
-        <span class="manual-preview__copy">
-          <strong class="manual-preview__title">Manual de Weltgeist</strong>
-          <span class="manual-preview__description">Ruta de señal, controles y ejemplos de configuración.</span>
-          <span class="manual-preview__action">
-            Abrir el manual (EN) <span aria-hidden="true">↗</span>
-          </span>
-        </span>
-      </a>
     </div>
 
     <ul class="why-effects" role="list">
@@ -482,6 +443,25 @@
         <p>Usa una señal independiente para atenuar un efecto en otra ruta de audio.</p>
       </li>
     </ul>
+
+    <a class="manual-preview" href="/weltgeist-manual.html" hreflang="en">
+      <span class="manual-preview__cover" aria-hidden="true">
+        <span class="manual-preview__brand">Late Roman Avdio</span>
+        <span class="manual-preview__columns">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="manual-preview__cover-title">Weltgeist</span>
+        <span class="manual-preview__edition">Manual</span>
+      </span>
+
+      <span class="manual-preview__copy">
+        <strong class="manual-preview__title">Manual de Weltgeist</strong>
+        <span class="manual-preview__description">Ruta de señal, controles y ejemplos de configuración.</span>
+        <span class="manual-preview__action">
+          Abrir el manual (EN) <span aria-hidden="true">↗</span>
+        </span>
+      </span>
+    </a>
   </div>
 </section>
 
@@ -664,7 +644,7 @@
       </h2>
 
       <p class="landing-description">
-        Prueba la simulación interactiva y descubre cómo Weltgeist <span class="accent-inline">transforma la dinámica al tocar en Expression Control</span>. Cambia entre la curva de transferencia y la ruta de señal para observar la misma respuesta desde dos perspectivas diferentes.
+        Prueba la simulación interactiva y descubre cómo Weltgeist <span class="accent-inline">transforma la dinámica al tocar en Expression Control</span>. Ajusta el nivel de entrada manualmente o usa el micrófono como entrada en directo. Mueve los controles del pedal y observa cómo responde la señal de expresión simulada.
       </p>
     </div>
     <div class="logo-bar-group pillar-copy-mark" aria-hidden="true">
@@ -957,107 +937,55 @@
     <section id="specifications" class="content-section particle-section" aria-labelledby="specifications-heading">
       <div id="specifications-particles" class="section-particles" aria-hidden="true"></div>
 
-      <div class="section-content">
-        <h2 id="specifications-heading" class="section-heading">
-          Especificaciones técnicas
-        </h2>
+      <div class="section-content specifications-layout">
+        <div class="specifications-data">
+          <h2 id="specifications-heading" class="section-heading">
+            Especificaciones técnicas
+          </h2>
 
-        <dl class="feature-list">
+          <table class="specifications-table" aria-labelledby="specifications-heading">
+            <tbody>
+              <tr>
+                <th scope="row">Entrada</th>
+                <td>1× entrada TS</td>
+              </tr>
+              <tr>
+                <th scope="row">Expression</th>
+                <td>2× salidas TRS Expression</td>
+              </tr>
+              <tr>
+                <th scope="row">Salida</th>
+                <td>1× salida TS</td>
+              </tr>
+              <tr>
+                <th scope="row">Impedancia de salida</th>
+                <td>100 Ω</td>
+              </tr>
+              <tr>
+                <th scope="row">Alimentación</th>
+                <td>9 V DC, centro negativo</td>
+              </tr>
+              <tr>
+                <th scope="row">Consumo de corriente</th>
+                <td>20 mA</td>
+              </tr>
+              <tr>
+                <th scope="row">Bypass</th>
+                <td>True Bypass</td>
+              </tr>
+              <tr>
+                <th scope="row">Dimensiones</th>
+                <td>145 mm × 100 mm × 100 mm</td>
+              </tr>
+              <tr>
+                <th scope="row">Peso</th>
+                <td>300 g</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-          <div class="feature-row">
-            <dt>
-              Entrada
-            </dt>
-
-            <dd>
-              1× entrada TS
-            </dd>
-          </div>
-
-          <div class="feature-row">
-            <dt>
-              Expression
-            </dt>
-
-            <dd>
-              2× salidas TRS Expression
-            </dd>
-          </div>
-
-          <div class="feature-row">
-            <dt>
-              Salida
-            </dt>
-
-            <dd>
-              1× salida TS
-            </dd>
-          </div>
-
-          <div class="feature-row">
-            <dt>
-              Impedancia de salida
-            </dt>
-
-            <dd>
-              100 Ω
-            </dd>
-          </div>
-
-          <div class="feature-row">
-            <dt>
-              Alimentación
-            </dt>
-
-            <dd>
-              9 V DC, centro negativo
-            </dd>
-          </div>
-
-          <div class="feature-row">
-            <dt>
-              Consumo de corriente
-            </dt>
-
-            <dd>
-              20 mA
-            </dd>
-          </div>
-
-          <div class="feature-row">
-            <dt>
-              Bypass
-            </dt>
-
-            <dd>
-              True Bypass
-            </dd>
-          </div>
-
-          <div class="feature-row">
-            <dt>
-              Dimensiones
-            </dt>
-
-            <dd>
-              145 mm × 100 mm × 100 mm
-            </dd>
-          </div>
-
-          <div class="feature-row">
-            <dt>
-              Peso
-            </dt>
-
-            <dd>
-              300 g
-            </dd>
-          </div>
-
-        </dl>
-
-
-        <div class="pillar-copy section-heading--subsequent">
+        <div class="pillar-copy">
           <div class="pillar-copy-text">
             <h2 class="section-heading">
               Aviso de compatibilidad

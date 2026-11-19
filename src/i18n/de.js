@@ -166,7 +166,7 @@ why: {
         "Probiere die interaktive Simulation aus und sieh, wie Weltgeist ",
       accent: "Spieldynamik in Expression-Steuerung übersetzt",
       after:
-        ". Wechsle zwischen Übertragungskurve und Signalweg, um dieselbe Reaktion aus zwei unterschiedlichen Perspektiven zu betrachten.",
+        ". Stell den Eingangspegel von Hand ein oder nutze dein Mikrofon als Live-Eingang. Verändere die Pedalregler und beobachte, wie sich das simulierte Expression-Signal verändert.",
     },
     panelHeading: "Interaktive Weltgeist-Simulation",
     pedal: {

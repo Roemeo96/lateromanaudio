@@ -168,7 +168,7 @@ why: {
         "Prova la simulazione interattiva e scopri come Weltgeist ",
       accent: "trasforma la dinamica del tuo modo di suonare in Expression Control",
       after:
-        ". Passa dalla curva di trasferimento al percorso del segnale per osservare la stessa risposta da due prospettive diverse.",
+        ". Regola manualmente il livello di ingresso oppure usa il microfono come ingresso in tempo reale. Modifica le impostazioni del pedale e osserva come risponde il segnale di espressione simulato.",
     },
     panelHeading: "Simulazione interattiva di Weltgeist",
     pedal: {

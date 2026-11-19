@@ -170,7 +170,7 @@ why: {
       accent:
         "transforme la dynamique de jeu en contrôle d'Expression",
       after:
-        ". Passe de la courbe de transfert au chemin du signal pour observer la même réponse sous deux perspectives différentes.",
+        ". Règle le niveau d’entrée à la main ou utilise ton micro comme entrée en direct. Ajuste les réglages de la pédale et observe la réaction du signal d’expression simulé.",
     },
     panelHeading: "Simulation interactive de Weltgeist",
     pedal: {

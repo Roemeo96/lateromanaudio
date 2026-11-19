@@ -1,19 +1,13 @@
 .app {
   display: grid;
-  grid-template-columns:
-    minmax(260px, 320px)
-    minmax(0, 1fr);
+  grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  align-items: stretch;
+  gap: clamp(1.5rem, 4vw, 3rem);
 
-  gap: 2rem;
-
-  width: min(58rem, calc(100% - 3rem));
-
-  margin: 1.5rem auto;
-
-  padding-top: 2rem;
-  padding-right: 0;
-  padding-bottom: 4rem;
-  padding-left: 0;
+  width: min(var(--layout-content-width), 69rem);
+  margin: clamp(1.5rem, 3vw, 2.5rem) auto clamp(2.5rem, 5vw, 4.5rem);
+  padding-block: clamp(1.25rem, 3vw, 2.25rem);
+  border-block: 1px solid var(--border);
 }
 
 .pedal-panel {
@@ -21,20 +15,15 @@
   flex-direction: column;
   gap: 0.5rem;
 
-  min-height: auto;
-  padding: 1.5rem;
-
+  min-width: 0;
 }
 
 .visualization-panel {
-  position: relative;
-
+  display: grid;
+  grid-template-rows: auto 1fr;
   min-width: 0;
-  padding: 1.5rem;
-
-  border-radius: 0;
-
-  box-shadow: none;
+  padding-inline-start: clamp(1.5rem, 4vw, 3rem);
+  border-inline-start: 1px solid var(--border);
 }
 
 .pedal-product-name {
@@ -64,10 +53,6 @@
   font-size: clamp(1.25rem, 3vw, 1.8rem);
   font-weight: 400;
   letter-spacing: 0.02em;
-}
-
-.pedal-header {
-  padding-top: 1.5rem;
 }
 
 .control {
@@ -566,74 +551,12 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 }
 
 #simulation {
-  padding-block:
-    clamp(2.5rem, 5vw, 4.5rem);
+  padding-block: clamp(2.5rem, 5vw, 4.5rem) 0;
 }
 
 .simulation-showcase-start {
   border-top:
     1px solid rgb(var(--text-rgb) / 12.16%);
-}
-
-.simulation-showcase-end::after {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-  bottom: 0;
-
-  width: 100vw;
-  height: 1px;
-
-  transform: translateX(-50%);
-
-  background:
-    rgb(var(--text-rgb) / 12.16%);
-}
-
-@media (max-width: 1180px) {
-  .visualization-panel {
-    border-left: none;
-  }
-
-  .control {
-    margin-top: 0;
-  }
-
-  .app {
-    grid-template-columns: 1fr;
-  }
-
-  .pedal-panel {
-    min-height: auto;
-    padding: 1.25rem;
-  }
-
-  .visualization-header {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 500px) {
-  .app {
-    width: min(100% - 1rem, 1280px);
-    padding: 0.5rem 0;
-  }
-
-  .pedal-panel,
-  .visualization-panel {
-    padding: 1.25rem;
-    border-radius: 1rem;
-  }
-
-  .live-values {
-    width: 100%;
-  }
-
-  .live-values div {
-    flex: 1;
-  }
 }
 
 @media (max-width: 600px) {
@@ -646,19 +569,6 @@ input[type="range"]:focus-visible::-moz-range-thumb {
     flex-wrap: wrap;
   }
   
-}
-/* Simulation layout: input and controls together, illustration on the right. */
-.app {
-  grid-template-columns: minmax(290px, 360px) minmax(0, 1fr);
-  gap: clamp(1.25rem, 2vw, 1.5rem);
-  align-items: start;
-}
-.pedal-panel,
-.visualization-panel {
-  padding: clamp(0.75rem, 1.5vw, 1.5rem);
-}
-.pedal-header {
-  padding-top: 0;
 }
 .pedal-product-name {
   margin-bottom: 1.3rem;
@@ -702,12 +612,8 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   font-size: clamp(1.3rem, 2.4vw, 1.85rem);
 }
 .expression-pedal-stage {
+  align-self: center;
   width: 100%;
-  padding-block: 0.5rem 1rem;
-}
-.expression-pedal-illustration {
-  width: 100%;
-  max-width: 580px;
 }
 .expression-position-meter {
   position: relative;
@@ -723,13 +629,16 @@ input[type="range"]:focus-visible::-moz-range-thumb {
   background: var(--tertiary);
   transition: width 80ms linear;
 }
-@media (max-width: 900px) {
+@media (max-width: 760px) {
   .app {
     grid-template-columns: minmax(0, 1fr);
-    gap: 1.25rem;
+    gap: 1.75rem;
   }
   .visualization-panel {
-    padding-top: 0;
+    padding-inline-start: 0;
+    padding-block-start: 1.5rem;
+    border-inline-start: 0;
+    border-block-start: 1px solid var(--border);
   }
   .visualization-header {
     margin-bottom: 1.5rem;

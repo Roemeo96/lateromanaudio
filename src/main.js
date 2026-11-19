@@ -34,8 +34,10 @@ import {
 } from "./theme.js";
 
 import "@google/model-viewer";
+import { initializeProductGallery } from './product-gallery.js';
 
 initializeDemoCarousel();
+initializeProductGallery();
 
 initializeMobileMenu();
 
