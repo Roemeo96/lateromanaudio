@@ -163,6 +163,22 @@
 </div>
 
       <button
+      class="site-header-motion-toggle"
+      type="button"
+      data-particle-motion
+      aria-pressed="true"
+      aria-label="{{model.actions.motion}}"
+      title="{{model.actions.motion}}"
+      hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="3" fill="currentColor"/>
+        <circle cx="5" cy="6" r="1.5" fill="currentColor"/>
+        <circle cx="19" cy="5" r="1.5" fill="currentColor"/>
+        <circle cx="18" cy="19" r="1.5" fill="currentColor"/>
+        <circle cx="5" cy="18" r="1" fill="currentColor"/>
+      </svg>
+    </button>
+    <button
         class="site-header-theme-toggle"
         type="button"
         aria-label="{{header.themeToggleAriaLabel}}"
@@ -228,9 +244,9 @@
         <div class="stage-copy"><p class="stage-kicker">{{stage.kicker}}</p><h2>{{stage.title}}</h2><p>{{stage.intro}}</p>
           <div class="stage-actions"><a class="stage-button" href="#studio">{{stage.explore}}</a><a class="stage-link" href="#pedal">{{stage.product}}</a></div>
         </div>
-        <figure class="stage-photo"><img src="/images/weltgeist-hero-cutout.png" sizes="(max-width: 760px) 100vw, 60vw" alt="{{purchase.imageAlt}}" width="1402" height="1122" fetchpriority="high"><figcaption><span>{{stage.caption}}</span><span>EXP I + EXP II</span></figcaption></figure>
+        <figure class="stage-photo"><img src="/images/weltgeist-hero-cutout.png" sizes="(max-width: 760px) 100vw, 60vw" alt="{{purchase.imageAlt}}" width="1402" height="1122" fetchpriority="high"></figure>
       </div>
-      <div class="stage-foot"><span>{{stage.footer}}</span><button class="stage-motion-toggle" type="button" data-particle-motion aria-pressed="true" hidden>{{model.actions.motion}}</button><a href="#studio">{{stage.scroll}}</a></div>
+      
     </section>
 
 <section id="studio" class="studio-shell" aria-labelledby="studio-title">

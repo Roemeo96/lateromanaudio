@@ -77,7 +77,7 @@ export function initializeMobileMenu() {
           'a, button',
         );
 
-      if (!navigationItem || navigationItem.matches('.site-header-theme-toggle')) {
+      if (!navigationItem || navigationItem.matches('.site-header-theme-toggle, .site-header-motion-toggle')) {
         return;
       }
 

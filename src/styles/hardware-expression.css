@@ -634,3 +634,74 @@
 .studio-shell #invert::after {
   content: none;
 }
+
+/* Größere, besser lesbare Navigation */
+.site-header {
+  min-height: 5rem;
+  padding-block: 1.25rem;
+}
+
+.site-header-wordmark {
+  font-size: 1.25rem;
+}
+
+.site-header-symbol {
+  height: 2rem;
+}
+
+.site-header-navigation > a {
+  font-size: 1.2rem;
+  padding-block: .6rem;
+}
+
+.site-header-language,
+.site-header-language a {
+  font-size: 1rem;
+}
+
+.site-header-cart {
+  font-size: 1.1rem;
+  min-height: 3rem;
+}
+
+.site-header-theme-toggle,
+.site-header-motion-toggle {
+  width: 3.5rem;
+  height: 3.5rem;
+  min-height: 3.5rem;
+  padding: .65rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.site-header-motion-toggle {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.site-header-motion-toggle svg,
+.site-header-theme-toggle svg {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.site-header-motion-toggle[hidden] {
+  display: none;
+}
+
+.site-header-motion-toggle:hover {
+  color: var(--tertiary);
+}
+
+.site-header-motion-toggle[aria-pressed="false"] {
+  opacity: .4;
+}
+
+@media (max-width: 1099px) {
+  .site-header-wordmark { font-size: 1rem; }
+  .site-header-navigation > a { font-size: 1.05rem; }
+}
