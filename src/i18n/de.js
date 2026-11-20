@@ -1,4 +1,33 @@
 export default {
+  stage: {
+    "modelFallback": "3D ist in diesem Browser nicht verfügbar. Produktfoto wird angezeigt.",
+    "setup": "Dein Setup",
+    "technical": "Die Details",
+  "category": "Dynamikgesteuertes Expression-Pedal",
+  "kicker": "Dein Spiel gibt den Ton an.",
+  "title": "Jede Note bewegt etwas.",
+  "intro": "Verwandle deine Spieldynamik in Expression-Steuerung für die Pedale, die du bereits besitzt.",
+  "explore": "Weltgeist entdecken",
+  "product": "Das Pedal",
+  "caption": "Entwickelt, um zu reagieren.",
+  "footer": "Zwei Expression-Ausgänge. Eine musikalische Geste.",
+  "scroll": "Eintauchen",
+  "studioLabel": "Das Studio",
+  "studioTitle": "Entdecke deinen nächsten Ausdruck.",
+  "studioIntro": "Sechs Wege, deine Effekte auf dein Spiel reagieren zu lassen. Wähle eine Anwendung und erkunde die Reaktion.",
+  "applications": "Anwendungen",
+  "principle": "So funktioniert es",
+  "play": "Du spielst",
+  "playText": "Dein Anschlag gibt den Impuls.",
+  "respondText": "Formt deine Dynamik zur Expression-Steuerung.",
+  "effect": "Dein Effekt reagiert",
+  "effectText": "Der zugewiesene Parameter folgt dem Expression-Ausgang.",
+  "try": "Regler ausprobieren",
+  "demoNote": "Anwendungsvorschau. Die Expression-Simulation unten visualisiert Steuersignale und erzeugt keinen Effektklang.",
+  "details": "Das Instrument",
+  "detailsTitle": "Ein genauerer Blick.",
+  "model": "Gehäuse und Bedienelemente erkunden"
+},
   lang: "de",
 
   seo: {

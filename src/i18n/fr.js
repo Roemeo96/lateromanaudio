@@ -1,4 +1,33 @@
 export default {
+  stage: {
+    "modelFallback": "3D indisponible dans ce navigateur. Photo du produit affichée.",
+    "setup": "Votre configuration",
+    "technical": "Les détails",
+  "category": "Expression contrôlée par la dynamique",
+  "kicker": "Votre jeu aux commandes.",
+  "title": "Chaque note met en mouvement.",
+  "intro": "Transformez la dynamique de votre jeu en contrôle d’expression pour vos pédales.",
+  "explore": "Explorer Weltgeist",
+  "product": "La pédale",
+  "caption": "Conçue pour réagir.",
+  "footer": "Deux sorties d’expression. Un geste musical.",
+  "scroll": "Entrez",
+  "studioLabel": "Le studio",
+  "studioTitle": "Trouvez votre prochaine expression.",
+  "studioIntro": "Six façons de faire réagir vos effets à votre jeu. Choisissez une application et explorez la réponse.",
+  "applications": "Applications",
+  "principle": "Le principe",
+  "play": "Vous jouez",
+  "playText": "Votre attaque donne l’impulsion.",
+  "respondText": "Transforme votre dynamique en contrôle d’expression.",
+  "effect": "Votre effet réagit",
+  "effectText": "Le paramètre assigné suit la sortie d’expression.",
+  "try": "Essayer les réglages",
+  "demoNote": "Aperçu des applications. La simulation ci-dessous visualise les signaux de contrôle sans produire de son d’effet.",
+  "details": "L’instrument",
+  "detailsTitle": "De plus près.",
+  "model": "Explorer la pédale et ses réglages"
+},
   lang: "fr",
 
   seo: {

@@ -1,4 +1,33 @@
 export default {
+  stage: {
+    "modelFallback": "3D non disponibile in questo browser. È mostrata la foto del prodotto.",
+    "setup": "Il tuo setup",
+    "technical": "I dettagli",
+  "category": "Expression controllata dalla dinamica",
+  "kicker": "Il tuo modo di suonare, al comando.",
+  "title": "Ogni nota mette in movimento.",
+  "intro": "Trasforma la dinamica del tuo strumento in controllo di espressione per i pedali che già possiedi.",
+  "explore": "Esplora Weltgeist",
+  "product": "Il pedale",
+  "caption": "Progettato per reagire.",
+  "footer": "Due uscite di espressione. Un gesto musicale.",
+  "scroll": "Entra",
+  "studioLabel": "Lo studio",
+  "studioTitle": "Trova la tua prossima espressione.",
+  "studioIntro": "Sei modi per far reagire gli effetti al tuo modo di suonare. Scegli un’applicazione ed esplora la risposta.",
+  "applications": "Applicazioni",
+  "principle": "Come funziona",
+  "play": "Tu suoni",
+  "playText": "Il tuo tocco dà l’impulso.",
+  "respondText": "Trasforma la dinamica in controllo di espressione.",
+  "effect": "Il tuo effetto reagisce",
+  "effectText": "Il parametro assegnato segue l’uscita di espressione.",
+  "try": "Prova i controlli",
+  "demoNote": "Anteprima delle applicazioni. La simulazione mostra i segnali di controllo senza generare suoni di effetti.",
+  "details": "Lo strumento",
+  "detailsTitle": "Uno sguardo da vicino.",
+  "model": "Esplora il pedale e i controlli"
+},
   lang: "it",
 
   seo: {

@@ -55,9 +55,9 @@
       </span>
 
       <span class="site-header-symbol" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span>
+        <span></span><span></span>
+        <span></span><span></span>
       </span>
     </a>
 
@@ -79,25 +79,10 @@
     </button>
 
     <nav id="site-header-navigation" class="site-header-navigation" aria-label="{{nav.ariaLabel}}">
-      <a href="#pedal">
-        {{nav.pedal}}
-        </a>
-
-        <a href="#features">
-        {{nav.features}}
-        </a>
-
-        <a href="#demos">
-        {{nav.demo}}
-        </a>
-
-        <a href="#simulation">
-        {{nav.simulation}}
-        </a>
-
-        <a href="#specifications">
-        {{nav.specifications}}
-        </a>
+      <a href="#studio">{{stage.studioLabel}}</a>
+      <a href="#simulation">{{stage.try}}</a>
+      <a href="#specifications">{{nav.specifications}}</a>
+      <a href="#pedal">{{nav.pedal}}</a>
 <div
   class="site-header-language"
   role="group"
@@ -229,404 +214,34 @@
 
   <main id="main-content" tabindex="-1">
 
-    <section class="landing-hero particle-section">
+    <section class="product-stage" aria-labelledby="stage-title">
+      <div class="editorial-orb editorial-orb--hero" data-parallax="0.07" aria-hidden="true"></div>
+      <div class="editorial-orb editorial-orb--outline" data-parallax="-0.04" aria-hidden="true"></div>
       <div id="hero-particles" class="section-particles" aria-hidden="true"></div>
-
-      <h1 class="visually-hidden">
-        {{hero.heading}}
-      </h1>
-
-      <div role="img" class="landing-logo" aria-label="Late Roman Audio">
-        <div class="text-logo" aria-hidden="true">
-          <div>Late</div>
-          <div>Roman</div>
-          <div>Avdio</div>
-        </div>
-
-        <div class="logo-symbol" aria-hidden="true">
-          <div class="logo-bar-group">
-            <span></span>
-            <span></span>
-          </div>
-
-          <div class="logo-bar-group">
-            <span></span>
-            <span></span>
-          </div>
-
-          <div class="logo-bar-group">
-            <span></span>
-            <span></span>
-          </div>
-        </div>
+      <div class="stage-brand" role="img" aria-label="Late Roman Audio">
+        <span class="stage-brand-text" aria-hidden="true">Late<br>Roman<br>Avdio</span>
+        <span class="stage-brand-columns" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></span>
       </div>
-
-      <div class="landing-copy">
-        <p class="landing-eyebrow">
-  {{hero.presents}}
-</p>
-
-<p class="landing-product-name">
-  {{product.name}}
-</p>
-
-<p class="landing-tagline">
-  {{hero.tagline1}}
-</p>
-
-<p class="landing-tagline">
-  {{hero.tagline2}}
-</p>
-
-        <p class="landing-description">
-          {{hero.description1.before}}
-          <span class="">{{hero.description1.accent}}</span>{{hero.description1.after}}
-        </p>
-
-        <p class="landing-description">{{hero.description2}}</p>
+      <div class="stage-topline"><span>Late Roman Audio</span><span>{{stage.category}}</span><span>Weltgeist</span></div>
+      <h1 id="stage-title">Weltgeist</h1>
+      <div class="stage-composition">
+        <div class="stage-copy"><p class="stage-kicker">{{stage.kicker}}</p><h2>{{stage.title}}</h2><p>{{stage.intro}}</p>
+          <div class="stage-actions"><a class="stage-button" href="#studio">{{stage.explore}}</a><a class="stage-link" href="#pedal">{{stage.product}}</a></div>
+        </div>
+        <figure class="stage-photo"><img src="/images/weltgeist-beauty-shot.jpg" srcset="/images/weltgeist-beauty-shot-720.webp 720w, /images/weltgeist-beauty-shot.jpg 1200w" sizes="(max-width: 760px) 100vw, 60vw" alt="{{purchase.imageAlt}}" width="1200" height="960" fetchpriority="high"><figcaption><span>{{stage.caption}}</span><span>EXP I + EXP II</span></figcaption></figure>
       </div>
+      <div class="stage-foot"><span>{{stage.footer}}</span><button class="stage-motion-toggle" type="button" data-particle-motion aria-pressed="true" hidden>{{model.actions.motion}}</button><a href="#studio">{{stage.scroll}}</a></div>
     </section>
 
-
-    <section id="pedal" class="pedal-showcase reveal-section" aria-labelledby="pedal-heading">
-      <div class="pedal-showcase-content">
-        <figure class="pedal-showcase-figure" data-product-gallery
-          data-top-label="{{purchase.gallery.top}}"
-          data-front-label="{{purchase.gallery.front}}"
-          data-low-angle-label="{{purchase.gallery.lowAngle}}">
-          <div class="pedal-gallery-thumbnails" hidden></div>
-          <div class="pedal-showcase-image-frame">
-            <div class="pedal-gallery-stage">
-              <img
-                class="pedal-showcase-image"
-                src="{{product.photo}}"
-                srcset="{{product.photoMedium}} 720w, {{product.photo}} 1200w"
-                sizes="auto, (max-width: 850px) calc(100vw - 4rem), 540px"
-                alt="{{purchase.imageAlt}}"
-                width="{{product.photoWidth}}"
-                height="{{product.photoHeight}}"
-                loading="lazy"
-              >
-            </div>
-          </div>
-
-          <figcaption>
-            {{purchase.figcaption}}
-          </figcaption>
-        </figure>
-
-        <div class="pedal-purchase-panel">
-          <div class="logo-bar-group pedal-purchase-mark" aria-hidden="true">
-            <span></span><span></span>
-          </div>
-          <div class="pedal-purchase">
-            <p class="eyebrow">
-              Late Roman Audio
-            </p>
-
-            <h2 id="pedal-heading">
-              {{product.name}}
-            </h2>
-
-            <p class="pedal-purchase-price">
-              {{product.displayPrice}}
-            </p>
-
-            <p class="pedal-purchase-status accent-status">
-              {{product.availabilityLabel}}
-            </p>
-
-            <div class="pedal-purchase-controls">
-              <div class="quantity-control">
-                <label for="weltgeist-quantity">
-                  {{purchase.quantity}}
-                </label>
-
-                <input id="weltgeist-quantity" class="quantity-input" type="number" min="{{product.quantity.min}}" max="{{product.quantity.max}}" step="1" value="{{product.quantity.min}}"
-                  inputmode="numeric">
-              </div>
-
-              <button id="weltgeist-add-to-cart" class="snipcart-add-item pedal-add-to-cart" type="button" {{product.purchaseState}}
-                data-item-id="{{product.id}}" data-item-name="{{product.name}}" data-item-price="{{product.decimalPrice}}" data-item-url="{{product.itemUrl}}"
-                data-item-taxable="false" data-item-image="{{product.checkoutImage}}"
-                data-item-description="{{purchase.description}}"
-                data-item-min-quantity="{{product.quantity.min}}" data-item-max-quantity="{{product.quantity.max}}" data-item-quantity="{{product.quantity.min}}">
-                {{purchase.addToCart}}
-              </button>
-            </div>
-            <div class="pedal-purchase-includes">
-              <p class="pedal-purchase-includes-title">{{purchase.cablesIncluded}}</p>
-              <p class="pedal-purchase-includes-description">{{purchase.cablesDescription}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-<section
-  id="why-weltgeist"
-  class="content-section reveal-section particle-section"
-  aria-labelledby="why-weltgeist-heading"
->
-  <div id="why-weltgeist-particles" class="section-particles" aria-hidden="true"></div>
-
-  <div class="section-content why-layout">
-    <div class="why-intro">
-      <div class="pillar-copy">
-        <div class="pillar-copy-text">
-          <h2 id="why-weltgeist-heading" class="section-heading">{{why.heading}}</h2>
-          <p class="landing-description">{{why.principle}}</p>
-          <p class="landing-description">{{why.benefit}}</p>
-        </div>
-        <div class="logo-bar-group pillar-copy-mark" aria-hidden="true">
-          <span></span><span></span>
-        </div>
-      </div>
-    </div>
-
-    <ul class="why-effects" role="list">
-      <li>
-        <h3>{{why.effects.modulation}}</h3>
-        <p>{{why.effectDescriptions.modulation}}</p>
-      </li>
-      <li>
-        <h3>{{why.effects.swell}}</h3>
-        <p>{{why.effectDescriptions.swell}}</p>
-      </li>
-      <li>
-        <h3>{{why.effects.filters}}</h3>
-        <p>{{why.effectDescriptions.filters}}</p>
-      </li>
-      <li>
-        <h3>{{why.effects.dirt}}</h3>
-        <p>{{why.effectDescriptions.dirt}}</p>
-      </li>
-      <li>
-        <h3>{{why.effects.delayReverb}}</h3>
-        <p>{{why.effectDescriptions.delayReverb}}</p>
-      </li>
-      <li>
-        <h3>{{why.effects.ducking}}</h3>
-        <p>{{why.effectDescriptions.ducking}}</p>
-      </li>
-    </ul>
-
-    <a class="manual-preview" href="/weltgeist-manual.html" hreflang="en">
-      <span class="manual-preview__cover" aria-hidden="true">
-        <span class="manual-preview__brand">Late Roman Avdio</span>
-        <span class="manual-preview__columns">
-          <span></span><span></span><span></span>
-        </span>
-        <span class="manual-preview__cover-title">{{product.name}}</span>
-        <span class="manual-preview__edition">Manual</span>
-      </span>
-
-      <span class="manual-preview__copy">
-        <strong class="manual-preview__title">{{why.manual.title}}</strong>
-        <span class="manual-preview__description">{{why.manual.description}}</span>
-        <span class="manual-preview__action">
-          {{why.manual.action}} <span aria-hidden="true">↗</span>
-        </span>
-      </span>
-    </a>
-  </div>
-</section>
-
-
-<section
-  id="features"
-  class="weltgeist-model-section reveal-section particle-section"
-  aria-labelledby="weltgeist-model-heading"
->
-  <div id="features-particles" class="section-particles" aria-hidden="true"></div>
-
-  <div class="weltgeist-model-inner">
-    <div class="weltgeist-model-heading">
-      <p class="weltgeist-model-kicker">{{model.kicker}}</p>
-      <h2 id="weltgeist-model-heading">{{model.heading}}</h2>
-      <p class="weltgeist-model-description">{{model.description}}</p>
-    </div>
-
-    <div class="weltgeist-model-layout">
-      <div class="weltgeist-model-media">
-        <div class="weltgeist-model-stage">
-          <div class="weltgeist-model-label weltgeist-model-label-top">
-            {{model.interactiveLabel}}
-          </div>
-
-          <model-viewer
-            class="weltgeist-model"
-            src="/models/weltgeist.glb"
-            alt="{{model.alt}}"
-            camera-controls
-            interaction-prompt="none"
-            exposure="1.8"
-            shadow-intensity="1"
-          ></model-viewer>
-
-          <div class="weltgeist-model-label weltgeist-model-label-bottom">
-            {{model.instructions}}
-          </div>
-        </div>
-
-        <div class="weltgeist-model-actions" role="group" aria-label="{{model.actions.label}}">
-          <button type="button" data-model-action="rotate">{{model.actions.rotate}}</button>
-          <button type="button" data-model-action="zoom-in">{{model.actions.zoomIn}}</button>
-          <button type="button" data-model-action="zoom-out">{{model.actions.zoomOut}}</button>
-          <button type="button" data-particle-motion aria-pressed="true" hidden>{{model.actions.motion}}</button>
-        </div>
-
-        <div class="weltgeist-model-meta">
-          <span>{{model.meta.controls}}</span>
-          <span aria-hidden="true">/</span>
-          <span>{{model.meta.switches}}</span>
-          <span aria-hidden="true">/</span>
-          <span>{{model.meta.levelDisplay}}</span>
-          <span aria-hidden="true">/</span>
-          <span>{{model.meta.expressionControl}}</span>
-        </div>
-      </div>
-
-      <div class="weltgeist-model-controls">
-        <h3 id="features-heading" class="section-heading">{{features.heading}}</h3>
-
-        <dl class="weltgeist-model-controls-list">
-          <div>
-            <dt>{{features.base.label}}</dt>
-            <dd>{{features.base.description}}</dd>
-          </div>
-          <div>
-            <dt>{{features.sensitivity.label}}</dt>
-            <dd>{{features.sensitivity.description}}</dd>
-          </div>
-          <div>
-            <dt>{{features.rise.label}}</dt>
-            <dd>{{features.rise.description}}</dd>
-          </div>
-          <div>
-            <dt>{{features.fall.label}}</dt>
-            <dd>{{features.fall.description}}</dd>
-          </div>
-          <div>
-            <dt>{{features.invert.label}}</dt>
-            <dd>{{features.invert.description}}</dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <section class="demo-showcase reveal-section" aria-labelledby="demo-heading">
-      <div id="demos" class="demo-content">
-        <p class="section-eyebrow">{{demo.eyebrow}}</p>
-
-        <h2 id="demo-heading" class="section-heading">
-          {{demo.heading}}
-        </h2>
-
-        <div class="demo-carousel">
-          <div class="demo-carousel-viewport" tabindex="0" role="group" aria-labelledby="demo-heading">
-            <div class="demo-carousel-track">
-
-              <article class="demo-card">
-                <div class="demo-media-placeholder">
-                  <span>
-                    {{demo.video1.label}}
-                  </span>
-                </div>
-
-                <div class="demo-card-content">
-                  <p class="demo-card-number">
-                    01
-                  </p>
-
-                  <h3>
-                    {{demo.video1.heading}}
-                  </h3>
-
-                  <p>
-                    {{demo.video1.description}}
-                  </p>
-                </div>
-              </article>
-
-              <article class="demo-card">
-                <div class="demo-media-placeholder">
-                  <span>
-                    {{demo.video2.label}}
-                  </span>
-                </div>
-
-                <div class="demo-card-content">
-                  <p class="demo-card-number">
-                    02
-                  </p>
-
-                  <h3>
-                    {{demo.video2.heading}}
-                  </h3>
-
-                  <p>
-                    {{demo.video2.description}}
-                  </p>
-                </div>
-              </article>
-
-            </div>
-          </div>
-
-          <div class="demo-carousel-controls">
-            <div class="demo-carousel-status" aria-hidden="true">
-              <span class="is-active"></span>
-              <span></span>
-            </div>
-
-            <div class="demo-carousel-buttons">
-              <button class="demo-carousel-button demo-carousel-previous" type="button" aria-label="{{demo.previousAriaLabel}}">
-                <span aria-hidden="true">←</span>
-              </button>
-
-              <button class="demo-carousel-button demo-carousel-next" type="button" aria-label="{{demo.nextAriaLabel}}">
-                <span aria-hidden="true">→</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-<section
-  id="simulation"
-  class="content-section reveal-section particle-section simulation-showcase-start"
-  aria-labelledby="simulation-heading"
->
-  <div
-    id="simulation-particles"
-    class="section-particles"
-    aria-hidden="true"
-  ></div>
-
-  <div class="pillar-copy">
-    <div class="pillar-copy-text">
-      <h2 id="simulation-heading" class="section-heading">
-        {{simulation.heading}}
-      </h2>
-
-      <p class="landing-description">
-        {{simulation.description.before}}<span class="accent-inline">{{simulation.description.accent}}</span>{{simulation.description.after}}
-      </p>
-    </div>
-    <div class="logo-bar-group pillar-copy-mark" aria-hidden="true">
-      <span></span><span></span>
-    </div>
-  </div>
-</section>
-
-
+<section id="studio" class="studio-shell" aria-labelledby="studio-title">
+ <div class="editorial-orb editorial-orb--studio" data-parallax="0.045" aria-hidden="true"></div>
+ <div id="why-weltgeist-particles" class="section-particles" aria-hidden="true"></div>
+ <div class="studio-heading"><div><p class="stage-kicker">{{stage.studioLabel}}</p><h2 id="studio-title">{{stage.studioTitle}}</h2></div><p>{{stage.studioIntro}}</p></div>
+ <div class="studio-workspace"><div class="studio-choices" role="group" aria-label="{{stage.applications}}"><button type="button" class="studio-choice" data-scene="modulation" aria-pressed="true"><span>01</span><strong>{{why.effects.modulation}}</strong><span class="studio-choice-dot" aria-hidden="true"></span></button><button type="button" class="studio-choice" data-scene="swell" aria-pressed="false"><span>02</span><strong>{{why.effects.swell}}</strong><span class="studio-choice-dot" aria-hidden="true"></span></button><button type="button" class="studio-choice" data-scene="filters" aria-pressed="false"><span>03</span><strong>{{why.effects.filters}}</strong><span class="studio-choice-dot" aria-hidden="true"></span></button><button type="button" class="studio-choice" data-scene="dirt" aria-pressed="false"><span>04</span><strong>{{why.effects.dirt}}</strong><span class="studio-choice-dot" aria-hidden="true"></span></button><button type="button" class="studio-choice" data-scene="delayReverb" aria-pressed="false"><span>05</span><strong>{{why.effects.delayReverb}}</strong><span class="studio-choice-dot" aria-hidden="true"></span></button><button type="button" class="studio-choice" data-scene="ducking" aria-pressed="false"><span>06</span><strong>{{why.effects.ducking}}</strong><span class="studio-choice-dot" aria-hidden="true"></span></button></div>
+ <div class="studio-scene"><div class="studio-scene-top"><span>{{stage.applications}}</span><span data-scene-number>01 / 06</span></div><img src="/images/weltgeist-top-720.webp" alt="{{purchase.imageAlt}}" width="720" height="576" loading="lazy"><div class="studio-scene-copy" aria-live="polite"><h3>{{why.effects.modulation}}</h3><p>{{why.effectDescriptions.modulation}}</p></div></div>
+ <div class="studio-route"><p class="stage-kicker">{{stage.principle}}</p><div class="route-step"><span>01</span><h3>{{stage.play}}</h3><p>{{stage.playText}}</p></div><div class="route-step"><span>02</span><h3>Weltgeist</h3><p>{{stage.respondText}}</p></div><div class="route-step"><span>03</span><h3>{{stage.effect}}</h3><p>{{stage.effectText}}</p></div><a class="stage-button" href="#simulation">{{stage.try}}</a></div></div>
+ <p class="studio-note">{{stage.demoNote}}</p><template data-scene-copy="modulation"><h3>{{why.effects.modulation}}</h3><p>{{why.effectDescriptions.modulation}}</p></template><template data-scene-copy="swell"><h3>{{why.effects.swell}}</h3><p>{{why.effectDescriptions.swell}}</p></template><template data-scene-copy="filters"><h3>{{why.effects.filters}}</h3><p>{{why.effectDescriptions.filters}}</p></template><template data-scene-copy="dirt"><h3>{{why.effects.dirt}}</h3><p>{{why.effectDescriptions.dirt}}</p></template><template data-scene-copy="delayReverb"><h3>{{why.effects.delayReverb}}</h3><p>{{why.effectDescriptions.delayReverb}}</p></template><template data-scene-copy="ducking"><h3>{{why.effects.ducking}}</h3><p>{{why.effectDescriptions.ducking}}</p></template>
+ <div id="simulation" class="studio-simulation-heading"><div class="simulation-signature" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div><p class="stage-kicker">{{stage.try}}</p><h2>{{simulation.heading}}</h2><p>{{simulation.description.before}}{{simulation.description.accent}}{{simulation.description.after}}</p></div>
     <section id="pedal-simulation" class="app reveal-section simulation-showcase-end"
       aria-labelledby="simulation-panel-heading">
       <h2 id="simulation-panel-heading" class="visually-hidden">
@@ -725,23 +340,7 @@
 
           </div>
 
-
-
         <div class="simulation-controls-group">
-        <div class="control control--horizontal">
-          <div class="control-heading">
-            <label for="sensitivity">
-              {{simulation.controls.sensitivity}}
-            </label>
-
-            <output id="sensitivity-value" for="sensitivity">
-              6.5
-            </output>
-          </div>
-
-          <input id="sensitivity" type="range" min="0.5" max="10" step="0.1" value="6.5">
-        </div>
-
         <div class="control control--horizontal">
           <div class="control-heading">
             <label for="base">
@@ -753,7 +352,21 @@
             </output>
           </div>
 
-          <input id="base" type="range" min="0" max="5" step="0.05" value="1">
+          <div class="rotary-widget" data-rotary="base"><div class="rotary-face" aria-hidden="true"><span class="rotary-tick"></span><span class="rotary-hub"></span></div><input id="base" type="range" min="0" max="5" step="0.05" value="1"></div>
+        </div>
+
+        <div class="control control--horizontal">
+          <div class="control-heading">
+            <label for="sensitivity">
+              {{simulation.controls.sensitivity}}
+            </label>
+
+            <output id="sensitivity-value" for="sensitivity">
+              6.5
+            </output>
+          </div>
+
+          <div class="rotary-widget" data-rotary="sensitivity"><div class="rotary-face" aria-hidden="true"><span class="rotary-tick"></span><span class="rotary-hub"></span></div><input id="sensitivity" type="range" min="0.5" max="10" step="0.1" value="6.5"></div>
         </div>
 
         <div class="control control--horizontal">
@@ -767,7 +380,7 @@
             </output>
           </div>
 
-          <input id="attack" type="range" min="0" max="4000" step="10" value="0">
+          <div class="rotary-widget" data-rotary="attack"><div class="rotary-face" aria-hidden="true"><span class="rotary-tick"></span><span class="rotary-hub"></span></div><input id="attack" type="range" min="0" max="4000" step="10" value="0"></div>
         </div>
 
         <div class="control control--horizontal">
@@ -781,7 +394,7 @@
             </output>
           </div>
 
-          <input id="release" type="range" min="10" max="4000" step="10" value="4000">
+          <div class="rotary-widget" data-rotary="release"><div class="rotary-face" aria-hidden="true"><span class="rotary-tick"></span><span class="rotary-hub"></span></div><input id="release" type="range" min="10" max="4000" step="10" value="4000"></div>
         </div>
 
         <div class="control control--horizontal">
@@ -796,122 +409,205 @@
         </div>
       </div>
 
-
-
-      <section class="visualization-panel">
-
-        <header class="visualization-header">
-          <div>
-            <p class="eyebrow">
-              {{simulation.visualization.eyebrow}}
-            </p>
-
-            <h3>
-              {{simulation.visualization.heading}}
-            </h3>
-          </div>
-
-
-          <dl class="live-values">
-            <div>
-              <dt>
-                {{simulation.values.input}}
-              </dt>
-
-              <dd id="current-input">
-                0.00
-              </dd>
-            </div>
-
-            <div>
-              <dt>
-                {{simulation.values.output}}
-              </dt>
-
-              <dd id="current-output" class="accent-value">
-                0.00
-              </dd>
-            </div>
-          </dl>
-        </header>
-
-<div class="expression-pedal-stage">
-
-<figure class="expression-pedal-illustration">
-  <svg viewBox="100 102 660 218"
-       aria-hidden="true"
-       focusable="false">
-<path class="expression-pedal-illustration__body"
-      d="M164 222 H440 L700 276 H708 V294
-         H152 V234 Q152 222 164 222 Z"/>
-
-<path class="expression-pedal-illustration__detail"
-      d="M166 232 H438 L670 280.2"/>
-
-    <g class="expression-pedal-illustration__treadle"
-       id="expression-pedal-treadle"
-       transform="rotate(-9 440 207)">
-      <path class="expression-pedal-illustration__plate"
-            d="M171 145 L697 234 Q702 235 704 240
-               L706 247 Q706 251 701 252
-               L168 161 Q162 159 162 153
-               V150 Q162 146 171 145 Z"/>
-
-      <path class="expression-pedal-illustration__grip"
-            d="M185 146 L268 160
-               M286 164 L369 178
-               M389 181 L472 195
-               M490 198 L573 212
-               M592 215 L679 229"/>
-    </g>
-
-    <path class="expression-pedal-illustration__feet"
-          d="M183 294 v5 h28 v-5
-             M655 294 v5 h28 v-5"/>
-
-    <text class="expression-pedal-illustration__brand"
-          x="260" y="278">{{product.uppercaseName}}</text>
-
-    <path class="expression-pedal-illustration__ground"
-          d="M106 311 H754"/>
-  </svg>
-
-  <figcaption class="expression-pedal-illustration__labels">
-    <span>{{simulation.pedal.toeDown}}</span>
-    <span>{{simulation.pedal.heelDown}}</span>
-  </figcaption>
-<div
-  class="expression-position-meter"
-  id="expression-position-meter"
-  role="progressbar"
-  aria-label="{{simulation.values.output}}"
-  aria-valuemin="0"
-  aria-valuemax="100"
-  aria-valuenow="0"
->
-  <span
-    class="expression-position-meter__maximum-fill"
-    id="expression-position-meter-maximum"
-    aria-hidden="true"
-  ></span>
-
-  <span
-    class="expression-position-meter__fill"
-    id="expression-position-meter-fill"
-  ></span>
-</div>
-</figure>
-
-
-</div>
+      <section class="visualization-panel" aria-labelledby="expression-heading">
+        <p class="eyebrow">{{simulation.visualization.eyebrow}}</p>
+        <h3 id="expression-heading">{{simulation.visualization.heading}}</h3>
+        <div class="expression-motion" aria-hidden="true">
+          <svg viewBox="0 0 600 230" focusable="false">
+            <circle class="motion-orbit" cx="300" cy="123" r="103"/>
+            <path class="motion-ground" d="M65 204 H535"/>
+            <path class="motion-support" d="M255 193 L300 125 L345 193 Z"/>
+            <g id="expression-motion-plate" class="expression-motion-plate" transform="rotate(6 300 125)">
+              <path class="motion-plate" d="M105 108 Q105 100 115 100 H485 Q495 100 495 108 V119 H105 Z"/>
+              <path class="motion-detail" d="M120 109 H480 M158 99 V91 M206 99 V91 M254 99 V91 M302 99 V91 M350 99 V91 M398 99 V91 M446 99 V91"/>
+              <circle class="motion-pivot" cx="300" cy="125" r="8"/>
+            </g>
+          </svg>
+          <div class="motion-labels"><span>{{simulation.pedal.toeDown}}</span><span>{{simulation.pedal.heelDown}}</span></div>
+        </div>
+        <div class="expression-readout">
+          <span class="expression-readout-label">{{simulation.values.output}}</span>
+          <div class="expression-readout-number"><output id="current-output">0.00</output><span>/ 5</span></div>
+        </div>
+        <div class="expression-position-meter" id="expression-position-meter" role="progressbar" aria-label="{{simulation.values.output}}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <span class="expression-position-meter__maximum-fill" id="expression-position-meter-maximum" aria-hidden="true"></span>
+          <span class="expression-position-meter__fill" id="expression-position-meter-fill"></span>
+        </div>
+        <div class="expression-scale" aria-hidden="true"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+        <div class="expression-input-readout"><span>{{simulation.values.input}}</span><output id="current-input">0.00</output><span>/ 1</span></div>
+        <div class="expression-input-meter" aria-hidden="true"><span id="expression-input-fill"></span></div>
+        <p class="expression-response-caption">{{stage.respondText}}</p>
       </section>
     </section>
 
-    <section id="specifications" class="content-section particle-section" aria-labelledby="specifications-heading">
+</section>
+<div class="product-detail-heading"><p class="stage-kicker">{{stage.details}}</p><h2>{{stage.detailsTitle}}</h2></div>
+    <section id="pedal" class="pedal-showcase reveal-section" aria-labelledby="pedal-heading">
+      <div class="pedal-showcase-content">
+        <figure class="pedal-showcase-figure" data-product-gallery
+          data-top-label="{{purchase.gallery.top}}"
+          data-front-label="{{purchase.gallery.front}}"
+          data-low-angle-label="{{purchase.gallery.lowAngle}}">
+          <div class="pedal-gallery-thumbnails" hidden></div>
+          <div class="pedal-showcase-image-frame">
+            <div class="pedal-gallery-stage">
+              <img
+                class="pedal-showcase-image"
+                src="{{product.photo}}"
+                srcset="{{product.photoMedium}} 720w, {{product.photo}} 1200w"
+                sizes="auto, (max-width: 850px) calc(100vw - 4rem), 540px"
+                alt="{{purchase.imageAlt}}"
+                width="{{product.photoWidth}}"
+                height="{{product.photoHeight}}"
+                loading="lazy"
+              >
+            </div>
+          </div>
+
+          <figcaption>
+            {{purchase.figcaption}}
+          </figcaption>
+        </figure>
+
+        <div class="pedal-purchase-panel">
+          <div class="logo-bar-group pedal-purchase-mark" aria-hidden="true">
+            <span></span><span></span>
+          </div>
+          <div class="pedal-purchase">
+            <p class="eyebrow">
+              Late Roman Audio
+            </p>
+
+            <h2 id="pedal-heading">
+              {{product.name}}
+            </h2>
+
+            <p class="pedal-purchase-price">
+              {{product.displayPrice}}
+            </p>
+
+            <p class="pedal-purchase-status accent-status">
+              {{product.availabilityLabel}}
+            </p>
+
+            <div class="pedal-purchase-controls">
+              <div class="quantity-control">
+                <label for="weltgeist-quantity">
+                  {{purchase.quantity}}
+                </label>
+
+                <input id="weltgeist-quantity" class="quantity-input" type="number" min="{{product.quantity.min}}" max="{{product.quantity.max}}" step="1" value="{{product.quantity.min}}"
+                  inputmode="numeric">
+              </div>
+
+              <button id="weltgeist-add-to-cart" class="snipcart-add-item pedal-add-to-cart" type="button" {{product.purchaseState}}
+                data-item-id="{{product.id}}" data-item-name="{{product.name}}" data-item-price="{{product.decimalPrice}}" data-item-url="{{product.itemUrl}}"
+                data-item-taxable="false" data-item-image="{{product.checkoutImage}}"
+                data-item-description="{{purchase.description}}"
+                data-item-min-quantity="{{product.quantity.min}}" data-item-max-quantity="{{product.quantity.max}}" data-item-quantity="{{product.quantity.min}}">
+                {{purchase.addToCart}}
+              </button>
+            </div>
+            <div class="pedal-purchase-includes">
+              <p class="pedal-purchase-includes-title">{{purchase.cablesIncluded}}</p>
+              <p class="pedal-purchase-includes-description">{{purchase.cablesDescription}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><section
+  id="features"
+  class="weltgeist-model-section particle-section hardware-section"
+  aria-labelledby="weltgeist-model-heading"
+>
+  <div class="editorial-orb editorial-orb--hardware" data-parallax="-0.035" aria-hidden="true"></div>
+  <div id="features-particles" class="section-particles" aria-hidden="true"></div>
+
+  <div class="weltgeist-model-inner">
+    <div class="weltgeist-model-heading">
+      <p class="weltgeist-model-kicker">{{model.kicker}}</p>
+      <h2 id="weltgeist-model-heading">{{model.heading}}</h2>
+      <p class="weltgeist-model-description">{{model.description}}</p>
+    </div>
+
+    <div class="weltgeist-model-layout">
+      <div class="weltgeist-model-media">
+        <div class="weltgeist-model-stage">
+          <div class="weltgeist-model-label weltgeist-model-label-top">
+            {{model.interactiveLabel}}
+          </div>
+
+          <img class="model-static-fallback" src="/images/weltgeist.webp" alt="{{purchase.imageAlt}}" width="1122" height="1402" loading="lazy">
+          <model-viewer
+            class="weltgeist-model"
+            src="/models/weltgeist.glb"
+            alt="{{model.alt}}"
+            camera-controls
+            touch-action="pan-y"
+            poster="/images/weltgeist-low-angle-720.webp"
+            interaction-prompt="none"
+            exposure="1.8"
+            shadow-intensity="1"
+          ></model-viewer>
+
+          <div class="weltgeist-model-label weltgeist-model-label-bottom" data-model-fallback-message="{{stage.modelFallback}}">
+            {{model.instructions}}
+          </div>
+        </div>
+
+        <div class="weltgeist-model-actions" role="group" aria-label="{{model.actions.label}}">
+          <button type="button" data-model-action="rotate">{{model.actions.rotate}}</button>
+          <button type="button" data-model-action="zoom-in">{{model.actions.zoomIn}}</button>
+          <button type="button" data-model-action="zoom-out">{{model.actions.zoomOut}}</button>
+        </div>
+
+        <div class="weltgeist-model-meta">
+          <span>{{model.meta.controls}}</span>
+          <span aria-hidden="true">/</span>
+          <span>{{model.meta.switches}}</span>
+          <span aria-hidden="true">/</span>
+          <span>{{model.meta.levelDisplay}}</span>
+          <span aria-hidden="true">/</span>
+          <span>{{model.meta.expressionControl}}</span>
+        </div>
+      </div>
+
+      <div class="weltgeist-model-controls">
+        <h3 id="features-heading" class="section-heading">{{features.heading}}</h3>
+
+        <dl class="weltgeist-model-controls-list">
+          <div>
+            <dt>{{features.base.label}}</dt>
+            <dd>{{features.base.description}}</dd>
+          </div>
+          <div>
+            <dt>{{features.sensitivity.label}}</dt>
+            <dd>{{features.sensitivity.description}}</dd>
+          </div>
+          <div>
+            <dt>{{features.rise.label}}</dt>
+            <dd>{{features.rise.description}}</dd>
+          </div>
+          <div>
+            <dt>{{features.fall.label}}</dt>
+            <dd>{{features.fall.description}}</dd>
+          </div>
+          <div>
+            <dt>{{features.invert.label}}</dt>
+            <dd>{{features.invert.description}}</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="specifications" class="content-section particle-section" aria-labelledby="specifications-heading">
+      <div class="editorial-orb editorial-orb--specifications" data-parallax="0.025" aria-hidden="true"></div>
       <div id="specifications-particles" class="section-particles" aria-hidden="true"></div>
 
       <div class="section-content specifications-layout">
         <div class="specifications-data">
+          <p class="stage-kicker">{{stage.technical}}</p>
           <h2 id="specifications-heading" class="section-heading">
             {{specifications.heading}}
           </h2>
@@ -958,20 +654,29 @@
           </table>
         </div>
 
-        <div class="pillar-copy">
-          <div class="pillar-copy-text">
-            <h2 class="section-heading">
-              {{specifications.compatibility.heading}}
-            </h2>
+        <aside class="compatibility-reference" aria-labelledby="compatibility-heading">
+          <p class="stage-kicker">{{stage.setup}}</p>
+          <h2 id="compatibility-heading">{{specifications.compatibility.heading}}</h2>
+          <p class="compatibility-text">{{specifications.compatibility.description}}</p>
+          <div class="reference-manual"><a class="manual-preview" href="/weltgeist-manual.html" hreflang="en">
+      <span class="manual-preview__cover" aria-hidden="true">
+        <span class="manual-preview__brand">Late Roman Avdio</span>
+        <span class="manual-preview__columns">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="manual-preview__cover-title">{{product.name}}</span>
+        <span class="manual-preview__edition">Manual</span>
+      </span>
 
-            <p class="landing-description">
-              {{specifications.compatibility.description}}
-            </p>
-          </div>
-          <div class="logo-bar-group pillar-copy-mark" aria-hidden="true">
-            <span></span><span></span>
-          </div>
-        </div>
+      <span class="manual-preview__copy">
+        <strong class="manual-preview__title">{{why.manual.title}}</strong>
+        <span class="manual-preview__description">{{why.manual.description}}</span>
+        <span class="manual-preview__action">
+          {{why.manual.action}}
+        </span>
+      </span>
+    </a></div>
+        </aside>
       </div>
     </section>
 

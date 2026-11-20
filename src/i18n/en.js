@@ -1,4 +1,33 @@
 export default {
+  stage: {
+    "modelFallback": "3D unavailable in this browser. Product photo shown.",
+    "setup": "Your setup",
+    "technical": "The details",
+  "category": "Dynamics-controlled expression",
+  "kicker": "Your playing. In control.",
+  "title": "Make every note move.",
+  "intro": "Turn your playing dynamics into expression control for the pedals you already own.",
+  "explore": "Explore Weltgeist",
+  "product": "The pedal",
+  "caption": "Designed to respond.",
+  "footer": "Two expression outputs. One musical gesture.",
+  "scroll": "Step inside",
+  "studioLabel": "The studio",
+  "studioTitle": "Find your next expression.",
+  "studioIntro": "Six ways to make your effects follow your playing. Choose an application, then explore the response.",
+  "applications": "Applications",
+  "principle": "How it works",
+  "play": "You play",
+  "playText": "Your attack provides the starting point.",
+  "respondText": "Shapes your dynamics into expression control.",
+  "effect": "Your effect responds",
+  "effectText": "The assigned parameter follows the expression output.",
+  "try": "Try the controls",
+  "demoNote": "Application preview. The expression simulation below visualizes control signals; it does not produce effect audio.",
+  "details": "The instrument",
+  "detailsTitle": "A closer look.",
+  "model": "Explore the hardware & controls"
+},
   lang: "en",
 
   seo: {

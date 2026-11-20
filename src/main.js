@@ -35,6 +35,7 @@ import {
 
 import { initializeProductGallery } from './product-gallery.js';
 import { initializeModelControls } from './model-controls.js';
+import { initializeRotaryControls } from './rotary-controls.js';
 
 initializeDemoCarousel();
 initializeProductGallery();
@@ -53,17 +54,12 @@ initializeRevealSections();
 
 pedalSimulation.render();
 
-initializeSectionParticles()
-  .then(() => {
-    updateParticleWobble(
-      pedalSimulation.getCurrentOutput(),
-    );
-  })
-  .catch((error) => {
-    console.error(
-      "Section particles could not be initialized:",
-      error,
-    );
-  });
-
 initializeRangeFills();
+initializeRotaryControls();
+
+import './studio-preview.js';
+
+initializeSectionParticles()
+  .then(() => updateParticleWobble(pedalSimulation.getCurrentOutput()))
+  .catch(error => console.error('Particle initialization failed:', error));
+import './editorial-motion.js';

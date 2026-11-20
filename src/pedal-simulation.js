@@ -75,8 +75,8 @@ export function createPedalSimulation() {
   const currentOutputValue =
     document.querySelector('#current-output');
 
-  const pedalTreadle =
-    document.querySelector('#expression-pedal-treadle');
+  const inputMeterFill = document.querySelector('#expression-input-fill');
+  const motionPlate = document.querySelector('#expression-motion-plate');
 
   const positionMeterMaximum =
     document.querySelector('#expression-position-meter-maximum');
@@ -121,7 +121,6 @@ export function createPedalSimulation() {
     || !invertInput
     || !currentInputValue
     || !currentOutputValue
-    || !pedalTreadle
     || !liveAudioInfo
     || !liveAudioStatus
   ) {
@@ -196,27 +195,15 @@ export function createPedalSimulation() {
 
     currentInputValue.textContent =
       state.input.toFixed(2);
+    if (inputMeterFill) inputMeterFill.style.width = `${Math.max(0, Math.min(1, state.input)) * 100}%`;
 
     inputLevelInput.value =
       String(state.input);
   }
 
-function renderPedalPosition() {
-  if (!pedalTreadle) return;
-
-
-  const position = Math.max(
-    0,
-    Math.min(1, state.currentOutput / 5),
-  );
-
-
-  const angle = 3 - position * 13;
-  pedalTreadle.setAttribute(
-    'transform',
-    `rotate(${angle.toFixed(2)} 440 207)`,
-  );
-
+function renderExpressionPosition() {
+  const position = Math.max(0, Math.min(1, state.currentOutput / 5));
+  if (motionPlate) motionPlate.setAttribute('transform', `rotate(${(6 - position * 24).toFixed(2)} 300 125)`);
   if (positionMeter && positionMeterFill) {
     const percentage = position * 100;
     positionMeterFill.style.width = `${percentage}%`;
@@ -228,7 +215,7 @@ function renderPedalPosition() {
     currentOutputValue.textContent =
       state.currentOutput.toFixed(2);
 
-    renderPedalPosition();
+    renderExpressionPosition();
   }
 
   function render() {

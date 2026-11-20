@@ -1,0 +1,130 @@
+/* Third pass: tactile controls, physical expression movement, a broad hardware chapter. */
+.studio-shell .app { max-width: 1380px; grid-template-columns: minmax(0,1.05fr) minmax(0,1fr); }
+.studio-shell .simulation-controls-group { gap: 1.5rem 2.5rem; border-top: 0; }
+.studio-shell .simulation-controls-group > .control { border-top: 1px solid var(--border); padding-top: 1rem; }
+.studio-shell .simulation-controls-group > .control:last-child { grid-column: 1/-1; grid-template-columns: 1fr auto; padding-top: 1.3rem; }
+.studio-shell .simulation-controls-group > .control:last-child .control-heading { flex-direction: row; }
+.studio-shell .simulation-controls-group > .control:last-child input { justify-self: end; }
+.rotary-widget { --dial-angle: -135deg; --dial-sweep: 0deg; display: grid; justify-items: center; gap: .6rem; padding: .4rem .5rem .6rem; }
+.rotary-face { position: relative; width: clamp(5.5rem,8.5vw,8.5rem); aspect-ratio: 1; border-radius: 50%; background: conic-gradient(from 225deg,var(--tertiary) 0deg var(--dial-sweep),transparent var(--dial-sweep) 270deg,transparent 270deg); cursor: ns-resize; touch-action: none; }
+.rotary-face::before { content: ''; position: absolute; inset: .35rem; border: 1px solid var(--border); border-radius: 50%; background: var(--background); }
+.rotary-hub { position: absolute; inset: 17%; border: 1px solid var(--tertiary); border-radius: 50%; background: var(--surface); box-shadow: 0 .3rem .7rem rgb(var(--shadow-rgb) / 10%); }
+.rotary-tick { position: absolute; inset: 17%; z-index: 1; transform: rotate(var(--dial-angle)); pointer-events: none; }
+.rotary-tick::after { content: ''; position: absolute; top: 12%; left: calc(50% - 1px); width: 2px; height: 25%; background: var(--tertiary); }
+.rotary-widget:focus-within .rotary-face { outline: 2px solid var(--tertiary); outline-offset: 5px; }
+.rotary-widget input[type="range"] { width: min(100%,9rem); min-height: 1.75rem; }
+.studio-shell .visualization-panel { min-height: 42rem; padding-top: 2rem; overflow: hidden; }
+.studio-shell .visualization-panel > * { position: relative; z-index: 1; }
+.studio-shell .visualization-panel h3 { margin-bottom: .5rem; font-size: clamp(1.8rem,2.3vw,2.8rem); }
+.expression-motion { margin: .5rem -1.5rem 1.25rem; }
+.expression-motion svg { display: block; width: 100%; height: auto; }
+.motion-orbit { fill: none; stroke: currentColor; stroke-opacity: .18; stroke-width: 1; }
+.motion-ground { fill: none; stroke: currentColor; stroke-opacity: .35; stroke-width: 1; }
+.motion-support { fill: none; stroke: currentColor; stroke-opacity: .75; stroke-width: 1.5; }
+.motion-plate { fill: var(--editorial-cream); stroke: var(--editorial-cream); stroke-width: 1.5; }
+.motion-detail { fill: none; stroke: var(--editorial-cream); stroke-width: 2; }
+.motion-pivot { fill: var(--studio-blue); stroke: var(--editorial-cream); stroke-width: 1.5; }
+.motion-labels { display: flex; justify-content: space-between; margin: -.5rem 2rem 0; font-size: .9rem; opacity: .85; }
+.expression-readout-number output { font-size: clamp(4rem,6vw,6.5rem); }
+.expression-input-readout { margin-top: 1.5rem; }
+.expression-response-caption { padding-top: 1rem; }
+/* The hardware is visible without an expander, in the same visual language as the hero. */
+.hardware-section { position: relative; isolation: isolate; overflow: visible; padding: 6rem var(--layout-gutter) 5rem; margin-top: 4rem; border-block: 0; }
+.hardware-section .weltgeist-model-inner { width: 100%; max-width: none; margin: 0; }
+.hardware-section .weltgeist-model-heading { display: grid; grid-template-columns: minmax(0,1.3fr) minmax(0,.7fr); gap: .6rem 8vw; align-items: end; margin-bottom: 3.5rem; }
+.hardware-section .weltgeist-model-kicker { grid-column: 1/-1; text-transform: none; font-size: 1rem; color: var(--tertiary); letter-spacing: .03em; }
+.hardware-section .weltgeist-model-heading h2 { font-size: clamp(3.5rem,7vw,8rem); line-height: .98; letter-spacing: -.045em; max-width: 11em; }
+.hardware-section .weltgeist-model-description { font-size: 1.2rem; max-width: 32rem; margin: 0; line-height: 1.6; color: var(--text); }
+.hardware-section .weltgeist-model-layout { grid-template-columns: minmax(0,1.5fr) minmax(0,1fr); gap: clamp(3rem,6vw,7rem); align-items: center; }
+.hardware-section .weltgeist-model-stage { height: clamp(28rem,41vw,50rem); background: transparent; border: 0; box-shadow: none; isolation: isolate; }
+.hardware-section .weltgeist-model-stage::before { content: ''; position: absolute; width: 90%; max-width: 48rem; aspect-ratio: 1; border-radius: 50%; left: 2%; top: 3%; background: var(--studio-blue); z-index: -1; }
+.hardware-section .weltgeist-model-label { color: var(--text); font-size: .9rem; letter-spacing: .03em; background: var(--background); padding: .4rem .6rem; }
+.hardware-section .weltgeist-model-label-top { top: 1rem; left: 0; }
+.hardware-section .weltgeist-model-label-bottom { bottom: 0; right: 0; left: auto; max-width: 90%; }
+.hardware-section .weltgeist-model-meta { font-size: .9rem; letter-spacing: 0; margin-top: 1.5rem; }
+.hardware-section .weltgeist-model-actions { gap: .75rem; }
+.hardware-section .weltgeist-model-actions button { padding: .7rem 1rem; font-size: 1rem; min-height: 44px; border-color: var(--tertiary); }
+.hardware-section .weltgeist-model-actions button:hover { background: rgb(var(--tertiary-rgb) / 8%); }
+.hardware-section .weltgeist-model-controls .section-heading { font-size: 2.5rem; font-weight: 400; text-transform: none; letter-spacing: -.025em; }
+.hardware-section .weltgeist-model-controls-list { margin-top: 1.75rem; }
+.hardware-section .weltgeist-model-controls-list > div { display: grid; grid-template-columns: minmax(6rem,.65fr) minmax(0,1.35fr); gap: 1.5rem; padding-block: 1.2rem; }
+.hardware-section .weltgeist-model-controls-list dt { color: var(--tertiary); font-size: 1.6rem; font-weight: 400; }
+.hardware-section .weltgeist-model-controls-list dd { margin: .2rem 0 0; font-size: 1.15rem; line-height: 1.6; }
+.editorial-orb--hardware { width: 35vw; right: -20%; bottom: -10rem; border: 1px solid var(--tertiary); }
+/* Exact technical data stay in a table, but take the space of a complete chapter. */
+#specifications.content-section { overflow: visible; padding: 5rem var(--layout-gutter) 6rem; isolation: isolate; }
+#specifications .specifications-layout { position: relative; z-index: 1; width: 100%; max-width: none; margin: 0; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: clamp(3rem,7vw,9rem); align-items: start; }
+#specifications .specifications-data > .stage-kicker { font-size: 1rem; margin: 0 0 1rem; }
+#specifications .specifications-data .section-heading { font-size: clamp(3rem,5vw,6rem); font-weight: 400; text-transform: none; letter-spacing: -.045em; line-height: 1; margin: 0 0 2.5rem; }
+#specifications .specifications-table { table-layout: auto; margin-top: 0; }
+#specifications .specifications-table th { font-weight: 400; text-transform: none; letter-spacing: 0; font-size: 1.2rem; width: 42%; padding-right: 2rem; }
+#specifications .specifications-table td { font-size: 1.2rem; letter-spacing: 0; }
+#specifications .specifications-table th,#specifications .specifications-table td { padding-block: 1.3rem; }
+.compatibility-reference { --text: #f4f1e6; --muted: #dedfff; --border: rgb(244 241 230 / 30%); --tertiary: #f4f1e6; background: var(--studio-blue); color: var(--text); padding: clamp(2rem,4vw,4rem); margin-top: 5rem; position: relative; }
+.compatibility-reference::before { content: ''; position: absolute; width: 15rem; aspect-ratio: 1; border: 1px solid rgb(244 241 230 / 22%); border-radius: 50%; right: -6rem; top: -6rem; pointer-events: none; }
+.compatibility-reference .stage-kicker { margin: 0 0 1rem; color: var(--text); }
+.compatibility-reference h2 { font-size: clamp(2.5rem,3.5vw,4.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -.035em; margin: 0 0 1.5rem; max-width: 12em; }
+.compatibility-text { font-size: 1.2rem; line-height: 1.7; max-width: 40em; margin: 0; }
+.reference-manual { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.reference-manual .manual-preview { display: flex; gap: 1.5rem; align-items: center; max-width: none; margin: 0; padding: 0; border: 0; background: transparent; color: var(--text); text-decoration: none; }
+.reference-manual .manual-preview__cover { flex: 0 0 6rem; width: 6rem; height: 8.5rem; background: var(--editorial-cream); color: #11110f; }
+.reference-manual .manual-preview__copy { gap: .65rem; }
+.reference-manual .manual-preview__title { font-size: 1.6rem; font-weight: 400; letter-spacing: 0; }
+.reference-manual .manual-preview__description { color: var(--muted); font-size: 1.05rem; line-height: 1.5; letter-spacing: 0; }
+.reference-manual .manual-preview__action { color: var(--text); font-size: 1rem; letter-spacing: 0; text-transform: none; text-decoration: underline; text-underline-offset: .3rem; }
+.reference-manual .manual-preview:hover .manual-preview__action { text-decoration-thickness: 2px; }
+.reference-manual .manual-preview__brand { font-size: .45rem; }
+.reference-manual .manual-preview__cover-title { font-size: 1rem; }
+.editorial-orb--specifications { width: 45vw; left: -32%; top: 3rem; background: rgb(var(--tertiary-rgb) / 7%); }
+.site-footer { width: var(--layout-content-width); max-width: none; margin-top: 1rem; font-size: .9rem; letter-spacing: .03em; }
+@media (min-width: 1600px) {
+ .hardware-section .weltgeist-model-layout { grid-template-columns: minmax(0,1.45fr) minmax(0,1fr); }
+ .hardware-section .weltgeist-model-controls-list dd { font-size: 1.3rem; }
+ #specifications .specifications-table td,#specifications .specifications-table th,.compatibility-text { font-size: 1.35rem; }
+}
+@media (max-width: 1050px) {
+ .hardware-section .weltgeist-model-layout { grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 2rem; }
+ .hardware-section .weltgeist-model-controls-list > div { display: block; }
+ .hardware-section .weltgeist-model-heading { grid-template-columns: 1fr; gap: 1rem; }
+ .hardware-section .weltgeist-model-description { max-width: 45rem; }
+ #specifications .specifications-layout { gap: 2rem; }
+ .compatibility-reference { padding: 2rem; }
+}
+@media (max-width: 760px) {
+ .studio-shell .app { grid-template-columns: minmax(0,1fr); }
+ .studio-shell .simulation-controls-group { gap: 1rem 1.5rem; }
+ .studio-shell .visualization-panel { min-height: 38rem; }
+ .rotary-face { width: 6.5rem; }
+ .expression-readout-number output { font-size: 5rem; }
+ .hardware-section { padding-block: 3rem; margin-top: 2rem; }
+ .hardware-section .weltgeist-model-layout { grid-template-columns: minmax(0,1fr); gap: 3rem; }
+ .hardware-section .weltgeist-model-stage { height: clamp(23rem,90vw,35rem); }
+ .hardware-section .weltgeist-model-heading { margin-bottom: 2rem; }
+ .hardware-section .weltgeist-model-heading h2 { font-size: 3.5rem; }
+ .hardware-section .weltgeist-model-description { font-size: 1.1rem; }
+ .hardware-section .weltgeist-model-controls-list > div { display: grid; grid-template-columns: minmax(0,.65fr) minmax(0,1.35fr); gap: 1rem; }
+ .hardware-section .weltgeist-model-controls-list dt { font-size: 1.3rem; }
+ .hardware-section .weltgeist-model-controls-list dd { font-size: 1.05rem; }
+ #specifications.content-section { padding-block: 3rem; }
+ #specifications .specifications-layout { grid-template-columns: minmax(0,1fr); gap: 2rem; }
+ #specifications .specifications-table th,#specifications .specifications-table td { font-size: 1.05rem; }
+ #specifications .specifications-table th { padding-right: 1rem; }
+ .compatibility-reference { margin-top: 0; padding: 1.75rem; overflow: hidden; }
+ .compatibility-reference h2 { font-size: 2.7rem; }
+ .compatibility-text { font-size: 1.1rem; }
+ .reference-manual .manual-preview { gap: 1rem; }
+ .reference-manual .manual-preview__cover { flex-basis: 4.5rem; width: 4.5rem; height: 6.5rem; }
+ .reference-manual .manual-preview__title { font-size: 1.3rem; }
+ .reference-manual .manual-preview__brand { font-size: .35rem; }
+ .reference-manual .manual-preview__description { font-size: 1rem; }
+ .reference-manual .manual-preview__cover-title { font-size: .8rem; }
+}
+@media (prefers-reduced-motion: reduce) { .expression-motion-plate { transform: none; } }
+/* Keep the moving background clear of the explanatory text. */
+.studio-simulation-heading { background: var(--background); padding: 3rem 1.5rem 2.5rem; margin-top: 4rem; }
+.studio-shell input[type="range"] { --range-accent: var(--tertiary); }
+.model-static-fallback { position: absolute; inset: -12% 5%; width: 90%; height: 120%; object-fit: contain; transform: rotate(-8deg); pointer-events: none; }
+.model-static-fallback[hidden],.weltgeist-model[hidden] { display: none; }
+.hardware-section .weltgeist-model-actions button:disabled { opacity: .45; cursor: default; }
+@media (max-width: 760px) { .studio-simulation-heading { padding-inline: .5rem; } }
+.hardware-section .weltgeist-model-stage::before { width: auto; height: 94%; max-width: none; }
