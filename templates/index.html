@@ -6,46 +6,8 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link
-  rel="canonical"
-  href="{{seo.canonical}}"
->
-
-<link
-  rel="alternate"
-  hreflang="en"
-  href="https://lateromanaudio.de/en/"
->
-
-<link
-  rel="alternate"
-  hreflang="de"
-  href="https://lateromanaudio.de/de/"
->
-
-<link
-  rel="alternate"
-  hreflang="fr"
-  href="https://lateromanaudio.de/fr/"
->
-
-<link
-  rel="alternate"
-  hreflang="it"
-  href="https://lateromanaudio.de/it/"
->
-
-<link
-  rel="alternate"
-  hreflang="es"
-  href="https://lateromanaudio.de/es/"
->
-
-<link
-  rel="alternate"
-  hreflang="x-default"
-  href="https://lateromanaudio.de/en/"
->
+<link rel="canonical" href="{{canonical}}">
+  {{languageAlternates}}
 
   <script src="/theme-bootstrap.js"></script>
   <script type="application/ld+json">
@@ -54,11 +16,14 @@
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Late Roman Audio">
-  <meta property="og:url" content="{{seo.canonical}}">
+  <meta property="og:url" content="{{canonical}}">
   <meta property="og:locale" content="{{social.locale}}">
   <meta property="og:title" content="{{social.title}}">
   <meta property="og:description" content="{{social.description}}">
   <meta property="og:image" content="{{social.image}}">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="{{product.photoWidth}}">
+  <meta property="og:image:height" content="{{product.photoHeight}}">
   <meta property="og:image:alt" content="{{social.imageAlt}}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{{social.title}}">
@@ -81,8 +46,10 @@
 <body>
   <script type="module" src="/src/snipcart.js"></script>
 
+  <a class="skip-link" href="#main-content">{{nav.skipToContent}}</a>
+
   <header class="site-header">
-    <a class="site-header-brand" href="{{links.home}}" aria-label="{{header.homeAriaLabel}}">
+    <a class="site-header-brand" href="{{product.itemUrl}}" aria-label="{{header.homeAriaLabel}}">
       <span class="site-header-wordmark">
         Late Roman Avdio
       </span>
@@ -133,11 +100,12 @@
         </a>
 <div
   class="site-header-language"
+  role="group"
   aria-label="{{language.ariaLabel}}"
 >
   <a
     class="site-header-language-link site-header-language-link--en"
-    href="/en/"
+    href="{{localePaths.en}}"
     lang="en"
     hreflang="en"
   >
@@ -153,7 +121,7 @@
 
   <a
     class="site-header-language-link site-header-language-link--de"
-    href="/de/"
+    href="{{localePaths.de}}"
     lang="de"
     hreflang="de"
   >
@@ -169,7 +137,7 @@
 
   <a
     class="site-header-language-link site-header-language-link--fr"
-    href="/fr/"
+    href="{{localePaths.fr}}"
     lang="fr"
     hreflang="fr"
   >
@@ -185,7 +153,7 @@
 
   <a
     class="site-header-language-link site-header-language-link--it"
-    href="/it/"
+    href="{{localePaths.it}}"
     lang="it"
     hreflang="it"
   >
@@ -201,7 +169,7 @@
 
   <a
     class="site-header-language-link site-header-language-link--es"
-    href="/es/"
+    href="{{localePaths.es}}"
     lang="es"
     hreflang="es"
   >
@@ -259,7 +227,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
 
     <section class="landing-hero particle-section">
       <div id="hero-particles" class="section-particles" aria-hidden="true"></div>
@@ -332,9 +300,11 @@
               <img
                 class="pedal-showcase-image"
                 src="{{product.photo}}"
+                srcset="{{product.photoMedium}} 720w, {{product.photo}} 1200w"
+                sizes="auto, (max-width: 850px) calc(100vw - 4rem), 540px"
                 alt="{{purchase.imageAlt}}"
-                width="1200"
-                height="960"
+                width="{{product.photoWidth}}"
+                height="{{product.photoHeight}}"
                 loading="lazy"
               >
             </div>
@@ -490,7 +460,7 @@
             src="/models/weltgeist.glb"
             alt="{{model.alt}}"
             camera-controls
-            auto-rotate
+            interaction-prompt="none"
             exposure="1.8"
             shadow-intensity="1"
           ></model-viewer>
@@ -498,6 +468,13 @@
           <div class="weltgeist-model-label weltgeist-model-label-bottom">
             {{model.instructions}}
           </div>
+        </div>
+
+        <div class="weltgeist-model-actions" role="group" aria-label="{{model.actions.label}}">
+          <button type="button" data-model-action="rotate">{{model.actions.rotate}}</button>
+          <button type="button" data-model-action="zoom-in">{{model.actions.zoomIn}}</button>
+          <button type="button" data-model-action="zoom-out">{{model.actions.zoomOut}}</button>
+          <button type="button" data-particle-motion aria-pressed="true" hidden>{{model.actions.motion}}</button>
         </div>
 
         <div class="weltgeist-model-meta">
@@ -551,7 +528,7 @@
         </h2>
 
         <div class="demo-carousel">
-          <div class="demo-carousel-viewport">
+          <div class="demo-carousel-viewport" tabindex="0" role="group" aria-labelledby="demo-heading">
             <div class="demo-carousel-track">
 
               <article class="demo-card">
@@ -609,11 +586,11 @@
 
             <div class="demo-carousel-buttons">
               <button class="demo-carousel-button demo-carousel-previous" type="button" aria-label="{{demo.previousAriaLabel}}">
-                ←
+                <span aria-hidden="true">←</span>
               </button>
 
               <button class="demo-carousel-button demo-carousel-next" type="button" aria-label="{{demo.nextAriaLabel}}">
-                →
+                <span aria-hidden="true">→</span>
               </button>
             </div>
           </div>
@@ -715,7 +692,6 @@
             <div
                 id="live-audio-info"
                 class="live-audio-info"
-                aria-live="polite"
                 data-requesting="{{simulation.input.requesting}}"
                 data-access-denied="{{simulation.input.accessDenied}}"
                 data-no-device="{{simulation.input.noDevice}}"
@@ -730,6 +706,7 @@
                 {{simulation.input.privacy}}
               </p>
             </div>
+            <p id="live-audio-announcement" class="visually-hidden" role="status"></p>
 
 
             <div class="control control--horizontal input-level-control">
@@ -955,7 +932,7 @@
               </tr>
               <tr>
                 <th scope="row">{{specifications.outputImpedance.label}}</th>
-                <td>{{specifications.outputImpedance.value}}</td>
+                <td>{{product.outputImpedance}}</td>
               </tr>
               <tr>
                 <th scope="row">{{specifications.powerSupply.label}}</th>
@@ -971,7 +948,7 @@
               </tr>
               <tr>
                 <th scope="row">{{specifications.dimensions.label}}</th>
-                <td>{{specifications.dimensions.value}}</td>
+                <td>{{product.dimensions}}</td>
               </tr>
               <tr>
                 <th scope="row">{{specifications.weight.label}}</th>

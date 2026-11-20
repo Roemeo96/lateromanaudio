@@ -28,17 +28,29 @@
 }
 
 .reveal-section {
+  transition: opacity 550ms ease, transform 550ms ease;
+}
+
+.reveal-pending:not(.is-visible):not(:focus-within) {
   opacity: 0;
   transform: translateY(3rem);
-
-  transition:
-    opacity 550ms ease,
-    transform 550ms ease;
 }
 
 .reveal-section.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.reveal-pending:focus-within {
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 .content-section > .landing-description {
@@ -144,6 +156,7 @@
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
   align-items: start;
+  max-width: var(--layout-content-max-width);
   column-gap: clamp(2rem, 5vw, 4rem);
   row-gap: clamp(2rem, 4vw, 3rem);
 }
@@ -251,6 +264,7 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  hyphens: auto;
 }
 
 .specifications-table td {

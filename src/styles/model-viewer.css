@@ -91,6 +91,34 @@
   letter-spacing: 0.12em;
 }
 
+.weltgeist-model-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.weltgeist-model-actions button {
+  min-height: 24px;
+  padding: 0.2rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.weltgeist-model-actions button:focus-visible,
+.demo-carousel-viewport:focus-visible {
+  outline: 1px solid var(--text);
+  outline-offset: 2px;
+}
+
+.weltgeist-model-actions button[aria-pressed="true"] {
+  border-color: var(--muted);
+}
+
 .weltgeist-model-controls .section-heading {
   text-align: left;
 }

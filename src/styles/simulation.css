@@ -189,8 +189,9 @@ input[type="range"] {
   -webkit-appearance: none;
 
   width: 100%;
-  height: 2px;
+  height: 24px;
   margin: 0;
+  border-block: 11px solid transparent;
 
   border-radius: 999px;
 
@@ -199,10 +200,11 @@ input[type="range"] {
       to right,
       var(--range-accent, var(--text)) 0%,
       var(--range-accent, var(--text)) var(--range-percentage),
-      rgb(var(--text-rgb) / 30%)
+      rgb(var(--text-rgb) / 50%)
         var(--range-percentage),
-      rgb(var(--text-rgb) / 30%) 100%
+      rgb(var(--text-rgb) / 50%) 100%
     );
+  background-clip: padding-box;
 
   cursor: pointer;
 }
@@ -233,7 +235,7 @@ input[type="range"]::-moz-range-track {
   height: 2px;
 
   background:
-    rgb(var(--text-rgb) / 30%);
+    rgb(var(--text-rgb) / 50%);
 
   border-radius: 999px;
 }
@@ -257,13 +259,8 @@ input[type="range"]::-moz-range-thumb {
 }
 
 input[type="range"]:focus-visible {
-  outline: none;
-}
-
-input[type="range"]:focus-visible::-webkit-slider-thumb,
-input[type="range"]:focus-visible::-moz-range-thumb {
-  outline: 1px solid var(--accent);
-  outline-offset: 3px;
+  outline: 1px solid var(--text);
+  outline-offset: 2px;
 }
 
 
@@ -413,6 +410,7 @@ input[type="range"]:focus-visible::-moz-range-thumb {
 .input-source-option {
   display: inline-flex;
   align-items: center;
+  min-height: 24px;
   gap: 0.45rem;
 
   color:

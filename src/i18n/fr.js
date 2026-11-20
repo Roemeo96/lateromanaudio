@@ -2,20 +2,15 @@ export default {
   lang: "fr",
 
   seo: {
-    canonical: "https://lateromanaudio.de/fr/",
-    title: "Late Roman Audio | {product.name}: Pédale d’expression pilotée par la dynamique de jeu",
+    title: "Late Roman Audio | {product.name} : pédale d’expression pilotée par la dynamique de jeu",
     description:
       "{product.name} exploite la dynamique de votre instrument pour piloter des effets compatibles via leur entrée d’expression.",
     productDescription:
       "Pédale d'expression contrôlée par la dynamique de Late Roman Audio.",
   },
 
-  links: {
-    home: "/fr/",
-  },
-
   header: {
-    homeAriaLabel: "Late Roman Audio – Accueil",
+    homeAriaLabel: "Late Roman Avdio – Accueil",
     openNavigationAriaLabel: "Ouvrir la navigation",
     closeNavigationAriaLabel: "Fermer la navigation",
     themeToggleAriaLabel: "Passer au mode clair",
@@ -25,6 +20,7 @@ export default {
   },
 
   nav: {
+    skipToContent: "Aller au contenu principal",
     ariaLabel: "Navigation principale",
     pedal: "Pédale",
     features: "Fonctions",
@@ -38,7 +34,7 @@ export default {
   },
 
   hero: {
-    heading: "{product.name}: Pédale d’expression pilotée par la dynamique de jeu",
+    heading: "{product.name} : pédale d’expression pilotée par la dynamique de jeu",
     presents: "présente",
     tagline1: "La dynamique perdue à la compression",
     tagline2: "Devient un signal de commande",
@@ -70,7 +66,7 @@ cablesDescription: "",
   },
 
 why: {
-  heading: "Pourquoi {product.name} ?",
+  heading: "Pourquoi {product.name} ?",
   principle:
     "Pilotez un paramètre d’une pédale compatible par la dynamique de votre jeu.",
   benefit:
@@ -84,23 +80,30 @@ why: {
     ducking: "Ducking en sidechain",
   },
   effectDescriptions: {
-    modulation: "Faites suivre la vitesse ou la profondeur d’un trémolo à votre attaque.",
+    modulation: "Faites varier la vitesse ou la profondeur d’un trémolo selon la dynamique de votre attaque.",
     swell: "Agissez sur le niveau pour faire monter chaque note progressivement.",
     filters: "Faites varier la fréquence d’une bande d’égalisation selon votre dynamique de jeu.",
-    dirt: "Dosez le mix d’une overdrive ou d’une fuzz avec votre attaque.",
+    dirt: "Dosez la proportion d’overdrive ou de fuzz selon votre attaque.",
     delayReverb: "Prolongez les répétitions du delay ou faites reculer la réverbération quand vous jouez.",
     ducking: "Utilisez un signal séparé pour atténuer un effet dans une autre chaîne audio.",
   },
   manual: {
     title: "Manuel {product.name}",
     description: "Routage du signal, réglages et exemples de configuration.",
-    action: "Ouvrir le manuel (EN)",
+    action: "Ouvrir le manuel (en anglais)",
   },
 },
 
   model: {
+    actions: {
+      label: "Commandes du modèle 3D",
+      rotate: "Faire pivoter",
+      zoomIn: "Agrandir",
+      zoomOut: "Réduire",
+      motion: "Animation d’arrière-plan",
+    },
     kicker: "{product.uppercaseName} / MODÈLE 3D INTERACTIF",
-    heading: "Découvre la pédale",
+    heading: "Explorez la pédale",
     description:
       "Examinez les réglages, les commutateurs et les connecteurs.",
     interactiveLabel: "MODÈLE INTERACTIF",
@@ -116,7 +119,7 @@ why: {
   },
 
   features: {
-    heading: "Fonctions de {product.name}",
+    heading: "Réglages de {product.name}",
     base: {
       label: "Base",
       description:
@@ -125,7 +128,7 @@ why: {
     sensitivity: {
       label: "Sensitivity",
       description:
-        "Détermine l’amplitude du mouvement d’expression quand le niveau d’entrée varie.",
+        "Détermine de combien la position d’expression se déplace quand le niveau d’entrée varie.",
     },
     rise: {
       label: "Rise",
@@ -153,13 +156,13 @@ why: {
       label: "Vidéo 01",
       heading: "Deux sorties d’expression",
       description:
-        "EXP 1 pilote le trémolo. EXP 2 règle la proportion de delay avec une réponse inversée. Les deux sont actifs en fin de vidéo.",
+        "EXP 1 pilote le trémolo. EXP 2 règle la proportion de delay avec une réponse inversée.",
     },
     video2: {
       label: "Vidéo 02",
       heading: "Sidechain",
       description:
-        "Un signal d’entrée séparé pilote le paramètre d’expression d’un effet dans une autre chaîne audio.",
+        "Un signal d’entrée séparé pilote un paramètre d’effet dans une autre chaîne audio.",
     },
   },
 
@@ -167,9 +170,9 @@ why: {
     heading: "Simulation de la pédale",
     description: {
       before:
-        "{product.name} fait varier la résistance présentée à une entrée d’expression compatible ",
+        "{product.name} reproduit le comportement du potentiomètre d’une pédale d’expression en ",
       accent:
-        "comme le ferait une pédale d’expression",
+        "faisant varier la résistance présentée à une entrée d’expression compatible",
       after:
         ". Réglez le niveau d’entrée manuellement ou sélectionnez « Audio en direct » pour utiliser votre micro. Modifiez les réglages et observez la position d’expression simulée.",
     },
@@ -185,7 +188,7 @@ why: {
       fall: "Fall",
       invert: "Invert",
     },
-    invertAriaLabel: "Inverser la direction d'Expression",
+    invertAriaLabel: "Inverser le sens de la commande d’expression",
     visualization: {
       eyebrow: "Position d’expression",
       heading: "De la dynamique à l’expression",
@@ -194,7 +197,7 @@ why: {
       source: "Source d'entrée",
       manual: "Manuel",
       liveAudio: "Audio en direct",
-      listening: "Écoute…",
+      listening: "Micro actif",
       privacy:
         "Le traitement s’effectue dans votre navigateur. Aucune donnée audio n’est envoyée.",
       level: "Niveau d’entrée",
@@ -216,6 +219,7 @@ why: {
 
 
   specifications: {
+    approximate: "env.",
     heading: "Caractéristiques techniques",
     input: {
       label: "Entrée",
@@ -231,21 +235,19 @@ why: {
     },
     outputImpedance: {
       label: "Impédance de sortie",
-      value: "100 Ω",
     },
     powerSupply: {
       label: "Alimentation",
       polarity: { centerNegative: "centre négatif" },
     },
     currentDraw: {
-      label: "Consommation",
+      label: "Consom\u00admation",
     },
     bypass: {
       label: "Bypass",
     },
     dimensions: {
       label: "Dimensions",
-      value: "145 mm × 100 mm × 100 mm",
     },
     weight: {
       label: "Poids",
@@ -253,7 +255,7 @@ why: {
 compatibility: {
   heading: "Compatibilité",
   description:
-    "La linéarité de la réponse et la constance de la résistance totale sur toute la course émulée ne sont pas garanties. Utilisez {product.name} uniquement avec des appareils qui n’exigent pas une valeur précise de résistance du potentiomètre. La sortie d’expression ne fournit pas de véritable signal CV. La compatibilité dépend de l’appareil.",
+    "La linéarité de la réponse et la constance de la résistance totale sur toute la course émulée ne sont pas garanties. Utilisez {product.name} uniquement avec des appareils qui n’exigent pas de valeur précise de résistance du potentiomètre. La sortie d’expression ne fournit pas de véritable signal CV. La compatibilité dépend de l’appareil.",
 },
   },
 

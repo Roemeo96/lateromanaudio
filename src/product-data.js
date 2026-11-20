@@ -5,6 +5,9 @@ export const product = {
   currency: "EUR",
   availability: "OutOfStock",
   photo: "/images/weltgeist-beauty-shot.jpg",
+  photoWidth: 1200,
+  photoHeight: 960,
+  photoMedium: "/images/weltgeist-beauty-shot-720.webp",
   checkoutImage: "/images/weltgeist.webp",
   quantity: { min: 1, max: 5 },
   connections: {
@@ -12,9 +15,11 @@ export const product = {
     expression: { count: 2, connector: "TRS" },
     output: { count: 1, connector: "TS" },
   },
+  outputImpedanceKiloohms: 2,
   supply: { volts: 9, type: "DC", polarity: "centerNegative" },
   currentMilliamps: 20,
   bypass: "True Bypass",
+  dimensionsMm: [120, 90, 60],
   weightGrams: 300,
   cables: { count: 2, connector: "TRS", lengthCm: 60 },
 };

@@ -2,20 +2,15 @@ export default {
   lang: "en",
 
   seo: {
-    canonical: "https://lateromanaudio.de/en/",
     title: "Late Roman Audio | {product.name} – Dynamics-Controlled Expression Pedal",
     description:
-      "{product.name} transforms your instrument's playing dynamics into expression-pedal control, letting you control compatible effects directly through your performance.",
+      "{product.name} uses your instrument’s dynamics to control compatible effects through their expression inputs.",
     productDescription:
       "Dynamics-controlled expression pedal by Late Roman Audio.",
   },
 
-  links: {
-    home: "/en/",
-  },
-
   header: {
-    homeAriaLabel: "Late Roman Audio – Home",
+    homeAriaLabel: "Late Roman Avdio – Home",
     openNavigationAriaLabel: "Open navigation",
     closeNavigationAriaLabel: "Close navigation",
     themeToggleAriaLabel: "Switch to light mode",
@@ -25,6 +20,7 @@ export default {
     },
 
   nav: {
+    skipToContent: "Skip to main content",
     ariaLabel: "Main navigation",
     pedal: "Pedal",
     features: "Features",
@@ -38,17 +34,17 @@ export default {
   },
 
   hero: {
-    heading: "{product.name} – An Expression Pedal Controlled by Your Playing Dynamics",
+    heading: "{product.name}: Dynamics-Controlled Expression Pedal",
     presents: "presents",
     tagline1: "The Dynamics You Lost After Compression",
     tagline2: "Reborn as Control",
     description1: {
-      before: "{product.name} turns your instrument's ",
-      accent: "playing dynamics into expression control",
+      before: "{product.name} uses your instrument’s dynamics to control the",
+      accent: "expression input of a compatible effect pedal",
       after:
-        ". Instead of moving a conventional expression pedal with your foot, you can control compatible effects directly through how softly or aggressively you play.",
+        ".",
     },
-    description2: "Control a modulation pedal’s depth or rate with your picking dynamics. Sweep an EQ band’s frequency as you play to create an envelope filter, or control the level for auto-swell. Feed {product.name} a separate sidechain signal to create ducking. Make reverb recede while you play and come back in the gaps, or use your picking dynamics to make delay repeats linger or fade faster.",
+    description2: "",
   },
 
   purchase: {
@@ -64,17 +60,17 @@ export default {
     addToCart: "Add to cart",
     
 description: "Dynamics-controlled expression pedal by Late Roman Audio. Includes {product.cables.count} × {product.cables.lengthCm} cm {product.cables.connector} cables.",
-cablesIncluded: "{product.cables.count} × {product.cables.connector} cables ({product.cables.lengthCm} cm each) included",
-cablesDescription: "{product.cables.count} basic {product.cables.connector} cables are included so you can connect {product.name} right out of the box. Since cable length, color, and connector type depend on your pedalboard, they're intended as a practical starting point rather than a one-size-fits-all solution.",
+cablesIncluded: "Includes {product.cables.count} {product.cables.connector} cables, {product.cables.lengthCm} cm each.",
+cablesDescription: "",
 
   },
 
 why: {
   heading: "Why {product.name}?",
   principle:
-    "{product.name} emulates the potentiometer inside a traditional expression pedal. As you play, it changes the resistance seen by a compatible expression input, moving the assigned parameter in real time.",
+    "Make a parameter on a compatible pedal follow your picking dynamics, or use a separate signal to control it.",
   benefit:
-    "That lets the pedals you already own respond to your playing dynamics, even if they have no built-in dynamic control. Here are a few things you can do with it.",
+    "",
   effects: {
     modulation: "Dynamic Modulation",
     swell: "Auto-Swell",
@@ -85,11 +81,11 @@ why: {
   },
   effectDescriptions: {
     modulation: "Let tremolo rate or depth follow your picking dynamics.",
-    swell: "Control the level to make notes fade in smoothly.",
+    swell: "Use level control to fade in each note.",
     filters: "Sweep an EQ band’s frequency with your playing dynamics.",
     dirt: "Use your attack to control the mix of an overdrive or fuzz pedal.",
     delayReverb: "Let delay repeats linger longer or make reverb recede while you play.",
-    ducking: "Use a separate signal to turn down an effect in another signal path.",
+    ducking: "Use a separate signal to duck an effect in another signal path.",
   },
   manual: {
     title: "{product.name} Manual",
@@ -99,10 +95,17 @@ why: {
 },
 
   model: {
+    actions: {
+      label: "3D model controls",
+      rotate: "Rotate model",
+      zoomIn: "Zoom in",
+      zoomOut: "Zoom out",
+      motion: "Background motion",
+    },
     kicker: "{product.uppercaseName} / INTERACTIVE 3D",
     heading: "Explore the pedal.",
     description:
-      "Get a closer look at the controls, switches and physical layout of {product.name}.",
+      "Inspect the controls, switches and connections.",
     interactiveLabel: "INTERACTIVE MODEL",
     alt: "{product.name} expression control pedal",
     instructions: "DRAG TO ROTATE · SCROLL TO ZOOM",
@@ -119,46 +122,46 @@ why: {
     base: {
       label: "Base",
       description:
-        "Sets the expression position used when the input signal is quiet.",
+        "Sets the expression position at low input levels.",
     },
     sensitivity: {
       label: "Sensitivity",
       description:
-        "Adjusts how strongly the expression output responds to changes in input level.",
+        "Sets how much the expression position moves as the input level changes.",
     },
     rise: {
       label: "Rise",
       description:
-        "Controls how quickly the pedal responds as the input level increases.",
+        "Sets the response speed as the input level rises.",
     },
     fall: {
       label: "Fall",
       description:
-        "Controls how quickly the pedal responds as the input level decreases.",
+        "Sets the response speed as the input level falls.",
     },
     invert: {
       label: "Invert",
       description:
-        "Reverses the response so louder playing moves the expression position in the opposite direction.",
+        "Reverses the direction of expression movement as the input level changes.",
     },
   },
 
   demo: {
-    eyebrow: "See it in action",
-    heading: "{product.name} in Motion",
+    eyebrow: "",
+    heading: "{product.name} Demos",
     previousAriaLabel: "Previous demo",
     nextAriaLabel: "Next demo",
     video1: {
       label: "Video 01",
       heading: "Dual Expression",
       description:
-        "EXP1 drives tremolo. EXP2 controls an inverted delay mix. Then both come alive together.",
+        "EXP1 controls tremolo. EXP2 controls the delay mix with an inverted response.",
     },
     video2: {
       label: "Video 02",
       heading: "Sidechain",
       description:
-        "An external signal drives the expression response, turning dynamics into control across another signal path.",
+        "A separate input signal controls an effect parameter in another signal path.",
     },
   },
 
@@ -166,10 +169,10 @@ why: {
     heading: "Pedal Simulation",
     description: {
       before:
-        "Try the interactive simulation below to explore how {product.name} translates ",
-      accent: "playing dynamics into expression control",
+        "{product.name} emulates an expression-pedal potentiometer by ",
+      accent: "varying the resistance seen by a compatible expression input",
       after:
-        ". Set the input level by hand or use your microphone as a live input. Adjust the pedal controls and watch how the simulated expression signal responds.",
+        ". Set the input level manually or select Live Audio to use your microphone. Adjust the controls and watch the simulated expression position change.",
     },
     panelHeading: "Interactive {product.name} simulation",
     pedal: {
@@ -209,13 +212,14 @@ why: {
 
 
   specifications: {
+    approximate: "approx.",
     heading: "Specifications",
     input: {
       label: "Input",
       value: "{product.connections.input.count}× {product.connections.input.connector} input jack",
     },
     expression: {
-      label: "Expression",
+      label: "Expression outputs",
       value: "{product.connections.expression.count}× {product.connections.expression.connector} expression output jacks",
     },
     output: {
@@ -224,7 +228,6 @@ why: {
     },
     outputImpedance: {
       label: "Output impedance",
-      value: "100 Ω",
     },
     powerSupply: {
       label: "Power supply",
@@ -238,7 +241,6 @@ why: {
     },
     dimensions: {
       label: "Dimensions",
-      value: "145 mm × 100 mm × 100 mm",
     },
     weight: {
       label: "Weight",
@@ -246,7 +248,7 @@ why: {
     compatibility: {
   heading: "Compatibility Notice",
   description:
-    "The pedal emulates the behavior of an expression-pedal potentiometer, but neither a perfectly linear transfer characteristic nor a constant total resistance across the emulated travel is guaranteed. Use it only with devices that do not require a specific potentiometer resistance. The output is not a true CV signal and may not be compatible with all devices.",
+    "Linearity and constant total resistance are not guaranteed across the full emulated travel. Use {product.name} only with devices that do not require a specific potentiometer resistance. The expression output is not a true CV signal. Compatibility varies by device.",
 },
   },
 

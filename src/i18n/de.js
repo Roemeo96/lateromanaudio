@@ -2,7 +2,6 @@ export default {
   lang: "de",
 
   seo: {
-    canonical: "https://lateromanaudio.de/de/",
     title: "Late Roman Audio | {product.name}: Dynamikgesteuertes Expression-Pedal",
     description:
       "{product.name} nutzt die Dynamik deines Instruments, um kompatible Effekte über ihren Expression-Eingang zu steuern.",
@@ -10,12 +9,8 @@ export default {
       "Dynamikgesteuertes Expression-Pedal von Late Roman Audio.",
   },
 
-  links: {
-    home: "/de/",
-  },
-
   header: {
-    homeAriaLabel: "Late Roman Audio – Startseite",
+    homeAriaLabel: "Late Roman Avdio – Startseite",
     openNavigationAriaLabel: "Navigation öffnen",
     closeNavigationAriaLabel: "Navigation schließen",
     themeToggleAriaLabel: "Zum hellen Modus wechseln",
@@ -25,6 +20,7 @@ export default {
     },
 
   nav: {
+    skipToContent: "Zum Hauptinhalt",
     ariaLabel: "Hauptnavigation",
     pedal: "Effektpedal",
     features: "Funktionen",
@@ -62,7 +58,7 @@ purchase: {
   status: { OutOfStock: "Demnächst verfügbar" },
   quantity: "Anzahl",
   addToCart: "In den Warenkorb",
-  description: "Dynamikgesteuertes Expression-Pedal von Late Roman Audio. Inklusive 2 × 60 cm TRS-Kabel.",
+  description: "Dynamikgesteuertes Expression-Pedal von Late Roman Audio. Inklusive {product.cables.count} × {product.cables.lengthCm} cm {product.cables.connector}-Kabel.",
   cablesIncluded: "Im Lieferumfang: {product.cables.count} {product.cables.connector}-Kabel, je {product.cables.lengthCm} cm.",
   cablesDescription: "",
 },
@@ -70,7 +66,7 @@ purchase: {
 why: {
   heading: "Warum {product.name}?",
   principle:
-    "Steuere einen Parameter eines kompatiblen Pedals über deine Anschlagdynamik.",
+    "Steuere einen Parameter eines kompatiblen Pedals mit deiner Anschlagdynamik.",
   benefit:
     "Derselbe Parameter lässt sich auch über ein separates Signal steuern.",
   effects: {
@@ -83,20 +79,27 @@ why: {
   },
   effectDescriptions: {
     modulation: "Lass Geschwindigkeit oder Tiefe eines Tremolos deinem Anschlag folgen.",
-    swell: "Blende jede Note über den Pegel ein.",
+    swell: "Lass jede Note durch eine Pegeländerung langsam einsetzen.",
     filters: "Verschiebe die Frequenz eines EQ-Bands mit deiner Spieldynamik.",
     dirt: "Steuere den Mix eines Overdrives oder Fuzz-Pedals mit deinem Anschlag.",
     delayReverb: "Lass Delay-Wiederholungen länger nachklingen oder Hall beim Spielen zurücktreten.",
-    ducking: "Senke mit einem separaten Signal den Effektanteil in einem anderen Signalweg ab.",
+    ducking: "Senke mit einem separaten Signal einen Effekt in einem anderen Signalweg ab.",
   },
   manual: {
     title: "{product.name}-Handbuch",
     description: "Signalführung, Regler und Beispiel-Setups.",
-    action: "Handbuch öffnen (EN)",
+    action: "Handbuch öffnen (Englisch)",
   },
 },
 
   model: {
+    actions: {
+      label: "Steuerung des 3D-Modells",
+      rotate: "Modell drehen",
+      zoomIn: "Vergrößern",
+      zoomOut: "Verkleinern",
+      motion: "Hintergrundanimation",
+    },
     kicker: "{product.uppercaseName} / INTERAKTIVES 3D-MODELL",
     heading: "Entdecke das Pedal",
     description:
@@ -113,7 +116,7 @@ why: {
   },
 
   features: {
-    heading: "{product.name} Funktionen",
+    heading: "Regler und Schalter",
     base: {
       label: "Base",
       description:
@@ -122,7 +125,7 @@ why: {
     sensitivity: {
       label: "Sensitivity",
       description:
-        "Bestimmt, wie stark sich die Expression-Position bei Pegeländerungen bewegt.",
+        "Bestimmt, wie weit sich die Expression-Position bei Änderungen des Eingangspegels verschiebt.",
     },
     rise: {
       label: "Rise",
@@ -150,13 +153,13 @@ why: {
       label: "Video 01",
       heading: "Zwei Expression-Ausgänge",
       description:
-        "EXP 1 steuert das Tremolo. EXP 2 regelt den Delay-Anteil mit umgekehrter Reaktion. Am Ende sind beide aktiv.",
+        "EXP 1 steuert das Tremolo. EXP 2 regelt den Delay-Anteil mit umgekehrter Reaktion.",
     },
     video2: {
       label: "Video 02",
       heading: "Sidechain",
       description:
-        "Ein separates Eingangssignal steuert den Expression-Parameter eines Effekts in einem anderen Signalweg.",
+        "Ein separates Eingangssignal steuert einen Effektparameter in einem anderen Signalweg.",
     },
   },
 
@@ -164,10 +167,10 @@ why: {
     heading: "Pedal-Simulation",
     description: {
       before:
-        "{product.name} verändert den Widerstand am kompatiblen Expression-Eingang ",
-      accent: "wie ein herkömmliches Expression-Pedal",
+        "{product.name} bildet das Potentiometer eines Expression-Pedals nach, indem es ",
+      accent: "den Widerstand an einem kompatiblen Expression-Eingang verändert",
       after:
-        ". Stell den Eingangspegel von Hand ein oder wähle „Live-Audio“, um dein Mikrofon zu nutzen. Verändere die Regler und beobachte die simulierte Expression-Position.",
+        ". Stelle den Eingangspegel manuell ein oder wähle „Live-Audio“ für das Mikrofon. Passe die Regler an und beobachte, wie sich die simulierte Expression-Position verändert.",
     },
     panelHeading: "Interaktive {product.name}-Simulation",
     pedal: {
@@ -181,7 +184,7 @@ why: {
       fall: "Fall",
       invert: "Invert",
     },
-    invertAriaLabel: "Expression-Richtung umkehren",
+    invertAriaLabel: "Richtung der Expression-Steuerung umkehren",
     visualization: {
       eyebrow: "Expression-Position",
       heading: "Von der Dynamik zur Expression",
@@ -190,7 +193,7 @@ why: {
         source: "Eingangsquelle",
         manual: "Manuell",
         liveAudio: "Live-Audio",
-        listening: "Hört zu…",
+        listening: "Mikrofon aktiv",
         privacy: "Im Browser verarbeitet. Es werden keine Audiodaten übertragen.",
         level: "Eingangspegel",
 
@@ -207,6 +210,7 @@ why: {
 
 
 specifications: {
+  approximate: "ca.",
   heading: "Technische Daten",
   input: {
     label: "Eingang",
@@ -221,22 +225,20 @@ specifications: {
     value: "{product.connections.output.count}× {product.connections.output.connector}-Ausgangsbuchse",
   },
   outputImpedance: {
-    label: "Ausgangsimpedanz",
-    value: "ca. 2 kΩ",
+    label: "Ausgangs\u00adimpedanz",
   },
   powerSupply: {
-    label: "Stromversorgung",
+    label: "Strom\u00adversorgung",
     polarity: { centerNegative: "innen negativ" },
   },
   currentDraw: {
-    label: "Stromaufnahme",
+    label: "Strom\u00adaufnahme",
   },
   bypass: {
     label: "Bypass",
   },
   dimensions: {
-    label: "Abmessungen (L × B × H)",
-    value: "ca. 120 mm × 90 mm × 60 mm",
+    label: "Abmes\u00adsungen (L × B × H)",
   },
     weight: {
       label: "Gewicht",
@@ -244,12 +246,12 @@ specifications: {
     compatibility: {
       heading: "Kompatibilitätshinweis",
       description:
-        "Die simulierte Kennlinie ist nicht garantiert linear. Auch ein konstanter Gesamtwiderstand über den gesamten nachgebildeten Regelweg ist nicht garantiert. Verwende {product.name} nur mit Geräten, die keinen bestimmten Potentiometerwiderstand voraussetzen. Der Expression-Ausgang liefert kein echtes CV-Signal. Die Kompatibilität hängt vom angeschlossenen Gerät ab.",
+        "Eine lineare Kennlinie und ein konstanter Gesamtwiderstand über den gesamten nachgebildeten Regelweg sind nicht garantiert. Verwende {product.name} nur mit Geräten, die keinen bestimmten Potentiometerwiderstand voraussetzen. Der Expression-Ausgang liefert kein echtes CV-Signal. Die Kompatibilität hängt vom angeschlossenen Gerät ab.",
     },
   },
 
   footer: {
-    ariaLabel: "Footer-Navigation",
+    ariaLabel: "Navigation in der Fußzeile",
     imprint: "Impressum",
     privacy: "Datenschutzerklärung",
     contact: "Kontakt",

@@ -17,6 +17,9 @@ const particleWobbleFactors =
 let particlesEngineReady = false;
 let themeObserver = null;
 let lastKnownOutput = 0;
+let motionEnabled = true;
+const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+let motionUpdate = Promise.resolve();
 
 function getParticleColor() {
   const rootStyles =
@@ -197,7 +200,8 @@ async function initializeParticles(containerId) {
     });
 
   if (container) {
-    particleContainers.push(container);
+    if (!motionEnabled || motionPreference.matches) container.destroy();
+    else particleContainers.push(container);
   }
 }
 async function initializeAllParticleContainers() {
@@ -242,42 +246,47 @@ function initializeThemeObserver() {
 
 
 export async function initializeSectionParticles() {
-  const prefersReducedMotion =
-    window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+  const toggle = document.querySelector("[data-particle-motion]");
+  toggle?.addEventListener("click", () => {
+    motionEnabled = !motionEnabled;
+    toggle.setAttribute("aria-pressed", String(motionEnabled));
+    synchronizeMotion().catch(reportMotionError);
+  });
 
-  if (prefersReducedMotion) {
-    return;
-  }
-
-  if (!particlesEngineReady) {
-    await loadSlim(tsParticles);
-    await loadWobbleUpdater(tsParticles);
-
-    particlesEngineReady = true;
-  }
-
-  initializeThemeObserver();
-
-  await initializeAllParticleContainers();
+  motionPreference.addEventListener("change", () => {
+    if (toggle) toggle.hidden = motionPreference.matches;
+    synchronizeMotion().catch(reportMotionError);
+  });
+  await synchronizeMotion();
+  if (toggle) toggle.hidden = motionPreference.matches;
 }
 
-export async function refreshSectionParticles() {
-  const prefersReducedMotion =
-    window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
+function reportMotionError(error) {
+  console.error("Section particles could not be refreshed:", error);
+}
 
-  if (prefersReducedMotion) {
-    return;
+function synchronizeMotion() {
+  motionUpdate = motionUpdate.catch(() => {}).then(async () => {
+    if (!motionEnabled || motionPreference.matches) {
+      clearParticleContainers();
+      return;
+    }
+    if (!particlesEngineReady) {
+      await loadSlim(tsParticles);
+      await loadWobbleUpdater(tsParticles);
+      particlesEngineReady = true;
+    }
+    initializeThemeObserver();
+    if (motionEnabled && !motionPreference.matches) await initializeAllParticleContainers();
+  });
+  return motionUpdate;
+}
+
+export function refreshSectionParticles() {
+  if (!motionEnabled || motionPreference.matches || !particlesEngineReady) {
+    return Promise.resolve();
   }
-
-  if (!particlesEngineReady) {
-    return;
-  }
-
-  await initializeAllParticleContainers();
+  return synchronizeMotion();
 }
 
 export function updateParticleWobble(currentOutput) {

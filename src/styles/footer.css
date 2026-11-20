@@ -21,6 +21,10 @@
   margin: 0;
 }
 
+main:has(> #specifications) + .site-footer {
+  margin-block-start: 0;
+}
+
 .site-footer-links {
   display: flex;
   flex-wrap: wrap;

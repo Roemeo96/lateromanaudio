@@ -85,11 +85,9 @@ export function initializeDemoCarousel() {
       },
     );
 
-    previousButton.disabled =
-      activeIndex === 0;
+    previousButton.setAttribute('aria-disabled', String(activeIndex === 0));
 
-    nextButton.disabled =
-      activeIndex === cards.length - 1;
+    nextButton.setAttribute('aria-disabled', String(activeIndex === cards.length - 1));
 
     pauseInactiveVideos();
   }
@@ -112,7 +110,7 @@ export function initializeDemoCarousel() {
         getCardScrollPosition(
           cards[newIndex],
         ),
-      behavior: 'smooth',
+      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
     });
 
     updateControls();
@@ -121,6 +119,7 @@ export function initializeDemoCarousel() {
   previousButton.addEventListener(
     'click',
     () => {
+      if (activeIndex === 0) return;
       goToSlide(
         activeIndex - 1,
       );
@@ -130,6 +129,7 @@ export function initializeDemoCarousel() {
   nextButton.addEventListener(
     'click',
     () => {
+      if (activeIndex === cards.length - 1) return;
       goToSlide(
         activeIndex + 1,
       );

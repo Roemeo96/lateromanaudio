@@ -9,10 +9,6 @@ import {
   resolve,
 } from "node:path";
 
-import {
-  pathToFileURL,
-} from "node:url";
-
 import { product } from "../src/product-data.js";
 
 const projectRoot = process.cwd();
@@ -34,31 +30,47 @@ const organization = {
 };
 
 const locales = {
-  en: resolve(
-    projectRoot,
-    "src/i18n/en.js",
-  ),
-
-  de: resolve(
-    projectRoot,
-    "src/i18n/de.js",
-  ),
-
-  fr: resolve(
-    projectRoot,
-    "src/i18n/fr.js",
-  ),
-
-  it: resolve(
-    projectRoot,
-    "src/i18n/it.js",
-  ),
-
-  es: resolve(
-    projectRoot,
-    "src/i18n/es.js",
-  ),
+  en: "en_GB",
+  de: "de_DE",
+  fr: "fr_FR",
+  it: "it_IT",
+  es: "es_ES",
 };
+const localeUrls = Object.fromEntries(
+  Object.keys(locales).map((locale) => [locale, new URL(`${locale}/`, siteUrl)]),
+);
+const localePaths = Object.fromEntries(
+  Object.entries(localeUrls).map(([locale, url]) => [locale, url.pathname]),
+);
+const languageAlternates = [...Object.entries(localeUrls), ["x-default", localeUrls.en]]
+  .map(([locale, url]) => `<link rel="alternate" hreflang="${locale}" href="${url.href}">`)
+  .join("\n  ");
+
+function translationKeys(values, prefix = "") {
+  return Object.entries(values).flatMap(([key, value]) => {
+    const field = prefix + key;
+    if (typeof value === "string") return [field];
+    if (value && typeof value === "object" && !Array.isArray(value)) {
+      return translationKeys(value, field + ".");
+    }
+    throw new Error(`Invalid translation value: ${field}`);
+  });
+}
+
+const dictionaries = await Promise.all(Object.keys(locales).map(async (locale) => {
+  const { default: dictionary } = await import(`../src/i18n/${locale}.js`);
+  if (dictionary.lang !== locale) throw new Error(`Incorrect HTML language for ${locale}`);
+  return [locale, dictionary];
+}));
+const expectedKeys = new Set(translationKeys(dictionaries[0][1]));
+for (const [locale, dictionary] of dictionaries) {
+  const keys = new Set(translationKeys(dictionary));
+  const missing = [...expectedKeys].filter((key) => !keys.has(key));
+  const extra = [...keys].filter((key) => !expectedKeys.has(key));
+  if (missing.length || extra.length) {
+    throw new Error(`Translation keys for ${locale}: missing [${missing}], extra [${extra}]`);
+  }
+}
 
 function getNestedValue(
   object,
@@ -93,7 +105,12 @@ function renderTemplate(
   template,
   translations,
 ) {
-  return template.replace(
+  const populatedTemplate = template.replace(
+    /^[\t ]*<p\b[^>]*>\s*\{\{\s*([\w.-]+)\s*\}\}\s*<\/p>[\t ]*\r?\n/gm,
+    (paragraph, key) => getNestedValue(translations, key) === "" ? "" : paragraph,
+  );
+
+  return populatedTemplate.replace(
     /\{\{\s*([\w.-]+)\s*\}\}/g,
     (match, key) => {
       const value =
@@ -115,17 +132,9 @@ function renderTemplate(
 
 await writeFile(resolve(projectRoot, "weltgeist-manual.html"), renderTemplate(manual, { product, manualUrl }), "utf8");
 
-for (
-  const [locale, translationPath]
-  of Object.entries(locales)
-) {
-  const {
-    default: translations,
-  } = await import(
-    pathToFileURL(
-      translationPath,
-    ).href,
-  );
+for (const [locale, translations] of dictionaries) {
+  const url = localeUrls[locale];
+  const canonical = url.href;
 
   const productData = {
     ...product,
@@ -135,18 +144,19 @@ for (
       style: "currency",
       currency: product.currency,
     }).format(product.price),
-    itemUrl: translations.links.home,
+    itemUrl: url.pathname,
     purchaseState: product.availability === "OutOfStock" ? "disabled" : "",
     availabilityLabel: translations.purchase.status[product.availability],
-    offerUrl: new URL("#pedal", translations.seo.canonical).href,
+    offerUrl: new URL("#pedal", url).href,
     supplyRating: `${product.supply.volts} V ${product.supply.type}, ${translations.specifications.powerSupply.polarity[product.supply.polarity]}`,
+    outputImpedance: `${translations.specifications.approximate} ${product.outputImpedanceKiloohms} kΩ`,
+    dimensions: `${translations.specifications.approximate} ${product.dimensionsMm.map((dimension) => `${dimension} mm`).join(" × ")}`,
     current: `${product.currentMilliamps} mA`,
     weight: `${product.weightGrams} g`,
   };
 
-  const context = { ...translations, product: productData };
+  const context = { ...translations, product: productData, canonical, localePaths, languageAlternates };
   const seoText = (value) => resolveProductTokens(value, context);
-  const canonical = translations.seo.canonical;
   const productImage = new URL(product.photo, canonical).href;
   const structuredData = {
     "@context": "https://schema.org",
@@ -173,7 +183,7 @@ for (
     description: escapeAttribute(seoText(translations.seo.description)),
     image: productImage,
     imageAlt: escapeAttribute(seoText(translations.purchase.imageAlt)),
-    locale: { en: "en_GB", de: "de_DE", fr: "fr_FR", it: "it_IT", es: "es_ES" }[locale],
+    locale: locales[locale],
   };
 
   const html =
@@ -226,3 +236,12 @@ for (
     );
   }
 }
+
+const sitemapEntries = [...Object.values(localeUrls).map((url) => url.href), manualUrl]
+  .map((url) => `  <url>\n    <loc>${url}</loc>\n  </url>`)
+  .join("\n");
+await writeFile(
+  resolve(projectRoot, "public/sitemap.xml"),
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries}\n</urlset>\n`,
+  "utf8",
+);

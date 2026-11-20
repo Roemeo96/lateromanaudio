@@ -77,30 +77,37 @@ export function initializeMobileMenu() {
           'a, button',
         );
 
-      if (!navigationItem) {
+      if (!navigationItem || navigationItem.matches('.site-header-theme-toggle')) {
         return;
       }
 
+      const section = navigationItem.hash
+        ? document.getElementById(navigationItem.hash.slice(1))
+        : null;
+      const wasOpen = toggle.getAttribute('aria-expanded') === 'true';
       setMenuOpen(false);
+      if (section && wasOpen && event.detail === 0) {
+        section.setAttribute('tabindex', '-1');
+        section.focus({ preventScroll: true });
+      }
     },
   );
 
   document.addEventListener(
     'keydown',
     event => {
-      if (
-        event.key !== 'Escape'
-      ) {
+      if (event.key !== 'Escape' || toggle.getAttribute('aria-expanded') !== 'true') {
         return;
       }
 
       setMenuOpen(false);
+      if (header.contains(document.activeElement)) toggle.focus();
     },
   );
 
   const mobileBreakpoint =
     window.matchMedia(
-      '(max-width: 900px)',
+      '(max-width: 1360px)',
     );
 
   mobileBreakpoint.addEventListener(

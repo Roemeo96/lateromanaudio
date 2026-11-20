@@ -6,46 +6,13 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link
-  rel="canonical"
-  href="https://lateromanaudio.de/it/"
->
-
-<link
-  rel="alternate"
-  hreflang="en"
-  href="https://lateromanaudio.de/en/"
->
-
-<link
-  rel="alternate"
-  hreflang="de"
-  href="https://lateromanaudio.de/de/"
->
-
-<link
-  rel="alternate"
-  hreflang="fr"
-  href="https://lateromanaudio.de/fr/"
->
-
-<link
-  rel="alternate"
-  hreflang="it"
-  href="https://lateromanaudio.de/it/"
->
-
-<link
-  rel="alternate"
-  hreflang="es"
-  href="https://lateromanaudio.de/es/"
->
-
-<link
-  rel="alternate"
-  hreflang="x-default"
-  href="https://lateromanaudio.de/en/"
->
+<link rel="canonical" href="https://lateromanaudio.de/it/">
+  <link rel="alternate" hreflang="en" href="https://lateromanaudio.de/en/">
+  <link rel="alternate" hreflang="de" href="https://lateromanaudio.de/de/">
+  <link rel="alternate" hreflang="fr" href="https://lateromanaudio.de/fr/">
+  <link rel="alternate" hreflang="it" href="https://lateromanaudio.de/it/">
+  <link rel="alternate" hreflang="es" href="https://lateromanaudio.de/es/">
+  <link rel="alternate" hreflang="x-default" href="https://lateromanaudio.de/en/">
 
   <script src="/theme-bootstrap.js"></script>
   <script type="application/ld+json">
@@ -86,6 +53,9 @@
   <meta property="og:title" content="Late Roman Audio | Weltgeist: Pedale d’espressione controllato dalla dinamica">
   <meta property="og:description" content="Weltgeist usa la dinamica dello strumento per controllare gli effetti compatibili tramite il loro ingresso d’espressione.">
   <meta property="og:image" content="https://lateromanaudio.de/images/weltgeist-beauty-shot.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="960">
   <meta property="og:image:alt" content="Pedale Weltgeist di Late Roman Audio">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Late Roman Audio | Weltgeist: Pedale d’espressione controllato dalla dinamica">
@@ -108,8 +78,10 @@
 <body>
   <script type="module" src="/src/snipcart.js"></script>
 
+  <a class="skip-link" href="#main-content">Vai al contenuto principale</a>
+
   <header class="site-header">
-    <a class="site-header-brand" href="/it/" aria-label="Late Roman Audio, pagina iniziale">
+    <a class="site-header-brand" href="/it/" aria-label="Late Roman Avdio, pagina iniziale">
       <span class="site-header-wordmark">
         Late Roman Avdio
       </span>
@@ -160,6 +132,7 @@
         </a>
 <div
   class="site-header-language"
+  role="group"
   aria-label="Seleziona lingua"
 >
   <a
@@ -286,7 +259,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
 
     <section class="landing-hero particle-section">
       <div id="hero-particles" class="section-particles" aria-hidden="true"></div>
@@ -339,10 +312,9 @@
 
         <p class="landing-description">
           Weltgeist usa la dinamica del tuo strumento
-          <span class="">per controllare l’ingresso d’espressione di un pedale effetto compatibile</span>.
+          <span class="">per controllare l’ingresso d’espressione di un pedale per effetti compatibile</span>.
         </p>
 
-        <p class="landing-description"></p>
       </div>
     </section>
 
@@ -359,6 +331,8 @@
               <img
                 class="pedal-showcase-image"
                 src="/images/weltgeist-beauty-shot.jpg"
+                srcset="/images/weltgeist-beauty-shot-720.webp 720w, /images/weltgeist-beauty-shot.jpg 1200w"
+                sizes="auto, (max-width: 850px) calc(100vw - 4rem), 540px"
                 alt="Pedale Weltgeist di Late Roman Audio"
                 width="1200"
                 height="960"
@@ -413,7 +387,6 @@
             </div>
             <div class="pedal-purchase-includes">
               <p class="pedal-purchase-includes-title">Sono inclusi 2 cavi TRS da 60 cm ciascuno.</p>
-              <p class="pedal-purchase-includes-description"></p>
             </div>
           </div>
         </div>
@@ -433,7 +406,7 @@
       <div class="pillar-copy">
         <div class="pillar-copy-text">
           <h2 id="why-weltgeist-heading" class="section-heading">Perché Weltgeist?</h2>
-          <p class="landing-description">Fai seguire a un parametro di un pedale compatibile la dinamica della tua pennata.</p>
+          <p class="landing-description">Controlla un parametro di un pedale compatibile con la dinamica della pennata.</p>
           <p class="landing-description">Puoi anche controllare quel parametro con un segnale separato.</p>
         </div>
         <div class="logo-bar-group pillar-copy-mark" aria-hidden="true">
@@ -483,7 +456,7 @@
         <strong class="manual-preview__title">Manuale Weltgeist</strong>
         <span class="manual-preview__description">Percorso del segnale, controlli ed esempi di configurazione.</span>
         <span class="manual-preview__action">
-          Apri il manuale (EN) <span aria-hidden="true">↗</span>
+          Apri il manuale (in inglese) <span aria-hidden="true">↗</span>
         </span>
       </span>
     </a>
@@ -517,7 +490,7 @@
             src="/models/weltgeist.glb"
             alt="Weltgeist, pedale d’espressione controllato dalla dinamica"
             camera-controls
-            auto-rotate
+            interaction-prompt="none"
             exposure="1.8"
             shadow-intensity="1"
           ></model-viewer>
@@ -525,6 +498,13 @@
           <div class="weltgeist-model-label weltgeist-model-label-bottom">
             TRASCINA PER RUOTARE · SCORRI PER ZOOMARE
           </div>
+        </div>
+
+        <div class="weltgeist-model-actions" role="group" aria-label="Comandi del modello 3D">
+          <button type="button" data-model-action="rotate">Ruota il modello</button>
+          <button type="button" data-model-action="zoom-in">Ingrandisci</button>
+          <button type="button" data-model-action="zoom-out">Riduci</button>
+          <button type="button" data-particle-motion aria-pressed="true" hidden>Animazione di sfondo</button>
         </div>
 
         <div class="weltgeist-model-meta">
@@ -539,7 +519,7 @@
       </div>
 
       <div class="weltgeist-model-controls">
-        <h3 id="features-heading" class="section-heading">Funzioni di Weltgeist</h3>
+        <h3 id="features-heading" class="section-heading">Controlli di Weltgeist</h3>
 
         <dl class="weltgeist-model-controls-list">
           <div>
@@ -548,7 +528,7 @@
           </div>
           <div>
             <dt>Sensitivity</dt>
-            <dd>Regola quanto varia la posizione d’espressione al variare del livello d’ingresso.</dd>
+            <dd>Determina di quanto si sposta la posizione d’espressione quando cambia il livello d’ingresso.</dd>
           </div>
           <div>
             <dt>Rise</dt>
@@ -571,14 +551,13 @@
 
     <section class="demo-showcase reveal-section" aria-labelledby="demo-heading">
       <div id="demos" class="demo-content">
-        <p class="section-eyebrow"></p>
 
         <h2 id="demo-heading" class="section-heading">
           Demo di Weltgeist
         </h2>
 
         <div class="demo-carousel">
-          <div class="demo-carousel-viewport">
+          <div class="demo-carousel-viewport" tabindex="0" role="group" aria-labelledby="demo-heading">
             <div class="demo-carousel-track">
 
               <article class="demo-card">
@@ -598,7 +577,7 @@
                   </h3>
 
                   <p>
-                    EXP 1 controlla il tremolo. EXP 2 regola la quantità di delay con risposta invertita. Alla fine del video sono attivi entrambi.
+                    EXP 1 controlla il tremolo. EXP 2 regola il mix del delay con risposta invertita.
                   </p>
                 </div>
               </article>
@@ -620,7 +599,7 @@
                   </h3>
 
                   <p>
-                    Un segnale d’ingresso separato controlla il parametro d’espressione di un effetto in un altro percorso audio.
+                    Un segnale d’ingresso separato controlla un parametro di un effetto in un altro percorso audio.
                   </p>
                 </div>
               </article>
@@ -636,11 +615,11 @@
 
             <div class="demo-carousel-buttons">
               <button class="demo-carousel-button demo-carousel-previous" type="button" aria-label="Demo precedente">
-                ←
+                <span aria-hidden="true">←</span>
               </button>
 
               <button class="demo-carousel-button demo-carousel-next" type="button" aria-label="Demo successiva">
-                →
+                <span aria-hidden="true">→</span>
               </button>
             </div>
           </div>
@@ -667,7 +646,7 @@
       </h2>
 
       <p class="landing-description">
-        Weltgeist varia la resistenza vista da un ingresso d’espressione compatibile <span class="accent-inline">come un pedale d’espressione</span>. Imposta il livello d’ingresso a mano oppure seleziona «Audio in tempo reale» per usare il microfono. Prova i controlli e osserva la posizione d’espressione simulata.
+        Weltgeist riproduce il comportamento del potenziometro di un pedale d’espressione <span class="accent-inline">variando la resistenza vista da un ingresso d’espressione compatibile</span>. Imposta il livello d’ingresso a mano oppure seleziona «Audio in tempo reale» per usare il microfono. Prova i controlli e osserva la posizione d’espressione simulata.
       </p>
     </div>
     <div class="logo-bar-group pillar-copy-mark" aria-hidden="true">
@@ -698,7 +677,7 @@
 
             <fieldset class="input-source-selector">
               <legend>
-                Sorgente di ingresso
+                Sorgente d’ingresso
               </legend>
 
               <label class="input-source-option">
@@ -742,11 +721,10 @@
             <div
                 id="live-audio-info"
                 class="live-audio-info"
-                aria-live="polite"
-                data-requesting="Richiesta di accesso all'audio…"
-                data-access-denied="Accesso all'ingresso audio negato."
-                data-no-device="Nessun dispositivo di ingresso audio trovato."
-                data-start-failed="Impossibile avviare l'ingresso audio."
+                data-requesting="Richiesta di accesso all’audio…"
+                data-access-denied="Accesso all’ingresso audio negato."
+                data-no-device="Nessun dispositivo audio d’ingresso trovato."
+                data-start-failed="Impossibile avviare l’ingresso audio."
                 hidden
                 >
               <p id="live-audio-status" class="live-audio-status">
@@ -757,6 +735,7 @@
                 L’audio viene elaborato nel browser. Non viene inviato alcun dato audio.
               </p>
             </div>
+            <p id="live-audio-announcement" class="visually-hidden" role="status"></p>
 
 
             <div class="control control--horizontal input-level-control">
@@ -841,7 +820,7 @@
             </label>
           </div>
 
-          <input id="invert" type="checkbox" aria-label="Inverti la direzione Expression">
+          <input id="invert" type="checkbox" aria-label="Inverti il senso della risposta d’espressione">
         </div>
         </div>
       </div>
@@ -982,7 +961,7 @@
               </tr>
               <tr>
                 <th scope="row">Impedenza di uscita</th>
-                <td>100 Ω</td>
+                <td>ca. 2 kΩ</td>
               </tr>
               <tr>
                 <th scope="row">Alimentazione</th>
@@ -998,7 +977,7 @@
               </tr>
               <tr>
                 <th scope="row">Dimensioni</th>
-                <td>145 mm × 100 mm × 100 mm</td>
+                <td>ca. 120 mm × 90 mm × 60 mm</td>
               </tr>
               <tr>
                 <th scope="row">Peso</th>
@@ -1033,7 +1012,7 @@
       © Late Roman Audio
     </p>
 
-    <nav class="site-footer-links" aria-label="Navigazione footer">
+    <nav class="site-footer-links" aria-label="Navigazione a piè di pagina">
       
       <a href="/imprint.html">
         Impressum

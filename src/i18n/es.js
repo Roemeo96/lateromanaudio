@@ -2,7 +2,6 @@ export default {
   lang: "es",
 
   seo: {
-    canonical: "https://lateromanaudio.de/es/",
     title: "Late Roman Audio | {product.name}: Pedal de expresión controlado por la dinámica",
     description:
       "{product.name} usa la dinámica del instrumento para controlar efectos compatibles a través de su entrada de expresión.",
@@ -10,12 +9,8 @@ export default {
       "Pedal de expresión controlado por la dinámica de Late Roman Audio.",
   },
 
-  links: {
-    home: "/es/",
-  },
-
   header: {
-    homeAriaLabel: "Late Roman Audio – Inicio",
+    homeAriaLabel: "Late Roman Avdio – Inicio",
     openNavigationAriaLabel: "Abrir navegación",
     closeNavigationAriaLabel: "Cerrar navegación",
     themeToggleAriaLabel: "Cambiar al modo claro",
@@ -25,6 +20,7 @@ export default {
   },
 
   nav: {
+    skipToContent: "Ir al contenido principal",
     ariaLabel: "Navegación principal",
     pedal: "Pedal",
     features: "Funciones",
@@ -73,7 +69,7 @@ cablesDescription: "",
 why: {
   heading: "¿Por qué {product.name}?",
   principle:
-    "Haz que un parámetro de un pedal compatible responda a la dinámica de tu ataque.",
+    "Controla un parámetro de un pedal compatible con la dinámica de tu ataque.",
   benefit:
     "También puedes controlar ese parámetro con una señal independiente.",
   effects: {
@@ -95,11 +91,18 @@ why: {
   manual: {
     title: "Manual de {product.name}",
     description: "Ruta de señal, controles y ejemplos de configuración.",
-    action: "Abrir el manual (EN)",
+    action: "Abrir el manual (en inglés)",
   },
 },
 
   model: {
+    actions: {
+      label: "Controles del modelo 3D",
+      rotate: "Girar el modelo",
+      zoomIn: "Acercar",
+      zoomOut: "Alejar",
+      motion: "Animación de fondo",
+    },
     kicker: "{product.uppercaseName} / MODELO 3D INTERACTIVO",
     heading: "Descubre el pedal",
     description:
@@ -117,7 +120,7 @@ why: {
   },
 
   features: {
-    heading: "Funciones de {product.name}",
+    heading: "Controles de {product.name}",
     base: {
       label: "Base",
       description:
@@ -126,7 +129,7 @@ why: {
     sensitivity: {
       label: "Sensitivity",
       description:
-        "Determina cuánto se mueve la posición de expresión cuando cambia el nivel de entrada.",
+        "Determina cuánto cambia la posición de expresión cuando varía el nivel de entrada.",
     },
     rise: {
       label: "Rise",
@@ -154,13 +157,13 @@ why: {
       label: "Vídeo 01",
       heading: "Dos salidas de expresión",
       description:
-        "EXP 1 controla el trémolo. EXP 2 ajusta la mezcla del delay con una respuesta invertida. Al final del vídeo están activos los dos.",
+        "EXP 1 controla el trémolo. EXP 2 ajusta la mezcla del delay con una respuesta invertida.",
     },
     video2: {
       label: "Vídeo 02",
       heading: "Sidechain",
       description:
-        "Una señal de entrada independiente controla el parámetro de expresión de un efecto en otra ruta de audio.",
+        "Una señal de entrada independiente controla un parámetro de un efecto en otra ruta de audio.",
     },
   },
 
@@ -168,9 +171,9 @@ why: {
     heading: "Simulación del pedal",
     description: {
       before:
-        "{product.name} varía la resistencia que presenta a una entrada de expresión compatible ",
+        "{product.name} reproduce el comportamiento del potenciómetro de un pedal de expresión al ",
       accent:
-        "como un pedal de expresión",
+        "variar la resistencia que presenta a una entrada de expresión compatible",
       after:
         ". Ajusta el nivel de entrada a mano o selecciona «Audio en directo» para usar el micrófono. Prueba los controles y observa la posición de expresión simulada.",
     },
@@ -186,7 +189,7 @@ why: {
       fall: "Fall",
       invert: "Invert",
     },
-    invertAriaLabel: "Invertir la dirección de Expression",
+    invertAriaLabel: "Invertir el sentido de la respuesta de expresión",
     visualization: {
       eyebrow: "Posición de expresión",
       heading: "De la dinámica a la expresión",
@@ -195,7 +198,7 @@ why: {
       source: "Fuente de entrada",
       manual: "Manual",
       liveAudio: "Audio en directo",
-      listening: "Escuchando…",
+      listening: "Micrófono activo",
       privacy:
         "El audio se procesa en tu navegador. No se envían datos de audio.",
       level: "Nivel de entrada",
@@ -217,6 +220,7 @@ why: {
 
 
   specifications: {
+    approximate: "aprox.",
     heading: "Especificaciones técnicas",
     input: {
       label: "Entrada",
@@ -232,7 +236,6 @@ why: {
     },
     outputImpedance: {
       label: "Impedancia de salida",
-      value: "100 Ω",
     },
     powerSupply: {
       label: "Alimentación",
@@ -246,7 +249,6 @@ why: {
     },
     dimensions: {
       label: "Dimensiones",
-      value: "145 mm × 100 mm × 100 mm",
     },
     weight: {
       label: "Peso",

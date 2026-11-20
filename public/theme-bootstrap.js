@@ -1,4 +1,6 @@
 (() => {
+  document.documentElement.classList.add("has-js");
+
   let theme = "light";
 
   try {

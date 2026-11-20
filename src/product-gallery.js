@@ -5,14 +5,24 @@ export function initializeProductGallery() {
   const stage = gallery.querySelector('.pedal-gallery-stage');
   const thumbnails = gallery.querySelector('.pedal-gallery-thumbnails');
   const initialPhoto = stage.querySelector('img');
+  const photoSizes = initialPhoto.sizes.replace(/^auto,\s*/, '');
 
-  // Additional images use { type: 'image', src, label, thumbnail? }.
+  // These four photos share the exported -thumb and -720 WebP variants.
+  const photo = (src, label) => {
+    const stem = src.replace(/\.jpg$/, '');
+    return {
+      type: 'image', src, label,
+      thumbnail: `${stem}-thumb.webp`,
+      srcset: `${stem}-720.webp 720w, ${src} 1200w`,
+    };
+  };
+  // Additional images can provide { type: 'image', src, label, thumbnail?, srcset? }.
   // Videos use { type: 'video', src, label, thumbnail }.
   const media = [
-    { type: 'image', src: initialPhoto.getAttribute('src'), label: initialPhoto.alt },
-    { type: 'image', src: '/images/weltgeist-top.jpg', label: gallery.dataset.topLabel },
-    { type: 'image', src: '/images/weltgeist-front.jpg', label: gallery.dataset.frontLabel },
-    { type: 'image', src: '/images/weltgeist-low-angle.jpg', label: gallery.dataset.lowAngleLabel },
+    photo(initialPhoto.getAttribute('src'), initialPhoto.alt),
+    photo('/images/weltgeist-top.jpg', gallery.dataset.topLabel),
+    photo('/images/weltgeist-front.jpg', gallery.dataset.frontLabel),
+    photo('/images/weltgeist-low-angle.jpg', gallery.dataset.lowAngleLabel),
   ];
 
   let selected = 0;
@@ -38,7 +48,6 @@ export function initializeProductGallery() {
     const item = media[index];
     const display = item.type === 'video' ? document.createElement('video') : new Image();
     display.className = 'pedal-showcase-image';
-    display.src = item.src;
     if (item.type === 'video') {
       display.controls = true;
       display.playsInline = true;
@@ -47,7 +56,12 @@ export function initializeProductGallery() {
       display.setAttribute('aria-label', item.label);
     } else {
       display.alt = item.label;
+      if (item.srcset) {
+        display.sizes = photoSizes;
+        display.srcset = item.srcset;
+      }
     }
+    display.src = item.src;
 
     stage.querySelector('video')?.pause();
     stage.replaceChildren(display);

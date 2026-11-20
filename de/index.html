@@ -6,46 +6,13 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link
-  rel="canonical"
-  href="https://lateromanaudio.de/de/"
->
-
-<link
-  rel="alternate"
-  hreflang="en"
-  href="https://lateromanaudio.de/en/"
->
-
-<link
-  rel="alternate"
-  hreflang="de"
-  href="https://lateromanaudio.de/de/"
->
-
-<link
-  rel="alternate"
-  hreflang="fr"
-  href="https://lateromanaudio.de/fr/"
->
-
-<link
-  rel="alternate"
-  hreflang="it"
-  href="https://lateromanaudio.de/it/"
->
-
-<link
-  rel="alternate"
-  hreflang="es"
-  href="https://lateromanaudio.de/es/"
->
-
-<link
-  rel="alternate"
-  hreflang="x-default"
-  href="https://lateromanaudio.de/en/"
->
+<link rel="canonical" href="https://lateromanaudio.de/de/">
+  <link rel="alternate" hreflang="en" href="https://lateromanaudio.de/en/">
+  <link rel="alternate" hreflang="de" href="https://lateromanaudio.de/de/">
+  <link rel="alternate" hreflang="fr" href="https://lateromanaudio.de/fr/">
+  <link rel="alternate" hreflang="it" href="https://lateromanaudio.de/it/">
+  <link rel="alternate" hreflang="es" href="https://lateromanaudio.de/es/">
+  <link rel="alternate" hreflang="x-default" href="https://lateromanaudio.de/en/">
 
   <script src="/theme-bootstrap.js"></script>
   <script type="application/ld+json">
@@ -86,6 +53,9 @@
   <meta property="og:title" content="Late Roman Audio | Weltgeist: Dynamikgesteuertes Expression-Pedal">
   <meta property="og:description" content="Weltgeist nutzt die Dynamik deines Instruments, um kompatible Effekte über ihren Expression-Eingang zu steuern.">
   <meta property="og:image" content="https://lateromanaudio.de/images/weltgeist-beauty-shot.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="960">
   <meta property="og:image:alt" content="Weltgeist, Expression-Pedal von Late Roman Audio">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Late Roman Audio | Weltgeist: Dynamikgesteuertes Expression-Pedal">
@@ -108,8 +78,10 @@
 <body>
   <script type="module" src="/src/snipcart.js"></script>
 
+  <a class="skip-link" href="#main-content">Zum Hauptinhalt</a>
+
   <header class="site-header">
-    <a class="site-header-brand" href="/de/" aria-label="Late Roman Audio – Startseite">
+    <a class="site-header-brand" href="/de/" aria-label="Late Roman Avdio – Startseite">
       <span class="site-header-wordmark">
         Late Roman Avdio
       </span>
@@ -160,6 +132,7 @@
         </a>
 <div
   class="site-header-language"
+  role="group"
   aria-label="Sprache auswählen"
 >
   <a
@@ -286,7 +259,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
 
     <section class="landing-hero particle-section">
       <div id="hero-particles" class="section-particles" aria-hidden="true"></div>
@@ -342,7 +315,6 @@
           <span class="">zur Steuerung des Expression-Eingangs eines kompatiblen Effektpedals</span>.
         </p>
 
-        <p class="landing-description"></p>
       </div>
     </section>
 
@@ -359,6 +331,8 @@
               <img
                 class="pedal-showcase-image"
                 src="/images/weltgeist-beauty-shot.jpg"
+                srcset="/images/weltgeist-beauty-shot-720.webp 720w, /images/weltgeist-beauty-shot.jpg 1200w"
+                sizes="auto, (max-width: 850px) calc(100vw - 4rem), 540px"
                 alt="Weltgeist, Expression-Pedal von Late Roman Audio"
                 width="1200"
                 height="960"
@@ -413,7 +387,6 @@
             </div>
             <div class="pedal-purchase-includes">
               <p class="pedal-purchase-includes-title">Im Lieferumfang: 2 TRS-Kabel, je 60 cm.</p>
-              <p class="pedal-purchase-includes-description"></p>
             </div>
           </div>
         </div>
@@ -433,7 +406,7 @@
       <div class="pillar-copy">
         <div class="pillar-copy-text">
           <h2 id="why-weltgeist-heading" class="section-heading">Warum Weltgeist?</h2>
-          <p class="landing-description">Steuere einen Parameter eines kompatiblen Pedals über deine Anschlagdynamik.</p>
+          <p class="landing-description">Steuere einen Parameter eines kompatiblen Pedals mit deiner Anschlagdynamik.</p>
           <p class="landing-description">Derselbe Parameter lässt sich auch über ein separates Signal steuern.</p>
         </div>
         <div class="logo-bar-group pillar-copy-mark" aria-hidden="true">
@@ -449,7 +422,7 @@
       </li>
       <li>
         <h3>Auto-Swell</h3>
-        <p>Blende jede Note über den Pegel ein.</p>
+        <p>Lass jede Note durch eine Pegeländerung langsam einsetzen.</p>
       </li>
       <li>
         <h3>Envelope-Filter</h3>
@@ -465,7 +438,7 @@
       </li>
       <li>
         <h3>Sidechain-Ducking</h3>
-        <p>Senke mit einem separaten Signal den Effektanteil in einem anderen Signalweg ab.</p>
+        <p>Senke mit einem separaten Signal einen Effekt in einem anderen Signalweg ab.</p>
       </li>
     </ul>
 
@@ -483,7 +456,7 @@
         <strong class="manual-preview__title">Weltgeist-Handbuch</strong>
         <span class="manual-preview__description">Signalführung, Regler und Beispiel-Setups.</span>
         <span class="manual-preview__action">
-          Handbuch öffnen (EN) <span aria-hidden="true">↗</span>
+          Handbuch öffnen (Englisch) <span aria-hidden="true">↗</span>
         </span>
       </span>
     </a>
@@ -517,7 +490,7 @@
             src="/models/weltgeist.glb"
             alt="Weltgeist, dynamikgesteuertes Expression-Pedal"
             camera-controls
-            auto-rotate
+            interaction-prompt="none"
             exposure="1.8"
             shadow-intensity="1"
           ></model-viewer>
@@ -525,6 +498,13 @@
           <div class="weltgeist-model-label weltgeist-model-label-bottom">
             ZIEHEN ZUM DREHEN · SCROLLEN ZUM ZOOMEN
           </div>
+        </div>
+
+        <div class="weltgeist-model-actions" role="group" aria-label="Steuerung des 3D-Modells">
+          <button type="button" data-model-action="rotate">Modell drehen</button>
+          <button type="button" data-model-action="zoom-in">Vergrößern</button>
+          <button type="button" data-model-action="zoom-out">Verkleinern</button>
+          <button type="button" data-particle-motion aria-pressed="true" hidden>Hintergrundanimation</button>
         </div>
 
         <div class="weltgeist-model-meta">
@@ -539,7 +519,7 @@
       </div>
 
       <div class="weltgeist-model-controls">
-        <h3 id="features-heading" class="section-heading">Weltgeist Funktionen</h3>
+        <h3 id="features-heading" class="section-heading">Regler und Schalter</h3>
 
         <dl class="weltgeist-model-controls-list">
           <div>
@@ -548,7 +528,7 @@
           </div>
           <div>
             <dt>Sensitivity</dt>
-            <dd>Bestimmt, wie stark sich die Expression-Position bei Pegeländerungen bewegt.</dd>
+            <dd>Bestimmt, wie weit sich die Expression-Position bei Änderungen des Eingangspegels verschiebt.</dd>
           </div>
           <div>
             <dt>Rise</dt>
@@ -571,14 +551,13 @@
 
     <section class="demo-showcase reveal-section" aria-labelledby="demo-heading">
       <div id="demos" class="demo-content">
-        <p class="section-eyebrow"></p>
 
         <h2 id="demo-heading" class="section-heading">
           Weltgeist-Demos
         </h2>
 
         <div class="demo-carousel">
-          <div class="demo-carousel-viewport">
+          <div class="demo-carousel-viewport" tabindex="0" role="group" aria-labelledby="demo-heading">
             <div class="demo-carousel-track">
 
               <article class="demo-card">
@@ -598,7 +577,7 @@
                   </h3>
 
                   <p>
-                    EXP 1 steuert das Tremolo. EXP 2 regelt den Delay-Anteil mit umgekehrter Reaktion. Am Ende sind beide aktiv.
+                    EXP 1 steuert das Tremolo. EXP 2 regelt den Delay-Anteil mit umgekehrter Reaktion.
                   </p>
                 </div>
               </article>
@@ -620,7 +599,7 @@
                   </h3>
 
                   <p>
-                    Ein separates Eingangssignal steuert den Expression-Parameter eines Effekts in einem anderen Signalweg.
+                    Ein separates Eingangssignal steuert einen Effektparameter in einem anderen Signalweg.
                   </p>
                 </div>
               </article>
@@ -636,11 +615,11 @@
 
             <div class="demo-carousel-buttons">
               <button class="demo-carousel-button demo-carousel-previous" type="button" aria-label="Vorherige Demo">
-                ←
+                <span aria-hidden="true">←</span>
               </button>
 
               <button class="demo-carousel-button demo-carousel-next" type="button" aria-label="Nächste Demo">
-                →
+                <span aria-hidden="true">→</span>
               </button>
             </div>
           </div>
@@ -667,7 +646,7 @@
       </h2>
 
       <p class="landing-description">
-        Weltgeist verändert den Widerstand am kompatiblen Expression-Eingang <span class="accent-inline">wie ein herkömmliches Expression-Pedal</span>. Stell den Eingangspegel von Hand ein oder wähle „Live-Audio“, um dein Mikrofon zu nutzen. Verändere die Regler und beobachte die simulierte Expression-Position.
+        Weltgeist bildet das Potentiometer eines Expression-Pedals nach, indem es <span class="accent-inline">den Widerstand an einem kompatiblen Expression-Eingang verändert</span>. Stelle den Eingangspegel manuell ein oder wähle „Live-Audio“ für das Mikrofon. Passe die Regler an und beobachte, wie sich die simulierte Expression-Position verändert.
       </p>
     </div>
     <div class="logo-bar-group pillar-copy-mark" aria-hidden="true">
@@ -742,7 +721,6 @@
             <div
                 id="live-audio-info"
                 class="live-audio-info"
-                aria-live="polite"
                 data-requesting="Audiozugriff wird angefordert…"
                 data-access-denied="Zugriff auf den Audioeingang wurde verweigert."
                 data-no-device="Kein Audioeingabegerät gefunden."
@@ -750,13 +728,14 @@
                 hidden
                 >
               <p id="live-audio-status" class="live-audio-status">
-                Hört zu…
+                Mikrofon aktiv
               </p>
 
               <p class="live-audio-privacy">
                 Im Browser verarbeitet. Es werden keine Audiodaten übertragen.
               </p>
             </div>
+            <p id="live-audio-announcement" class="visually-hidden" role="status"></p>
 
 
             <div class="control control--horizontal input-level-control">
@@ -841,7 +820,7 @@
             </label>
           </div>
 
-          <input id="invert" type="checkbox" aria-label="Expression-Richtung umkehren">
+          <input id="invert" type="checkbox" aria-label="Richtung der Expression-Steuerung umkehren">
         </div>
         </div>
       </div>
@@ -981,15 +960,15 @@
                 <td>1× TS-Ausgangsbuchse</td>
               </tr>
               <tr>
-                <th scope="row">Ausgangsimpedanz</th>
+                <th scope="row">Ausgangs­impedanz</th>
                 <td>ca. 2 kΩ</td>
               </tr>
               <tr>
-                <th scope="row">Stromversorgung</th>
+                <th scope="row">Strom­versorgung</th>
                 <td>9 V DC, innen negativ</td>
               </tr>
               <tr>
-                <th scope="row">Stromaufnahme</th>
+                <th scope="row">Strom­aufnahme</th>
                 <td>20 mA</td>
               </tr>
               <tr>
@@ -997,7 +976,7 @@
                 <td>True Bypass</td>
               </tr>
               <tr>
-                <th scope="row">Abmessungen (L × B × H)</th>
+                <th scope="row">Abmes­sungen (L × B × H)</th>
                 <td>ca. 120 mm × 90 mm × 60 mm</td>
               </tr>
               <tr>
@@ -1015,7 +994,7 @@
             </h2>
 
             <p class="landing-description">
-              Die simulierte Kennlinie ist nicht garantiert linear. Auch ein konstanter Gesamtwiderstand über den gesamten nachgebildeten Regelweg ist nicht garantiert. Verwende Weltgeist nur mit Geräten, die keinen bestimmten Potentiometerwiderstand voraussetzen. Der Expression-Ausgang liefert kein echtes CV-Signal. Die Kompatibilität hängt vom angeschlossenen Gerät ab.
+              Eine lineare Kennlinie und ein konstanter Gesamtwiderstand über den gesamten nachgebildeten Regelweg sind nicht garantiert. Verwende Weltgeist nur mit Geräten, die keinen bestimmten Potentiometerwiderstand voraussetzen. Der Expression-Ausgang liefert kein echtes CV-Signal. Die Kompatibilität hängt vom angeschlossenen Gerät ab.
             </p>
           </div>
           <div class="logo-bar-group pillar-copy-mark" aria-hidden="true">
@@ -1033,7 +1012,7 @@
       © Late Roman Audio
     </p>
 
-    <nav class="site-footer-links" aria-label="Footer-Navigation">
+    <nav class="site-footer-links" aria-label="Navigation in der Fußzeile">
       
       <a href="/imprint.html">
         Impressum

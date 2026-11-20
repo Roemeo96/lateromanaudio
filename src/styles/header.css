@@ -294,7 +294,7 @@
 
 /* Mobile */
 
-@media (max-width: 900px) {
+@media (max-width: 1360px) {
 
     
 .site-header--legal
@@ -328,10 +328,16 @@
     display: inline-flex;
   }
 
+  .has-js .site-header:not(.site-header--legal) {
+    grid-template-rows: minmax(2.5rem, auto);
+  }
+
   .site-header-navigation {
     grid-column: 1 / -1;
 
     width: 100%;
+    max-block-size: calc(100dvh - 5rem);
+    overflow-y: auto;
 
     flex-direction: column;
     align-items: stretch;
@@ -343,6 +349,10 @@
 
   .site-header.has-mobile-menu
   .site-header-navigation {
+    display: none;
+  }
+
+  .has-js .site-header:not(.is-menu-open) #site-header-navigation {
     display: none;
   }
 

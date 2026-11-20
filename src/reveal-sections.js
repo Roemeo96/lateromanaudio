@@ -2,6 +2,8 @@ export function initializeRevealSections() {
   const sections =
     document.querySelectorAll('.reveal-section');
 
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
   const observer =
     new IntersectionObserver(
       entries => {
@@ -25,6 +27,7 @@ export function initializeRevealSections() {
     );
 
   sections.forEach(section => {
+    section.classList.add('reveal-pending');
     observer.observe(section);
   });
 }

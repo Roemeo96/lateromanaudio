@@ -90,7 +90,9 @@ export function createPedalSimulation() {
   const liveAudioStatus =
     document.querySelector('#live-audio-status');
 
+  const liveAudioAnnouncement = document.querySelector('#live-audio-announcement');
   const liveAudioMessages = {
+    listening: liveAudioStatus?.textContent.trim(),
     requesting:
       liveAudioInfo?.dataset.requesting,
 
@@ -136,22 +138,18 @@ export function createPedalSimulation() {
     };
   }
 
+  let outputFrame = null;
+  let previousFrameTime = null;
+
   function updateTargetOutput() {
-    state.targetOutput =
-      calculateOutput(
-        state.input,
-        getSettings(),
-      );
-      if (positionMeterMaximum) {
-  const maximumOutput = calculateOutput(
-    1,
-    getSettings(),
-  );
+    state.targetOutput = calculateOutput(state.input, getSettings());
+    scheduleOutput();
+  }
 
-  const percentage = maximumOutput / 5 * 100;
-
-  positionMeterMaximum.style.width = `${percentage}%`;
-}
+  function scheduleOutput() {
+    if (outputFrame === null && Math.abs(state.targetOutput - state.currentOutput) > 0.0001) {
+      outputFrame = requestAnimationFrame(animateOutput);
+    }
   }
 
   updateTargetOutput();
@@ -160,6 +158,10 @@ export function createPedalSimulation() {
     state.targetOutput;
 
   function renderControls() {
+    if (positionMeterMaximum) {
+      const percentage = calculateOutput(1, getSettings()) / 5 * 100;
+      positionMeterMaximum.style.width = `${percentage}%`;
+    }
     baseValue.textContent =
       state.base.toFixed(2);
 
@@ -273,12 +275,8 @@ function renderPedalPosition() {
     return operationPromise;
   }
 
-  let previousFrameTime = null;
-
   function animateOutput(frameTime) {
-    requestAnimationFrame(
-      animateOutput,
-    );
+    outputFrame = null;
 
     if (previousFrameTime === null) {
       previousFrameTime = frameTime;
@@ -298,6 +296,7 @@ function renderPedalPosition() {
       - state.currentOutput;
 
     if (Math.abs(difference) <= 0.0001) {
+      previousFrameTime = null;
       return;
     }
 
@@ -339,23 +338,20 @@ function renderPedalPosition() {
         error,
       );
     }
+
+    scheduleOutput();
+    if (outputFrame === null) previousFrameTime = null;
   }
 
-  function showLiveAudioInfo(message = '') {
+  function showLiveAudioInfo(message = liveAudioMessages.listening) {
     liveAudioInfo.hidden = false;
-
-    if (message) {
-      liveAudioStatus.textContent =
-        message;
-
-      liveAudioStatus.hidden = false;
-    } else {
-      liveAudioStatus.hidden = true;
-    }
+    liveAudioStatus.textContent = message;
+    if (liveAudioAnnouncement) liveAudioAnnouncement.textContent = message;
   }
 
   function hideLiveAudioInfo() {
     liveAudioInfo.hidden = true;
+    if (liveAudioAnnouncement) liveAudioAnnouncement.textContent = '';
   }
 
   inputSourceInputs.forEach(input => {
@@ -576,12 +572,6 @@ function renderPedalPosition() {
 
   return {
     render,
-
-    start() {
-      requestAnimationFrame(
-        animateOutput,
-      );
-    },
 
     getCurrentOutput() {
       return state.currentOutput;

@@ -2,7 +2,6 @@ export default {
   lang: "it",
 
   seo: {
-    canonical: "https://lateromanaudio.de/it/",
     title: "Late Roman Audio | {product.name}: Pedale d’espressione controllato dalla dinamica",
     description:
       "{product.name} usa la dinamica dello strumento per controllare gli effetti compatibili tramite il loro ingresso d’espressione.",
@@ -10,12 +9,8 @@ export default {
       "Expression Pedal controllato dalla dinamica di Late Roman Audio.",
   },
 
-  links: {
-    home: "/it/",
-  },
-
   header: {
-    homeAriaLabel: "Late Roman Audio, pagina iniziale",
+    homeAriaLabel: "Late Roman Avdio, pagina iniziale",
     openNavigationAriaLabel: "Apri navigazione",
     closeNavigationAriaLabel: "Chiudi navigazione",
     themeToggleAriaLabel: "Passa alla modalità chiara",
@@ -25,6 +20,7 @@ export default {
   },
 
   nav: {
+    skipToContent: "Vai al contenuto principale",
     ariaLabel: "Navigazione principale",
     pedal: "Pedale",
     features: "Funzioni",
@@ -44,7 +40,7 @@ export default {
     tagline2: "Diventa un segnale di controllo",
     description1: {
       before: "{product.name} usa la dinamica del tuo strumento",
-      accent: "per controllare l’ingresso d’espressione di un pedale effetto compatibile",
+      accent: "per controllare l’ingresso d’espressione di un pedale per effetti compatibile",
       after:
         ".",
     },
@@ -72,7 +68,7 @@ cablesDescription: "",
 why: {
   heading: "Perché {product.name}?",
   principle:
-    "Fai seguire a un parametro di un pedale compatibile la dinamica della tua pennata.",
+    "Controlla un parametro di un pedale compatibile con la dinamica della pennata.",
   benefit:
     "Puoi anche controllare quel parametro con un segnale separato.",
   effects: {
@@ -94,11 +90,18 @@ why: {
   manual: {
     title: "Manuale {product.name}",
     description: "Percorso del segnale, controlli ed esempi di configurazione.",
-    action: "Apri il manuale (EN)",
+    action: "Apri il manuale (in inglese)",
   },
 },
 
   model: {
+    actions: {
+      label: "Comandi del modello 3D",
+      rotate: "Ruota il modello",
+      zoomIn: "Ingrandisci",
+      zoomOut: "Riduci",
+      motion: "Animazione di sfondo",
+    },
     kicker: "{product.uppercaseName} / MODELLO 3D INTERATTIVO",
     heading: "Esplora il pedale",
     description:
@@ -115,7 +118,7 @@ why: {
   },
 
   features: {
-    heading: "Funzioni di {product.name}",
+    heading: "Controlli di {product.name}",
     base: {
       label: "Base",
       description:
@@ -124,7 +127,7 @@ why: {
     sensitivity: {
       label: "Sensitivity",
       description:
-        "Regola quanto varia la posizione d’espressione al variare del livello d’ingresso.",
+        "Determina di quanto si sposta la posizione d’espressione quando cambia il livello d’ingresso.",
     },
     rise: {
       label: "Rise",
@@ -152,13 +155,13 @@ why: {
       label: "Video 01",
       heading: "Due uscite d’espressione",
       description:
-        "EXP 1 controlla il tremolo. EXP 2 regola la quantità di delay con risposta invertita. Alla fine del video sono attivi entrambi.",
+        "EXP 1 controlla il tremolo. EXP 2 regola il mix del delay con risposta invertita.",
     },
     video2: {
       label: "Video 02",
       heading: "Sidechain",
       description:
-        "Un segnale d’ingresso separato controlla il parametro d’espressione di un effetto in un altro percorso audio.",
+        "Un segnale d’ingresso separato controlla un parametro di un effetto in un altro percorso audio.",
     },
   },
 
@@ -166,8 +169,8 @@ why: {
     heading: "Simulazione del pedale",
     description: {
       before:
-        "{product.name} varia la resistenza vista da un ingresso d’espressione compatibile ",
-      accent: "come un pedale d’espressione",
+        "{product.name} riproduce il comportamento del potenziometro di un pedale d’espressione ",
+      accent: "variando la resistenza vista da un ingresso d’espressione compatibile",
       after:
         ". Imposta il livello d’ingresso a mano oppure seleziona «Audio in tempo reale» per usare il microfono. Prova i controlli e osserva la posizione d’espressione simulata.",
     },
@@ -183,23 +186,23 @@ why: {
       fall: "Fall",
       invert: "Invert",
     },
-    invertAriaLabel: "Inverti la direzione Expression",
+    invertAriaLabel: "Inverti il senso della risposta d’espressione",
     visualization: {
       eyebrow: "Posizione d’espressione",
       heading: "Dalla dinamica all’espressione",
     },
     input: {
-      source: "Sorgente di ingresso",
+      source: "Sorgente d’ingresso",
       manual: "Manuale",
       liveAudio: "Audio in tempo reale",
       listening: "In ascolto…",
       privacy: "L’audio viene elaborato nel browser. Non viene inviato alcun dato audio.",
       level: "Livello d’ingresso",
 
-      requesting: "Richiesta di accesso all'audio…",
-      accessDenied: "Accesso all'ingresso audio negato.",
-      noDevice: "Nessun dispositivo di ingresso audio trovato.",
-      startFailed: "Impossibile avviare l'ingresso audio.",
+      requesting: "Richiesta di accesso all’audio…",
+      accessDenied: "Accesso all’ingresso audio negato.",
+      noDevice: "Nessun dispositivo audio d’ingresso trovato.",
+      startFailed: "Impossibile avviare l’ingresso audio.",
     },
     values: {
       input: "Ingresso",
@@ -209,6 +212,7 @@ why: {
 
 
   specifications: {
+    approximate: "ca.",
     heading: "Specifiche tecniche",
     input: {
       label: "Ingresso",
@@ -224,7 +228,6 @@ why: {
     },
     outputImpedance: {
       label: "Impedenza di uscita",
-      value: "100 Ω",
     },
     powerSupply: {
       label: "Alimentazione",
@@ -238,7 +241,6 @@ why: {
     },
     dimensions: {
       label: "Dimensioni",
-      value: "145 mm × 100 mm × 100 mm",
     },
     weight: {
       label: "Peso",
@@ -251,7 +253,7 @@ compatibility: {
   },
 
   footer: {
-    ariaLabel: "Navigazione footer",
+    ariaLabel: "Navigazione a piè di pagina",
     imprint: "Impressum",
     privacy: "Informativa sulla privacy",
     contact: "Contatti",

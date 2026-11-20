@@ -33,11 +33,12 @@ import {
   initializeThemeToggle,
 } from "./theme.js";
 
-import "@google/model-viewer";
 import { initializeProductGallery } from './product-gallery.js';
+import { initializeModelControls } from './model-controls.js';
 
 initializeDemoCarousel();
 initializeProductGallery();
+initializeModelControls();
 
 initializeMobileMenu();
 
@@ -64,7 +65,5 @@ initializeSectionParticles()
       error,
     );
   });
-
-pedalSimulation.start();
 
 initializeRangeFills();
