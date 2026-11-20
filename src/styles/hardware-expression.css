@@ -705,3 +705,50 @@
   .site-header-wordmark { font-size: 1rem; }
   .site-header-navigation > a { font-size: 1.05rem; }
 }
+
+/* Particles über die gesamte Bildschirmbreite */
+.product-stage > .section-particles,
+.studio-shell > .section-particles,
+.hardware-section > .section-particles,
+#specifications > .section-particles {
+  left: calc(50% - 50vw);
+  right: auto;
+  width: 100vw;
+}
+
+/* Linie der zweiten Kopfzeile bis zum Bildschirmrand */
+.stage-topline {
+  position: relative;
+  border-top: 0;
+}
+
+.stage-topline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(50% - 50vw);
+  width: 100vw;
+  border-top: 1px solid var(--border);
+  pointer-events: none;
+}
+
+/* Keine rechteckigen Hintergrundflächen hinter Texten */
+.studio-heading > div,
+.studio-heading > p,
+.studio-note,
+.studio-simulation-heading,
+.weltgeist-model-label {
+  background: transparent;
+}
+
+/* Linken Kreis hinter den freien Seitenrand setzen,
+   damit er die Simulationstexte nicht unleserlich macht */
+@media (min-width: 1100px) {
+  .editorial-orb--studio {
+    left: calc(
+      var(--layout-gutter)
+      - clamp(28rem, 55vw, 62rem)
+      - 1rem
+    );
+  }
+}
