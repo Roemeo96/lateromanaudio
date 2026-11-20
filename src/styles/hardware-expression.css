@@ -1,17 +1,17 @@
 /* Third pass: tactile controls, physical expression movement, a broad hardware chapter. */
-.studio-shell .app { max-width: 1380px; grid-template-columns: minmax(0,1.05fr) minmax(0,1fr); }
+.studio-shell .app { max-width: 86.25rem; grid-template-columns: minmax(0,1.05fr) minmax(0,1fr); }
 .studio-shell .simulation-controls-group { gap: 1.5rem 2.5rem; border-top: 0; }
-.studio-shell .simulation-controls-group > .control { border-top: 1px solid var(--border); padding-top: 1rem; }
+.studio-shell .simulation-controls-group > .control { border-top: 0.0625rem solid var(--border); padding-top: 1rem; }
 .studio-shell .simulation-controls-group > .control:last-child { grid-column: 1/-1; grid-template-columns: 1fr auto; padding-top: 1.3rem; }
 .studio-shell .simulation-controls-group > .control:last-child .control-heading { flex-direction: row; }
 .studio-shell .simulation-controls-group > .control:last-child input { justify-self: end; }
 .rotary-widget { --dial-angle: -135deg; --dial-sweep: 0deg; display: grid; justify-items: center; gap: .6rem; padding: .4rem .5rem .6rem; }
 .rotary-face { position: relative; width: clamp(5.5rem,8.5vw,8.5rem); aspect-ratio: 1; border-radius: 50%; background: conic-gradient(from 225deg,var(--tertiary) 0deg var(--dial-sweep),transparent var(--dial-sweep) 270deg,transparent 270deg); cursor: ns-resize; touch-action: none; }
-.rotary-face::before { content: ''; position: absolute; inset: .35rem; border: 1px solid var(--border); border-radius: 50%; background: var(--background); }
-.rotary-hub { position: absolute; inset: 17%; border: 1px solid var(--tertiary); border-radius: 50%; background: var(--surface); box-shadow: 0 .3rem .7rem rgb(var(--shadow-rgb) / 10%); }
+.rotary-face::before { content: ''; position: absolute; inset: .35rem; border: 0.0625rem solid var(--border); border-radius: 50%; background: var(--background); }
+.rotary-hub { position: absolute; inset: 17%; border: 0.0625rem solid var(--tertiary); border-radius: 50%; background: var(--surface); box-shadow: 0 .3rem .7rem rgb(var(--shadow-rgb) / 10%); }
 .rotary-tick { position: absolute; inset: 17%; z-index: 1; transform: rotate(var(--dial-angle)); pointer-events: none; }
-.rotary-tick::after { content: ''; position: absolute; top: 12%; left: calc(50% - 1px); width: 2px; height: 25%; background: var(--tertiary); }
-.rotary-widget:focus-within .rotary-face { outline: 2px solid var(--tertiary); outline-offset: 5px; }
+.rotary-tick::after { content: ''; position: absolute; top: 12%; left: calc(50% - 0.0625rem); width: 0.125rem; height: 25%; background: var(--tertiary); }
+.rotary-widget:focus-within .rotary-face { outline: 0.125rem solid var(--tertiary); outline-offset: 0.3125rem; }
 .rotary-widget input[type="range"] { width: min(100%,9rem); min-height: 1.75rem; }
 .studio-shell .visualization-panel { min-height: 42rem; padding-top: 2rem; overflow: hidden; }
 .studio-shell .visualization-panel > * { position: relative; z-index: 1; }
@@ -43,14 +43,14 @@
 .hardware-section .weltgeist-model-label-bottom { bottom: 0; right: 0; left: auto; max-width: 90%; }
 .hardware-section .weltgeist-model-meta { font-size: .9rem; letter-spacing: 0; margin-top: 1.5rem; }
 .hardware-section .weltgeist-model-actions { gap: .75rem; }
-.hardware-section .weltgeist-model-actions button { padding: .7rem 1rem; font-size: 1rem; min-height: 44px; border-color: var(--tertiary); }
+.hardware-section .weltgeist-model-actions button { padding: .7rem 1rem; font-size: 1rem; min-height: 2.75rem; border-color: var(--tertiary); }
 .hardware-section .weltgeist-model-actions button:hover { background: rgb(var(--tertiary-rgb) / 8%); }
 .hardware-section .weltgeist-model-controls .section-heading { font-size: 2.5rem; font-weight: 400; text-transform: none; letter-spacing: -.025em; }
 .hardware-section .weltgeist-model-controls-list { margin-top: 1.75rem; }
 .hardware-section .weltgeist-model-controls-list > div { display: grid; grid-template-columns: minmax(6rem,.65fr) minmax(0,1.35fr); gap: 1.5rem; padding-block: 1.2rem; }
 .hardware-section .weltgeist-model-controls-list dt { color: var(--tertiary); font-size: 1.6rem; font-weight: 400; }
 .hardware-section .weltgeist-model-controls-list dd { margin: .2rem 0 0; font-size: 1.15rem; line-height: 1.6; }
-.editorial-orb--hardware { width: 35vw; right: -20%; bottom: -10rem; border: 1px solid var(--tertiary); }
+.editorial-orb--hardware { width: 35vw; right: -20%; bottom: -10rem; border: 0.0625rem solid var(--tertiary); }
 /* Exact technical data stay in a table, but take the space of a complete chapter. */
 #specifications.content-section { overflow: visible; padding: 5rem var(--layout-gutter) 6rem; isolation: isolate; }
 #specifications .specifications-layout { position: relative; z-index: 1; width: 100%; max-width: none; margin: 0; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: clamp(3rem,7vw,9rem); align-items: start; }
@@ -61,18 +61,18 @@
 #specifications .specifications-table td { font-size: 1.2rem; letter-spacing: 0; }
 #specifications .specifications-table th,#specifications .specifications-table td { padding-block: 1.3rem; }
 .compatibility-reference { --text: #f4f1e6; --muted: #dedfff; --border: rgb(244 241 230 / 30%); --tertiary: #f4f1e6; background: var(--studio-blue); color: var(--text); padding: clamp(2rem,4vw,4rem); margin-top: 5rem; position: relative; }
-.compatibility-reference::before { content: ''; position: absolute; width: 15rem; aspect-ratio: 1; border: 1px solid rgb(244 241 230 / 22%); border-radius: 50%; right: -6rem; top: -6rem; pointer-events: none; }
+.compatibility-reference::before { content: ''; position: absolute; width: 15rem; aspect-ratio: 1; border: 0.0625rem solid rgb(244 241 230 / 22%); border-radius: 50%; right: -6rem; top: -6rem; pointer-events: none; }
 .compatibility-reference .stage-kicker { margin: 0 0 1rem; color: var(--text); }
 .compatibility-reference h2 { font-size: clamp(2.5rem,3.5vw,4.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -.035em; margin: 0 0 1.5rem; max-width: 12em; }
 .compatibility-text { font-size: 1.2rem; line-height: 1.7; max-width: 40em; margin: 0; }
-.reference-manual { margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+.reference-manual { margin-top: 2.5rem; padding-top: 2rem; border-top: 0.0625rem solid var(--border); }
 .reference-manual .manual-preview { display: flex; gap: 1.5rem; align-items: center; max-width: none; margin: 0; padding: 0; border: 0; background: transparent; color: var(--text); text-decoration: none; }
 .reference-manual .manual-preview__cover { flex: 0 0 6rem; width: 6rem; height: 8.5rem; background: var(--editorial-cream); color: #11110f; }
 .reference-manual .manual-preview__copy { gap: .65rem; }
 .reference-manual .manual-preview__title { font-size: 1.6rem; font-weight: 400; letter-spacing: 0; }
 .reference-manual .manual-preview__description { color: var(--muted); font-size: 1.05rem; line-height: 1.5; letter-spacing: 0; }
 .reference-manual .manual-preview__action { color: var(--text); font-size: 1rem; letter-spacing: 0; text-transform: none; text-decoration: underline; text-underline-offset: .3rem; }
-.reference-manual .manual-preview:hover .manual-preview__action { text-decoration-thickness: 2px; }
+.reference-manual .manual-preview:hover .manual-preview__action { text-decoration-thickness: 0.125rem; }
 .reference-manual .manual-preview__brand { font-size: .45rem; }
 .reference-manual .manual-preview__cover-title { font-size: 1rem; }
 .editorial-orb--specifications { width: 45vw; left: -32%; top: 3rem; background: rgb(var(--tertiary-rgb) / 7%); }
@@ -128,3 +128,509 @@
 .hardware-section .weltgeist-model-actions button:disabled { opacity: .45; cursor: default; }
 @media (max-width: 760px) { .studio-simulation-heading { padding-inline: .5rem; } }
 .hardware-section .weltgeist-model-stage::before { width: auto; height: 94%; max-width: none; }
+
+/* Breitere Desktopbereiche bei kompakter Darstellung */
+@media (min-width: 1100px) {
+  /* Find your next expression */
+  .studio-heading,
+  .studio-workspace,
+  .studio-note {
+    max-width: none;
+  }
+
+  /* Pedal Simulation */
+  .studio-simulation-heading,
+  .studio-shell .app {
+    max-width: none;
+  }
+
+  /* A closer look und Produkt-/Kaufbereich */
+  .product-detail-heading {
+    max-width: none;
+  }
+
+  .pedal-showcase-content {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* Breite Simulation mit kompakterer Expression-Anzeige */
+@media (min-width: 1100px) {
+  .studio-shell .visualization-panel {
+    min-height: 0;
+    transform: none;
+    padding: 2rem 3rem;
+  }
+
+  .expression-motion {
+    width: min(100%, 42rem);
+    margin: 0 auto 1rem;
+  }
+
+  .expression-motion svg {
+    height: 16rem;
+  }
+
+  .expression-readout-number output {
+    font-size: 4.5rem;
+  }
+
+  .expression-input-readout {
+    margin-top: 1rem;
+  }
+}
+
+/* Hero-Foto vollständig im ursprünglichen Seitenverhältnis */
+.stage-photo img {
+  aspect-ratio: auto;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+/* Freisteller vor der blauen Produktbühne */
+.stage-photo img {
+  aspect-ratio: auto;
+  width: 110%;
+  max-width: none;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  margin-left: -5%;
+  filter: drop-shadow(0 1.2rem 1.4rem rgb(0 0 0 / 15%));
+}
+
+.stage-photo figcaption,
+.stage-topline {
+  font-size: .95rem;
+}
+
+.stage-foot {
+  font-size: 1rem;
+  background: var(--background);
+  padding: 1.3rem 1rem;
+}
+
+.stage-foot > span,
+.stage-foot a,
+.stage-motion-toggle {
+  background: transparent;
+}
+
+.stage-foot a,
+.stage-motion-toggle {
+  color: var(--text);
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  padding: .45rem 0;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media (min-width: 1100px) {
+  .stage-copy h2 { max-width: 6em; }
+  .stage-kicker { font-size: 1rem; }
+  .site-header-navigation > a { font-size: 1rem; }
+  .site-header-language { font-size: .95rem; }
+}
+
+@media (max-width: 760px) {
+  .stage-photo img {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+/* Orange ergänzt Creme und Ultramarin */
+:root {
+  --action-orange: #f4511e;
+  --action-orange-hover: #ff693b;
+}
+
+/* Hauptaktionen */
+.stage-button,
+:root[data-theme="dark"] .stage-button {
+  background: var(--action-orange);
+  color: #11110f;
+}
+
+.stage-button:hover {
+  background: var(--action-orange-hover);
+}
+
+/* Aktive Anwendung */
+.studio-choice[aria-pressed="true"] {
+  color: var(--text);
+}
+
+.studio-choice[aria-pressed="true"] .studio-choice-dot {
+  color: var(--action-orange);
+}
+
+/* Textauswahl wie im gezeigten Farbbeispiel */
+::selection {
+  background: var(--action-orange);
+  color: #11110f;
+}
+
+/* Kreise nicht mehr durch einen Hintergrundbalken verdecken */
+.stage-foot,
+.stage-foot > span {
+  background: transparent;
+}
+
+.stage-foot {
+  border-top: 0;
+  padding-inline: 0;
+  gap: 2rem;
+}
+
+/* Kleine Aktionen bleiben auf Creme und Blau lesbar */
+.stage-foot a,
+.stage-motion-toggle {
+  background: var(--action-orange);
+  color: #11110f;
+  border: 0;
+  padding: .65rem 1rem;
+}
+
+.stage-foot a:hover,
+.stage-motion-toggle:hover {
+  background: var(--action-orange-hover);
+}
+
+.stage-motion-toggle[aria-pressed="false"] {
+  text-decoration: line-through;
+}
+
+/* Orange ergänzt Creme und Ultramarin */
+:root {
+  --action-orange: #f4511e;
+  --action-orange-hover: #ff693b;
+}
+
+/* Hauptaktionen */
+.stage-button,
+:root[data-theme="dark"] .stage-button {
+  background: var(--action-orange);
+  color: #11110f;
+}
+
+.stage-button:hover {
+  background: var(--action-orange-hover);
+}
+
+/* Aktive Anwendung */
+.studio-choice[aria-pressed="true"] {
+  color: var(--text);
+}
+
+.studio-choice[aria-pressed="true"] .studio-choice-dot {
+  color: var(--action-orange);
+}
+
+/* Textauswahl wie im gezeigten Farbbeispiel */
+::selection {
+  background: var(--action-orange);
+  color: #11110f;
+}
+
+/* Kreise nicht mehr durch einen Hintergrundbalken verdecken */
+.stage-foot,
+.stage-foot > span {
+  background: transparent;
+}
+
+.stage-foot {
+  border-top: 0;
+  padding-inline: 0;
+  gap: 2rem;
+}
+
+/* Kleine Aktionen bleiben auf Creme und Blau lesbar */
+.stage-foot a,
+.stage-motion-toggle {
+  background: var(--action-orange);
+  color: #11110f;
+  border: 0;
+  padding: .65rem 1rem;
+}
+
+.stage-foot a:hover,
+.stage-motion-toggle:hover {
+  background: var(--action-orange-hover);
+}
+
+.stage-motion-toggle[aria-pressed="false"] {
+  text-decoration: line-through;
+}
+
+/* Zurück zu Creme und Ultramarin */
+:root {
+  --action-orange: var(--tertiary);
+  --action-orange-hover: var(--tertiary-strong);
+}
+
+.stage-button,
+:root[data-theme="dark"] .stage-button,
+.stage-foot a,
+.stage-motion-toggle {
+  background: var(--tertiary);
+  color: var(--on-accent);
+}
+
+.stage-button:hover,
+.stage-foot a:hover,
+.stage-motion-toggle:hover {
+  background: var(--tertiary-strong);
+}
+
+.studio-choice[aria-pressed="true"],
+.studio-choice[aria-pressed="true"] .studio-choice-dot {
+  color: var(--tertiary);
+}
+
+::selection {
+  background: var(--tertiary);
+  color: var(--on-accent);
+}
+
+@media (min-width: 1100px) {
+  /* Produktfoto und Kaufbereich ausgewogener verteilen */
+  .pedal-showcase-content {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 5vw;
+  }
+
+  .pedal-showcase-figure {
+    width: 100%;
+    max-width: 64rem;
+    margin: 0;
+  }
+
+  .pedal-purchase-panel {
+    align-self: start;
+    padding-top: 3rem;
+    width: 100%;
+    max-width: 46rem;
+  }
+
+  .pedal-purchase {
+    max-width: none;
+    width: 100%;
+  }
+
+  .pedal-purchase h2 {
+    font-size: 5.2rem;
+  }
+
+  .pedal-purchase-price {
+    font-size: 2.2rem;
+  }
+
+  .pedal-purchase .eyebrow,
+  .pedal-purchase-status,
+  .quantity-control label {
+    font-size: 1rem;
+  }
+
+  .pedal-purchase .quantity-input,
+  .pedal-purchase .pedal-add-to-cart {
+    min-height: 4rem;
+    font-size: 1.1rem;
+  }
+
+  .pedal-purchase-includes-title,
+  .pedal-purchase-includes-description {
+    font-size: 1.1rem;
+  }
+
+  /* Specifications und Compatibility gleich hoch */
+  #specifications .specifications-layout {
+    align-items: stretch;
+  }
+
+  #specifications .compatibility-reference {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #specifications .reference-manual {
+    margin-top: auto;
+    padding-top: 2.5rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  /* Anwendungen: besser lesbare Inhalte */
+  .studio-choice strong {
+    font-size: 1.3rem;
+  }
+
+  .studio-scene-copy p,
+  .studio-heading > p {
+    font-size: 1.25rem;
+  }
+
+  .route-step p {
+    font-size: 1.15rem;
+  }
+
+  /* Simulation: vier Regler in einer Reihe */
+  .studio-shell .app {
+    align-items: start;
+  }
+
+  .studio-shell .simulation-controls-group {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .rotary-face {
+    width: 6.25rem;
+  }
+
+  .rotary-widget {
+    padding-inline: 0;
+  }
+
+  .rotary-widget input[type="range"] {
+    width: min(100%, 8rem);
+  }
+
+  .studio-shell .pedal-panel {
+    padding-block: 0;
+  }
+
+  /* Expression-Anzeige kompakter */
+  .studio-shell .visualization-panel {
+    min-height: 0;
+    padding: 1.5rem 2rem;
+    transform: none;
+  }
+
+  .studio-shell .visualization-panel h3 {
+    font-size: 2.25rem;
+    max-width: none;
+    margin-bottom: .5rem;
+  }
+
+  .expression-motion {
+    width: min(100%, 32rem);
+    margin: .5rem auto 1rem;
+  }
+
+  .expression-motion svg {
+    height: 10rem;
+  }
+
+  .expression-readout-number output {
+    font-size: 3.5rem;
+  }
+
+  .expression-input-readout {
+    margin-top: .75rem;
+  }
+
+  .expression-response-caption {
+    padding-top: .75rem;
+  }
+}
+
+/* Invert als deutlich erkennbare Hauptfunktion */
+.studio-shell .simulation-controls-group > .control:last-child {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  padding: 1.25rem 1.5rem;
+  margin-top: .5rem;
+  border: 1px solid var(--tertiary);
+  background: rgb(var(--tertiary-rgb) / 7%);
+}
+
+.studio-shell .simulation-controls-group > .control:last-child label {
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+.studio-shell #invert {
+  flex: 0 0 auto;
+  width: 4rem;
+  height: 2.2rem;
+  cursor: pointer;
+}
+
+/* Invert ohne umrahmte Zusatzleiste */
+.studio-shell .simulation-controls-group > .control:last-child {
+  width: auto;
+  margin: 0;
+  padding: 1rem 0 0;
+  background: transparent;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+@media (min-width: 1100px) {
+  .studio-shell .simulation-controls-group {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .studio-shell .simulation-controls-group > .control:last-child {
+    grid-column: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2.5rem;
+  }
+}
+
+.studio-shell .simulation-controls-group > .control:last-child label {
+  font-size: 1.1rem;
+}
+
+.studio-shell #invert {
+  appearance: none;
+  position: relative;
+  width: 4.5rem;
+  height: 2.5rem;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--muted);
+  border-radius: 2rem;
+  background: transparent;
+  cursor: pointer;
+}
+
+.studio-shell #invert::before {
+  content: "";
+  position: absolute;
+  width: 1.7rem;
+  height: 1.7rem;
+  top: 50%;
+  left: .3rem;
+  border-radius: 50%;
+  background: var(--muted);
+  transform: translateY(-50%);
+}
+
+.studio-shell #invert:checked {
+  background: var(--tertiary);
+  border-color: var(--tertiary);
+}
+
+.studio-shell #invert:checked::before {
+  background: var(--background);
+  transform: translate(2rem, -50%);
+}
+
+.studio-shell #invert::after {
+  content: none;
+}

@@ -1,6 +1,6 @@
 
 .legal-page {
-  width: min(100% - 2rem, 800px);
+  width: min(100% - 2rem, 50rem);
   margin: 0 auto;
   padding: clamp(4rem, 8vw, 7rem) 0;
 }

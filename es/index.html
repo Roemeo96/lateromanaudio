@@ -260,7 +260,7 @@
         <div class="stage-copy"><p class="stage-kicker">Tu forma de tocar, al mando.</p><h2>Cada nota mueve algo.</h2><p>Convierte la dinámica de tu interpretación en control de expresión para tus pedales.</p>
           <div class="stage-actions"><a class="stage-button" href="#studio">Explora Weltgeist</a><a class="stage-link" href="#pedal">El pedal</a></div>
         </div>
-        <figure class="stage-photo"><img src="/images/weltgeist-beauty-shot.jpg" srcset="/images/weltgeist-beauty-shot-720.webp 720w, /images/weltgeist-beauty-shot.jpg 1200w" sizes="(max-width: 760px) 100vw, 60vw" alt="Pedal Weltgeist de Late Roman Audio" width="1200" height="960" fetchpriority="high"><figcaption><span>Diseñado para responder.</span><span>EXP I + EXP II</span></figcaption></figure>
+        <figure class="stage-photo"><img src="/images/weltgeist-hero-cutout.png" sizes="(max-width: 760px) 100vw, 60vw" alt="Pedal Weltgeist de Late Roman Audio" width="1402" height="1122" fetchpriority="high"><figcaption><span>Diseñado para responder.</span><span>EXP I + EXP II</span></figcaption></figure>
       </div>
       <div class="stage-foot"><span>Dos salidas de expresión. Un gesto musical.</span><button class="stage-motion-toggle" type="button" data-particle-motion aria-pressed="true" hidden>Animación de fondo</button><a href="#studio">Entra</a></div>
     </section>
@@ -270,7 +270,7 @@
  <div id="why-weltgeist-particles" class="section-particles" aria-hidden="true"></div>
  <div class="studio-heading"><div><p class="stage-kicker">El estudio</p><h2 id="studio-title">Descubre tu próxima expresión.</h2></div><p>Seis formas de hacer que tus efectos respondan a tu interpretación. Elige una aplicación y explora la respuesta.</p></div>
  <div class="studio-workspace"><div class="studio-choices" role="group" aria-label="Aplicaciones"><button type="button" class="studio-choice" data-scene="modulation" aria-pressed="true"><span>01</span><strong>Modulación dinámica</strong><span class="studio-choice-dot" aria-hidden="true"></span></button><button type="button" class="studio-choice" data-scene="swell" aria-pressed="false"><span>02</span><strong>Auto-Swell</strong><span class="studio-choice-dot" aria-hidden="true"></span></button><button type="button" class="studio-choice" data-scene="filters" aria-pressed="false"><span>03</span><strong>Filtros de envolvente</strong><span class="studio-choice-dot" aria-hidden="true"></span></button><button type="button" class="studio-choice" data-scene="dirt" aria-pressed="false"><span>04</span><strong>Saturación dinámica</strong><span class="studio-choice-dot" aria-hidden="true"></span></button><button type="button" class="studio-choice" data-scene="delayReverb" aria-pressed="false"><span>05</span><strong>Delay y reverberación dinámicos</strong><span class="studio-choice-dot" aria-hidden="true"></span></button><button type="button" class="studio-choice" data-scene="ducking" aria-pressed="false"><span>06</span><strong>Ducking por sidechain</strong><span class="studio-choice-dot" aria-hidden="true"></span></button></div>
- <div class="studio-scene"><div class="studio-scene-top"><span>Aplicaciones</span><span data-scene-number>01 / 06</span></div><img src="/images/weltgeist-top-720.webp" alt="Pedal Weltgeist de Late Roman Audio" width="720" height="576" loading="lazy"><div class="studio-scene-copy" aria-live="polite"><h3>Modulación dinámica</h3><p>Haz que la velocidad o la profundidad de un trémolo siga la dinámica de tu ataque.</p></div></div>
+ <div class="studio-scene"><div class="studio-scene-top"><span>Aplicaciones</span><span data-scene-number>01 / 06</span></div><div data-application-visual aria-hidden="true"></div><div class="studio-scene-copy" aria-live="polite"><h3>Modulación dinámica</h3><p>Haz que la velocidad o la profundidad de un trémolo siga la dinámica de tu ataque.</p></div></div>
  <div class="studio-route"><p class="stage-kicker">Cómo funciona</p><div class="route-step"><span>01</span><h3>Tú tocas</h3><p>Tu ataque da el impulso.</p></div><div class="route-step"><span>02</span><h3>Weltgeist</h3><p>Transforma tu dinámica en control de expresión.</p></div><div class="route-step"><span>03</span><h3>Tu efecto responde</h3><p>El parámetro asignado sigue la salida de expresión.</p></div><a class="stage-button" href="#simulation">Prueba los controles</a></div></div>
  <p class="studio-note">Vista previa de aplicaciones. La simulación muestra las señales de control sin generar sonido de efectos.</p><template data-scene-copy="modulation"><h3>Modulación dinámica</h3><p>Haz que la velocidad o la profundidad de un trémolo siga la dinámica de tu ataque.</p></template><template data-scene-copy="swell"><h3>Auto-Swell</h3><p>Controla el nivel para que cada nota entre de forma gradual.</p></template><template data-scene-copy="filters"><h3>Filtros de envolvente</h3><p>Desplaza la frecuencia de una banda de ecualización con tu dinámica al tocar.</p></template><template data-scene-copy="dirt"><h3>Saturación dinámica</h3><p>Controla la mezcla de un overdrive o fuzz con tu ataque.</p></template><template data-scene-copy="delayReverb"><h3>Delay y reverberación dinámicos</h3><p>Alarga las repeticiones del delay o atenúa la reverberación mientras tocas.</p></template><template data-scene-copy="ducking"><h3>Ducking por sidechain</h3><p>Usa una señal independiente para atenuar un efecto en otra ruta de audio.</p></template>
  <div id="simulation" class="studio-simulation-heading"><div class="simulation-signature" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div><p class="stage-kicker">Prueba los controles</p><h2>Simulación del pedal</h2><p>Weltgeist reproduce el comportamiento del potenciómetro de un pedal de expresión al variar la resistencia que presenta a una entrada de expresión compatible. Ajusta el nivel de entrada a mano o selecciona «Audio en directo» para usar el micrófono. Prueba los controles y observa la posición de expresión simulada.</p></div>
@@ -445,16 +445,18 @@
         <p class="eyebrow">Posición de expresión</p>
         <h3 id="expression-heading">De la dinámica a la expresión</h3>
         <div class="expression-motion" aria-hidden="true">
-          <svg viewBox="0 0 600 230" focusable="false">
-            <circle class="motion-orbit" cx="300" cy="123" r="103"/>
-            <path class="motion-ground" d="M65 204 H535"/>
-            <path class="motion-support" d="M255 193 L300 125 L345 193 Z"/>
-            <g id="expression-motion-plate" class="expression-motion-plate" transform="rotate(6 300 125)">
-              <path class="motion-plate" d="M105 108 Q105 100 115 100 H485 Q495 100 495 108 V119 H105 Z"/>
-              <path class="motion-detail" d="M120 109 H480 M158 99 V91 M206 99 V91 M254 99 V91 M302 99 V91 M350 99 V91 M398 99 V91 M446 99 V91"/>
-              <circle class="motion-pivot" cx="300" cy="125" r="8"/>
-            </g>
-          </svg>
+          <svg viewBox="60 35 480 180" focusable="false">
+  <rect x="110" y="155" width="390" height="36" rx="4"
+        fill="rgb(244 241 230 / 12%)"
+        stroke="#f4f1e6" stroke-width="1.5"/>
+  <g id="expression-motion-plate"
+     class="expression-motion-plate"
+     transform="rotate(12 365 155)">
+    <path d="M105 110 H495 L365 155 Z"
+          fill="#f4f1e6" stroke="#f4f1e6"
+          stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+</svg>
           <div class="motion-labels"><span>Punta abajo</span><span>Talón abajo</span></div>
         </div>
         <div class="expression-readout">
@@ -568,14 +570,13 @@
             MODELO INTERACTIVO
           </div>
 
-          <img class="model-static-fallback" src="/images/weltgeist.webp" alt="Pedal Weltgeist de Late Roman Audio" width="1122" height="1402" loading="lazy">
+          <img hidden class="model-static-fallback" src="/images/weltgeist.webp" alt="Pedal Weltgeist de Late Roman Audio" width="1122" height="1402" loading="lazy">
           <model-viewer
             class="weltgeist-model"
             src="/models/weltgeist.glb"
             alt="Weltgeist, pedal de expresión controlado por la dinámica"
             camera-controls
             touch-action="pan-y"
-            poster="/images/weltgeist-low-angle-720.webp"
             interaction-prompt="none"
             exposure="1.8"
             shadow-intensity="1"

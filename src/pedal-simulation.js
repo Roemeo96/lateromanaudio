@@ -203,7 +203,7 @@ export function createPedalSimulation() {
 
 function renderExpressionPosition() {
   const position = Math.max(0, Math.min(1, state.currentOutput / 5));
-  if (motionPlate) motionPlate.setAttribute('transform', `rotate(${(6 - position * 24).toFixed(2)} 300 125)`);
+  if (motionPlate) motionPlate.setAttribute('transform', `rotate(${(12 * (1 - position)).toFixed(2)} 365 155)`);
   if (positionMeter && positionMeterFill) {
     const percentage = position * 100;
     positionMeterFill.style.width = `${percentage}%`;

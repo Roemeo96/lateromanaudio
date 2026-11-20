@@ -54,7 +54,7 @@
 }
 
 .content-section > .landing-description {
-  width: min(800px, calc(100% - 6rem));
+  width: min(50rem, calc(100% - 6rem));
   margin: 1.25rem auto 0;
 }
 
@@ -78,18 +78,18 @@
   justify-content: center;
   gap: clamp(1rem, 3vw, 2rem);
   padding-block-start: clamp(1.5rem, 3vw, 2rem);
-  border-block-start: 1px solid var(--border);
+  border-block-start: 0.0625rem solid var(--border);
   color: var(--text);
   text-decoration: none;
 }
 
 .manual-preview:hover .manual-preview__action {
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 0.125rem;
 }
 
 .manual-preview:focus-visible {
-  outline: 2px solid var(--tertiary);
-  outline-offset: 4px;
+  outline: 0.125rem solid var(--tertiary);
+  outline-offset: 0.25rem;
 }
 
 .manual-preview__cover {
@@ -102,7 +102,7 @@
   background: #f4f1e6;
   color: #11110f;
   text-align: center;
-  border: 1px solid var(--border);
+  border: 0.0625rem solid var(--border);
 }
 
 .manual-preview__brand,
@@ -114,13 +114,13 @@
 
 .manual-preview__columns {
   display: flex;
-  gap: 4px;
+  gap: 0.25rem;
   height: 1.35rem;
 }
 
 .manual-preview__columns > span {
-  width: 5px;
-  border-inline: 1px solid currentColor;
+  width: 0.3125rem;
+  border-inline: 0.0625rem solid currentColor;
 }
 
 .manual-preview__cover-title {
@@ -199,7 +199,7 @@
 
 .why-effects > li {
   padding-block-end: 0.85rem;
-  border-block-end: 1px solid var(--border);
+  border-block-end: 0.0625rem solid var(--border);
 }
 
 .why-effects h3 {
@@ -251,7 +251,7 @@
 .specifications-table th,
 .specifications-table td {
   padding-block: 0.65rem;
-  border-block-start: 1px solid var(--border);
+  border-block-start: 0.0625rem solid var(--border);
   text-align: left;
   vertical-align: top;
   overflow-wrap: anywhere;

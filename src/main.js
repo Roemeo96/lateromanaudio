@@ -63,3 +63,7 @@ initializeSectionParticles()
   .then(() => updateParticleWobble(pedalSimulation.getCurrentOutput()))
   .catch(error => console.error('Particle initialization failed:', error));
 import './editorial-motion.js';
+
+import './application-visuals.js';
+
+import './hold-input.js';

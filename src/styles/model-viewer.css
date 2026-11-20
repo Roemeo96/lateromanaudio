@@ -1,6 +1,6 @@
 .weltgeist-model-section {
   padding-block: 5rem;
-  border-block: 1px solid var(--border);
+  border-block: 0.0625rem solid var(--border);
 }
 
 .weltgeist-model-inner {
@@ -43,11 +43,11 @@
 
 .weltgeist-model-stage {
   position: relative;
-  height: clamp(320px, 40vw, 432px);
+  height: clamp(20rem, 40vw, 27rem);
   overflow: hidden;
 
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 0.0625rem solid var(--border);
   box-shadow: var(--panel-shadow);
 }
 
@@ -99,9 +99,9 @@
 }
 
 .weltgeist-model-actions button {
-  min-height: 24px;
+  min-height: 1.5rem;
   padding: 0.2rem 0.55rem;
-  border: 1px solid var(--border);
+  border: 0.0625rem solid var(--border);
   border-radius: 0;
   background: transparent;
   color: var(--text);
@@ -111,8 +111,8 @@
 
 .weltgeist-model-actions button:focus-visible,
 .demo-carousel-viewport:focus-visible {
-  outline: 1px solid var(--text);
-  outline-offset: 2px;
+  outline: 0.0625rem solid var(--text);
+  outline-offset: 0.125rem;
 }
 
 .weltgeist-model-actions button[aria-pressed="true"] {
@@ -129,7 +129,7 @@
 
 .weltgeist-model-controls-list > div {
   padding-block: 0.75rem;
-  border-top: 1px solid var(--border);
+  border-top: 0.0625rem solid var(--border);
 }
 
 .weltgeist-model-controls-list dt {

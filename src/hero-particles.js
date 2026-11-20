@@ -133,7 +133,7 @@ function createParticleOptions() {
       },
 
       number: {
-        value: 25,
+        value: 30,
 
         density: {
           enable: true,
@@ -144,8 +144,8 @@ function createParticleOptions() {
 
       opacity: {
         value: {
-          min: isLightMode ? 0.25 : 0.1,
-          max: isLightMode ? 0.65 : 0.45,
+          min: isLightMode ? 0.4 : 0.25,
+          max: isLightMode ? 0.85 : 0.7,
         },
         animation: {
           enable: true,
@@ -308,10 +308,10 @@ export function updateParticleWobble(currentOutput) {
     normalizedPosition * 1.5;
 
   const minimumOpacity =
-    0.3 + normalizedPosition * 0.25;
+    0.45 + normalizedPosition * 0.2;
 
   const maximumOpacity =
-    0.7 + normalizedPosition * 0.25;
+    0.85 + normalizedPosition * 0.15;
 
   particleContainers.forEach(
     container => {
