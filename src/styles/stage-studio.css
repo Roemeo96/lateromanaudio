@@ -1,6 +1,9 @@
 /* Second direction: a calm editorial grid with free, oversized circular fields. */
-:root { --studio-blue: #3342cb; --studio-blue-rgb: 51 66 203; --editorial-cream: #f4f1e6; --surface: #111219; --surface-rgb: 17 18 25; --control-surface: #252736; --tertiary: #a3aaff; --tertiary-strong: #b8bdff; --tertiary-rgb: 163 170 255; --particle-color: #a3aaff; }
+/*:root { --studio-blue: #3342cb; --studio-blue-rgb: 51 66 203; --editorial-cream: #f4f1e6; --surface: #111219; --surface-rgb: 17 18 25; --control-surface: #252736; --tertiary: #a3aaff; --tertiary-strong: #b8bdff; --tertiary-rgb: 163 170 255; --particle-color: #a3aaff; }
 :root:not([data-theme="dark"]) { --background: #f4f1e6; --background-rgb: 244 241 230; --surface: #f4f1e6; --surface-rgb: 244 241 230; --surface-deep: #fbf8ee; --control-surface: #e3dfd1; --tertiary: #3342cb; --tertiary-strong: #2733a9; --tertiary-rgb: 51 66 203; --particle-color: #3342cb; }
+*/
+:root { --studio-blue: #187288; --studio-blue-rgb: 24 114 136; --editorial-cream: #f4f1e6; --surface: #111719; --surface-rgb: 17 23 25; --control-surface: #253236; --tertiary: #89d3e6; --tertiary-strong: #a8e1f0; --tertiary-rgb: 137 211 230; --particle-color: #89d3e6; }
+:root:not([data-theme="dark"]) { --background: #f4f1e6; --background-rgb: 244 241 230; --surface: #f4f1e6; --surface-rgb: 244 241 230; --surface-deep: #fbf8ee; --control-surface: #e3dfd1; --tertiary: #187288; --tertiary-strong: #125768; --tertiary-rgb: 24 114 136; --particle-color: #187288; }
 body, button, input, output, select, textarea { font-family: "Times New Roman", Times, serif; }
 body { background: var(--background); }
 html { scroll-padding-top: 6rem; }
